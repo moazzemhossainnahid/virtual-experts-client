@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { AiOutlineClose } from "react-icons/ai";
-import logo from "../../Assets/Images/Logo.svg";
+import logo from "../../Assets/Images/others/Logo.svg";
 import mobileLogo from "../../Assets/Images/public/v-logo-black.svg";
 import { NavbarData } from "../../Data/NavbarData";
 import styles from "../../styles/Navbar.module.css";
@@ -45,7 +45,7 @@ const Navbar = () => {
                   <Image src={logo} alt="logo" height="31" width="170" />
                 </a>
               </Link>
-            </div>
+            </div>   
             <div className="d-none d-md-block">
               <ul className="d-flex align-items-center">
                 {NavbarData?.map((nav) => (
@@ -107,7 +107,7 @@ const Navbar = () => {
           </div>
           <div className="offcanvas-body">
             <div className="text-center">
-              {navData.map((nav) => (
+              {NavbarData?.map((nav) => (
                 <div
                   key={nav.id}
                   className={`${styles.navItemMobileHover} my-2 py-2`}
