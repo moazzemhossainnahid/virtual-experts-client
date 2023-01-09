@@ -106,7 +106,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="offcanvas-body">
-            <div className="text-center">
+            {/* <div className="text-center">
               {NavbarData?.map((nav) => (
                 <div
                   key={nav.id}
@@ -123,7 +123,7 @@ const Navbar = () => {
                   </Link>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

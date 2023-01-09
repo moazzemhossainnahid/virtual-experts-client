@@ -184,7 +184,7 @@ export default function App({ Component, pageProps }) {
           <FaArrowAltCircleUp size={40} />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
