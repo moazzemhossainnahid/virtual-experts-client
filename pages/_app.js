@@ -7,7 +7,7 @@ import { createContext, useEffect, useState } from "react";
 import { FaArrowAltCircleUp } from 'react-icons/fa';
 import Footer from '../Components/Footer/Footer';
 import Navbar from '../Components/Navbar/Navbar';
-import '../styles/globals.css'
+import '../styles/globals.css';
 
 
 nProgress.configure(
@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }) {
     window.scroll(0, 0);
   };
 
-  const [signedUser, setSignedUser] = useState({});
+  const [signedUser, setSignedUser] = useState({})
   //showing n-progress
   Router.events.on("routeChangeStart", (url) => {
     nProgress.start();
@@ -123,12 +123,12 @@ export default function App({ Component, pageProps }) {
           integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
           crossOrigin="anonymous"
         ></script>
-        <script
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
-        ></script>
+        ></script> */}
         {/* Google Analytics Script Add */}
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `[window.dataLayer = window.dataLayer || [];
               function gtag() {
@@ -137,9 +137,9 @@ export default function App({ Component, pageProps }) {
               gtag("js", new Date());
               gtag("config", "G-M0L3PN9HQL");]`,
           }}
-        />
+        /> */}
         {/* facebook Analytics Script Add */}
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `!function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -151,7 +151,7 @@ export default function App({ Component, pageProps }) {
               fbq('init', '878234442794429');
               fbq('track', 'PageView');`,
           }}
-        />
+        /> */}
         <noscript>
           <img
             height="1"

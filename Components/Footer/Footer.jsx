@@ -18,15 +18,15 @@ const Footer = () => {
   const router = useRouter();
   const [footer, setFooter] = useState(null);
   const [footerLink, setFooterLink] = useState({});
-  useEffect(() => {
-    fetch("http://localhost:5000/footer")
-      .then((res) => res.json())
-      .then((data) => setFooter(data[0]));
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/footer")
+  //     .then((res) => res.json())
+  //     .then((data) => setFooter(data[0]))
 
-    fetch("http://localhost:5000/footerLink")
-      .then((res) => res.json())
-      .then((data) => setFooterLink(data[0]));
-  }, []);
+  //   fetch("http://localhost:5000/footerLink")
+  //     .then((res) => res.json())
+  //     .then((data) => setFooterLink(data[0]))
+  // }, []);
   console.log('footer', footer);
   console.log('footerLink', footerLink);
 
@@ -61,36 +61,36 @@ const Footer = () => {
                   Get in Touch
                 </h6>
               </div>
-              <Link href={`mailto:${footer?.email}`}>
-                <a target="_blank">
-                  <p className={`mt-3 text-muted fs-14 lh-30`}>
-                    <MdEmail className={`${styles.logo}`} />
-                    <span className={`${styles.hilight}`}>
-                      <span className="fw-500">Email</span> : {footer?.email}
-                    </span>
-                  </p>
-                </a>
+              <Link href={`mailto:${footer?.email}`} target="_blank" legacyBehavior>
+
+                <p className={`mt-3 text-muted fs-14 lh-30`}>
+                  <MdEmail className={`${styles.logo}`} />
+                  <span className={`${styles.hilight}`}>
+                    <span className="fw-500">Email</span> : {footer?.email}
+                  </span>
+                </p>
+
               </Link>
-              <Link href={`${footer?.skype}`}>
-                <a target="_blank">
-                  <p className=" text-muted fs-14 lh-30">
-                    <FaSkype className={`${styles.logo}`} />
-                    <span className={`${styles.hilight}`}>
-                      <span className="fw-500">Skype</span> : {footer?.skypeTitle}
-                    </span>
-                  </p>
-                </a>
+              <Link href={`${footer?.skype}`} target="_blank" legacyBehavior>
+
+                <p className=" text-muted fs-14 lh-30">
+                  <FaSkype className={`${styles.logo}`} />
+                  <span className={`${styles.hilight}`}>
+                    <span className="fw-500">Skype</span> : {footer?.skypeTitle}
+                  </span>
+                </p>
+
               </Link>
-              <Link href={`${footer?.whatsApp}`}>
-                <a target="_blank">
-                  <p className=" text-muted fs-14 lh-30">
-                    <IoLogoWhatsapp className={`${styles.logo}`} />
-                    <span className={`${styles.hilight}`}>
-                      <span className="fw-500">WhatsApp</span> :{" "}
-                      {footer?.whatsAppTitle}
-                    </span>
-                  </p>
-                </a>
+              <Link href={`${footer?.whatsApp}`} target="_blank" legacyBehavior>
+
+                <p className=" text-muted fs-14 lh-30">
+                  <IoLogoWhatsapp className={`${styles.logo}`} />
+                  <span className={`${styles.hilight}`}>
+                    <span className="fw-500">WhatsApp</span> :{" "}
+                    {footer?.whatsAppTitle}
+                  </span>
+                </p>
+
               </Link>
             </div>
             <div className="col-md-4 text-center text-md-start mt-4 mt-md-0">
@@ -99,41 +99,41 @@ const Footer = () => {
               </h6>
               <div className="d-flex align-items-center my-3 justify-content-center justify-content-md-start">
                 {footerLink?.facebook && (
-                  <Link href={footerLink.facebook}>
-                    <a target="_blank">
-                      <FaFacebook className={`${styles.logo} me-3`} />
-                    </a>
-                  </Link>
+                  (<Link href={footerLink.facebook} target="_blank" legacyBehavior>
+
+                    <FaFacebook className={`${styles.logo} me-3`} />
+
+                  </Link>)
                 )}
                 {footerLink?.instagram && (
-                  <Link href={footerLink.instagram}>
-                    <a target="_blank">
-                      <AiFillInstagram className={`${styles.logo} me-3`} />
-                    </a>
-                  </Link>
+                  (<Link href={footerLink.instagram} target="_blank" legacyBehavior>
+
+                    <AiFillInstagram className={`${styles.logo} me-3`} />
+
+                  </Link>)
                 )}
 
                 {footerLink?.telegram && (
-                  <Link href={footerLink.telegram}>
-                    <a target="_blank">
-                      <FaTelegram className={`${styles.logo} me-3`} />
-                    </a>
-                  </Link>
+                  (<Link href={footerLink.telegram} target="_blank" legacyBehavior>
+
+                    <FaTelegram className={`${styles.logo} me-3`} />
+
+                  </Link>)
                 )}
 
                 {footerLink?.twitter && (
-                  <Link href={footerLink.twitter}>
-                    <a target="_blank">
-                      <ImTwitter className={`${styles.logo} me-3`} />
-                    </a>
-                  </Link>
+                  (<Link href={footerLink.twitter} target="_blank" legacyBehavior>
+
+                    <ImTwitter className={`${styles.logo} me-3`} />
+
+                  </Link>)
                 )}
                 {footerLink?.youTube && (
-                  <Link href={footerLink.youTube}>
-                    <a target="_blank">
-                      <FaYoutube className={`${styles.logo} me-3`} />
-                    </a>
-                  </Link>
+                  (<Link href={footerLink.youTube} target="_blank" legacyBehavior>
+
+                    <FaYoutube className={`${styles.logo} me-3`} />
+
+                  </Link>)
                 )}
               </div>
               <h6 className={`${styles.title} fs-16 mt-5 mt-md-0 lh-30 fw-500`}>
