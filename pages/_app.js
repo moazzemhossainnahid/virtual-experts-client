@@ -7,7 +7,7 @@ import nProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { createContext, useEffect, useState } from "react";
 import { FaArrowAltCircleUp } from "react-icons/fa";
-import Navbar from '../Components/Navbar/Navbar';
+import Navbar from '../Components/Shared/Navbar/Navbar';
 import Footer from '../Components/Shared/Footer/Footer';
 
 
@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
   };
 
   const [signedUser, setSignedUser] = useState({});
-  
+
   //showing n-progress
   Router.events.on("routeChangeStart", (url) => {
     nProgress.start();

@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { AiOutlineClose } from "react-icons/ai";
-import logo from "../../Assets/Images/Others/Logo.svg";
-import mobileLogo from "../../Assets/Images/Others/v-logo.svg";
-import { NavbarData } from "../../Data/NavbarData";
-import styles from "../../styles/Navbar.module.css";  
+import logo from "../../../Assets/Images/others/Logo.svg";
+import mobileLogo from "../../../Assets/Images/others/v-logo.svg";
+import { NavbarData } from "../../../Data/NavbarData";
+import styles from "../../../styles/Navbar.module.css";  
 
 const Navbar = () => {
   const router = useRouter();
