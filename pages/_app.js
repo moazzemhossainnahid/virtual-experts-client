@@ -1,13 +1,14 @@
+import '../styles/globals.css';
+
 import jwt_decode from "jwt-decode";
 import Head from "next/head";
 import Router, { useRouter } from "next/router";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { createContext, useEffect, useState } from "react";
-import { FaArrowAltCircleUp } from 'react-icons/fa';
-import Footer from '../Components/Footer/Footer';
+import { FaArrowAltCircleUp } from "react-icons/fa";
 import Navbar from '../Components/Navbar/Navbar';
-import '../styles/globals.css';
+import Footer from '../Components/Shared/Footer/Footer';
 
 
 nProgress.configure(
@@ -18,18 +19,16 @@ nProgress.configure(
 );
 
 export const UserContext = createContext();
-
-
-
 export default function App({ Component, pageProps }) {
-
+  // return <Component {...pageProps} />
   const router = useRouter();
 
   const handelClickTop = () => {
     window.scroll(0, 0);
   };
 
-  const [signedUser, setSignedUser] = useState({})
+  const [signedUser, setSignedUser] = useState({});
+  
   //showing n-progress
   Router.events.on("routeChangeStart", (url) => {
     nProgress.start();
@@ -51,48 +50,38 @@ export default function App({ Component, pageProps }) {
     return Component.getLayout(
       <>
         <Head>
-          <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-            crossOrigin="anonymous"
-          ></link>
-          <script
-            async
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-            crossOrigin="anonymous"
-          ></script>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+          <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
           {/* Google Analytics Script Add */}
-          <script
+          {/* <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
           ></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `window.dataLayer = window.dataLayer || [];
-                function gtag() {
-                  dataLayer.push(arguments);
-                }
-                gtag("js", new Date());
-                gtag("config", "G-M0L3PN9HQL");`,
+              function gtag() {
+                dataLayer.push(arguments);
+              }
+              gtag("js", new Date());
+              gtag("config", "G-M0L3PN9HQL");`,
             }}
-          />
+          /> */}
           {/* facebook Analytics Script Add */}
-          <script
+          {/* <script
             dangerouslySetInnerHTML={{
               __html: `!function(f,b,e,v,n,t,s)
-                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s)}(window, document,'script',
-                'https://connect.facebook.net/en_US/fbevents.js');
-                fbq('init', '878234442794429');
-                fbq('track', 'PageView');`,
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '878234442794429');
+              fbq('track', 'PageView');`,
             }}
-          />
+          /> */}
           <noscript>
             <img
               height="1"
@@ -102,6 +91,7 @@ export default function App({ Component, pageProps }) {
             />
           </noscript>
         </Head>
+
         <UserContext.Provider value={[signedUser, setSignedUser]}>
           <Component {...pageProps} />
         </UserContext.Provider>
@@ -123,10 +113,10 @@ export default function App({ Component, pageProps }) {
           integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
           crossOrigin="anonymous"
         ></script>
-        {/* <script
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
-        ></script> */}
+        ></script>
         {/* Google Analytics Script Add */}
         {/* <script
           dangerouslySetInnerHTML={{
@@ -152,14 +142,14 @@ export default function App({ Component, pageProps }) {
               fbq('track', 'PageView');`,
           }}
         /> */}
-        <noscript>
+        {/* <noscript>
           <img
             height="1"
             width="1"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
           />
-        </noscript>
+        </noscript> */}
       </Head>
       <Navbar />
       <UserContext.Provider value={[signedUser, setSignedUser]}>
@@ -184,7 +174,7 @@ export default function App({ Component, pageProps }) {
           <FaArrowAltCircleUp size={40} />
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

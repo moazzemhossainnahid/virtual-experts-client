@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { AiOutlineClose } from "react-icons/ai";
-import logo from "../../Assets/Images/others/Logo.svg";
-import mobileLogo from "../../Assets/Images/public/v-logo-black.svg";
+import logo from "../../Assets/Images/Others/Logo.svg";
+import mobileLogo from "../../Assets/Images/Others/v-logo.svg";
 import { NavbarData } from "../../Data/NavbarData";
-import styles from "../../styles/Navbar.module.css";
+import styles from "../../styles/Navbar.module.css";  
 
 const Navbar = () => {
   const router = useRouter();
@@ -45,16 +45,17 @@ const Navbar = () => {
                 <Image src={logo} alt="logo" height="31" width="170" />
 
               </Link>
-            </div>   
+            </div>
             <div className="d-none d-md-block">
-            <ul className="d-flex align-items-center">
+              <ul className="d-flex align-items-center">
                 {NavbarData?.map((nav) => (
                   <li key={nav.id} className="mx-3 position-relative">
                     <Link
                       href={nav.link}
                       className={`${
                         currentPath === nav.link ? `${styles.active}` : ""
-                      } ${styles.navItem}`}>
+                      } ${styles.navItem}`}
+                      legacyBehavior>
 
                       {nav.title}
 
@@ -106,7 +107,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="offcanvas-body">
-            {/* <div className="text-center">
+            <div className="text-center">
               {NavbarData?.map((nav) => (
                 <div
                   key={nav.id}
@@ -123,7 +124,7 @@ const Navbar = () => {
                   </Link>
                 </div>
               ))}
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

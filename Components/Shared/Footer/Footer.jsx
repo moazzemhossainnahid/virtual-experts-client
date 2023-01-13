@@ -7,12 +7,12 @@ import { FaFacebook, FaSkype, FaTelegram, FaYoutube } from "react-icons/fa";
 import { ImTwitter } from "react-icons/im";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
-import Logo from "../../Assets/Images/others/Logo.svg";
-import BTC from "../../Assets/Images/others/Bitcoin.svg";
-import Payoneer from "../../Assets/Images/others/Payoneer.svg";
-import PayPal from "../../Assets/Images/others/PayPal.svg";
-import skrill from "../../Assets/Images/others/Skrill.svg";
-import styles from "../../styles/Footer.module.css";
+import Logo from "../../../Assets/Images/others/Logo.svg";
+import BTC from "../../../Assets/Images/others/Bitcoin.svg";
+import Payoneer from "../../../Assets/Images/others/Payoneer.svg";
+import PayPal from "../../../Assets/Images/others/PayPal.svg";
+import skrill from "../../../Assets/Images/others/Skrill.svg";
+import styles from "../../../styles/Footer.module.css";
 
 const Footer = () => {
   const router = useRouter();
@@ -153,7 +153,7 @@ const Footer = () => {
                   <Image src={BTC} alt="BTC" />
                 </div>
               </div>
-            </div>
+            </div>  
           </div>
         </div>
         <div className="text-center  text-muted">
