@@ -167,12 +167,12 @@ export default function App({ Component, pageProps }) {
             : ""
         }
       >
-        <div
+        {/* <div
           onClick={handelClickTop}
           className="scrol-icon me-5 position-fixed end-0 top-80 cursor-pointer"
         >
           <FaArrowAltCircleUp size={40} />
-        </div>
+        </div> */}
       </div>
       <Footer />
     </>
