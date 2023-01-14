@@ -11,7 +11,7 @@ const Amazon = ({ amazonData }) => {
           <div className="row d-flex align-items-center">
             <div className="col-md-6 pb-5 pb-md-0 px-5">
               <Image
-              className=""
+              className="img-fluid"
                 src={amazonImg}
                 alt="amazon-marketing-service-virtual-experts-limited"
                 title="amazon-marketing-service-virtual-experts-limited"
