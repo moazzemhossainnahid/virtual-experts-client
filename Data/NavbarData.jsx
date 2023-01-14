@@ -9,11 +9,11 @@ export const NavbarData = [
         title: "Service",
         link: "/services", 
     },
-    {
-        id: "3",
-        title: "Blog",
-        link: "/blog",
-    },
+    // {
+    //     id: "3",
+    //     title: "",
+    //     link: "/",
+    // },
     {
         id: "4",
         title: "About",
