@@ -89,7 +89,7 @@ const Banner = ({ bannerData, footerLink }) => {
       <SideLink/>
 
       {/* PopUp Modal */}
-      {/* <div
+      <div
         className="modal fade"
         id="popup"
         tabIndex="-1"
@@ -184,7 +184,7 @@ const Banner = ({ bannerData, footerLink }) => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
