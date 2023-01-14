@@ -18,15 +18,15 @@ const Footer = () => {
   const router = useRouter();
   const [footer, setFooter] = useState(null);
   const [footerLink, setFooterLink] = useState({});
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/footer")
-  //     .then((res) => res.json())
-  //     .then((data) => setFooter(data[0]))
+  useEffect(() => {
+    fetch("http://localhost:5000/footer")
+      .then((res) => res.json())
+      .then((data) => setFooter(data[0]))
 
-  //   fetch("http://localhost:5000/footerLink")
-  //     .then((res) => res.json())
-  //     .then((data) => setFooterLink(data[0]))
-  // }, []);
+    fetch("http://localhost:5000/footerLink")
+      .then((res) => res.json())
+      .then((data) => setFooterLink(data[0]))
+  }, []);
   console.log('footer', footer);
   console.log('footerLink', footerLink);
 

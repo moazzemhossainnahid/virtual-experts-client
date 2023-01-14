@@ -7,8 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 import bannerImg from "../../../Assets/Images/home/amazon-fba-consultant-virtual-experts.svg";
 import cardHeaderBg from "../../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../../Assets/Images/others/v-logo.svg";
-// import SideLink from "../../sideLink/sideLink";
-import styles from "../../../styles/banner.module.css";
+import styles from "../../../styles/Banner.module.css";
+import SideLink from "./SideLink/SideLink";
 
 const Banner = ({ bannerData, footerLink }) => {
   const {
@@ -85,7 +85,7 @@ const Banner = ({ bannerData, footerLink }) => {
       </div>
 
       {/* social link goes here */}
-      {/* <SideLink /> */}
+      <SideLink />
 
       {/* PopUp Modal */}
       <div
