@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Amazon from "../Components/Home/Amazon/Amazon";
 import Banner from "../Components/Home/banner/banner";
 
 export default function Home({
@@ -50,22 +51,22 @@ export default function Home({
       </Head>
       <main>
         <Banner bannerData={bannerData} footerLink={footerLink} />
-        {/* <Amazon amazonData={amazonData} />
-        <WhyChooseVirtualExports
+        <Amazon amazonData={amazonData} />
+        {/* <WhyChooseVirtualExports
           virtualServicesData={virtualServicesData}
           headerInfoVirtualExportsData={headerInfoVirtualExportsData}
-        />
+        /> */}
 
-        <TopServices
+        {/* <TopServices
           topServicesData={topServicesData}
           headerInfoTopServicesData={headerInfoTopServicesData}
-        />
-        <HowToPlaceAnOrder
+        /> */}
+        {/* <HowToPlaceAnOrder
           placeAnOrderData={placeAnOrderData}
           placeAnOrderListData={placeAnOrderListData}
-        />
-        <Testimonial testimonials={testimonials} />
-        <ScheduleMeeting /> */}
+        /> */}
+        {/* <Testimonial testimonials={testimonials} /> */}
+        {/* <ScheduleMeeting /> */}
       </main>
     </>
   );
