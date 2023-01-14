@@ -64,11 +64,11 @@ const Banner = ({ bannerData, footerLink }) => {
                 {bannerData[0].description}
               </p>
               <button
-                className="button px-4 py-1"
+                className="button px-4 py-1 slide_right"
                 data-bs-toggle="modal"
                 data-bs-target="#popup"
               >
-                <h4 className="d-inline fs-14 font-family-roboto">
+                <h4 className="d-inline fs-14 font-family-roboto font-semibold">
                   Get Free Quote!
                 </h4>
               </button>
