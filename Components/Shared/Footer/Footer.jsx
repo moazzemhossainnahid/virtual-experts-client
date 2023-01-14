@@ -27,8 +27,8 @@ const Footer = () => {
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]))
   }, []);
-  console.log('footer', footer);
-  console.log('footerLink', footerLink);
+  // console.log('footer', footer);
+  // console.log('footerLink', footerLink);
 
 
   return (
