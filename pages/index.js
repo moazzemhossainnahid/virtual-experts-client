@@ -53,10 +53,10 @@ export default function Home({
       <main>
         <Banner bannerData={bannerData} footerLink={footerLink} />
         <Amazon amazonData={amazonData} />
-        {/* <WhyChooseVirtualExperts
+        <WhyChooseVirtualExperts
           virtualServicesData={virtualServicesData}
           headerInfoVirtualExpertsData={headerInfoVirtualExpertsData}
-        /> */}
+        />
 
         {/* <TopServices
           topServicesData={topServicesData}

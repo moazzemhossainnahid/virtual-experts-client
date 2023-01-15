@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SectionTitle from "../../Shared/SectionTitile/SectionTitile";
 
 const WhyChooseVirtualExperts = ({
   virtualServicesData,
@@ -25,9 +26,9 @@ const WhyChooseVirtualExperts = ({
                   width="60"
                 />
                 <h3 className="fs-16 mt-2 lh-26 font-family-popins fw-500">
-                  {virtualService.title}
+                  {virtualService?.title}
                 </h3>
-                <p className="fs-15 lh-30">{virtualService.description}</p>
+                <p className="fs-15 lh-30">{virtualService?.description}</p>
               </div>
             </div>
           ))}
