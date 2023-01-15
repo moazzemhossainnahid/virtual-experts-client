@@ -1,12 +1,13 @@
 import Head from "next/head";
 import Amazon from "../Components/Home/Amazon/Amazon";
 import Banner from "../Components/Home/banner/banner";
+import WhyChooseVirtualExperts from "../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
 
 export default function Home({
   topServicesData,
   virtualServicesData,
   bannerData,
-  headerInfoVirtualExportsData,
+  headerInfoVirtualExpertsData,
   headerInfoTopServicesData,
   testimonials,
   amazonData,
@@ -52,9 +53,9 @@ export default function Home({
       <main>
         <Banner bannerData={bannerData} footerLink={footerLink} />
         <Amazon amazonData={amazonData} />
-        {/* <WhyChooseVirtualExports
+        {/* <WhyChooseVirtualExperts
           virtualServicesData={virtualServicesData}
-          headerInfoVirtualExportsData={headerInfoVirtualExportsData}
+          headerInfoVirtualExpertsData={headerInfoVirtualExpertsData}
         /> */}
 
         {/* <TopServices
@@ -88,10 +89,10 @@ export async function getServerSideProps(context) {
   );
   const virtualServicesData = await resVirtualService.json();
 
-  const resHeaderInfoVirtualExports = await fetch(
+  const resHeaderInfoVirtualExperts = await fetch(
     "http://localhost:5000/headerInfoVirtualExports"
   );
-  const headerInfoVirtualExportsData = await resHeaderInfoVirtualExports.json();
+  const headerInfoVirtualExpertsData = await resHeaderInfoVirtualExperts.json();
 
   const resBanner = await fetch(
     "http://localhost:5000/banner"
@@ -132,7 +133,7 @@ export async function getServerSideProps(context) {
     props: {
       topServicesData,
       headerInfoTopServicesData,
-      headerInfoVirtualExportsData,
+      headerInfoVirtualExpertsData,
       virtualServicesData,
       bannerData,
       testimonials,
