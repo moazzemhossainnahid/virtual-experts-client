@@ -4,13 +4,11 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
-    AiFillInstagram,
-    AiOutlineSkype,
-    AiOutlineWhatsApp,
+    AiFillInstagram
 } from "react-icons/ai";
-import { FaFacebook, FaTelegram, FaYoutube } from "react-icons/fa";
+import { FaEnvelope, FaFacebook, FaSkype, FaTelegram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
-import { HiOutlineMail } from "react-icons/hi";
+import { HiLocationMarker, HiOutlineMail } from "react-icons/hi";
 import { ImTwitter } from "react-icons/im";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -112,7 +110,7 @@ const LetsTalk = ({ footerData }) => {
                             Marketing? Feel free to contact us. For better response use
                             Skype/WhatsApp.
                         </p>
-                        {/* <div className="text-muted mb-5 ">
+                        <div className="text-muted mb-5 ">
                             <p className="fs-15 d-flex align-items-md-center lh-40 m-0">
                                 {" "}
                                 <GoLocation className={`${styles.logo} icon-margin-top`} />
@@ -123,27 +121,20 @@ const LetsTalk = ({ footerData }) => {
                             </p>
                             <p className="fs-15 d-flex align-items-center lh-40 m-0">
                                 {" "}
-                                <HiOutlineMail className={`${styles.logo}`} />
+                                <FaEnvelope className={`${styles.logo}`} />
                                 <span className="fw-500">Email</span>: {footerData[0].email}
-                            </p>
-                            <p className="fs-15 d-flex lh-40 m-0">
-                                {" "}
-                                <div>
-                                    <AiOutlineSkype className={`${styles.logo}`} />
-                                </div>
-                                <span className="col-10 d-flex">
-                                    {" "}
-                                    <span className="fw-500">Skype</span>:{" "}
-                                    <span>{footerData[0].skypeTitle}</span>
-                                </span>
                             </p>
                             <p className="fs-15 d-flex align-items-center lh-40 m-0">
                                 {" "}
-                                <AiOutlineWhatsApp className={`${styles.logo} fs-15`} />
-                                <span className="fw-500">Whatsapp</span>:{" "}
-                                {footerData[0].whatsAppTitle}
+                                <FaSkype className={`${styles.logo}`} />
+                                <span className="fw-500">Email</span>: {footerData[0].skypeTitle}
                             </p>
-                        </div> */}
+                            <p className="fs-15 d-flex align-items-center lh-40 m-0">
+                                {" "}
+                                <FaWhatsapp className={`${styles.logo}`} />
+                                <span className="fw-500">Email</span>: {footerData[0].whatsAppTitle}
+                            </p>
+                        </div>
                         <div>
                             <h6
                                 className={`${styles.title} fs-18 roboto-font-family lh-24`}
