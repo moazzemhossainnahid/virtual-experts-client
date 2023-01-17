@@ -98,7 +98,7 @@ const LetsTalk = ({ footerData }) => {
             {/* //form part */}
             <div className="container pt-5 mt-5">
                 <div className="row">
-                    {/* <div className="col-md-6">
+                    <div className="col-md-6">
                         <div>
                             <Image src={Logo} alt="logo" />
                         </div>
@@ -112,7 +112,7 @@ const LetsTalk = ({ footerData }) => {
                             Marketing? Feel free to contact us. For better response use
                             Skype/WhatsApp.
                         </p>
-                        <div className="text-muted mb-5 ">
+                        {/* <div className="text-muted mb-5 ">
                             <p className="fs-15 d-flex align-items-md-center lh-40 m-0">
                                 {" "}
                                 <GoLocation className={`${styles.logo} icon-margin-top`} />
@@ -143,7 +143,7 @@ const LetsTalk = ({ footerData }) => {
                                 <span className="fw-500">Whatsapp</span>:{" "}
                                 {footerData[0].whatsAppTitle}
                             </p>
-                        </div>
+                        </div> */}
                         <div>
                             <h6
                                 className={`${styles.title} fs-18 roboto-font-family lh-24`}
@@ -190,22 +190,6 @@ const LetsTalk = ({ footerData }) => {
                                 )}
                             </div>
                         </div>
-                    </div> */}
-
-                    <div className="col-md-6">
-                        <div>
-                            <Image src={Logo} alt="logo" />
-                        </div>
-                        <h6
-                            className={`${styles.title} fs-24 mt-2 roboto-font-family lh-44 fw-400`}
-                        >
-                            Amazon Growth & Results.
-                        </h6>
-                        <p className="text-muted my-4 fs-15 lh-24">
-                            Do you have any questions related to Amazon FBA/Kindle & Digital
-                            Marketing? Feel free to contact us. For better response use
-                            Skype/WhatsApp.
-                        </p>
                     </div>
 
                     {/* form starts here ======================== form starts here */}
