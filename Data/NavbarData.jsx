@@ -22,6 +22,6 @@ export const NavbarData = [
     {
         id: "5",
         title: "Let's Talk",
-        link: "/lets-talk",
+        link: "/letstalk",
     },
 ]
