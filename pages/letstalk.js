@@ -9,7 +9,7 @@ const LetsTalks = ({ footerData, metaLetsTalk }) => {
         <title>
           {metaLetsTalk.title
             ? `Virtual Experts |  ${metaLetsTalk.title}`
-            : "virtual Experts | Lets Talk"}
+            : "virtual Experts | Let's Talk"}
         </title>
         {/* <title>Virtual Experts | Let&apos;s Talk</title> */}
         <meta
