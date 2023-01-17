@@ -201,6 +201,11 @@ const LetsTalk = ({ footerData }) => {
                         >
                             Amazon Growth & Results.
                         </h6>
+                        <p className="text-muted my-4 fs-15 lh-24">
+                            Do you have any questions related to Amazon FBA/Kindle & Digital
+                            Marketing? Feel free to contact us. For better response use
+                            Skype/WhatsApp.
+                        </p>
                     </div>
 
                     {/* form starts here ======================== form starts here */}
