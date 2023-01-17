@@ -14,7 +14,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { ImTwitter } from "react-icons/im";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import Logo from "../../Assets/Images/others/Shape.svg";
+import Logo from "../../Assets/Images/others/Shape.svg";
 import styles from "../../styles/LetsTalk.module.css";
 import SideLink from "../Home/banner/SideLink/SideLink";
 
@@ -191,6 +191,17 @@ const LetsTalk = ({ footerData }) => {
                             </div>
                         </div>
                     </div> */}
+
+                    <div className="col-md-6">
+                        <div>
+                            <Image src={Logo} alt="logo" />
+                        </div>
+                        <h6
+                            className={`${styles.title} fs-24 mt-2 roboto-font-family lh-44 fw-400`}
+                        >
+                            Amazon Growth & Results.
+                        </h6>
+                    </div>
 
                     {/* form starts here ======================== form starts here */}
 
