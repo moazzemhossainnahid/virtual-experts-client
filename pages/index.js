@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Amazon from "../Components/Home/Amazon/Amazon";
 import Banner from "../Components/Home/banner/banner";
+import HowToPlaceAnOrder from "../Components/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";
 import TopThreeServices from "../Components/Home/TopThreeServices/TopThreeServices";
 import WhyChooseVirtualExperts from "../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
 
@@ -63,10 +64,10 @@ export default function Home({
           topServicesData={topServicesData}
           headerInfoTopServicesData={headerInfoTopServicesData}
         />
-        {/* <HowToPlaceAnOrder
+        <HowToPlaceAnOrder
           placeAnOrderData={placeAnOrderData}
           placeAnOrderListData={placeAnOrderListData}
-        /> */}
+        />
         {/* <Testimonial testimonials={testimonials} /> */}
         {/* <ScheduleMeeting /> */}
       </main>
