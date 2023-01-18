@@ -40,7 +40,7 @@ const AboutComponents = ({
 
         <div className="container my-5">
           <div className="row py-5">
-            <div className="col-md-6">
+            <div className="col-md-6 order-2 order-md-1">
               <h2
                 className={`${styles.title} fs-28 roboto-font-family lh-44 fw-400`}
               >
@@ -62,7 +62,7 @@ const AboutComponents = ({
 
         {/* ================================= */}
 
-        {/* <div className="background-color-skyblue py-5">
+        <div className="background-color-skyblue py-5">
           <div className="container my-5">
             <div className="row">
               <div className="col-md-6 d-flex justify-content-center align-items-center">
@@ -91,7 +91,7 @@ const AboutComponents = ({
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
 
         {/* ========================================= */}
 
