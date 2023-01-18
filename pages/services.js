@@ -1,9 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import ScheduleMeeting from "../src/components/home/scheduleMeeting/scheduleMeeting";
-import Header from "../src/components/services/header/header";
-import ServicesCard from "../src/components/services/servicesCard/servicesCard";
-import WhatWeDo from "../src/components/services/whatWeDo/whatWeDo";
+import ServicesComponents from "../Components/Services/Services";
 
 const Services = ({
   servicesCardData,
@@ -46,13 +43,9 @@ const Services = ({
           how to remove bad reviews on amazon"
         />
       </Head>
-      <Header />
-      <WhatWeDo whatWeDo={whatWeDo} />
-      <ServicesCard
-        servicesCardData={servicesCardData}
-        serviceCardHeader={serviceCardHeader}
-      />
-      <ScheduleMeeting />
+      <ServicesComponents whatWeDo={whatWeDo} servicesCardData={servicesCardData} serviceCardHeader={serviceCardHeader} />
+      {/* ===================================== */}
+      {/* <ScheduleMeeting /> */}
     </>
   );
 };
