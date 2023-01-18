@@ -61,7 +61,7 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                     })}
                 </div>
                 <div className="d-flex justify-content-center mt-4">
-                    <Link href="/services" className="button py-1 px-3">
+                    <Link href="/services" className="button slide_right bg-white py-1 px-3">
 
                         <h4 className="d-inline font-family-roboto fs-14">
                             View all Amazon Services
