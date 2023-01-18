@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Amazon from "../Components/Home/Amazon/Amazon";
 import Banner from "../Components/Home/banner/banner";
+import TopThreeServices from "../Components/Home/TopThreeServices/TopThreeServices";
 import WhyChooseVirtualExperts from "../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
 
 export default function Home({
@@ -58,10 +59,10 @@ export default function Home({
           headerInfoVirtualExpertsData={headerInfoVirtualExpertsData}
         />
 
-        {/* <TopServices
+        <TopThreeServices
           topServicesData={topServicesData}
           headerInfoTopServicesData={headerInfoTopServicesData}
-        /> */}
+        />
         {/* <HowToPlaceAnOrder
           placeAnOrderData={placeAnOrderData}
           placeAnOrderListData={placeAnOrderListData}
