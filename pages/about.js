@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import AboutC from "../src/components/about/about";
+import AboutComponents from "../Components/About/About";
 
 const About = ({
   aboutData,
@@ -34,7 +34,7 @@ const About = ({
         amazon seo agency"
         />
       </Head>
-      <AboutC
+      <AboutComponents
         aboutData={aboutData}
         aboutTeamData={aboutTeamData}
         aboutUniquetData={aboutUniquetData}
