@@ -183,7 +183,7 @@ ul {
 
 .numberBefore {
   position: relative;
-  z-index: 1111;
+  z-index: 10;
 }
 .numberBefore::before {
   content: "";

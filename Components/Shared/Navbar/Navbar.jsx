@@ -25,7 +25,7 @@ const Navbar = () => {
     >
       <div className={`${styles.marginBottomNavbar}`}>
         <div className={`fixed-top bg-white`}>
-          <div className="d-flex justify-content-between align-items-center container py-3">
+          <div className="d-flex justify-content-between z-50 align-items-center container py-3">
             <div className="d-none d-md-block">
               <Link href="/" scroll legacyBehavior>
 
