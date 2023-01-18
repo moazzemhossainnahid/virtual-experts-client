@@ -47,7 +47,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                             />
                                         )}
                                     </div>
-                                    <div className="card-body hover:shadow-md">
+                                    <div className="card-body">
                                         <h3 className="fs-18 lh-28 mb-4 roboto-font-family fw-normal">
                                             {servicesCard.title}
                                         </h3>
