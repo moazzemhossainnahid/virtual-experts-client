@@ -95,7 +95,7 @@ const AboutComponents = ({
 
         {/* ========================================= */}
 
-        {/* <div className="container my-5">
+        <div className="container my-5">
           <div className="d-flex justify-content-center align-items-center">
             <div className="col-12 col-md-7 text-center  mt-5 pt-3">
               <h2
@@ -150,7 +150,7 @@ const AboutComponents = ({
               );
             })}
           </div>
-        </div> */}
+        </div>
         {/* ============================ */}
         {/* <ScheduleMeeting /> */}
       </section>
