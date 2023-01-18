@@ -38,7 +38,7 @@ const AboutComponents = ({
 
         {/* ================================= */}
 
-        {/* <div className="container my-5">
+        <div className="container my-5">
           <div className="row py-5">
             <div className="col-md-6">
               <h2
@@ -58,7 +58,7 @@ const AboutComponents = ({
               />
             </div>
           </div>
-        </div> */}
+        </div>
 
         {/* ================================= */}
 
