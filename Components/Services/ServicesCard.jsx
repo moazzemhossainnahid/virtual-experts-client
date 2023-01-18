@@ -3,12 +3,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import shape from "../../Assets/Images/others/dummy.png";
+import SectionTitle from "../Shared/SectionTitile/SectionTitile";
 
 const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
   const router = useRouter();
   return <>
     <div className="background-color-skyblue py-5">
-      {/* <SectionTitle title={serviceCardHeader?.title} /> */}
+      <SectionTitle title={serviceCardHeader?.title} />
       <div className="container">
         <div className="row">
           {servicesCardData.map((servicesCard) => {

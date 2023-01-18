@@ -16,7 +16,7 @@ const SectionTitle = ({ title, isBgWhite }) => {
       </div>
 
       <div className="ring d-none d-md-block">
-        <Image src={ring} alt="angle" />
+        <Image src={ring} alt="angle" />  
       </div>
 
       <div className="angle d-none d-md-block">
