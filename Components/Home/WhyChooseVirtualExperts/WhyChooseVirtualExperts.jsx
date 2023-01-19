@@ -1,10 +1,7 @@
 import Image from "next/image";
-import SectionTitle from "../../Shared/SectionTitile/SectionTitile";
 
-const WhyChooseVirtualExperts = ({
-  virtualServicesData,
-  headerInfoVirtualExpertsData,
-}) => {
+const WhyChooseVirtualExperts = ({ virtualServicesData, headerInfoVirtualExpertsData }) => {
+
   return (
     <section className="py-5 background-color-skyblue">
       <div className="container">
@@ -19,12 +16,24 @@ const WhyChooseVirtualExperts = ({
           {virtualServicesData.map((virtualService) => (
             <div className="col-12 my-3 col-md-4" key={virtualService._id}>
               <div className="mx-1 bg-white p-3 h-100">
-                <Image
-                  src={virtualService?.img}
-                  alt="service"
-                  height="60"
-                  width="60"
-                />
+                <div className="d-flex justify-content-center">
+                  {virtualService.imgURL ? (
+                    <Image
+                      src={virtualService.imgURL}
+                      title={virtualService.alt}
+                      alt={virtualService.alt}
+                      height="150"
+                      width="150"
+                    />
+                  ) : (
+                    <Image
+                      src={`${imgType} ; base64, ${virtualService.img.img}`}
+                      alt="Loading..."
+                      height="150"
+                      width="150"
+                    />
+                  )}
+                </div>
                 <h3 className="fs-16 mt-2 lh-26 font-family-popins fw-500">
                   {virtualService?.title}
                 </h3>
