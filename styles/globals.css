@@ -536,6 +536,27 @@ ul {
   bottom: -10px;
   transform: scale(1.5);
 }
+
+
+
+.title1 {
+  position: relative;
+  display: inline-block;
+  justify-items: center;
+  text-align: center;
+  width: 100%;
+}
+.title1::before {
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  bottom: -11px;
+  width: 30px;
+  height: 3px;
+  background: #ff9f26;
+  left: 45%;
+}
+
 /* 
 .serviceCard:hover .card-shape-bottom {
   transform: scale(1.2);

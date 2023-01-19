@@ -2,28 +2,28 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import quoteIcon from "../../../Assets/Images/others/icon.svg";
 
-const TopAmazonClients = ({ testimonials }) => {
+const TopAmazonClients = ({ topclients }) => {
     const [number, setNumber] = useState(0);
 
     const [currentTestimonials, setCurrentTestimonial] = useState(
-        testimonials[number]
+        topclients[number]
     );
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (number >= testimonials.length - 1) {
+            if (number >= topclients.length - 1) {
                 setNumber(0);
-                setCurrentTestimonial(testimonials[number]);
+                setCurrentTestimonial(topclients[number]);
             } else {
                 setNumber(number + 1);
-                setCurrentTestimonial(testimonials[number]);
+                setCurrentTestimonial(topclients[number]);
             }
         }, 3000);
         return () => clearInterval(interval);
-    }, [number, testimonials.length, testimonials]);
+    }, [number, topclients.length, topclients]);
 
     const handleChange = (id) => {
-        setCurrentTestimonial(testimonials[id]);
+        setCurrentTestimonial(topclients[id]);
     };
 
     let imgType;
@@ -62,7 +62,7 @@ const TopAmazonClients = ({ testimonials }) => {
                         <p className="fs-14 lh-26">{currentTestimonials.jobTitle}</p>
                     </div>
                     <div className="position-absolute right-38 d-flex flex-md-column">
-                        {testimonials.map((data, index) => {
+                        {topclients.map((data, index) => {
                             let imgType;
                             if (data.img.contentType === "image/svg+xml") {
                                 imgType = "data:image/svg+xml";
