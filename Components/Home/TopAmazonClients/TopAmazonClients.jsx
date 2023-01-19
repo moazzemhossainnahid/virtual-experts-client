@@ -18,7 +18,7 @@ const TopAmazonClients = ({ topclients }) => {
                 setNumber(number + 1);
                 setCurrentTestimonial(topclients[number]);
             }
-        }, 3000);
+        }, 5000);
         return () => clearInterval(interval);
     }, [number, topclients.length, topclients]);
 
