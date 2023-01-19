@@ -12,7 +12,7 @@ const WhyChooseVirtualExperts = ({
           {headerInfoVirtualExpertsData[0].title}
         </h2>
 
-        <p className="col-12 col-md-7 mx-auto fs-14 lh-26 text-center">
+        <p className="col-12 col-md-7 mx-auto fs-14 pt-3 lh-26 text-center">
           {headerInfoVirtualExpertsData[0].description}
         </p>
         <div className="row mt-1">
