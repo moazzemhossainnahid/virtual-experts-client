@@ -38,7 +38,7 @@ const TopAmazonClients = ({ topclients }) => {
     return (
         <section>
             <div className="container py-5">
-                <h2 className={`${styles.title1} fs-24 roboto-font-family fw-400`} >
+                <h2 className={`title1 fs-24 roboto-font-family fw-400`} >
                     Our Top Amazon Clients
                 </h2>
                 <div className="col-12 col-md-7 boxShadow mx-auto mb-3 mt-5 position-relative">

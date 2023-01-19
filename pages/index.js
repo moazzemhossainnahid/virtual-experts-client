@@ -2,6 +2,7 @@ import Head from "next/head";
 import Amazon from "../Components/Home/Amazon/Amazon";
 import Banner from "../Components/Home/banner/banner";
 import HowToPlaceAnOrder from "../Components/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";
+import TopAmazonClients from "../Components/Home/TopAmazonClients/TopAmazonClients";
 import TopThreeServices from "../Components/Home/TopThreeServices/TopThreeServices";
 import WhyChooseVirtualExperts from "../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
 
@@ -68,7 +69,7 @@ export default function Home({
           placeAnOrderData={placeAnOrderData}
           placeAnOrderListData={placeAnOrderListData}
         />
-        {/* <Testimonial testimonials={testimonials} /> */}
+        <TopAmazonClients topclients={testimonials} />
         {/* <ScheduleMeeting /> */}
       </main>
     </>
