@@ -69,7 +69,7 @@ export default function Home({
           placeAnOrderData={placeAnOrderData}
           placeAnOrderListData={placeAnOrderListData}
         />
-        {/* <TopAmazonClients topclients={testimonials} /> */}
+        <TopAmazonClients topclients={testimonials} />
         {/* <ScheduleMeeting /> */}
       </main>
     </>
