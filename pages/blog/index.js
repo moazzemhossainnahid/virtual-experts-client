@@ -10,8 +10,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import cardHeaderBg from "../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../Assets/Images/others/v-logo.svg";
-import { blogData } from "../../src/components/fakeData/blogData";
-import SideLink from "../../src/components/sideLink/sideLink";
+import SideLink from "../../Components/Home/Banner/SideLink/SideLink";
 
 const Blog = () => {
   const router = useRouter();

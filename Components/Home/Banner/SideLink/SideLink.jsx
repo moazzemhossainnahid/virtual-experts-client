@@ -56,7 +56,7 @@ const SideLink = () => {
         title={footerLink.email}
         className="position-relative d-flex align-items-center test">
 
-        <MdEmail
+        <MdEmail  
           className={`d-block cursor-pointer px-2 order-color fixedIcon ${styles.sidelinkColor}`}
           size={40}
         />
