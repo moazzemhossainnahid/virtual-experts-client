@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import cardHeaderBg from "../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../Assets/Images/others/v-logo.svg";
 import SideLink from "../../Components/Home/Banner/SideLink/SideLink";
+import { BlogData } from "../../Data/BlogData";
 
 const Blog = () => {
   const router = useRouter();
@@ -84,7 +85,7 @@ const Blog = () => {
           {/* divide two main columns */}
           <div className="col-md-8 mb-md-5">
             <div className="row">
-              {blogData.map((blog) => (
+              {BlogData?.map((blog) => (
                 <div
                   className="col-12 col-md-6 my-2 cursor-pointer"
                   key={blog.id}
