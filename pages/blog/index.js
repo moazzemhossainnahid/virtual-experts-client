@@ -139,8 +139,8 @@ const Blog = () => {
           <div className="col-md-4 mt-2">
             <div className="boxShadow">
               <div className="position-relative">
-                <div className="cardHeaderBg">
-                  <Image src={cardHeaderBg} alt="header" />
+                <div className="w-full overflow-hidden mx-auto rounded">
+                  <Image className="" src={cardHeaderBg} alt="header" />
                 </div>
                 <div className="cardHeaderImg">
                   <Image
