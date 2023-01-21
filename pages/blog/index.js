@@ -9,7 +9,7 @@ import { FaUser } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import cardHeaderBg from "../../Assets/Images/others/Group 157.svg";
-import cardHeaderImg from "../../images/v-logo.svg";
+import cardHeaderImg from "../../Assets/Images/others/v-logo.svg";
 import { blogData } from "../../src/components/fakeData/blogData";
 import SideLink from "../../src/components/sideLink/sideLink";
 
