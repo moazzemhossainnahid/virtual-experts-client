@@ -23,7 +23,7 @@ const WhyChooseVirtualExperts = ({ virtualServicesData, headerInfoVirtualExperts
               imgType = "data:image/jpg";
             }
             return (
-              <div className="col-12 my-3 col-md-4" key={virtualService._id}>
+              <div className="col-12 my-3 col-md-4 hoverable " key={virtualService._id}>
                 <div className="mx-1 bg-white p-3 h-100">
                   <div className="d-flex justify-content-left">
                     {virtualService?.imgURL ? (

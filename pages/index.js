@@ -5,6 +5,7 @@ import HowToPlaceAnOrder from "../Components/Home/HowToPlaceAnOrder/HowToPlaceAn
 import TopAmazonClients from "../Components/Home/TopAmazonClients/TopAmazonClients";
 import TopThreeServices from "../Components/Home/TopThreeServices/TopThreeServices";
 import WhyChooseVirtualExperts from "../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
+import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
 export default function Home({
   topServicesData,
@@ -70,7 +71,7 @@ export default function Home({
           placeAnOrderListData={placeAnOrderListData}
         />
         <TopAmazonClients topclients={testimonials} />
-        {/* <ScheduleMeeting /> */}
+        <ScheduleMeeting />
       </main>
     </>
   );
