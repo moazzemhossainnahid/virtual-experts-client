@@ -25,21 +25,22 @@ const WhyChooseVirtualExperts = ({ virtualServicesData, headerInfoVirtualExperts
             return (
               <div className="col-12 my-3 col-md-4" key={virtualService._id}>
                 <div className="mx-1 bg-white p-3 h-100">
-                  <div className="d-flex justify-content-center">
+                  <div className="d-flex justify-content-left">
                     {virtualService?.imgURL ? (
                       <Image
                         src={virtualService?.imgURL}
                         title={virtualService?.alt}
                         alt={virtualService?.alt}
-                        height="150"
-                        width="150"
+                        height="60"
+                        width="60"
                       />
                     ) : (
                       <Image
                         src={`${imgType} ; base64, ${virtualService?.img?.img}`}
-                        alt="Loading..."
-                        height="150"
-                        width="150"
+                        title={virtualService?.alt}
+                        alt={virtualService?.alt}
+                        height="60"
+                        width="60"
                       />
                     )}
                   </div>
