@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import AboutComponents from "../Components/About/About";
+import AmazonFBAConsultant from "../Components/AmazonFBA/AmazonFBAConsultant";
 
 const AmazonFBA = ({
   aboutData,
@@ -34,7 +34,7 @@ const AmazonFBA = ({
         amazon seo agency"
         />
       </Head>
-      <AboutComponents
+      <AmazonFBAConsultant
         aboutData={aboutData}
         aboutTeamData={aboutTeamData}
         aboutUniquetData={aboutUniquetData}

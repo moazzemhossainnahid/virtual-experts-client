@@ -7,7 +7,7 @@ import about1 from "../../Assets/Images/about/amazon-fba-consultant-about-virtua
 import styles from "../../styles/About.module.css";
 import SideLink from "../Home/banner/SideLink/SideLink";
 
-const AmazonFBA = ({
+const AmazonFBAConsultant = ({
   aboutData,
   aboutTeamData,
   aboutUniquetData,
@@ -20,7 +20,7 @@ const AmazonFBA = ({
       <section className="overflow-hidden">
         <div className="background-color-skyblue">
           <div className="container d-md-flex justify-content-between align-items-center py-5">
-            <h2 className="fs-30 lh-45 roboto-font-family fw-400">About</h2>
+            <h2 className="fs-30 lh-45 roboto-font-family fw-400">Amazon FBA Consultant</h2>
             <p className="fs-14">
               <span className="cursor-pointer" onClick={() => router.push("/")}>
                 Home
@@ -159,4 +159,4 @@ const AmazonFBA = ({
   );
 };
 
-export default AmazonFBA;
+export default AmazonFBAConsultant;
