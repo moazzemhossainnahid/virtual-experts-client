@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import AboutComponents from "../Components/About/About";
 
-const About = ({
+const AmazonFBA = ({
   aboutData,
   aboutTeamData,
   aboutUniquetData,
@@ -16,7 +16,7 @@ const About = ({
         <title>
           {metaAbout.title
             ? `Virtual Experts |  ${metaAbout.title}`
-            : "virtual Experts | About"}
+            : "virtual Experts | Amazon FBA Consultant"}
         </title>
         <meta
           name="description"
@@ -45,7 +45,7 @@ const About = ({
   );
 };
 
-export default About;
+export default AmazonFBA;
 
 export async function getServerSideProps() {
   const aboutResponse = await fetch(

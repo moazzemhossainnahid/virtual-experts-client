@@ -11,7 +11,7 @@ export const NavbarData = [
     },
     {
         id: "3",
-        title: "FBA",
+        title: "Amazon FBA Consultant",
         link: "/fba", 
     },
     {
