@@ -3,12 +3,12 @@ import { useRouter } from "next/router";
 import React from "react";
 import ReactHtmlParser from "react-html-parser";
 import about2 from "../../Assets/Images/about/about-virtual-experts-amazon-seo-agency.svg";
-import about1 from "../../Assets/Images/about/amazon-fba-consultant-about-virtual-experts.svg";
+import amazonFBA from "../../Assets/Images/public/amazon-fba.svg";
 import styles from "../../styles/About.module.css";
 import SideLink from "../Home/banner/SideLink/SideLink";
 
 const AmazonFBAConsultant = ({
-  aboutData,
+  fbaData,
   aboutTeamData,
   aboutUniquetData,
   aboutUniquetListData,
@@ -44,15 +44,18 @@ const AmazonFBAConsultant = ({
               <h2
                 className={`${styles.title} fs-28 roboto-font-family lh-44 fw-400`}
               >
-                {aboutData?.title}
+                {fbaData?.title}
               </h2>
               <p className="text-muted fs-15 lh-30 text-justify">
-                {ReactHtmlParser(aboutData?.discription)}
+                {ReactHtmlParser(fbaData?.description_part_1)}
+              </p>
+              <p className="text-muted fs-15 lh-30 text-justify">
+                {ReactHtmlParser(fbaData?.description_part_2)}
               </p>
             </div>
             <div className="col-md-6 text-center order-1 order-md-2 px-4">
               <Image
-                src={about1}
+                src={amazonFBA}
                 alt="amazon-fba-consultant-about-virtual-experts"
                 title="amazon-fba-consultant-about-virtual-experts"
               />

@@ -3,7 +3,7 @@ import React from "react";
 import AmazonFBAConsultant from "../Components/AmazonFBA/AmazonFBAConsultant";
 
 const AmazonFBA = ({
-  aboutData,
+  fbaData,
   aboutTeamData,
   aboutUniquetData,
   aboutUniquetListData,
@@ -35,7 +35,7 @@ const AmazonFBA = ({
         />
       </Head>
       <AmazonFBAConsultant
-        aboutData={aboutData}
+        fbaData={fbaData}
         aboutTeamData={aboutTeamData}
         aboutUniquetData={aboutUniquetData}
         aboutUniquetListData={aboutUniquetListData}
@@ -48,10 +48,10 @@ const AmazonFBA = ({
 export default AmazonFBA;
 
 export async function getServerSideProps() {
-  const aboutResponse = await fetch(
-    "http://localhost:5000/about"
+  const fbaResponse = await fetch(
+    "http://localhost:5000/amazonfba"
   );
-  const aboutData = await aboutResponse.json();
+  const fbaData = await fbaResponse.json();
 
   const aboutUniqueResponse = await fetch(
     "http://localhost:5000/aboutUnique"
@@ -78,7 +78,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      aboutData: aboutData[0],
+      fbaData: fbaData[0],
       aboutUniquetData: aboutUniquetData[0],
       aboutUniquetListData: aboutUniquetListData,
       aboutTeamData: aboutTeamData[0],

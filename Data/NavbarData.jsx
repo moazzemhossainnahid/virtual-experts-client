@@ -6,13 +6,13 @@ export const NavbarData = [
     },
     {
         id: "2",
-        title: "Service",
-        link: "/services", 
+        title: "Amazon FBA Consultant",
+        link: "/amazon-fba-consultant", 
     },
     {
         id: "3",
-        title: "Amazon FBA Consultant",
-        link: "/fba", 
+        title: "Service",
+        link: "/services", 
     },
     {
         id: "4",
@@ -21,7 +21,7 @@ export const NavbarData = [
     },
     {
         id: "5",
-        title: "About",
+        title: "About US",
         link: "/about",
     },
     {
