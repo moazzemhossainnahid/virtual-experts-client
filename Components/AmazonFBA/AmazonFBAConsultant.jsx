@@ -65,27 +65,27 @@ const AmazonFBAConsultant = ({
 
         {/* ================================= */}
 
-        <div className="background-color-skyblue py-5">
+        <div className="py-5">
           <div className="container my-5">
             <div className="row">
               <div className="col-md-6 d-flex justify-content-center align-items-center">
-                <Image
-                  src={about2}
-                  alt="about-virtual-experts-amazon-seo-agency"
-                  title="about-virtual-experts-amazon-seo-agency"
-                />
-              </div>
-              <div className="col-md-6 text-muted">
-                <h6
-                  className={`${styles.title} text-dark fs-24 lh-44 roboto-font-family fw-400`}
-                >
-                  {aboutUniquetData.title}
-                </h6>
-                <div>
+              <div>
                   {aboutUniquetListData.map((item, index) => (
                     <div key={item._id} className="d-flex fs-15 lh-30 mt-2">
                       <span className="me-2 numberBefore fw-500 text-dark">
                         {index + 1 > 9 ? index + 1 : ` 0${index + 1}`}
+                      </span>
+                      <p>{item.title}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="col-md-6 text-muted">
+                <div>
+                  {aboutUniquetListData.map((item, index) => (
+                    <div key={item._id} className="d-flex fs-15 lh-30 mt-2">
+                      <span className="me-2 numberBefore fw-500 text-dark">
+                        {index=11 + 1 > 9 ? index + 1 : ` 0${index + 1}`}
                       </span>
                       <p>{item.title}</p>
                     </div>
