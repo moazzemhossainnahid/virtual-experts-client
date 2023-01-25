@@ -6,6 +6,7 @@ import amazonFBA from "../../Assets/Images/public/amazon-fba.svg";
 import styles from "../../styles/About.module.css";
 import SideLink from "../Home/banner/SideLink/SideLink";
 import SectionTitle2 from "../Shared/SectionTitile/SectionTitile2";
+import SectionTitle3 from "../Shared/SectionTitile/SectionTitle3";
 
 const AmazonFBAConsultant = ({
   fbaData,
@@ -67,10 +68,10 @@ const AmazonFBAConsultant = ({
 
         <div className="py-5">
           <div className="container my-5">
-          <SectionTitle2 title="An Amazon FBA Consultant can Provide a wipe range of services, including:" />
+            <SectionTitle2 title="An Amazon FBA Consultant can Provide a wipe range of services, including:" isBgWhite={true} />
             <div className="row">
               <div className="col-md-6 d-flex justify-content-center align-items-center">
-              <div>
+                <div>
                   {aboutUniquetListData.map((item, index) => (
                     <div key={item._id} className="d-flex fs-15 lh-30 mt-2">
                       <span className="me-2 numberBefore fw-500 text-dark">
@@ -83,7 +84,7 @@ const AmazonFBAConsultant = ({
               </div>
               <div className="col-md-6 text-muted">
                 <div>
-                  {aboutUniquetListData.map((item, index=11) => (
+                  {aboutUniquetListData.map((item, index = 11) => (
                     <div key={item._id} className="d-flex fs-15 lh-30 mt-2">
                       <span className="me-2 numberBefore fw-500 text-dark">
                         {index + 1 > 9 ? index + 1 : ` 0${index + 1}`}
@@ -97,6 +98,9 @@ const AmazonFBAConsultant = ({
           </div>
         </div>
 
+        {/* ========================================= */}
+
+        <SectionTitle3 title="Something Text Here" />
         {/* ========================================= */}
 
         <div className="container my-5">

@@ -32,7 +32,7 @@ p {
 
 #nprogress .bar {
   background: #ffb300 !important;
-  }
+}
 
 h1,
 h2,
@@ -97,6 +97,7 @@ ul {
 .fs-30 {
   font-size: 30px;
 }
+
 .fs-36 {
   font-size: 36px;
 }
@@ -157,6 +158,7 @@ ul {
   right: -48px;
   bottom: 0;
 }
+
 @media only screen and (max-width: 600px) {
   .right-38 {
     right: 20px;
@@ -185,6 +187,7 @@ ul {
   position: relative;
   z-index: 10;
 }
+
 .numberBefore::before {
   content: "";
   position: absolute;
@@ -260,6 +263,7 @@ ul {
   .fs-30 {
     font-size: 30px;
   }
+
   .fs-36 {
     font-size: 24px;
   }
@@ -299,9 +303,11 @@ ul {
   .lh-30 {
     line-height: 26px;
   }
+
   .lh-26 {
     line-height: 26px;
   }
+
   .lh-36 {
     line-height: 36px;
   }
@@ -322,13 +328,16 @@ ul {
 .scroll {
   overflow-y: auto;
 }
+
 .scrollBlog {
   max-width: 600px;
   margin: 0 auto;
 }
+
 .scrollBlog::-webkit-scrollbar {
   width: 1em;
 }
+
 /* .scrollBlog::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(126, 126, 126, 0.3);
 } */
@@ -357,6 +366,8 @@ ul {
   right: -30px;
 }
 
+
+
 .ring-mobile-size {
   position: absolute;
   top: -20px;
@@ -369,10 +380,22 @@ ul {
   left: -10px;
 }
 
+.angle2 {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+}
+
 .angle-mobile-size {
   position: absolute;
   bottom: -12px;
   left: -10px;
+}
+
+.angle-mobile-size2 {
+  position: absolute;
+  top: -12px;
+  right: -10px;
 }
 
 /* Scrollbar Design */
@@ -546,6 +569,7 @@ ul {
   text-align: center;
   width: 100%;
 }
+
 .title1::before {
   content: "";
   position: absolute;
