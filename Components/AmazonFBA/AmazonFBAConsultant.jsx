@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import ReactHtmlParser from "react-html-parser";
 import amazonFBA from "../../Assets/Images/public/amazon-fba.svg";
+import shape from "../../Assets/Images/others/dummy.png";
 import styles from "../../styles/About.module.css";
 import SideLink from "../Home/banner/SideLink/SideLink";
 import SectionTitle2 from "../Shared/SectionTitile/SectionTitile2";
@@ -118,19 +119,19 @@ console.log(fbad1Data?.discription)
                 </p>
               </div>
             </div>
-            {/* <div className="row">
-              {servicesCardData.map((servicesCard) => {
+            <div className="row">
+              {whyshouldhireData?.map((servicesCard) => {
                 return (
                   <div
-                    className="col-md-4 position-relative overflow-hidden serviceCard cursor-pointer my-4"
+                    className="col-md-6 position-relative overflow-hidden serviceCard cursor-pointer my-4"
                     key={servicesCard._id}
                   >
                     <div className="card h-100 border-0 borderRadius overflow-hidden">
                       <div className="mx-1 bg-white p-3 h-100">
                         <h3 className="fs-16 mt-2 lh-26 font-family-popins fw-500">
-                          {virtualService?.title}
+                          {servicesCard?.title}
                         </h3>
-                        <p className="fs-15 lh-30">{virtualService?.description}</p>
+                        <p className="fs-15 lh-30">{servicesCard?.description}</p>
                       </div>
                       <div className="position-absolute end-0 card-shape-bottom ">
                         <Image src={shape} alt="shape" height="120" width="120" />
@@ -139,7 +140,7 @@ console.log(fbad1Data?.discription)
                   </div>
                 );
               })}
-            </div> */}
+            </div>
           </div>
         </div>
         <SectionTitle4/>
