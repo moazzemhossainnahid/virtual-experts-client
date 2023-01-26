@@ -110,10 +110,10 @@ console.log(fbad1Data?.discription)
         <div style={{ backgroundColor: "#F5F8FE" }}>
           <div className="container my-5">
             <div className="d-flex justify-content-center align-items-center">
-              <div className="col-12 col-md-7 text-center  mt-5 pt-3">
-                <SectionTitle2 title="" isBgWhite={true} />
+              <div className="col-12 text-center  mt-5 pt-3">
+                <SectionTitle2 title="Why you should hire an Amazon FBA Consultant for your Amazon Marketing Service?" isBgWhite={true} />
                 <p className="text-muted fs-15 mt-3 mb-5 lh-30">
-                  {aboutTeamData?.discription}
+                Hiring an Amazon FBA consultant for your Amazon Marketing Service (AMS) can provide several benefits for your business:
                 </p>
               </div>
             </div>
