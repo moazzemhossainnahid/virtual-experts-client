@@ -386,6 +386,12 @@ ul {
   right: -10px;
 }
 
+.angle3 {
+  position: absolute;
+  top: -12px;
+  left: -10px;
+}
+
 .angle-mobile-size {
   position: absolute;
   bottom: -12px;
@@ -579,6 +585,27 @@ ul {
   height: 3px;
   background: #ff9f26;
   left: 45%;
+}
+
+
+
+.title2 {
+  position: relative;
+  display: inline-block;
+  justify-items: left;
+  text-align: left;
+  width: 100%;
+}
+
+.title2::before {
+  content: "";
+  position: absolute;
+  color: #222f3e;
+  bottom: -11px;
+  width: 30px;
+  height: 3px;
+  background: #ff9f26;
+  left: 1%;
 }
 
 /* 
