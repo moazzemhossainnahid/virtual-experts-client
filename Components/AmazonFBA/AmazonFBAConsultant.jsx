@@ -9,6 +9,8 @@ import SideLink from "../Home/banner/SideLink/SideLink";
 import SectionTitle2 from "../Shared/SectionTitile/SectionTitile2";
 import SectionTitle3 from "../Shared/SectionTitile/SectionTitle3";
 import SectionTitle4 from "../Shared/SectionTitile/SectionTitle4";
+import angle from "../../Assets/Images/others/Rectangle 266.svg";
+
 
 const AmazonFBAConsultant = ({
   fbaData,
@@ -21,7 +23,7 @@ const AmazonFBAConsultant = ({
 }) => {
   const router = useRouter();
 
-console.log(fbad1Data?.discription)
+  console.log(fbad1Data?.discription)
   return (
     <>
       <section className="overflow-hidden">
@@ -106,7 +108,7 @@ console.log(fbad1Data?.discription)
 
         {/* ========================================= */}
 
-        <SectionTitle3/>
+        <SectionTitle3 />
         {/* ========================================= */}
 
         <div style={{ backgroundColor: "#F5F8FE" }}>
@@ -115,7 +117,7 @@ console.log(fbad1Data?.discription)
               <div className="col-12 text-center  mt-5 pt-3">
                 <SectionTitle2 title="Why you should hire an Amazon FBA Consultant for your Amazon Marketing Service?" isBgWhite={true} />
                 <p className="text-muted fs-15 mt-3 mb-5 lh-30">
-                Hiring an Amazon FBA consultant for your Amazon Marketing Service (AMS) can provide several benefits for your business:
+                  Hiring an Amazon FBA consultant for your Amazon Marketing Service (AMS) can provide several benefits for your business:
                 </p>
               </div>
             </div>
@@ -123,10 +125,13 @@ console.log(fbad1Data?.discription)
               {whyshouldhireData?.map((servicesCard) => {
                 return (
                   <div
-                    className="col-md-6 angle3 position-relative overflow-hidden serviceCard cursor-pointer my-4"
+                    className="col-md-6 position-relative serviceCard cursor-pointer my-4"
                     key={servicesCard._id}
                   >
-                    <div className="card h-100 border-0 overflow-hidden">
+                    <div className="angle3 d-none d-md-block">
+                      <Image src={angle} alt="angle" />
+                    </div>
+                    <div className="card position-relative h-100 border-0 overflow-hidden">
                       <div className="mx-1 bg-white p-3 h-100">
                         <h3 className="title2 fs-16 mt-2 lh-26 font-family-popins fw-500">
                           {servicesCard?.title}
@@ -143,7 +148,7 @@ console.log(fbad1Data?.discription)
             </div>
           </div>
         </div>
-        <SectionTitle4/>
+        <SectionTitle4 />
         {/* ============================ */}
         {/* <ScheduleMeeting /> */}
       </section>
