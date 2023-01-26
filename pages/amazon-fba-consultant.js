@@ -6,10 +6,7 @@ const AmazonFBA = ({
   fbaData,
   fbad1Data,
   whyshouldhireData,
-  aboutTeamData,
-  aboutUniquetData,
-  aboutUniquetListData,
-  teams,
+  fbaServiceData,
   metaAbout,
 }) => {
   return (
@@ -40,10 +37,8 @@ const AmazonFBA = ({
         fbaData={fbaData}
         fbad1Data={fbad1Data}
         whyshouldhireData={whyshouldhireData}
+        fbaServiceData={fbaServiceData}
         aboutTeamData={aboutTeamData}
-        aboutUniquetData={aboutUniquetData}
-        aboutUniquetListData={aboutUniquetListData}
-        teams={teams}
       />
     </>
   );
@@ -67,23 +62,10 @@ export async function getServerSideProps() {
   );
   const whyshouldhireData = await whyshouldhireResponse.json();
 
-  const aboutUniqueResponse = await fetch(
-    "http://localhost:5000/aboutUnique"
+  const fbaServiceResponse = await fetch(
+    "http://localhost:5000/fbaservice"
   );
-  const aboutUniquetData = await aboutUniqueResponse.json();
-
-  const aboutUniqueListResponse = await fetch(
-    "http://localhost:5000/aboutUniqueList"
-  );
-  const aboutUniquetListData = await aboutUniqueListResponse.json();
-
-  const aboutTeamResponse = await fetch(
-    "http://localhost:5000/aboutTeam"
-  );
-  const aboutTeamData = await aboutTeamResponse.json();
-
-  const resTeams = await fetch("http://localhost:5000/teams");
-  const teams = await resTeams.json();
+  const fbaServiceData = await fbaServiceResponse.json();
 
   const resMetaAbout = await fetch(
     "http://localhost:5000/metaAbout"
@@ -95,10 +77,7 @@ export async function getServerSideProps() {
       fbaData: fbaData[0],
       fbad1Data: fbad1Data[0],
       whyshouldhireData: whyshouldhireData,
-      aboutUniquetData: aboutUniquetData[0],
-      aboutUniquetListData: aboutUniquetListData,
-      aboutTeamData: aboutTeamData[0],
-      teams,
+      fbaServiceData: fbaServiceData[0],
       metaAbout: metaAbout[0],
     },
   };
