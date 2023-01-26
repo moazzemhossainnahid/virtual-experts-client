@@ -10,7 +10,7 @@ const SectionTitle2 = ({ title, isBgWhite }) => {
           isBgWhite ? "bg-white" : "background-color-skyblue"
         }`}
       >
-        <h2 className="text-center fs-28 lh-44 p-3 textCenterAfterEffect font-family-roboto">
+        <h2 className="text-center fs-22 lh-44 p-3 textCenterAfterEffect font-family-roboto">
           {title}
         </h2>
       </div>

@@ -43,7 +43,7 @@ console.log(fbad1Data?.discription)
 
         {/* ================================= */}
 
-        <div className="container my-5">
+        <div className="container">
           <div className="row py-5">
             <div className="col-md-6 order-2 order-md-1">
               <h2
