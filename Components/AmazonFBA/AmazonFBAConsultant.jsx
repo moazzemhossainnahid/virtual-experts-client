@@ -77,7 +77,7 @@ const AmazonFBAConsultant = ({
           <div className="container my-5">
             <SectionTitle2 title="An Amazon FBA Consultant can Provide a wipe range of services, including:" isBgWhite={true} />
             <div className="row">
-              <div className="col-md-6 d-flex justify-content-center align-items-center">
+              <div className="col-md-6 d-flex justify-content-left justify-content-md-center align-items-center">
                 <div>
                   {fbaServiceData?.slice(0,10).map((item) => (
                     <div key={item._id} className="d-flex fs-15 lh-30 mt-2">
@@ -89,7 +89,7 @@ const AmazonFBAConsultant = ({
                   ))}
                 </div>
               </div>
-              <div className="col-md-6 text-muted">
+              <div className="col-md-6 d-flex justify-content-left justify-content-md-center align-items-center">
                 <div>
                   {fbaServiceData?.slice(10,20).map((item) => (
                     <div key={item._id} className="d-flex fs-15 lh-30 mt-2">
