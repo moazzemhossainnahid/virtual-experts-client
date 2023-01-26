@@ -4,6 +4,7 @@ import AmazonFBAConsultant from "../Components/AmazonFBA/AmazonFBAConsultant";
 
 const AmazonFBA = ({
   fbaData,
+  fbad1Data,
   aboutTeamData,
   aboutUniquetData,
   aboutUniquetListData,
@@ -36,6 +37,7 @@ const AmazonFBA = ({
       </Head>
       <AmazonFBAConsultant
         fbaData={fbaData}
+        fbad1Data={fbad1Data}
         aboutTeamData={aboutTeamData}
         aboutUniquetData={aboutUniquetData}
         aboutUniquetListData={aboutUniquetListData}
@@ -52,6 +54,11 @@ export async function getServerSideProps() {
     "http://localhost:5000/amazonfba"
   );
   const fbaData = await fbaResponse.json();
+
+  const fbad1Response = await fetch(
+    "http://localhost:5000/fbadesc1"
+  );
+  const fbad1Data = await fbad1Response.json();
 
   const aboutUniqueResponse = await fetch(
     "http://localhost:5000/aboutUnique"
@@ -79,6 +86,7 @@ export async function getServerSideProps() {
   return {
     props: {
       fbaData: fbaData[0],
+      fbad1Data: fbad1Data[0],
       aboutUniquetData: aboutUniquetData[0],
       aboutUniquetListData: aboutUniquetListData,
       aboutTeamData: aboutTeamData[0],

@@ -7,15 +7,19 @@ import styles from "../../styles/About.module.css";
 import SideLink from "../Home/banner/SideLink/SideLink";
 import SectionTitle2 from "../Shared/SectionTitile/SectionTitile2";
 import SectionTitle3 from "../Shared/SectionTitile/SectionTitle3";
+import SectionTitle4 from "../Shared/SectionTitile/SectionTitle4";
 
 const AmazonFBAConsultant = ({
   fbaData,
+  fbad1Data,
   aboutTeamData,
   aboutUniquetData,
   aboutUniquetListData,
   teams,
 }) => {
   const router = useRouter();
+
+console.log(fbad1Data?.discription)
   return (
     <>
       <section className="overflow-hidden">
@@ -100,65 +104,44 @@ const AmazonFBAConsultant = ({
 
         {/* ========================================= */}
 
-        <SectionTitle3 title="Something Text Here" />
+        <SectionTitle3/>
         {/* ========================================= */}
 
-        <div className="container my-5">
-          <div className="d-flex justify-content-center align-items-center">
-            <div className="col-12 col-md-7 text-center  mt-5 pt-3">
-              <h2
-                className={`${styles.title1} fs-24 roboto-font-family fw-400`}
-              >
-                {aboutTeamData?.title}
-              </h2>
-              <p className="text-muted fs-15 mt-3 mb-5 lh-30">
-                {aboutTeamData?.discription}
-              </p>
+        <div style={{ backgroundColor: "#F5F8FE" }}>
+          <div className="container my-5">
+            <div className="d-flex justify-content-center align-items-center">
+              <div className="col-12 col-md-7 text-center  mt-5 pt-3">
+                <SectionTitle2 title="" isBgWhite={true} />
+                <p className="text-muted fs-15 mt-3 mb-5 lh-30">
+                  {aboutTeamData?.discription}
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="row">
-            {teams.map((team) => {
-              let imgType;
-              if (team.img.contentType === "image/svg+xml") {
-                imgType = "data:image/svg+xml";
-              } else if (team.img.contentType === "image/png") {
-                imgType = "data:image/png";
-              } else {
-                imgType = "data:image/jpg";
-              }
-              return (
-                <div className="col-12 col-md-4 text-center" key={team._id}>
-                  <div className="m-3 p-2 cursor-pointer">
-                    {team.imgURL ? (
-                      <Image
-                        src={team.imgURL}
-                        alt={team.alt}
-                        title={team.alt}
-                        height="350"
-                        width="300"
-                        layout="responsive"
-                        className="pb-1"
-                      />
-                    ) : (
-                      <Image
-                        src={`${imgType} ; base64, ${team.img.img}`}
-                        alt="loading.."
-                        height="350"
-                        width="300"
-                        layout="responsive"
-                        className="pb-1"
-                      />
-                    )}
-                    <div className={`${styles.name} mt-4`}>
-                      <h6 className="fs-18 lh-26 fw-500">{team.name}</h6>
-                      <p className="fs-15 lh-26">{team.jobTitle}</p>
+            {/* <div className="row">
+              {servicesCardData.map((servicesCard) => {
+                return (
+                  <div
+                    className="col-md-4 position-relative overflow-hidden serviceCard cursor-pointer my-4"
+                    key={servicesCard._id}
+                  >
+                    <div className="card h-100 border-0 borderRadius overflow-hidden">
+                      <div className="mx-1 bg-white p-3 h-100">
+                        <h3 className="fs-16 mt-2 lh-26 font-family-popins fw-500">
+                          {virtualService?.title}
+                        </h3>
+                        <p className="fs-15 lh-30">{virtualService?.description}</p>
+                      </div>
+                      <div className="position-absolute end-0 card-shape-bottom ">
+                        <Image src={shape} alt="shape" height="120" width="120" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div> */}
           </div>
         </div>
+        <SectionTitle4/>
         {/* ============================ */}
         {/* <ScheduleMeeting /> */}
       </section>
