@@ -12,6 +12,7 @@ import SectionTitle4 from "../Shared/SectionTitile/SectionTitle4";
 const AmazonFBAConsultant = ({
   fbaData,
   fbad1Data,
+  whyshouldhireData,
   aboutTeamData,
   aboutUniquetData,
   aboutUniquetListData,
