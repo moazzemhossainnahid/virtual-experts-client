@@ -38,7 +38,6 @@ const AmazonFBA = ({
         fbad1Data={fbad1Data}
         whyshouldhireData={whyshouldhireData}
         fbaServiceData={fbaServiceData}
-        aboutTeamData={aboutTeamData}
       />
     </>
   );
@@ -77,7 +76,7 @@ export async function getServerSideProps() {
       fbaData: fbaData[0],
       fbad1Data: fbad1Data[0],
       whyshouldhireData: whyshouldhireData,
-      fbaServiceData: fbaServiceData[0],
+      fbaServiceData: fbaServiceData,
       metaAbout: metaAbout[0],
     },
   };

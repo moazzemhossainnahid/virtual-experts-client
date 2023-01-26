@@ -16,8 +16,7 @@ const AmazonFBAConsultant = ({
   fbaData,
   fbad1Data,
   whyshouldhireData,
-  aboutTeamData,
-  aboutUniquetData,
+  fbaServiceData,
   aboutUniquetListData,
   teams,
 }) => {
@@ -80,22 +79,22 @@ const AmazonFBAConsultant = ({
             <div className="row">
               <div className="col-md-6 d-flex justify-content-center align-items-center">
                 <div>
-                  {aboutUniquetListData.map((item, index) => (
+                  {fbaServiceData?.slice(0,10).map((item) => (
                     <div key={item._id} className="d-flex fs-15 lh-30 mt-2">
                       <span className="me-2 numberBefore fw-500 text-dark">
-                        {index + 1 > 9 ? index + 1 : ` 0${index + 1}`}
+                        {item?.sl}
                       </span>
-                      <p>{item.title}</p>
+                      <p>{item?.title}</p>
                     </div>
                   ))}
                 </div>
               </div>
               <div className="col-md-6 text-muted">
                 <div>
-                  {aboutUniquetListData.map((item, index = 11) => (
+                  {fbaServiceData?.slice(10,20).map((item) => (
                     <div key={item._id} className="d-flex fs-15 lh-30 mt-2">
                       <span className="me-2 numberBefore fw-500 text-dark">
-                        {index + 1 > 9 ? index + 1 : ` 0${index + 1}`}
+                        {item?.sl}
                       </span>
                       <p>{item.title}</p>
                     </div>
