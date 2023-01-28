@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import AmazonFBAConsultant from "../Components/AmazonFBA/AmazonFBAConsultant";
+import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
 const AmazonFBA = ({
   fbaData,
@@ -39,6 +40,8 @@ const AmazonFBA = ({
         whyshouldhireData={whyshouldhireData}
         fbaServiceData={fbaServiceData}
       />
+      {/* ===================================== */}
+      <ScheduleMeeting />
     </>
   );
 };
