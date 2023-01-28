@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
 import cardHeaderBg from "../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../Assets/Images/others/v-logo.svg";
-import Spinner from "../src/components/spinner";
+import Spinner from "../Components/Others/Spinner";
 import { UserContext } from "./_app";
 
 const Signin = () => {
