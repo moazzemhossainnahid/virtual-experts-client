@@ -54,7 +54,7 @@ const Signin = () => {
           const token = jwt_encode(user, "secret");
           localStorage.removeItem("info");
           localStorage.setItem("info", JSON.stringify(token));
-          router.push("/dashboard");
+          router.push("/richard");
         }
       });
   };
@@ -177,12 +177,12 @@ const Signin = () => {
                   {errors.password?.message}
                 </span>
 
-                <p
+                {/* <p
                   className="text-end cursor-pointer fs-14 text-dark"
                   onClick={handleResetPassword}
                 >
                   Change Password?
-                </p>
+                </p> */}
 
                 <button className="card-button mt-2 d-block" type="submit">
                   Sign In
