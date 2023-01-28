@@ -9,12 +9,12 @@ import {
   FacebookShareButton,
   LinkedinIcon,
   LinkedinShareButton,
-  PinterestIcon,
-  PinterestShareButton,
-  RedditIcon,
-  RedditShareButton,
-  TumblrIcon,
-  TumblrShareButton,
+  // PinterestIcon,
+  // PinterestShareButton,
+  // RedditIcon,
+  // RedditShareButton,
+  // TumblrIcon,
+  // TumblrShareButton,
   TwitterIcon,
   TwitterShareButton,
 } from "react-share";
@@ -236,7 +236,7 @@ const BlogDetails = () => {
           <LinkedinIcon size={32} round={true} />
         </LinkedinShareButton>
 
-        <PinterestShareButton
+        {/* <PinterestShareButton
           url="https://virtualexperts.net/"
           className="d-block p-2"
         >
@@ -248,7 +248,7 @@ const BlogDetails = () => {
           className="d-block p-2"
         >
           <RedditIcon size={32} round={true} />
-        </RedditShareButton>
+        </RedditShareButton> */}
 
         <TwitterShareButton
           url="https://virtualexperts.net/"
@@ -257,12 +257,12 @@ const BlogDetails = () => {
           <TwitterIcon size={32} round={true} />
         </TwitterShareButton>
 
-        <TumblrShareButton
+        {/* <TumblrShareButton
           url="https://virtualexperts.net/"
           className="d-block p-2"
         >
           <TumblrIcon size={32} round={true} />
-        </TumblrShareButton>
+        </TumblrShareButton> */}
       </div>
     </>
   );
