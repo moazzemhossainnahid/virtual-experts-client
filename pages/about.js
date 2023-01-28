@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import AboutComponents from "../Components/About/About";
+import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
 const About = ({
   aboutData,
@@ -41,6 +42,8 @@ const About = ({
         aboutUniquetListData={aboutUniquetListData}
         teams={teams}
       />
+      {/* ===================================== */}
+      <ScheduleMeeting />
     </>
   );
 };
