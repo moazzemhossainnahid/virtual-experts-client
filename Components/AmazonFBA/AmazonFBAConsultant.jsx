@@ -10,6 +10,7 @@ import SectionTitle2 from "../Shared/SectionTitile/SectionTitile2";
 import SectionTitle3 from "../Shared/SectionTitile/SectionTitle3";
 import SectionTitle4 from "../Shared/SectionTitile/SectionTitle4";
 import angle from "../../Assets/Images/others/Rectangle 266.svg";
+import ScheduleMeeting from "../ScheduleMeeting/ScheduleMeeting";
 
 
 const AmazonFBAConsultant = ({
@@ -149,7 +150,7 @@ const AmazonFBAConsultant = ({
         </div>
         <SectionTitle4 />
         {/* ============================ */}
-        {/* <ScheduleMeeting /> */}
+        <ScheduleMeeting />
       </section>
       <SideLink />
     </>

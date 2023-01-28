@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 import ServicesComponents from "../Components/Services/Services";
 
 const Services = ({
@@ -45,7 +46,7 @@ const Services = ({
       </Head>
       <ServicesComponents whatWeDo={whatWeDo} servicesCardData={servicesCardData} serviceCardHeader={serviceCardHeader} />
       {/* ===================================== */}
-      {/* <ScheduleMeeting /> */}
+      <ScheduleMeeting />
     </>
   );
 };

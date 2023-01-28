@@ -7,21 +7,21 @@ const AmazonFBA = ({
   fbad1Data,
   whyshouldhireData,
   fbaServiceData,
-  metaAbout,
+  metaFBA,
 }) => {
   return (
     <>
       <Head>
         <title>
-          {metaAbout.title
-            ? `Virtual Experts |  ${metaAbout.title}`
+          {metaFBA.title
+            ? `Virtual Experts |  ${metaFBA.title}`
             : "virtual Experts | Amazon FBA Consultant"}
         </title>
         <meta
           name="description"
           content={
-            metaAbout.description
-              ? ` ${metaAbout.description}`
+            metaFBA.description
+              ? ` ${metaFBA.description}`
               : "virtual Experts"
           }
         />
@@ -66,10 +66,10 @@ export async function getServerSideProps() {
   );
   const fbaServiceData = await fbaServiceResponse.json();
 
-  const resMetaAbout = await fetch(
-    "http://localhost:5000/metaAbout"
+  const resMetaFBA = await fetch(
+    "http://localhost:5000/metaFBA"
   );
-  const metaAbout = await resMetaAbout.json();
+  const metaFBA = await resMetaFBA.json();
 
   return {
     props: {
@@ -77,7 +77,7 @@ export async function getServerSideProps() {
       fbad1Data: fbad1Data[0],
       whyshouldhireData: whyshouldhireData,
       fbaServiceData: fbaServiceData,
-      metaAbout: metaAbout[0],
+      metaFBA: metaFBA[0],
     },
   };
 }
