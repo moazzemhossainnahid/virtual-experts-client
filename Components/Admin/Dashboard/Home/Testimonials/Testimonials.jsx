@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlinePlus } from "react-icons/ai";
 import Spinner from "../../../../Others/Spinner";
+import TestimonialsCard from "./TestimonialsCard";
 
 const AdminTestimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -63,7 +64,7 @@ const AdminTestimonials = () => {
         ) : (
           <div className="row">
             {testimonials.map((testimonial, index) => (
-              <TestimonialCard
+              <TestimonialsCard
                 testimonial={testimonial}
                 key={testimonial._id}
                 index={index}
