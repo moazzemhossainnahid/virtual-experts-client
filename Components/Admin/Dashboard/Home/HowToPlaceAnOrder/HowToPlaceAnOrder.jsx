@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SingleAnswerCard from "./singleAnswerCard";
+import HowToPlaceAnOrderCard from "./HowToPlaceAnOrderCard";
 
 const AdminHowToPlaceAnOrder = () => {
   const [answerList, setAnswerList] = useState([]);
@@ -16,7 +16,7 @@ const AdminHowToPlaceAnOrder = () => {
       <h6 className="fs-24">Edit How to place an order</h6>
       <p>How to place an order</p>
       {answerList?.map((answer, index) => (
-        <SingleAnswerCard
+        <HowToPlaceAnOrderCard
           key={answer._id}
           answer={answer}
           index={index}

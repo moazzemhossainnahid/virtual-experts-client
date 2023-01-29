@@ -70,7 +70,7 @@ const Dashboard = () => {
           <div className="col-12 col-md-10 py-4 vh-100 scroll">
             <AdminBanner />
             <AdminAmazon />
-            {/* <AdminWhyChooseVirtualExperts /> */}
+            <AdminWhyChooseVirtualExperts />
             {/* <AdminTopThreeService /> */}
             <AdminHowToPlaceAnOrder />
             {/* <AdminTestimonials /> */}

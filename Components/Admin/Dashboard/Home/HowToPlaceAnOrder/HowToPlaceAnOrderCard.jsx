@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
-const SingleAnswerCard = ({ answer, index, setNumber }) => {
+const HowToPlaceAnOrderCard = ({ answer, index, setNumber }) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -78,4 +78,4 @@ const SingleAnswerCard = ({ answer, index, setNumber }) => {
   );
 };
 
-export default SingleAnswerCard;
+export default HowToPlaceAnOrderCard;
