@@ -30,54 +30,54 @@ const Sidebar = () => {
       </Link>
       <div className="pt-1">
         <Link
-          href="/dashboard/"
+          href="/richard/"
           className={`d-block py-2 ${
-            pathname === "/dashboard" ? "bg-orange" : ""
+            pathname === "/richard" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
             Home
           
         </Link>
         <Link
-          href="/dashboard/service"
+          href="/richard/service"
           className={`d-block py-2 ${
-            pathname === "/dashboard/service" ? "bg-orange" : ""
+            pathname === "/richard/service" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
             Service
           
         </Link>
         <Link
-          href="/dashboard/about"
+          href="/richard/about"
           className={`d-block py-2 ${
-            pathname === "/dashboard/about" ? "bg-orange" : ""
+            pathname === "/richard/about" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
             About
           
         </Link>
         <Link
-          href="/dashboard/orders"
+          href="/richard/orders"
           className={`d-block py-2 ${
-            pathname === "/dashboard/orders" ? "bg-orange" : ""
+            pathname === "/richard/orders" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
             Orders
           
         </Link>
         <Link
-          href="/dashboard/invoice"
+          href="/richard/invoice"
           className={`d-block py-2 ${
-            pathname === "/dashboard/invoice" ? "bg-orange" : ""
+            pathname === "/richard/invoice" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
             Invoice
           
         </Link>
         <Link
-          href="/dashboard/meta"
+          href="/richard/meta"
           className={`d-block py-2 ${
-            pathname === "/dashboard/meta" ? "bg-orange" : ""
+            pathname === "/richard/meta" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
             Meta
