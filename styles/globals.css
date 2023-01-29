@@ -566,6 +566,15 @@ ul {
   transform: scale(1.5);
 }
 
+.spacing-3{
+  letter-spacing: 3px;
+}
+
+/* ========================= */
+.bg-gray{
+  background-color: #d6d6d6;
+}
+/* ========================= */
 
 
 .title1 {

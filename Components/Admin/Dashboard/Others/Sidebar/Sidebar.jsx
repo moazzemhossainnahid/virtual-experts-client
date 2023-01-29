@@ -74,7 +74,7 @@ const Sidebar = () => {
             Blog
           
         </Link>
-        <Link
+        {/* <Link
           href="/richard/orders"
           className={`d-block py-2 ${
             pathname === "/richard/orders" ? "bg-orange" : ""
@@ -91,7 +91,7 @@ const Sidebar = () => {
           
             Invoice
           
-        </Link>
+        </Link> */}
         <Link
           href="/richard/footer"
           className={`d-block py-2 ${

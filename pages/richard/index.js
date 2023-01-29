@@ -63,10 +63,10 @@ const Dashboard = () => {
           </div>
           <div className="col-12 col-md-10 py-4 vh-100 scroll">
             <AdminBanner />
-            <AdminAmazon />
-            <AdminWhyChooseVirtualExperts />
+            {/* <AdminAmazon /> */}
+            {/* <AdminWhyChooseVirtualExperts /> */}
             {/* <AdminTopThreeService /> */}
-            <AdminHowToPlaceAnOrder />
+            {/* <AdminHowToPlaceAnOrder /> */}
             {/* <AdminTestimonials /> */}
             {/* <ScheduleMeeting /> */}
             {/* <AdminFooter /> */}
