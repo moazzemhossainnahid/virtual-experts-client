@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import AdminServiceBanner from "../../Components/Admin/Dashboard/Services/AdminServiceBanner/AdminServiceBanner";
+import ServiceCardHeader from "../../Components/Admin/Dashboard/Services/AdminServiceCardHeader/AdminServiceCardHeader";
 import Spinner from "../../Components/Others/Spinner";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
@@ -91,12 +92,12 @@ const Service = () => {
               />
             </div>
 
-            {/* <div className="p-3 boxShadow me-4 mb-5">
+            <div className="p-3 boxShadow me-4 mb-5">
               <ServiceCardHeader
                 serviceCardHeader={serviceCardHeader}
                 setNumber={setNumber}
               />
-            </div> */}
+            </div>
 
             {/* <div className="p-3 boxShadow me-4 mb-5">
               <AdminAddServices setNumber={setNumber} />
