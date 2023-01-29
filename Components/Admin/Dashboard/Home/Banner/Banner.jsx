@@ -44,15 +44,13 @@ const AdminBanner = () => {
                 <div className="d-flex justify-content-center">
                     <h6 className="fs-24 spacing-3">Banner</h6>
                 </div>
-                <div className="d-flex justify-content-between">
-                    <div className="">
-                        <h6 className="mt-3 fs-18">Title</h6>
-                        <p className="fs-14">{bannerData.title}</p>
-                    </div>
-                    <div className="">
-                        <h6 className="fs-18 mt-3">Subtitle</h6>
-                        <p className="fs-14">{bannerData.description}</p>
-                    </div>
+                <div className="">
+                    <h6 className="mt-3 fs-18">Title</h6>
+                    <p className="fs-14">{bannerData.title}</p>
+                </div>
+                <div className="">
+                    <h6 className="fs-18 mt-3">Subtitle</h6>
+                    <p className="fs-14">{bannerData.description}</p>
                 </div>
                 <div className="d-flex justify-content-end">
                     <AiFillEdit
