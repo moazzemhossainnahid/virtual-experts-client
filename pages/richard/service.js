@@ -5,6 +5,7 @@ import { BiMenu } from "react-icons/bi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
+import AdminServiceBanner from "../../Components/Admin/Dashboard/Services/AdminServiceBanner/AdminServiceBanner";
 import Spinner from "../../Components/Others/Spinner";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
@@ -83,12 +84,12 @@ const Service = () => {
             </div>
           </div>
           <div className="col-12 col-md-10 container pt-5 vh-100 scroll">
-            {/* <div className="p-3 boxShadow me-4 mb-5">
+            <div className="p-3 boxShadow me-4 mb-5">
               <AdminServiceBanner
                 serviceBanner={serviceBanner}
                 setNumber={setNumber}
               />
-            </div> */}
+            </div>
 
             {/* <div className="p-3 boxShadow me-4 mb-5">
               <ServiceCardHeader
