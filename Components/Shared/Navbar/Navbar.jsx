@@ -78,7 +78,8 @@ const Navbar = () => {
       </div>
       <div className="d-block d-md-none">
         <div
-          className={`offcanvas offcanvas-end bg-dark ${styles.zIndex}`}
+        style={{backgroundColor:"#828B9A"}}
+          className={`offcanvas offcanvas-end ${styles.zIndex}`}
           tabIndex="-1"
           id="offcanvasRight"
           aria-labelledby="offcanvasRightLabel"

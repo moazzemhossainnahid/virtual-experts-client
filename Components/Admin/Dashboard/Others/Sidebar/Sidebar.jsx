@@ -16,7 +16,7 @@ const Sidebar = () => {
   };
 
   return (
-    <nav className="vh-100 bg-dark px-3 text-white">
+    <nav style={{backgroundColor:"#828B9A"}} className="vh-100 px-3 text-white">
       <Link href="/" className="d-block mx-auto w-100 text-center">
 
         <Image
