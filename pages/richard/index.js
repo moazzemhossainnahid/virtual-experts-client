@@ -4,15 +4,16 @@ import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
-import AdminAmazon from "../../src/components/dashboard/amazon/amazon";
-import AdminBanner from "../../src/components/dashboard/banner.js/banner";
-import AdminFooter from "../../src/components/dashboard/footer/footer";
-import AdminHowToPlaceAnOrder from "../../src/components/dashboard/howToPlaceAnOrder/howToPlaceAnOrder";
-import ScheduleMeeting from "../../src/components/dashboard/scheduleMeeting/scheduleMeeting";
-import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
-import AdminTestimonials from "../../src/components/dashboard/testimonials/testimonials";
-import AdminTopThreeService from "../../src/components/dashboard/topThreeService/topThreeService";
-import AdminWhyChooseVirtualExperts from "../../src/components/dashboard/whyChooseVirtualExperts/whyChooseVirtualExperts";
+import AdminAmazon from "../../Components/Admin/Dashboard/Home/Amazon/Amazon";
+import AdminBanner from "../../Components/Admin/Dashboard/Home/Banner/Banner";
+import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
+// import AdminFooter from "../../src/components/dashboard/footer/footer";
+// import AdminHowToPlaceAnOrder from "../../src/components/dashboard/howToPlaceAnOrder/howToPlaceAnOrder";
+// import ScheduleMeeting from "../../src/components/dashboard/scheduleMeeting/scheduleMeeting";
+// import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
+// import AdminTestimonials from "../../src/components/dashboard/testimonials/testimonials";
+// import AdminTopThreeService from "../../src/components/dashboard/topThreeService/topThreeService";
+// import AdminWhyChooseVirtualExperts from "../../src/components/dashboard/whyChooseVirtualExperts/whyChooseVirtualExperts";
 
 const Dashboard = () => {
   return (
@@ -68,12 +69,12 @@ const Dashboard = () => {
           <div className="col-12 col-md-10 py-4 vh-100 scroll">
             <AdminBanner />
             <AdminAmazon />
-            <AdminWhyChooseVirtualExperts />
+            {/* <AdminWhyChooseVirtualExperts />
             <AdminTopThreeService />
             <AdminHowToPlaceAnOrder />
             <AdminTestimonials />
             <ScheduleMeeting />
-            <AdminFooter />
+            <AdminFooter /> */}
           </div>
         </div>
       </section>

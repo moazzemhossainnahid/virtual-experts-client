@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext } from "react";
-import Logo from "../../../../Assets/Images/others/v-logo.svg";
-import { UserContext } from "../../../../pages/_app";
+import Logo from "../../../../../Assets/Images/others/v-logo.svg";
+import { UserContext } from "../../../../../pages/_app";
 
 const Sidebar = () => {
   const router = useRouter();
