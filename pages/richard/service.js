@@ -5,6 +5,7 @@ import { BiMenu } from "react-icons/bi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
+import AdminAddServices from "../../Components/Admin/Dashboard/Services/AdminAddServices/AdminAddServices";
 import AdminServiceBanner from "../../Components/Admin/Dashboard/Services/AdminServiceBanner/AdminServiceBanner";
 import ServiceCardHeader from "../../Components/Admin/Dashboard/Services/AdminServiceCardHeader/AdminServiceCardHeader";
 import Spinner from "../../Components/Others/Spinner";
@@ -99,7 +100,7 @@ const Service = () => {
               />
             </div>
 
-            {/* <div className="p-3 boxShadow me-4 mb-5">
+            <div className="p-3 boxShadow me-4 mb-5">
               <AdminAddServices setNumber={setNumber} />
               {!showSpinner ? (
                 <Spinner />
@@ -128,7 +129,7 @@ const Service = () => {
                   })}
                 </div>
               )}
-            </div> */}
+            </div>
           </div>
         </div>
       </section>
