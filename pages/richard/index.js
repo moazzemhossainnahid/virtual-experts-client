@@ -7,6 +7,7 @@ import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 import AdminAmazon from "../../Components/Admin/Dashboard/Home/Amazon/Amazon";
 import AdminBanner from "../../Components/Admin/Dashboard/Home/Banner/Banner";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
+import AdminHowToPlaceAnOrder from "../../Components/Admin/Dashboard/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";
 // import AdminFooter from "../../src/components/dashboard/footer/footer";
 // import AdminHowToPlaceAnOrder from "../../src/components/dashboard/howToPlaceAnOrder/howToPlaceAnOrder";
 // import ScheduleMeeting from "../../src/components/dashboard/scheduleMeeting/scheduleMeeting";
@@ -69,12 +70,12 @@ const Dashboard = () => {
           <div className="col-12 col-md-10 py-4 vh-100 scroll">
             <AdminBanner />
             <AdminAmazon />
-            {/* <AdminWhyChooseVirtualExperts />
-            <AdminTopThreeService />
+            {/* <AdminWhyChooseVirtualExperts /> */}
+            {/* <AdminTopThreeService /> */}
             <AdminHowToPlaceAnOrder />
-            <AdminTestimonials />
-            <ScheduleMeeting />
-            <AdminFooter /> */}
+            {/* <AdminTestimonials /> */}
+            {/* <ScheduleMeeting /> */}
+            {/* <AdminFooter /> */}
           </div>
         </div>
       </section>
