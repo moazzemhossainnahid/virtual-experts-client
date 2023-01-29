@@ -1,22 +1,17 @@
 import Head from "next/head";
 import { BiMenu } from "react-icons/bi";
+import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import WithAdminAuth from "../../Components/Others/WithAdminAuth";
-import AdminAmazon from "../../Components/Admin/Dashboard/Home/Amazon/Amazon";
-import AdminBanner from "../../Components/Admin/Dashboard/Home/Banner/Banner";
+import AdminFooter from "../../Components/Admin/Dashboard/Footer/Footer";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
-import AdminHowToPlaceAnOrder from "../../Components/Admin/Dashboard/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";
-import AdminWhyChooseVirtualExperts from "../../Components/Admin/Dashboard/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
-import AdminTopThreeService from "../../Components/Admin/Dashboard/Home/TopThreeServices/TopThreeServices";
-import { AiOutlineClose } from "react-icons/ai";
-import AdminTestimonials from "../../Components/Admin/Dashboard/Home/Testimonials/Testimonials";
+import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
-const Dashboard = () => {
+const Footer = () => {
   return (
     <>
       <Head>
-        <title>Virtual Experts | Admin</title>
+        <title>Virtual Experts | Admin-Footer</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <ToastContainer
@@ -40,18 +35,17 @@ const Dashboard = () => {
               size={32}
               className="ms-2"
               data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight3"
+              data-bs-target="#offcanvasRight2"
               aria-controls="offcanvasRight"
             />
             <div
-             style={{backgroundColor:"#828B9A"}}
-              className="offcanvas offcanvas-start"
+              className="offcanvas offcanvas-start bg-dark"
               tabIndex="-1"
-              id="offcanvasRight3"
+              id="offcanvasRight2"
               aria-labelledby="offcanvasRightLabel"
             >
               <div className="offcanvas-header">
-                <AiOutlineClose
+                <GiCrossedPistols
                   size={32}
                   className="text-reset d-block ms-auto mt-2"
                   style={{ color: "#fff!important" }}
@@ -64,14 +58,8 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-10 py-4 vh-100 scroll">
-            <AdminBanner />
-            <AdminAmazon />
-            <AdminWhyChooseVirtualExperts />
-            <AdminTopThreeService />
-            <AdminHowToPlaceAnOrder />
-            <AdminTestimonials />
-            {/* <ScheduleMeeting /> */}
+          <div className="col-12 col-md-10 scroll vh-100">
+            <AdminFooter/>
           </div>
         </div>
       </section>
@@ -79,8 +67,8 @@ const Dashboard = () => {
   );
 };
 
-export default WithAdminAuth(Dashboard);
+export default WithAdminAuth(Footer);
 
-Dashboard.getLayout = function PageLayout(page) {
+Footer.getLayout = function PageLayout(page) {
   return <>{page}</>;
 };
