@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { BiMenu } from "react-icons/bi";
-import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
@@ -10,6 +9,7 @@ import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import AdminHowToPlaceAnOrder from "../../Components/Admin/Dashboard/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";
 import AdminWhyChooseVirtualExperts from "../../Components/Admin/Dashboard/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
 import AdminTopThreeService from "../../Components/Admin/Dashboard/Home/TopThreeServices/TopThreeServices";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Dashboard = () => {
   return (
@@ -43,13 +43,14 @@ const Dashboard = () => {
               aria-controls="offcanvasRight"
             />
             <div
-              className="offcanvas offcanvas-start bg-dark"
+             style={{backgroundColor:"#828B9A"}}
+              className="offcanvas offcanvas-start"
               tabIndex="-1"
               id="offcanvasRight3"
               aria-labelledby="offcanvasRightLabel"
             >
               <div className="offcanvas-header">
-                <GiCrossedPistols
+                <AiOutlineClose
                   size={32}
                   className="text-reset d-block ms-auto mt-2"
                   style={{ color: "#fff!important" }}
