@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
+import AdminWhyChooseVirtualExpertsCard from "./WhyChooseVirtualExpertsCard";
 
 const AdminWhyChooseVirtualExperts = () => {
   const [info, setInfo] = useState({});

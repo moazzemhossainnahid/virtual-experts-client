@@ -8,6 +8,7 @@ import AdminAmazon from "../../Components/Admin/Dashboard/Home/Amazon/Amazon";
 import AdminBanner from "../../Components/Admin/Dashboard/Home/Banner/Banner";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import AdminHowToPlaceAnOrder from "../../Components/Admin/Dashboard/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";
+import AdminWhyChooseVirtualExperts from "../../Components/Admin/Dashboard/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
 // import AdminFooter from "../../src/components/dashboard/footer/footer";
 // import AdminHowToPlaceAnOrder from "../../src/components/dashboard/howToPlaceAnOrder/howToPlaceAnOrder";
 // import ScheduleMeeting from "../../src/components/dashboard/scheduleMeeting/scheduleMeeting";
