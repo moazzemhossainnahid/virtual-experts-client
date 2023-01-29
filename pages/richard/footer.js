@@ -1,6 +1,6 @@
 import Head from "next/head";
+import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
-import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AdminFooter from "../../Components/Admin/Dashboard/Footer/Footer";
@@ -45,7 +45,7 @@ const Footer = () => {
               aria-labelledby="offcanvasRightLabel"
             >
               <div className="offcanvas-header">
-                <GiCrossedPistols
+                <AiOutlineClose
                   size={32}
                   className="text-reset d-block ms-auto mt-2"
                   style={{ color: "#fff!important" }}
