@@ -10,6 +10,7 @@ import AdminHowToPlaceAnOrder from "../../Components/Admin/Dashboard/Home/HowToP
 import AdminWhyChooseVirtualExperts from "../../Components/Admin/Dashboard/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
 import AdminTopThreeService from "../../Components/Admin/Dashboard/Home/TopThreeServices/TopThreeServices";
 import { AiOutlineClose } from "react-icons/ai";
+import AdminTestimonials from "../../Components/Admin/Dashboard/Home/Testimonials/Testimonials";
 
 const Dashboard = () => {
   return (
@@ -65,11 +66,11 @@ const Dashboard = () => {
           </div>
           <div className="col-12 col-md-10 py-4 vh-100 scroll">
             <AdminBanner />
-            {/* <AdminAmazon /> */}
-            {/* <AdminWhyChooseVirtualExperts /> */}
+            <AdminAmazon />
+            <AdminWhyChooseVirtualExperts />
             <AdminTopThreeService />
-            {/* <AdminHowToPlaceAnOrder /> */}
-            {/* <AdminTestimonials /> */}
+            <AdminHowToPlaceAnOrder />
+            <AdminTestimonials />
             {/* <ScheduleMeeting /> */}
             {/* <AdminFooter /> */}
           </div>
