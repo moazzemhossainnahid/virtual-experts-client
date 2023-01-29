@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import Spinner from "../../../../Others/Spinner";
+import AdminTopThreeServiceCard from "./TopThreeServicesCard";
 
 const AdminTopThreeService = () => {
   const [title, setTitle] = useState({});
@@ -61,7 +62,7 @@ const AdminTopThreeService = () => {
         ) : (
           <div className="row">
             {serviceCards.map((serviceCard, index) => (
-              <AdminTopServiceCard
+              <AdminTopThreeServiceCard
                 key={serviceCard._id}
                 serviceCard={serviceCard}
                 setNumber={setNumber}
