@@ -34,12 +34,12 @@ const Footer = () => {
   return (
     <footer
       className={
-        router.pathname === "/dashboard" ||
-        router.pathname === "/dashboard/service" ||
-        router.pathname === "/dashboard/about" ||
-        router.pathname === "/dashboard/orders" ||
-        router.pathname === "/dashboard/invoice" ||
-        router.pathname === "/dashboard/meta"
+        router.pathname === "/richard" ||
+        router.pathname === "/richard/service" ||
+        router.pathname === "/richard/about" ||
+        router.pathname === "/richard/orders" ||
+        router.pathname === "/richard/invoice" ||
+        router.pathname === "/richard/meta"
           ? "d-none"
           : ""
       }
