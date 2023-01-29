@@ -9,13 +9,6 @@ import AdminBanner from "../../Components/Admin/Dashboard/Home/Banner/Banner";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import AdminHowToPlaceAnOrder from "../../Components/Admin/Dashboard/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";
 import AdminWhyChooseVirtualExperts from "../../Components/Admin/Dashboard/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
-// import AdminFooter from "../../src/components/dashboard/footer/footer";
-// import AdminHowToPlaceAnOrder from "../../src/components/dashboard/howToPlaceAnOrder/howToPlaceAnOrder";
-// import ScheduleMeeting from "../../src/components/dashboard/scheduleMeeting/scheduleMeeting";
-// import Sidebar from "../../src/components/dashboard/sidebar/sidebar";
-// import AdminTestimonials from "../../src/components/dashboard/testimonials/testimonials";
-// import AdminTopThreeService from "../../src/components/dashboard/topThreeService/topThreeService";
-// import AdminWhyChooseVirtualExperts from "../../src/components/dashboard/whyChooseVirtualExperts/whyChooseVirtualExperts";
 
 const Dashboard = () => {
   return (
