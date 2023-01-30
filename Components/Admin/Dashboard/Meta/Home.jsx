@@ -28,20 +28,22 @@ const Home = ({ homeData, setNumber }) => {
 
   return (
     <>
-      <section className="my-2 boxShadow me-3 p-3">
-        <div className="d-flex justify-content-between">
-          <h1 className="fs-24">Home Page</h1>
-          <AiFillEdit
-            size={24}
-            className="text-warning cursor-pointer "
-            data-bs-toggle="modal"
-            data-bs-target="#homeModal"
-          />
+      <section className="my-2 boxShadow bg-gray rounded me-3 p-3">
+        <div className="d-flex justify-content-center">
+          <h1 className="fs-24 spacing-3">Home Page</h1>
         </div>
         <h6 className="fs-18 mt-2">Title</h6>
         <p className="fs-14">{title}</p>
         <h6 className="fs-18 mt-2">Description</h6>
         <p className="fs-14">{description}</p>
+        <div className="d-flex py-3 justify-content-end">
+          <AiFillEdit
+            size={30}
+            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+            data-bs-toggle="modal"
+            data-bs-target="#homeModal"
+          />
+        </div>
       </section>
 
       {/* =============== modal */}
