@@ -49,15 +49,9 @@ const AdminTestimonials = () => {
 
   return (
     <>
-      <div className="p-3 boxShadow me-3 my-2">
-        <div className="d-flex justify-content-between">
-          <h6 className="fs-24">Testimonials</h6>
-          <AiOutlinePlus
-            size={24}
-            className="text-warning cursor-pointer"
-            data-bs-toggle="modal"
-            data-bs-target="#addTestimonial"
-          />
+      <div className="p-3 boxShadow bg-gray rounded me-3 my-2">
+        <div className="d-flex justify-content-center">
+          <h6 className="fs-24 spacing-3">Testimonials</h6>
         </div>
         {showSpinner ? (
           <Spinner />
@@ -73,6 +67,14 @@ const AdminTestimonials = () => {
             ))}
           </div>
         )}
+        <div className="d-flex justify-content-end">
+          <AiOutlinePlus
+            size={30}
+            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+            data-bs-toggle="modal"
+            data-bs-target="#addTestimonial"
+          />
+        </div>
       </div>
 
       {/* Modal part start here */}
