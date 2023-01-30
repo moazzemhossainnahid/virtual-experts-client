@@ -88,8 +88,8 @@ const AdminFooter = () => {
         </div>
         <h6 className="mt-3 fs-18">Footer Description</h6>
         <p className="fs-14">{footerData.description}</p>
-        <h6 className="mt-3 fs-18">Copy Right Text</h6>
-        <p className="fs-14">{footerData?.copyRightText}</p>
+        {/* <h6 className="mt-3 fs-18">Copy Right Text</h6>
+        <p className="fs-14">{footerData?.copyRightText}</p> */}
         <h6 className="fs-18 mt-3">Contact Info</h6>
         <label htmlFor="email" className="d-block my-2">
           Email
