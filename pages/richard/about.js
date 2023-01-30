@@ -5,6 +5,7 @@ import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AdminWhoAreVirtualExperts from "../../Components/Admin/Dashboard/About/WhoAreVirtualExperts/WhoAreVirtualExperts";
+import AdminWhyWeAreUnique from "../../Components/Admin/Dashboard/About/WhyWeAreUnique/WhyWeAreUnique";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
@@ -62,7 +63,7 @@ const About = () => {
           </div>
           <div className="col-12 col-md-10 scroll vh-100">
             <AdminWhoAreVirtualExperts />
-            {/* <AdminWhyWeAreUnique /> */}
+            <AdminWhyWeAreUnique />
             {/* <AdminTeamSection /> */}
             {/* <AdminTeam /> */}
           </div>
