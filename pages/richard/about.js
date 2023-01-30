@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
@@ -59,10 +60,10 @@ const About = () => {
             </div>
           </div>
           <div className="col-12 col-md-10 scroll vh-100">
-            {/* <AdminWhoAreVirtualExperts />
-            <AdminWhyWeAreUnique />
-            <AdminTeamSection />
-            <AdminTeam /> */}
+            {/* <AdminWhoAreVirtualExperts /> */}
+            {/* <AdminWhyWeAreUnique /> */}
+            {/* <AdminTeamSection /> */}
+            {/* <AdminTeam /> */}
           </div>
         </div>
       </section>
