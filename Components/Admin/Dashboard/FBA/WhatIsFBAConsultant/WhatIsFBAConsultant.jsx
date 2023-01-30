@@ -12,7 +12,7 @@ const AdminWhatIsFBAConsultant = () => {
     useEffect(() => {
         const loadData = async () => {
             const fbaResponse = await fetch(
-                "http://localhost:5000/fba"
+                "http://localhost:5000/amazonfba"
             );
             const fbaData = await fbaResponse.json();
             setFBAData(fbaData[0]);
@@ -22,11 +22,12 @@ const AdminWhatIsFBAConsultant = () => {
 
     const onSubmit = (data) => {
         const title = data.title || fbaData.title;
-        const discription = data.discription || fbaData.discription;
-        fetch("http://localhost:5000/fba/update", {
+        const description_part_1 = data.description_part_1 || fbaData.description_part_1;
+        const description_part_2 = data.description_part_2 || fbaData.description_part_2;
+        fetch("http://localhost:5000/amazonfba/update", {
             method: "PUT",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify({ title, _id: fbaData._id, discription }),
+            body: JSON.stringify({ title, _id: fbaData._id, description_part_1, description_part_2 }),
         })
             .then((res) => res.json())
             .then((data) => {
@@ -43,8 +44,10 @@ const AdminWhatIsFBAConsultant = () => {
                 </div>
                 <h6 className="fs-18 mt-2">Title</h6>
                 <p className="fs-14">{fbaData?.title}</p>
-                <h6 className="fs-18 mt-2">Sub Title</h6>
-                <p className="fs-14">{fbaData?.discription}</p>
+                <h6 className="fs-18 mt-2">Banner Description 1</h6>
+                <p className="fs-14">{fbaData?.description_part_1}</p>
+                <h6 className="fs-18 mt-2">Banner Description 2</h6>
+                <p className="fs-14">{fbaData?.description_part_2}</p>
                 <div className="d-flex py-3 justify-content-end">
                     <AiFillEdit
                         size={30}
