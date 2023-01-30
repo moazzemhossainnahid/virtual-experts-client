@@ -94,15 +94,9 @@ const AdminWhyChooseVirtualExpertsCard = ({
   return (
     <>
       <div className="col-12 col-md-6 my-2">
-        <div className="m-2 boxShadow p-3 h-100">
+        <div className="m-2 boxShadow bg-gray2 rounded p-3 h-100">
           <div className="d-flex justify-content-between">
             <h6>{cardData.title}</h6>
-            <AiFillEdit
-              size={24}
-              className="text-warning cursor-pointer"
-              data-bs-toggle="modal"
-              data-bs-target={`#aboutVirtualCard${index + 1}`}
-            />
           </div>
           <div className="d-flex justify-content-left py-3">
             {cardData?.imgURL ? (
@@ -127,6 +121,14 @@ const AdminWhyChooseVirtualExpertsCard = ({
           <p className="fs-14">{cardData.title}</p>
           <h6 className="fs-18">Subtitle</h6>
           <p className="fs-14">{cardData.description}</p>
+          <div className="d-flex justify-content-end">
+          <AiFillEdit
+            size={30}
+            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+            data-bs-toggle="modal"
+            data-bs-target={`#aboutVirtualCard${index + 1}`}
+          />
+        </div>
         </div>
       </div>
       <div
@@ -169,13 +171,13 @@ const AdminWhyChooseVirtualExpertsCard = ({
                   id="description"
                   className="form-control mb-2"
                 ></textarea>
-                <input
+                {/* <input
                   type="file"
                   className="form-control mb-2"
                   name="file"
                   onChange={handleFileChange}
                   id="img"
-                />
+                /> */}
                 <input
                   type="submit"
                   className="btn btn-primary"
