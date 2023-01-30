@@ -21,13 +21,14 @@ const AdminWhatIsFBAConsultant = () => {
     }, [number]);
 
     const onSubmit = (data) => {
+        const _id = fbaData._id;
         const title = data.title || fbaData.title;
         const description_part_1 = data.description_part_1 || fbaData.description_part_1;
         const description_part_2 = data.description_part_2 || fbaData.description_part_2;
         fetch("http://localhost:5000/amazonfba/update", {
             method: "PUT",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify({ title, _id: fbaData._id, description_part_1, description_part_2 }),
+            body: JSON.stringify({ title, _id, description_part_1, description_part_2 }),
         })
             .then((res) => res.json())
             .then((data) => {
