@@ -85,7 +85,7 @@ const AdminWhyChooseVirtualExperts = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Edit Banner
+                Edit - Why Choose Banner
               </h5>
               <button
                 type="button"
