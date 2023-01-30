@@ -93,15 +93,15 @@ const Service = () => {
                 setNumber={setNumber}
               />
             </div>
-
+{/* 
             <div className="p-3 boxShadow me-4 mb-5">
               <ServiceCardHeader
                 serviceCardHeader={serviceCardHeader}
                 setNumber={setNumber}
               />
-            </div>
+            </div> */}
 
-            <div className="p-3 boxShadow me-4 mb-5">
+            <div className="p-3 boxShadow bg-gray rounded me-4 mb-5">
               <AdminAddServices setNumber={setNumber} />
               {!showSpinner ? (
                 <Spinner />
