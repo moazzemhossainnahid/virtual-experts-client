@@ -36,7 +36,9 @@ const Footer = () => {
       className={
         router.pathname === "/richard" ||
         router.pathname === "/richard/service" ||
+        router.pathname === "/richard/fba" ||
         router.pathname === "/richard/about" ||
+        router.pathname === "/richard/blog" ||
         router.pathname === "/richard/orders" ||
         router.pathname === "/richard/invoice" ||
         router.pathname === "/richard/meta"
