@@ -69,15 +69,9 @@ const AdminAmazon = () => {
         draggable
         pauseOnHover
       />
-      <div className="p-3 boxShadow me-3 my-2">
-        <div className="d-flex justify-content-between">
-          <h6 className="fs-24">Amazon</h6>
-          <AiFillEdit
-            size={24}
-            className="text-warning cursor-pointer"
-            data-bs-toggle="modal"
-            data-bs-target="#amazon"
-          />
+      <div className="p-3 boxShadow bg-gray rounded me-3 my-2">
+        <div className="d-flex justify-content-center">
+          <h6 className="fs-24 spacing-3">Amazon</h6>
         </div>
         <h6 className="mt-3 fs-18">Title</h6>
         <p className="fs-14">{amazon.title}</p>
@@ -87,6 +81,14 @@ const AdminAmazon = () => {
         <p className="fs-14">{amazon.description_part_2}</p>
         <h6 className="fs-18 mt-3">Description Part 3</h6>
         <p className="fs-14">{amazon.description_part_3}</p>
+        <div className="d-flex justify-content-end">
+          <AiFillEdit
+            size={30}
+            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+            data-bs-toggle="modal"
+            data-bs-target="#amazon"
+          />
+        </div>
       </div>
       {/* For Edit service banner data Start */}
       <div
