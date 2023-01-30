@@ -45,7 +45,7 @@ const About = () => {
               aria-labelledby="offcanvasRightLabel"
             >
               <div className="offcanvas-header">
-                <GiCrossedPistols
+              <AiOutlineClose
                   size={32}
                   className="text-reset d-block ms-auto mt-2"
                   style={{ color: "#fff!important" }}
@@ -59,10 +59,10 @@ const About = () => {
             </div>
           </div>
           <div className="col-12 col-md-10 scroll vh-100">
-            <AdminWhoAreVirtualExperts />
+            {/* <AdminWhoAreVirtualExperts />
             <AdminWhyWeAreUnique />
             <AdminTeamSection />
-            <AdminTeam />
+            <AdminTeam /> */}
           </div>
         </div>
       </section>
