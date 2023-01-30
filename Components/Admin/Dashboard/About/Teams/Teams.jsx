@@ -49,15 +49,15 @@ const AdminTeams = () => {
 
   return (
     <>
-      <div className="p-3 boxShadow me-3 my-2">
-        <div className="d-flex justify-content-between">
-          <h6 className="fs-24">Edit/Add Team</h6>
-          <AiOutlinePlus
+      <div className="p-3 boxShadow bg-gray rounded me-3 my-3">
+        <div className="d-flex justify-content-center">
+          <h6 className="fs-24 spacing-3">Edit - Team Section</h6>
+          {/* <AiOutlinePlus
             size={24}
             className="text-warning cursor-pointer"
             data-bs-toggle="modal"
             data-bs-target="#addTestimonial"
-          />
+          /> */}
         </div>
         {showSpinner ? (
           <Spinner />
