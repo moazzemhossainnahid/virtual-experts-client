@@ -7,7 +7,7 @@ import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
 
-const FBA = () => {
+const Blog = () => {
   return (
     <>
       <Head>
@@ -70,8 +70,8 @@ const FBA = () => {
   );
 };
 
-export default WithAdminAuth(FBA);
+export default WithAdminAuth(Blog);
 
-FBA.getLayout = function PageLayout(page) {
+Blog.getLayout = function PageLayout(page) {
   return <>{page}</>;
 };
