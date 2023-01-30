@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Meta = () => {
   const [number, setNumber] = useState(0);
   const [homeData, setHomeData] = useState({});
+  const [fbaData, setFBAData] = useState({});
   const [aboutData, setAboutData] = useState({});
   const [serviceData, setServiceData] = useState({});
   const [blogData, setBlogData] = useState({});
@@ -15,6 +16,10 @@ const Meta = () => {
     fetch("http://localhost:5000/metaHome")
       .then((res) => res.json())
       .then((data) => setHomeData(data[0]));
+
+    fetch("http://localhost:5000/metaFBA")
+      .then((res) => res.json())
+      .then((data) => setFBAData(data[0]));
 
     fetch("http://localhost:5000/metaAbout")
       .then((res) => res.json())
@@ -80,6 +85,7 @@ const Meta = () => {
           </div>
           <div className="col-12 col-md-10 scroll vh-100">
             <Home setNumber={setNumber} homeData={homeData} />
+            <FBA setNumber={setNumber} fbaData={fbaData} />
             <About setNumber={setNumber} aboutData={aboutData} />
             <Service setNumber={setNumber} serviceData={serviceData} />
             <Blog setNumber={setNumber} blogData={blogData} />
