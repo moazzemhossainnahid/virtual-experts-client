@@ -96,7 +96,7 @@ const AdminFooter = () => {
         </label>
         <input
           type="text"
-          className="form-control fs-14"
+          className="form-control bg-gray2 fs-14"
           name="email"
           value={footerData.email}
         />
@@ -105,7 +105,7 @@ const AdminFooter = () => {
         </label>
         <input
           type="text"
-          className="form-control fs-14"
+          className="form-control bg-gray2 fs-14"
           name="skypeTitle"
           value={footerData.skypeTitle}
         />
@@ -114,7 +114,7 @@ const AdminFooter = () => {
         </label>
         <input
           type="text"
-          className="form-control fs-14"
+          className="form-control bg-gray2 fs-14"
           name="skype"
           value={footerData.skype}
         />
@@ -123,7 +123,7 @@ const AdminFooter = () => {
         </label>
         <input
           type="text"
-          className="form-control fs-14"
+          className="form-control bg-gray2 fs-14"
           name="whatsAppTitle"
           value={footerData.whatsAppTitle}
         />
@@ -132,7 +132,7 @@ const AdminFooter = () => {
         </label>
         <input
           type="text"
-          className="form-control fs-14"
+          className="form-control bg-gray2 fs-14"
           name="whatsApp"
           value={footerData.whatsApp}
         />
@@ -141,7 +141,7 @@ const AdminFooter = () => {
         </label>
         <input
           type="text"
-          className="form-control fs-14"
+          className="form-control bg-gray2 fs-14"
           name="address"
           value={footerData?.address}
         />
@@ -161,7 +161,7 @@ const AdminFooter = () => {
         </label>
         <input
           type="text"
-          className="form-control fs-14"
+          className="form-control bg-gray2 fs-14"
           name="facebook"
           value={footerLink.facebook}
         />
@@ -170,7 +170,7 @@ const AdminFooter = () => {
         </label>
         <input
           type="text"
-          className="form-control fs-14"
+          className="form-control bg-gray2 fs-14"
           name="instagram"
           value={footerLink.instagram}
         />
@@ -179,7 +179,7 @@ const AdminFooter = () => {
         </label>
         <input
           type="text"
-          className="form-control fs-14"
+          className="form-control bg-gray2 fs-14"
           name="telegram"
           value={footerLink.telegram}
         />
@@ -188,7 +188,7 @@ const AdminFooter = () => {
         </label>
         <input
           type="text"
-          className="form-control fs-14"
+          className="form-control bg-gray2 fs-14"
           name="twitter"
           value={footerLink.twitter}
         />
@@ -197,7 +197,7 @@ const AdminFooter = () => {
         </label>
         <input
           type="text"
-          className="form-control fs-14"
+          className="form-control bg-gray2 fs-14"
           name="youTube"
           value={footerLink?.youTube}
         />
