@@ -29,14 +29,8 @@ const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
 
   return (
     <>
-      <div className="d-flex justify-content-between">
-        <h6 className="fs-24">Service Banner</h6>
-        <AiFillEdit
-          size={24}
-          className="text-warning cursor-pointer"
-          data-bs-toggle="modal"
-          data-bs-target="#serviceBanner"
-        />
+      <div className="d-flex justify-content-center">
+        <h6 className="fs-24 spacing-3">Service Banner</h6>
       </div>
       <h6 className="mt-3 fs-18">Title</h6>
       <p className="fs-14">{title}</p>
@@ -44,7 +38,14 @@ const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
       <p className="fs-14">{description}</p>
       <h6 className="fs-18 mt-3">SubDescription</h6>
       <p className="fs-14">{subDescription}</p>
-
+      <div className="d-flex justify-content-end">
+        <AiFillEdit
+          size={30}
+          className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+          data-bs-toggle="modal"
+          data-bs-target="#serviceBanner"
+        />
+      </div>
       {/* For Edit service banner data Start */}
       <div
         className="modal fade"

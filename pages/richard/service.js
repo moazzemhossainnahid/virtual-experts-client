@@ -87,7 +87,7 @@ const Service = () => {
             </div>
           </div>
           <div className="col-12 col-md-10 container pt-5 vh-100 scroll">
-            <div className="p-3 boxShadow me-4 mb-5">
+            <div className="p-3 boxShadow bg-gray rounded me-4 mb-5">
               <AdminServiceBanner
                 serviceBanner={serviceBanner}
                 setNumber={setNumber}
