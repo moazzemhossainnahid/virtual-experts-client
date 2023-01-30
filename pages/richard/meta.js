@@ -4,6 +4,7 @@ import { BiMenu } from "react-icons/bi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import About from "../../Components/Admin/Dashboard/Meta/About";
+import Blog from "../../Components/Admin/Dashboard/Meta/Blog";
 import FBA from "../../Components/Admin/Dashboard/Meta/FBA";
 import Home from "../../Components/Admin/Dashboard/Meta/Home";
 import Service from "../../Components/Admin/Dashboard/Meta/Service";
