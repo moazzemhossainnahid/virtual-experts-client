@@ -7,6 +7,7 @@ import About from "../../Components/Admin/Dashboard/Meta/About";
 import Blog from "../../Components/Admin/Dashboard/Meta/Blog";
 import FBA from "../../Components/Admin/Dashboard/Meta/FBA";
 import Home from "../../Components/Admin/Dashboard/Meta/Home";
+import LetsTalk from "../../Components/Admin/Dashboard/Meta/LetsTalk";
 import Service from "../../Components/Admin/Dashboard/Meta/Service";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 
