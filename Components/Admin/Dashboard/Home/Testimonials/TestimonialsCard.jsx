@@ -68,13 +68,7 @@ const TestimonialsCard = ({ testimonial, index, setNumber }) => {
   return (
     <>
       <div className="col-12 col-md-6  mx-auto my-3">
-        <div className="p-5 text-center mx-2 boxShadow cursor-pointer h-100">
-          <AiFillEdit
-            size={24}
-            className="text-warning d-block ms-auto"
-            data-bs-toggle="modal"
-            data-bs-target={`#testimonial${index + 1}`}
-          />
+        <div className="p-5 text-center mx-2 boxShadow bg-gray2 rounded cursor-pointer h-100">
           <Image
             src={`${imgType} ; base64, ${testimonial.img.img}`}
             alt="Loading..."
@@ -85,6 +79,14 @@ const TestimonialsCard = ({ testimonial, index, setNumber }) => {
           <p className="fst-italic my-3 fs-14 lh-lg">“{testimonial.review}”</p>
           <h6 className="fw-bold fs-18">{testimonial.name}</h6>
           <p className="fs-14">{testimonial.jobTitle}</p>
+          <div className="d-flex justify-content-end">
+            <AiFillEdit
+              size={30}
+              className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+              data-bs-toggle="modal"
+              data-bs-target={`#testimonial${index + 1}`}
+            />
+          </div>
         </div>
       </div>
 
@@ -100,7 +102,7 @@ const TestimonialsCard = ({ testimonial, index, setNumber }) => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Edit Banner
+                Edit - Testimonial
               </h5>
               <button
                 type="button"

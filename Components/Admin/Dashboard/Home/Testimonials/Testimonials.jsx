@@ -68,12 +68,14 @@ const AdminTestimonials = () => {
           </div>
         )}
         <div className="d-flex justify-content-end">
-          <AiOutlinePlus
-            size={30}
-            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
-            data-bs-toggle="modal"
-            data-bs-target="#addTestimonial"
-          />
+          <div className="">
+            <AiOutlinePlus
+              size={30}
+              className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+              data-bs-toggle="modal"
+              data-bs-target="#addTestimonial"
+            />
+          </div>
         </div>
       </div>
 
@@ -89,7 +91,7 @@ const AdminTestimonials = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Add Testimonials
+                Add a Testimonial
               </h5>
               <button
                 type="button"
