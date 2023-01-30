@@ -68,7 +68,7 @@ const AdminWhatIsFBAConsultant = () => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel">
-                                Edit Banner
+                                Edit FBA Banner
                             </h5>
                             <button
                                 type="button"
@@ -80,7 +80,7 @@ const AdminWhatIsFBAConsultant = () => {
                         <div className="modal-body">
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <textarea
-                                    rows="5"
+                                    rows="2"
                                     cols="5"
                                     defaultValue={fbaData?.title}
                                     {...register("title")}
@@ -91,10 +91,19 @@ const AdminWhatIsFBAConsultant = () => {
                                 <textarea
                                     rows="5"
                                     cols="5"
-                                    defaultValue={fbaData?.discription}
-                                    {...register("discription")}
-                                    name="discription"
-                                    id="discription"
+                                    defaultValue={fbaData?.description_part_1}
+                                    {...register("description_part_1")}
+                                    name="description_part_1"
+                                    id="description_part_1"
+                                    className="form-control mb-2"
+                                ></textarea>
+                                <textarea
+                                    rows="5"
+                                    cols="5"
+                                    defaultValue={fbaData?.description_part_2}
+                                    {...register("description_part_2")}
+                                    name="description_part_2"
+                                    id="description_part_2"
                                     className="form-control mb-2"
                                 ></textarea>
                                 <input
