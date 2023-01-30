@@ -9,7 +9,7 @@ const FBA = () => {
   return (
     <>
       <Head>
-        <title>Virtual Experts | Admin-About</title>
+        <title>Virtual Experts | Admin-FBA</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <ToastContainer
