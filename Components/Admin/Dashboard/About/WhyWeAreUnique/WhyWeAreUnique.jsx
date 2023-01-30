@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import WhyWeAreUniqueSinglData from "./WhyWeAreUniqueSingleData";
 
 const AdminWhyWeAreUnique = () => {
   const [number, setNumber] = useState(0);
@@ -19,7 +20,7 @@ const AdminWhyWeAreUnique = () => {
       <h1 className="fs-24">Edit Why We are unique Section</h1>
       <h6 className="fs-18">Answers</h6>
       {answers.map((answer, index) => (
-        <WhyWeAreUniqueSingleList
+        <WhyWeAreUniqueSinglData
           key={answer._id}
           answer={answer}
           index={index}
