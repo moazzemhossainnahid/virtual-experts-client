@@ -178,7 +178,9 @@ const AdminServiceCard = ({
               Maintenence : ${servicesCard.maintenance} per month
             </p>
           )}
+
         </div>
+        
         {/* For Edit Card data Start */}
         <div
           className="modal fade"

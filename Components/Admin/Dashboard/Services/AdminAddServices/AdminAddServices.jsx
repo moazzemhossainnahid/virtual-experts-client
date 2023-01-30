@@ -48,14 +48,8 @@ const AdminAddServices = ({ setNumber }) => {
 
   return (
     <>
-      <div className="d-flex justify-content-between mb-4">
-        <h6 className="fs-24">Service Card</h6>
-        <GoPlus
-          size={24}
-          className="text-dark cursor-pointer"
-          data-bs-toggle="modal"
-          data-bs-target="#addServiceModal"
-        />
+      <div className="d-flex justify-content-center mb-4">
+        <h6 className="fs-24 spacing-3">Service Card</h6>
       </div>
       {/* For Add Card data Start */}
       <div
@@ -263,6 +257,7 @@ const AdminAddServices = ({ setNumber }) => {
           </div>
         </div>
       </div>
+
       {/* For Add Card data Finish */}
     </>
   );

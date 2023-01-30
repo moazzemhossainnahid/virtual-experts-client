@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
+import { GoPlus } from "react-icons/go";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
@@ -93,7 +94,7 @@ const Service = () => {
                 setNumber={setNumber}
               />
             </div>
-{/* 
+            {/* 
             <div className="p-3 boxShadow me-4 mb-5">
               <ServiceCardHeader
                 serviceCardHeader={serviceCardHeader}
@@ -130,6 +131,14 @@ const Service = () => {
                   })}
                 </div>
               )}
+              <div className="d-flex justify-content-end">
+                <GoPlus
+                  size={30}
+                  className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+                  data-bs-toggle="modal"
+                  data-bs-target="#addServiceModal"
+                />
+              </div>
             </div>
           </div>
         </div>
