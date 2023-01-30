@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
-const FBA = ({ aboutData, setNumber }) => {
-  const { _id, title, description } = aboutData;
+const FBA = ({ fbaData, setNumber }) => {
+  const { _id, title, description } = fbaData;
   const newTitle = title;
   const newDescription = description;
   const { register, handleSubmit } = useForm();
