@@ -4,6 +4,7 @@ import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
+import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
 
 const About = () => {
