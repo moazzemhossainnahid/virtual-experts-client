@@ -46,15 +46,9 @@ const AdminWhyChooseVirtualExperts = () => {
 
   return (
     <>
-      <div className="p-3 boxShadow me-3 my-3">
-        <div className="d-flex justify-content-between">
-          <h6 className="fs-24">Edit Why Choose Virtual Experts</h6>
-          <AiFillEdit
-            size={24}
-            className="text-warning cursor-pointer"
-            data-bs-toggle="modal"
-            data-bs-target="#whyVirtualId"
-          />
+      <div className="p-3 boxShadow bg-gray rounded me-3 my-3">
+        <div className="d-flex justify-content-center">
+          <h6 className="fs-24 spacing-3">Why Choose Virtual Experts</h6>
         </div>
         <h6 className="mt-3 fs-18">Title</h6>
         <p className="fs-14">{info.title}</p>
@@ -69,6 +63,14 @@ const AdminWhyChooseVirtualExperts = () => {
               setNumber={setNumber}
             />
           ))}
+        </div>
+        <div className="d-flex justify-content-end">
+          <AiFillEdit
+            size={30}
+            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+            data-bs-toggle="modal"
+            data-bs-target="#whyVirtualId"
+          />
         </div>
       </div>
 
