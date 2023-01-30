@@ -68,13 +68,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
   return (
     <>
       <div className="col-12 col-md-6 my-2" key={serviceCard._id}>
-        <div className="boxShadow p-3 h-100">
-          <AiFillEdit
-            size={24}
-            className="text-warning d-block ms-auto cursor-pointer"
-            data-bs-toggle="modal"
-            data-bs-target={`#topService${index + 1}`}
-          />
+        <div className="boxShadow bg-gray2 rounded p-3 h-100">
           <Image
             src={`${imgType} ; base64, ${serviceCard.img.img}`}
             alt="Loading..."
@@ -85,6 +79,14 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
           <p>{serviceCard.title}</p>
           <h6 className="fs-18">Subtitle</h6>
           <p>{serviceCard.description}</p>
+          <div className="d-flex justify-content-end">
+          <AiFillEdit
+            size={30}
+            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+            data-bs-toggle="modal"
+            data-bs-target={`#topService${index + 1}`}
+          />
+        </div>
         </div>
       </div>
 
