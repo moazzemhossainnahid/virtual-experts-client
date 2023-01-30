@@ -28,9 +28,9 @@ const Service = ({ serviceData, setNumber }) => {
 
     return (
         <>
-            <section className="my-2 boxShadow me-3 p-3">
-                <div className="d-flex justify-content-between">
-                    <h1 className="fs-24">Service Page</h1>
+            <section className="my-2 boxShadow bg-gray rounded me-3 p-3">
+                <div className="d-flex justify-content-center">
+                    <h1 className="fs-24 spacing-3">Service Page</h1>
                 </div>
                 <h6 className="fs-18 mt-2">Title</h6>
                 <p className="fs-14">{title}</p>
