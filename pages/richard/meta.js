@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import About from "../../Components/Admin/Dashboard/Meta/About";
 import FBA from "../../Components/Admin/Dashboard/Meta/FBA";
 import Home from "../../Components/Admin/Dashboard/Meta/Home";
+import Service from "../../Components/Admin/Dashboard/Meta/Service";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 
 const Meta = () => {
