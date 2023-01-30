@@ -23,16 +23,20 @@ const HowToPlaceAnOrderCard = ({ answer, index, setNumber }) => {
   };
   return (
     <>
-      <div className="d-flex justify-content-between" key={answer._id}>
-        <p className="fs-14">
-          {index + 1}. {answer.title}
-        </p>
-        <AiFillEdit
-          size={24}
-          className="text-warning cursor-pointer"
-          data-bs-toggle="modal"
-          data-bs-target={`#answer${index + 1}`}
-        />
+      <div className="d-flex justify-content-between align-items-center bg-gray2 my-3 p-2 rounded" key={answer._id}>
+        <div className="">
+          <p className="fs-14">
+            {index + 1}. {answer.title}
+          </p>
+        </div>
+        <div className="">
+          <AiFillEdit
+            size={30}
+            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+            data-bs-toggle="modal"
+            data-bs-target={`#answer${index + 1}`}
+          />
+        </div>
       </div>
       <div
         className="modal fade"
