@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { AiOutlinePlus } from "react-icons/ai";
 import { toast } from "react-toastify";
 import Spinner from "../../../../Others/Spinner";
-import TeamCard from "./teamCard";
+import TeamsCard from "./TeamsCard";
 
 const AdminTeams = () => {
   const [teams, setTeams] = useState([]);
@@ -64,7 +64,7 @@ const AdminTeams = () => {
         ) : (
           <div className="row">
             {teams.map((team, index) => (
-              <TeamCard
+              <TeamsCard
                 team={team}
                 key={team._id}
                 index={index}
