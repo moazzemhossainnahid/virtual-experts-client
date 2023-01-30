@@ -37,7 +37,7 @@ const AdminTeamSection = () => {
 
     return (
         <>
-            <section className="my-2 boxShadow me-3 p-3">
+            <section className="my-3 boxShadow bg-gray rounded me-3 p-3">
                 <div className="d-flex justify-content-center">
                     <h1 className="fs-24 spacing-3">{teamSection?.title}</h1>
                 </div>
