@@ -44,9 +44,9 @@ const AdminTopThreeService = () => {
 
   return (
     <>
-      <div className="p-3 boxShadow me-3 my-2">
-        <div className="d-flex justify-content-between">
-          <h6 className="fs-24">Edit Top 3 Services</h6>
+      <div className="p-3 boxShadow bg-gray rounded me-3 my-2">
+        <div className="d-flex justify-content-center">
+          <h6 className="fs-24 spacing-3">Top 3 Services</h6>
           <AiFillEdit
             size={24}
             className="text-warning cursor-pointer"
@@ -84,7 +84,7 @@ const AdminTopThreeService = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Edit Banner
+                Edit - Top 3 Services
               </h5>
               <button
                 type="button"
