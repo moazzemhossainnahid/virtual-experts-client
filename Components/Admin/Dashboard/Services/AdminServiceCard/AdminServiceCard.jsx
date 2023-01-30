@@ -123,30 +123,16 @@ const AdminServiceCard = ({
   };
 
   return (
-    <div className="col-md-4" key={servicesCard._id}>
-      <div className="my-3 mx-1 p-3 border rounded-3">
-        <div className="d-flex justify-content-end">
-          <AiFillEdit
-            size={24}
-            className="text-warning mx-2 cursor-pointer"
-            data-bs-toggle="modal"
-            data-bs-target={`#card${index + 1}`}
-          />
-          <AiFillDelete
-            size={24}
-            className="text-danger mx-2 cursor-pointer"
-            data-bs-toggle="modal"
-            data-bs-target={`#cardDelete${index + 1}`}
-          />
-        </div>
+    <div className="col-md-6" key={servicesCard._id}>
+      <div className="my-3 mx-1 p-3 border bg-gray2 rounded-3">
         <Image
           src={`${imgType} ; base64, ${servicesCard.img.img}`}
           title={imgTitle}
           alt={imgAlt}
-          width={200}
-          height={200}
+          width={70}
+          height={70}
         />
-        <div className="boxShadow p-3 borderRadius" style={{ height: "300px" }}>
+        <div className="boxShadow p-3 borderRadius" style={{ height: "270px" }}>
           <h6 className="fs-18">{servicesCard.title}</h6>
           <h6 className="fs-14 mt-2">{servicesCard.subTitle}</h6>
           {servicesCard.regularReview && (
@@ -178,9 +164,23 @@ const AdminServiceCard = ({
               Maintenence : ${servicesCard.maintenance} per month
             </p>
           )}
+          <div className="d-flex justify-content-end">
+            <AiFillEdit
+              size={30}
+              className="text-warning bg-dark mx-1 rounded-circle p-1 cursor-pointer "
+              data-bs-toggle="modal"
+              data-bs-target={`#card${index + 1}`}
+            />
+            <AiFillDelete
+              size={30}
+              className="text-danger mx-1 bg-dark rounded-circle p-1 cursor-pointer "
+              data-bs-toggle="modal"
+              data-bs-target={`#cardDelete${index + 1}`}
+            />
+          </div>
 
         </div>
-        
+
         {/* For Edit Card data Start */}
         <div
           className="modal fade"
