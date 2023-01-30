@@ -70,6 +70,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
       <div className="col-12 col-md-6 my-2" key={serviceCard._id}>
         <div className="boxShadow bg-gray2 rounded p-3 h-100">
           <Image
+          className="d-flex justify-content-center mx-auto w-25 h-25"
             src={`${imgType} ; base64, ${serviceCard.img.img}`}
             alt="Loading..."
             height="150"
