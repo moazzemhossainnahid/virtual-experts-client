@@ -82,15 +82,9 @@ const AdminFooter = () => {
 
   return (
     <>
-      <div className="p-3 boxShadow me-3 my-2">
-        <div className="d-flex justify-content-between">
-          <h6 className="fs-24">Edit Footer Here</h6>
-          <AiFillEdit
-            size={24}
-            className="text-warning cursor-pointer"
-            data-bs-toggle="modal"
-            data-bs-target="#footerPart1"
-          />
+      <div className="p-3 boxShadow bg-gray rounded me-3 my-2">
+        <div className="d-flex justify-content-center">
+          <h6 className="fs-24 spacing-3">Footer</h6>
         </div>
         <h6 className="mt-3 fs-18">Footer Description</h6>
         <p className="fs-14">{footerData.description}</p>
@@ -151,14 +145,16 @@ const AdminFooter = () => {
           name="address"
           value={footerData?.address}
         />
-        <div className="d-flex justify-content-between my-4">
-          <h6 className="fs-18">Update Social Link</h6>
+        <div className="d-flex py-3 justify-content-end">
           <AiFillEdit
-            size={24}
-            className="text-warning cursor-pointer"
+            size={30}
+            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
             data-bs-toggle="modal"
-            data-bs-target="#footerPart2"
+            data-bs-target="#footerPart1"
           />
+        </div>
+        <div className="d-flex justify-content-center my-4">
+          <h6 className="fs-18 spacing-3">Update Social Link</h6>
         </div>
         <label htmlFor="facebook" className="d-block my-2">
           Facebook
@@ -205,6 +201,14 @@ const AdminFooter = () => {
           name="youTube"
           value={footerLink?.youTube}
         />
+        <div className="d-flex py-3 justify-content-end">
+          <AiFillEdit
+            size={30}
+            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+            data-bs-toggle="modal"
+            data-bs-target="#footerPart2"
+          />
+        </div>
       </div>
 
       {/* modal 1 start here */}
