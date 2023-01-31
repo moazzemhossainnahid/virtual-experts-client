@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { AiFillEdit } from "react-icons/ai";
+import { AiFillDelete } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const ContactFormSingleData = ({ info, index }) => {
@@ -7,8 +7,8 @@ const ContactFormSingleData = ({ info, index }) => {
 
     return (
         <>
-            <section className="bg-gray2 my-3 rounded p-2">
-                <div className="">
+            <section className="col-12 col-md-6">
+                <div className="m-2 boxShadow bg-gray2 rounded p-3 h-100">
                     <p style={{ height: "20px", width: "20px" }} className="fs-14 rounded-circle bg-danger text-white text-center">
                         {index + 1}
                     </p>
@@ -21,9 +21,9 @@ const ContactFormSingleData = ({ info, index }) => {
                     </div>
 
                     <div className="d-flex justify-content-end">
-                        <AiFillEdit
+                        <AiFillDelete
                             size={30}
-                            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+                            className="text-danger bg-dark rounded-circle p-1 cursor-pointer "
                             data-bs-toggle="modal"
                             data-bs-target={`#answer${index + 1}`}
                         />

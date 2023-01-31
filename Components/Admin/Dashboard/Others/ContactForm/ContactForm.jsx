@@ -19,7 +19,6 @@ const AdminContactForm = () => {
         <section className="my-2 boxShadow bg-gray rounded me-3 p-3">
             <h1 className="fs-24 spacing-3 text-center py-3">Let's Talk Info</h1>
             <div className="row">
-                <div className=" col-12 col-md-6">
                     {info.map((info, index) => (
                         <ContactFormSingleData
                             key={info._id}
@@ -28,7 +27,6 @@ const AdminContactForm = () => {
                             setNumber={setNumber}
                         />
                     ))}
-                </div>
             </div>
         </section>
     );
