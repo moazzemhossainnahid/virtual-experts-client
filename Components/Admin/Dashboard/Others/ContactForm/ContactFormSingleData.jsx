@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { AiFillDelete } from "react-icons/ai";
 import { toast } from "react-toastify";
 
-const ContactFormSingleData = ({ info,setInfo, index, setNumber }) => {
+const ContactFormSingleData = ({ infoData,setInfoData,info, index, setNumber }) => {
 
 
     const deleteContactForm = (id) => {
@@ -13,10 +13,10 @@ const ContactFormSingleData = ({ info,setInfo, index, setNumber }) => {
           .then((result) => {
             if (result) {
               toast.error("Service Delete Successfully");
-              const newInfoCard = info.filter(
+              const newinfoCard = infoData.filter(
                 (card) => card._id !== id
               );
-              setInfo(newInfoCard);
+              setInfoData(newinfoCard);
               setNumber((prevState) => prevState + 1);
             }
           });
@@ -24,7 +24,7 @@ const ContactFormSingleData = ({ info,setInfo, index, setNumber }) => {
 
     return (
         <>
-            <section className="col-12 col-md-6">
+            <section className="col-12 col-md-6 mt-3">
                 <div className="m-2 boxShadow bg-gray2 rounded p-3 h-100">
                     <p style={{ height: "20px", width: "20px" }} className="fs-14 rounded-circle bg-danger text-white text-center">
                         {index + 1}
