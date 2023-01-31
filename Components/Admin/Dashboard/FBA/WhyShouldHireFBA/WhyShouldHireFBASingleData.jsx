@@ -7,10 +7,11 @@ const WhyShouldHireFBASingleData = ({ answer, index, setNumber }) => {
 
     const onSubmit = (data) => {
         const title = data.title || answer.title;
-        fetch("http://localhost:5000/fbaservice/update", {
+        const description = data.description || answer.description;
+        fetch("http://localhost:5000/whyshouldhire/update", {
             method: "PUT",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify({ title, _id: answer._id }),
+            body: JSON.stringify({ title, _id: answer._id, description }),
         })
             .then((res) => res.json())
             .then((data) => {
@@ -50,7 +51,7 @@ const WhyShouldHireFBASingleData = ({ answer, index, setNumber }) => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel">
-                                Edit FBA Service Data
+                                Edit - Why Should FBA Data
                             </h5>
                             <button
                                 type="button"
@@ -62,12 +63,21 @@ const WhyShouldHireFBASingleData = ({ answer, index, setNumber }) => {
                         <div className="modal-body">
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <textarea
-                                    rows="5"
+                                    rows="2"
                                     cols="5"
                                     defaultValue={answer?.title}
                                     {...register("title")}
                                     name="title"
                                     id="title"
+                                    className="form-control mb-2"
+                                ></textarea>
+                                <textarea
+                                    rows="5"
+                                    cols="5"
+                                    defaultValue={answer?.description}
+                                    {...register("description")}
+                                    name="description"
+                                    id="description"
                                     className="form-control mb-2"
                                 ></textarea>
                                 <input
