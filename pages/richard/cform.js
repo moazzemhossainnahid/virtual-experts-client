@@ -3,7 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import AdminWhatIsFBAConsultant from "../../Components/Admin/Dashboard/FBA/WhatIsFBAConsultant/WhatIsFBAConsultant";
+import AdminContactForm from "../../Components/Admin/Dashboard/Others/ContactForm/ContactForm";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
@@ -60,7 +60,7 @@ const FBA = () => {
             </div>
           </div>
           <div className="col-12 col-md-10 scroll vh-100">
-            <AdminWhatIsFBAConsultant/>
+            <AdminContactForm/>
 
           </div>
         </div>
