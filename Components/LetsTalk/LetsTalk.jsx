@@ -19,6 +19,8 @@ import SideLink from "../Home/banner/SideLink/SideLink";
 const LetsTalk = ({ footerData }) => {
     const router = useRouter();
     const [footerLink, setFooterLink] = useState({});
+    const [txt, setTxt] = useState("");
+
 
     const {
         handleSubmit,
@@ -68,9 +70,9 @@ const LetsTalk = ({ footerData }) => {
         const emailInfo = {
             name: data.name,
             email: data.email,
-            subject: data.subject,
             phone: data.phone,
-            message: data.message,
+            subject: data.subject,
+            message: txt,
         };
 
         const res = await fetch("http://localhost:5000/contactform/post", {
