@@ -19,7 +19,7 @@ const AdminFBAService = () => {
     <section className="my-2 boxShadow bg-gray rounded me-3 p-3">
       <h1 className="fs-24 spacing-3 text-center py-3">Amazon FBA Consultant Service</h1>
       {/* <h6 className="fs-18">Answers</h6> */}
-      {answers.map((answer, index) => (
+      {answers?.map((answer, index) => (
         <FBAServiceSingleData
           key={answer._id}
           answer={answer}

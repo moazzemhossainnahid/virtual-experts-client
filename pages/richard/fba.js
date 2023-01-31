@@ -3,6 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AdminFBAService from "../../Components/Admin/Dashboard/FBA/FBAService/FBAService";
 import AdminWhatIsFBAConsultant from "../../Components/Admin/Dashboard/FBA/WhatIsFBAConsultant/WhatIsFBAConsultant";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
@@ -61,10 +62,10 @@ const FBA = () => {
           </div>
           <div className="col-12 col-md-10 scroll vh-100">
             <AdminWhatIsFBAConsultant/>
-            {/* <AdminWhoAreVirtualExperts />
-            <AdminWhyWeAreUnique />
-            <AdminTeamSection />
-            <AdminTeams /> */}
+            <AdminFBAService/>
+            {/* <AdminWhyWeAreUnique /> */}
+            {/* <AdminTeamSection /> */}
+            {/* <AdminTeams /> */}
           </div>
         </div>
       </section>
