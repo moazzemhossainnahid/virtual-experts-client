@@ -61,6 +61,18 @@ const LetsTalk = ({ footerData }) => {
         }
     };
 
+    
+    const onInputChange = e => {
+        const { value } = e.target;
+        console.log('Input value: ', value);
+
+        const re = /^[A-Za-z. ]+(?:[ .-][A-Za-z]+)*$/;
+        if (value === "" || re.test(value)) {
+            setTxt(value);
+        }
+    };
+
+
     return <>
         <ToastContainer
             position="top-right"
