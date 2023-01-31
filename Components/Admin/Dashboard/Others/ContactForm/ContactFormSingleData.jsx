@@ -7,20 +7,27 @@ const ContactFormSingleData = ({ info, index }) => {
 
     return (
         <>
-            <section className="d-flex bg-gray2 my-3 rounded p-2 justify-content-between">
-                <p className="fs-14">
-                    {index + 1}
-                    {". "}
-                    {info?.name}
-                </p>
+            <section className="bg-gray2 my-3 rounded p-2">
+                <div className="">
+                    <p style={{ height: "20px", width: "20px" }} className="fs-14 rounded-circle bg-danger text-white text-center">
+                        {index + 1}
+                    </p>
+                    <div className="">
+                        <p className="">Name: {info?.name}</p>
+                        <p className="">Email: {info?.email}</p>
+                        <p className="">Phone: {info?.phone}</p>
+                        <p className="">Subject: {info?.subject}</p>
+                        <p className="">Message: {info?.message}</p>
+                    </div>
 
-                <div className="d-flex justify-content-end">
-                    <AiFillEdit
-                        size={30}
-                        className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
-                        data-bs-toggle="modal"
-                        data-bs-target={`#answer${index + 1}`}
-                    />
+                    <div className="d-flex justify-content-end">
+                        <AiFillEdit
+                            size={30}
+                            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+                            data-bs-toggle="modal"
+                            data-bs-target={`#answer${index + 1}`}
+                        />
+                    </div>
                 </div>
             </section>
 
