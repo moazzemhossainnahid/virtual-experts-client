@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import FBAServiceSingleData from "./FBAServiceSingleData";
 
 const AdminFBAService = () => {
   const [number, setNumber] = useState(0);
