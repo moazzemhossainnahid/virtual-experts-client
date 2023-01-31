@@ -16,7 +16,7 @@ const AdminWhyShouldHireFBA = () => {
     loadData();
   }, [number]);
   return (
-    <section className="my-2 boxShadow bg-gray rounded me-3 p-3">
+    <section className="my-3 boxShadow bg-gray rounded me-3 p-3">
       <h1 className="fs-24 spacing-3 text-center py-3">Why Should Hire FBA</h1>
       {/* <h6 className="fs-18">Answers</h6> */}
       {answers?.map((answer, index) => (

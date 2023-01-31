@@ -22,14 +22,13 @@ const WhyShouldHireFBASingleData = ({ answer, index, setNumber }) => {
 
     return (
         <>
-            <section className="d-flex bg-gray2 my-3 rounded p-2 justify-content-between">
-                <p className="fs-14">
-                    {index + 1}
-                    {". "}
-                    {answer?.title}
-                </p>
+            <section className="my-3 boxShadow bg-gray rounded me-3 p-3">
 
-                <div className="d-flex justify-content-end">
+                <h6 className="fs-18 mt-2">Title</h6>
+                <p className="fs-14">{answer?.title}</p>
+                <h6 className="fs-18 mt-2">Description</h6>
+                <p className="fs-14">{answer?.description}</p>
+                <div className="d-flex py-3 justify-content-end">
                     <AiFillEdit
                         size={30}
                         className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
