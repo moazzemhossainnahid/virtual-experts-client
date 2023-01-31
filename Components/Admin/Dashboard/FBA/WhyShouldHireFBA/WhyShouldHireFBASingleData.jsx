@@ -22,7 +22,7 @@ const WhyShouldHireFBASingleData = ({ hire, index, setNumber }) => {
 
     return (
         <>
-            <section className="my-3 boxShadow bg-gray rounded me-3 p-3">
+            <section className="my-3 boxShadow bg-gray2 rounded me-3 p-3">
 
                 <h6 className="fs-18 mt-2">Title</h6>
                 <p className="fs-14">{hire?.title}</p>
