@@ -5,6 +5,23 @@ import { toast } from "react-toastify";
 const ContactFormSingleData = ({ info, index }) => {
 
 
+    const deleteContactForm = (id) => {
+        fetch(`http://localhost:5000/contactform/delete/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            if (result) {
+              toast.error("Service Delete Successfully");
+              const newServicesCard = servicesCardData.filter(
+                (servicesCard) => servicesCard._id !== id
+              );
+              setServicesCardData(newServicesCard);
+              setNumber((prevState) => prevState + 1);
+            }
+          });
+      };
+
     return (
         <>
             <section className="col-12 col-md-6">
