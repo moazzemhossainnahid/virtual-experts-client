@@ -30,6 +30,9 @@ const Footer = () => {
   console.log('footer', footer);
   console.log('footerLink', footerLink);
 
+  const today = new Date();
+  const year = today.getFullYear();
+
 
   return (
     <footer
@@ -158,8 +161,9 @@ const Footer = () => {
             </div>  
           </div>
         </div>
-        <div className="text-center  text-muted">
-          <p className="pt-3 fs-14 text-muted">{footer?.copyRightText}</p>
+        <div className="text-center text-muted">
+          {/* <p className="pt-3 fs-14 text-muted">{footer?.copyRightText}</p> */}
+          <p className="pt-3 fs-14 text-muted">© 2014-{year} Virtual Experts Limited | All Right Reserved</p>
         </div>
       </section>
     </footer>
