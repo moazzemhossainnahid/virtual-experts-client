@@ -2,16 +2,16 @@ import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
-const WhyShouldHireFBASingleData = ({ answer, index, setNumber }) => {
+const WhyShouldHireFBASingleData = ({ hire, index, setNumber }) => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        const title = data.title || answer.title;
-        const description = data.description || answer.description;
+        const title = data.title || hire.title;
+        const description = data.description || hire.description;
         fetch("http://localhost:5000/whyshouldhire/update", {
             method: "PUT",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify({ title, _id: answer._id, description }),
+            body: JSON.stringify({ title, _id: hire._id, description }),
         })
             .then((res) => res.json())
             .then((data) => {
@@ -25,15 +25,15 @@ const WhyShouldHireFBASingleData = ({ answer, index, setNumber }) => {
             <section className="my-3 boxShadow bg-gray rounded me-3 p-3">
 
                 <h6 className="fs-18 mt-2">Title</h6>
-                <p className="fs-14">{answer?.title}</p>
+                <p className="fs-14">{hire?.title}</p>
                 <h6 className="fs-18 mt-2">Description</h6>
-                <p className="fs-14">{answer?.description}</p>
+                <p className="fs-14">{hire?.description}</p>
                 <div className="d-flex py-3 justify-content-end">
                     <AiFillEdit
                         size={30}
                         className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
                         data-bs-toggle="modal"
-                        data-bs-target={`#answer${index + 1}`}
+                        data-bs-target={`#hire${index + 1}`}
                     />
                 </div>
             </section>
@@ -41,7 +41,7 @@ const WhyShouldHireFBASingleData = ({ answer, index, setNumber }) => {
             {/* modal start here */}
             <div
                 className="modal fade"
-                id={`answer${index + 1}`}
+                id={`hire${index + 1}`}
                 tabIndex="-1"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
@@ -64,7 +64,7 @@ const WhyShouldHireFBASingleData = ({ answer, index, setNumber }) => {
                                 <textarea
                                     rows="2"
                                     cols="5"
-                                    defaultValue={answer?.title}
+                                    defaultValue={hire?.title}
                                     {...register("title")}
                                     name="title"
                                     id="title"
@@ -73,7 +73,7 @@ const WhyShouldHireFBASingleData = ({ answer, index, setNumber }) => {
                                 <textarea
                                     rows="5"
                                     cols="5"
-                                    defaultValue={answer?.description}
+                                    defaultValue={hire?.description}
                                     {...register("description")}
                                     name="description"
                                     id="description"
