@@ -32,6 +32,38 @@ const LetsTalk = ({ footerData }) => {
             .then((data) => setFooterLink(data[0]));
     }, []);
 
+
+    // EmailJS Config
+    // const onSubmit = async (data, e) => {
+    //     const emailInfo = {
+    //         name: data.name,
+    //         email: data.email,
+    //         subject: data.subject,
+    //         phone: data.phone,
+    //         message: data.message,
+    //     };
+
+    //     const msgTemplate = {
+    //         service_id: "service_jpr5wh2",
+    //         template_id: "template_jcid58g",
+    //         user_id: "user_Gj21qvrXg9jH4lGJolreq",
+    //         template_params: {
+    //             ...emailInfo,
+    //         },
+    //     };
+
+    //     const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    //         method: "POST",
+    //         headers: { "content-type": "application/json" },
+    //         body: JSON.stringify(msgTemplate),
+    //     });
+    //     if (res.status === 200) {
+    //         toast.success("Message Sent Successfully");
+    //         e.target.reset();
+    //     }
+    // };
+
+
     const onSubmit = async (data, e) => {
         const emailInfo = {
             name: data.name,
@@ -41,19 +73,10 @@ const LetsTalk = ({ footerData }) => {
             message: data.message,
         };
 
-        const msgTemplate = {
-            service_id: "service_jpr5wh2",
-            template_id: "template_jcid58g",
-            user_id: "user_Gj21qvrXg9jH4lGJolreq",
-            template_params: {
-                ...emailInfo,
-            },
-        };
-
-        const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        const res = await fetch("http://localhost:5000/contactform/post", {
             method: "POST",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify(msgTemplate),
+            body: JSON.stringify(emailInfo),
         });
         if (res.status === 200) {
             toast.success("Message Sent Successfully");
@@ -257,6 +280,7 @@ const LetsTalk = ({ footerData }) => {
                                     rows="6"
                                     cols="50"
                                     {...register("message", { required: true })}
+                                    onChange={onInputChange}
                                     placeholder="Massage"
                                 ></textarea>
                                 {errors.message && (
