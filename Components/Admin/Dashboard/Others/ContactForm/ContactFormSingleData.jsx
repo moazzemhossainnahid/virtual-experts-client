@@ -42,7 +42,7 @@ const ContactFormSingleData = ({ info,setInfo, index, setNumber }) => {
                             size={30}
                             className="text-danger bg-dark rounded-circle p-1 cursor-pointer "
                             data-bs-toggle="modal"
-                            data-bs-target={`#answer${index + 1}`}
+                            data-bs-target={`#cardDelete${index + 1}`}
                         />
                     </div>
                 </div>
