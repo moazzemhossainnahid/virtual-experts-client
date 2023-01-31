@@ -93,6 +93,15 @@ const Sidebar = () => {
           
         </Link> */}
         <Link
+          href="/richard/cform"
+          className={`d-block py-2 ${
+            pathname === "/richard/cform" ? "bg-orange" : ""
+          } px-3 rounded-3 text-white my-2 navHover`}>
+          
+            Contact
+          
+        </Link>
+        <Link
           href="/richard/footer"
           className={`d-block py-2 ${
             pathname === "/richard/footer" ? "bg-orange" : ""
