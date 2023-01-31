@@ -23,6 +23,7 @@ const AdminContactForm = () => {
                         <ContactFormSingleData
                             key={info._id}
                             info={info}
+                            setInfo={setInfo}
                             index={index}
                             setNumber={setNumber}
                         />

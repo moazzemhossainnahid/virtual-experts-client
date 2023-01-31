@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { AiFillDelete } from "react-icons/ai";
 import { toast } from "react-toastify";
 
-const ContactFormSingleData = ({ info, index }) => {
+const ContactFormSingleData = ({ info,setInfo, index, setNumber }) => {
 
 
     const deleteContactForm = (id) => {
@@ -13,10 +13,10 @@ const ContactFormSingleData = ({ info, index }) => {
           .then((result) => {
             if (result) {
               toast.error("Service Delete Successfully");
-              const newServicesCard = servicesCardData.filter(
-                (servicesCard) => servicesCard._id !== id
+              const newInfoCard = info.filter(
+                (card) => card._id !== id
               );
-              setServicesCardData(newServicesCard);
+              setInfo(newInfoCard);
               setNumber((prevState) => prevState + 1);
             }
           });
@@ -48,6 +48,52 @@ const ContactFormSingleData = ({ info, index }) => {
                 </div>
             </section>
 
+
+        {/* For Delete Card data Start */}
+        <div
+          className="modal fade"
+          id={`cardDelete${index + 1}`}
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  DELETE - {info.name}'s Data
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="modal-body">
+                <p>Are you want to delete this?</p>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  data-bs-dismiss="modal"
+                  onClick={() => deleteContactForm(info._id)}
+                >
+                  Yes
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  data-bs-dismiss="modal"
+                >
+                  No
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* For Delete Card data Finish */}
         </>
     );
 };
