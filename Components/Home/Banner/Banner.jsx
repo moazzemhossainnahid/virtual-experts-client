@@ -197,10 +197,10 @@ const onInputChange = e => {
                     <textarea
                       rows="5"
                       col="3"
-                      onChange={onInputChange}
                       placeholder="Description"
                       name="description"
                       {...register("description", { required: true })}
+                      onChange={onInputChange}
                       className="form-control my-4"
                     />
                     {errors.description && (
