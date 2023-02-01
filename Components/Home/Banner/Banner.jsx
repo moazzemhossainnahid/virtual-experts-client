@@ -1,6 +1,6 @@
 import styles from "../../../styles/Banner.module.css";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineClose } from "react-icons/ai";
 import { toast, ToastContainer } from "react-toastify";
@@ -11,35 +11,66 @@ import cardHeaderImg from "../../../Assets/Images/others/v-logo.svg";
 import SideLink from "./SideLink/SideLink";
 
 const Banner = ({ bannerData, footerLink }) => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const [txt, setTxt] = useState("");
 
-  const onSubmit = async (data, e) => {
-    data.subject = `You got a new mail from ${data.name}`;
-    const msgTemplate = {
-      service_id: "service_jpr5wh2",
-      template_id: "template_445qkqh",
-      user_id: "user_Gj21qvrXg9jH4lGJolreq",
-      template_params: data,
+  // const onSubmit = async (data, e) => {
+  //   data.subject = `You got a new mail from ${data.name}`;
+  //   const msgTemplate = {
+  //     service_id: "",
+  //     template_id: "",
+  //     user_id: "",
+  //     template_params: data,
+  //   };
+
+  //   const sendMessage = async () => {
+  //     const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+  //       method: "POST",
+  //       headers: { "content-type": "application/json" },
+  //       body: JSON.stringify(msgTemplate),
+  //     });
+  //     if (res.status === 200) {
+  //       toast.success("Message Sent Successfully");
+  //     }
+  //   };
+
+  //   sendMessage();
+  //   e.target.reset();
+  // };
+
+  
+  const onSubmit = async (data) => {
+    const Info = {
+        name: data.name,
+        email: data.email,
+        productlink: data.productlink,
+        description: txt,
     };
 
-    const sendMessage = async () => {
-      const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    console.log(Info)
+
+    const res = await fetch("http://localhost:5000/leads/post", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify(msgTemplate),
-      });
-      if (res.status === 200) {
-        toast.success("Message Sent Successfully");
-      }
-    };
+        body: JSON.stringify(Info),
+    });
+    if (res.status === 200) {
+        toast.success("Data Sent Successfully");
+        reset();
+    }
+};
 
-    sendMessage();
-    e.target.reset();
-  };
+
+const onInputChange = e => {
+    const { value } = e.target;
+    console.log('Input value: ', value);
+
+    const re = /^[A-Za-z. ]+(?:[ .-][A-Za-z]+)*$/;
+    if (value === "" || re.test(value)) {
+        setTxt(value);
+    }
+};
+
   return (
     <div className="">
       <ToastContainer
@@ -150,9 +181,9 @@ const Banner = ({ bannerData, footerLink }) => {
                   <div className="my-3">
                     <input
                       type="text"
-                      name="productLink/ASIN"
+                      name="productlink"
                       placeholder="Product Link/ASIN"
-                      {...register("productLinkOrASIN", { required: true })}
+                      {...register("productlink", { required: true })}
                       className="form-control mt-3"
                     />
                     {errors.productLinkOrASIN && (
@@ -166,6 +197,7 @@ const Banner = ({ bannerData, footerLink }) => {
                     <textarea
                       rows="5"
                       col="3"
+                      onChange={onInputChange}
                       placeholder="Description"
                       name="description"
                       {...register("description", { required: true })}
