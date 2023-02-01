@@ -93,8 +93,8 @@ const Meta = () => {
           <div className="col-12 col-md-10 scroll vh-100">
             <Home setNumber={setNumber} homeData={homeData} />
             <FBA setNumber={setNumber} fbaData={fbaData} />
-            <About setNumber={setNumber} aboutData={aboutData} />
             <Service setNumber={setNumber} serviceData={serviceData} />
+            <About setNumber={setNumber} aboutData={aboutData} />
             <Blog setNumber={setNumber} blogData={blogData} />
             <LetsTalk setNumber={setNumber} letsTalkData={letsTalkData} />
           </div>
