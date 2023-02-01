@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import LeadsSingleData from "./LeadsSingleData";
 
 const AdminLeads = () => {
     const [number, setNumber] = useState(0);
@@ -19,7 +20,7 @@ const AdminLeads = () => {
             <h1 className="fs-24 spacing-3 text-center py-3">Lead's Info</h1>
             <div className="row">
                     {leadData.map((lead, index) => (
-                        <ContactFormSingleData
+                        <LeadsSingleData
                             key={info._id}
                             lead={lead}
                             leadData={leadData}
