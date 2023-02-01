@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import ReactHtmlParser from "react-html-parser";
 import { AiOutlineClockCircle } from "react-icons/ai";
@@ -15,35 +15,66 @@ import { BlogData } from "../../Data/BlogData";
 
 const Blog = () => {
   const router = useRouter();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset} = useForm();
+  const [txt, setTxt] = useState("");
 
-  const onSubmit = async (data, e) => {
-    data.subject = `You got a new mail from ${data.name}`;
-    const msgTemplate = {
-      service_id: "service_jpr5wh2",
-      template_id: "template_445qkqh",
-      user_id: "user_Gj21qvrXg9jH4lGJolreq",
-      template_params: data,
+  // const onSubmit = async (data, e) => {
+  //   data.subject = `You got a new mail from ${data.name}`;
+  //   const msgTemplate = {
+  //     service_id: "service_jpr5wh2",
+  //     template_id: "template_445qkqh",
+  //     user_id: "user_Gj21qvrXg9jH4lGJolreq",
+  //     template_params: data,
+  //   };
+
+  //   const sendMessage = async () => {
+  //     const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+  //       method: "POST",
+  //       headers: { "content-type": "application/json" },
+  //       body: JSON.stringify(msgTemplate),
+  //     });
+  //     if (res.status === 200) {
+  //       toast.success("Message Sent Successfully");
+  //     }
+  //   };
+
+  //   sendMessage();
+  //   e.target.reset();
+  // };
+
+  
+  const onSubmit = async (data) => {
+    const Info = {
+        name: data.name,
+        email: data.email,
+        productlink: data.productlink,
+        description: txt,
     };
 
-    const sendMessage = async () => {
-      const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    console.log(Info)
+
+    const res = await fetch("http://localhost:5000/leads/post", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify(msgTemplate),
-      });
-      if (res.status === 200) {
-        toast.success("Message Sent Successfully");
-      }
-    };
+        body: JSON.stringify(Info),
+    });
+    if (res.status === 200) {
+        toast.success("Data Sent Successfully");
+        reset();
+    }
+};
 
-    sendMessage();
-    e.target.reset();
-  };
+
+const onInputChange = e => {
+    const { value } = e.target;
+    console.log('Input value: ', value);
+
+    const re = /^[A-Za-z. ]+(?:[ .-][A-Za-z]+)*$/;
+    if (value === "" || re.test(value)) {
+        setTxt(value);
+    }
+};
+
 
   return (
     <>
@@ -187,7 +218,7 @@ const Blog = () => {
                       type="text"
                       name="productLink/ASIN"
                       placeholder="Product Link/ASIN"
-                      {...register("productLinkOrASIN", { required: true })}
+                      {...register("productlink", { required: true })}
                       className="form-control mt-3"
                     />
                     {errors.productLinkOrASIN && (
@@ -204,6 +235,7 @@ const Blog = () => {
                       placeholder="Description"
                       name="description"
                       {...register("description", { required: true })}
+                      onChange={onInputChange}
                       className="form-control my-4"
                     />
                     {errors.description && (
