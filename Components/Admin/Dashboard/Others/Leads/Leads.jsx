@@ -21,7 +21,7 @@ const AdminLeads = () => {
             <div className="row">
                     {leadData.map((lead, index) => (
                         <LeadsSingleData
-                            key={info._id}
+                            key={lead._id}
                             lead={lead}
                             leadData={leadData}
                             setLeadData={setLeadData}
