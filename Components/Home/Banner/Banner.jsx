@@ -38,38 +38,39 @@ const Banner = ({ bannerData, footerLink }) => {
   //   e.target.reset();
   // };
 
-  
+
   const onSubmit = async (data) => {
     const Info = {
-        name: data.name,
-        email: data.email,
-        productlink: data.productlink,
-        description: txt,
+      name: data.name,
+      email: data.email,
+      productlink: data.productlink,
+      description: txt,
     };
 
     console.log(Info)
 
     const res = await fetch("http://localhost:5000/leads/post", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(Info),
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(Info),
     });
     if (res.status === 200) {
-        toast.success("Data Sent Successfully");
-        reset();
+      // toast.success("Data Sent Successfully");
+      // reset();
+
     }
-};
+  };
 
 
-const onInputChange = e => {
+  const onInputChange = e => {
     const { value } = e.target;
     console.log('Input value: ', value);
 
     const re = /^[A-Za-z. ]+(?:[ .-][A-Za-z]+)*$/;
     if (value === "" || re.test(value)) {
-        setTxt(value);
+      setTxt(value);
     }
-};
+  };
 
   return (
     <div className="">
@@ -117,7 +118,7 @@ const onInputChange = e => {
       </div>
 
       {/* social link goes here */}
-      <SideLink/>
+      <SideLink />
 
       {/* PopUp Modal */}
       <div

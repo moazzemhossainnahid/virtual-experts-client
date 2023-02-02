@@ -19,7 +19,7 @@ const AdminAddServices = ({ setNumber }) => {
 
   const onSubmit = (data, e) => {
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("img", file);
     formData.append("title", data.title);
     formData.append("subTitle", data.subTitle);
     formData.append("regularReview", data.regularReview);

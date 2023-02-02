@@ -57,12 +57,18 @@ const Order = () => {
           const subject = "You got a new order";
           const id = data._id;
           const msgTemplate = {
-            service_id: "service_jpr5wh2",
-            template_id: "template_445qkqh",
-            user_id: "user_Gj21qvrXg9jH4lGJolreq",
+            service_id: "service_rluy6hk",
+            template_id: "template_os982z1",
+            user_id: "seFfSonT2U8bIGJ8J",
             template_params: {
-              id,
-              subject,
+              orderID:id,
+              name:orderInfo.name,
+              email:orderInfo.email,
+              productLinkOrASIN:orderInfo.productLinkOrASIN,
+              description:orderInfo.description,
+              selectedServices:orderInfo.selectedServices,
+
+
             },
           };
 
@@ -74,7 +80,7 @@ const Order = () => {
             .then((res) => res.json())
             .then((data) => {});
           e.target.reset();
-          return swal("Thank You", "Order Successfully Done.", "success");
+          return swal("Thank You", "Order Place Successfully.", "success");
         }
       });
   };
