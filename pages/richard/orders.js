@@ -221,12 +221,12 @@ const Orders = () => {
                                 {/* modal 2 end */}
                             </div>
                         ))}
-                        <div className="d-flex justify-content-center">
+                        {/* <div className="d-flex justify-content-center">
                             <ReactPaginate
                                 pageCount={totalPage}
                                 onPageChange={handlePageChange}
                             />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
