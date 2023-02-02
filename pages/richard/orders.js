@@ -120,7 +120,7 @@ const Orders = () => {
                         {/*  */}
                         {orderData.map((info, index) => (
                             <div key={info._id}>
-                                <div className="boxShadow bg-gray2 rounded p-3 my-3 d-flex justify-content-between align-items-center">
+                                <div className="boxShadow bg-gray2 rounded p-3 my-3 d-flex  flex-column flex-md-row justify-content-between align-items-center">
                                     <p className="fs-14">
                                         <span className="fw-bold">Order Id</span> - {info._id}
                                     </p>
