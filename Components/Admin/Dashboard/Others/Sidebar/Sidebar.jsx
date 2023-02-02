@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext } from "react";
-import Logo from "../../../../../Assets/Images/others/v-logo.svg";
+import Logo from "../../../../../Assets/Images/others/Logo.svg";
 import { UserContext } from "../../../../../pages/_app";
 
 const Sidebar = () => {
@@ -18,20 +18,19 @@ const Sidebar = () => {
   return (
     <nav style={{backgroundColor:"#828B9A"}} className="vh-100 px-3 text-white">
       <Link href="/" className="d-block mx-auto w-100 text-center">
-
         <Image
           src={Logo}
           alt="virtual-logo"
-          height="100"
+          height="50"
           width="150"
-          className="d-block mx-auto"
+          className="d-block mx-auto py-1"
         />
-
       </Link>
+
       <div className="pt-1">
         <Link
           href="/richard/"
-          className={`d-block py-2 ${
+          className={`d-block py-1 ${
             pathname === "/richard" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
@@ -40,7 +39,7 @@ const Sidebar = () => {
         </Link>
         <Link
           href="/richard/fba"
-          className={`d-block py-2 ${
+          className={`d-block py-1 ${
             pathname === "/richard/fba" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
@@ -49,7 +48,7 @@ const Sidebar = () => {
         </Link>
         <Link
           href="/richard/service"
-          className={`d-block py-2 ${
+          className={`d-block py-1 ${
             pathname === "/richard/service" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
@@ -58,7 +57,7 @@ const Sidebar = () => {
         </Link>
         <Link
           href="/richard/about"
-          className={`d-block py-2 ${
+          className={`d-block py-1 ${
             pathname === "/richard/about" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
@@ -67,16 +66,16 @@ const Sidebar = () => {
         </Link>
         <Link
           href="/richard/blog"
-          className={`d-block py-2 ${
+          className={`d-block py-1 ${
             pathname === "/richard/blog" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
             Blog
           
         </Link>
-        {/* <Link
+        <Link
           href="/richard/orders"
-          className={`d-block py-2 ${
+          className={`d-block py-1 ${
             pathname === "/richard/orders" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
@@ -85,16 +84,16 @@ const Sidebar = () => {
         </Link>
         <Link
           href="/richard/invoice"
-          className={`d-block py-2 ${
+          className={`d-block py-1 ${
             pathname === "/richard/invoice" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
             Invoice
           
-        </Link> */}
+        </Link>
         <Link
           href="/richard/cform"
-          className={`d-block py-2 ${
+          className={`d-block py-1 ${
             pathname === "/richard/cform" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
@@ -103,7 +102,7 @@ const Sidebar = () => {
         </Link>
         <Link
           href="/richard/leads"
-          className={`d-block py-2 ${
+          className={`d-block py-1 ${
             pathname === "/richard/leads" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
@@ -112,7 +111,7 @@ const Sidebar = () => {
         </Link>
         <Link
           href="/richard/footer"
-          className={`d-block py-2 ${
+          className={`d-block py-1 ${
             pathname === "/richard/footer" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
@@ -121,7 +120,7 @@ const Sidebar = () => {
         </Link>
         <Link
           href="/richard/meta"
-          className={`d-block py-2 ${
+          className={`d-block py-1 ${
             pathname === "/richard/meta" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
@@ -130,7 +129,7 @@ const Sidebar = () => {
         </Link>
         <Link
           href="/"
-          className={`d-block py-2 px-3 rounded-3 text-white my-2 navHover`}
+          className={`d-block py-1 px-3 rounded-3 text-white my-2 navHover`}
           onClick={logout}>
           
             Logout
