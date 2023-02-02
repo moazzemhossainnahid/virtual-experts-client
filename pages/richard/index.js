@@ -44,8 +44,7 @@ const Dashboard = () => {
               aria-controls="offcanvasRight"
             />
             <div
-             style={{backgroundColor:"#828B9A"}}
-              className="offcanvas offcanvas-start"
+              className="offcanvas offcanvas-start bg-gray3"
               tabIndex="-1"
               id="offcanvasRight3"
               aria-labelledby="offcanvasRightLabel"

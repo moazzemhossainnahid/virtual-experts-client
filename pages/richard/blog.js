@@ -39,7 +39,7 @@ const Blog = () => {
               aria-controls="offcanvasRight"
             />
             <div
-              className="offcanvas offcanvas-start bg-dark"
+              className="offcanvas offcanvas-start bg-gray3"
               tabIndex="-1"
               id="offcanvasRight2"
               aria-labelledby="offcanvasRightLabel"
