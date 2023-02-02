@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert";
+import SectionTitle from "../Components/Shared/SectionTitile/SectionTitile";
 
 const Order = () => {
   const router = useRouter();

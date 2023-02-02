@@ -9,7 +9,7 @@ const SectionTitle = ({ title, isBgWhite }) => {
         className={`border border-warning my-5 ring-title ${
           isBgWhite ? "bg-white" : "background-color-skyblue"
         }`}
-      >
+      > 
         <h2 className="text-center fs-28 lh-44 p-3 textCenterAfterEffect font-family-roboto">
           {title}
         </h2>
