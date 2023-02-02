@@ -109,7 +109,7 @@ const Orders = () => {
 
                     <div className="col-12 col-md-10 boxShadow bg-gray py-4 vh-100 scroll">
                         {/*  */}
-                        <div className="p-3 d-flex justify-content-center">
+                        <div className="pt-2 d-flex justify-content-center">
                             <h2 className="fs-22 roboto-font-family spacing-3">
                                 Total Orders - {totalData}
                             </h2>

@@ -619,7 +619,7 @@ import {
   );
   
   const MyDocument = ({ info, selectedServices, handelClear }) => (
-    <div className="btn btn-success btn-dark" onClick={handelClear}>
+    <div className="btn btn-dark" onClick={handelClear}>
       <PDFDownloadLink
         document={<MyDoc info={info} selectedServices={selectedServices} />}
         fileName={`${info.clientName}.pdf`}

@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,15 +8,27 @@ const MyDocument = dynamic(import("../../../../Others/PDF"), {
     ssr: false,
 });
 
-const Invoice = ({ serviceData }) => {
+const Invoice = () => {
     const [selectedServices, setSelectedServices] = useState([]);
     const [info, setInfo] = useState({});
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch( "http://localhost:5000/servicesCard" )
+        .then(res => res.json())
+        .then((data) => {
+            setData(data)
+          })
+    },[]);
+
+    // console.log("Services Data",data);
 
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
+
 
     const onSubmit = (data, e) => {
         setInfo(data);
@@ -48,7 +60,7 @@ const Invoice = ({ serviceData }) => {
             />
             <section className="overflow-hidden">
                 <div className="row">
-                    <div className="col-12 col-md-10 mx-auto scroll d-flex justify-content-between align-items-center">
+                    <div className="col-12 mt-n5 col-md-10 mx-auto scroll d-flex justify-content-between align-items-center">
                         <div>
                             <button data-bs-toggle="modal" data-bs-target="#invoiceModal" className="btn btn-warning mx-3" >
                                 Create Invoice
@@ -169,7 +181,7 @@ const Invoice = ({ serviceData }) => {
                                         <option selected disabled value="NULL">
                                             Select Service
                                         </option>
-                                        {serviceData?.map((service) => (
+                                        {data?.map((service) => (
                                             <option key={service._id}>{service.title}</option>
                                         ))}
                                     </select>
@@ -314,15 +326,15 @@ const Invoice = ({ serviceData }) => {
 
 export default Invoice;
 
-export async function getServerSideProps() {
-    const res = await fetch(
-        "http://localhost:5000/servicesCard"
-    );
-    const serviceData = await res.json();
-
-    return {
-        props: {
-            serviceData,
-        },
-    };
-}
+// export async function getServerSideProps() {
+//     const res = await fetch(
+//       "http://localhost:5000/servicesCard"
+//     );
+//     const serviceData = await res.json();
+  
+//     return {
+//       props: {
+//         serviceData,
+//       },
+//     };
+//   }
