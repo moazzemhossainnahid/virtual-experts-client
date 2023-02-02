@@ -9,6 +9,7 @@ import bannerImg from "../../../Assets/Images/home/amazon-fba-consultant-virtual
 import cardHeaderBg from "../../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../../Assets/Images/others/v-logo.svg";
 import SideLink from "./SideLink/SideLink";
+import swal from "sweetalert";
 
 const Banner = ({ bannerData, footerLink }) => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -55,9 +56,22 @@ const Banner = ({ bannerData, footerLink }) => {
       body: JSON.stringify(Info),
     });
     if (res.status === 200) {
-      // toast.success("Data Sent Successfully");
-      // reset();
+      const msgTemplate = {
+        service_id: "service_rluy6hk",
+        template_id: "template_4errde5",
+        user_id: "seFfSonT2U8bIGJ8J",
+        template_params: Info,
+      };
 
+      fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(msgTemplate),
+      })
+        .then((res) => res.json())
+        .then((data) => { });
+      reset();
+      return swal("Thank You", "Lead Place Successfully.", "success");
     }
   };
 
