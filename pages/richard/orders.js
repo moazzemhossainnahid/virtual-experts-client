@@ -129,8 +129,6 @@ const Orders = () => {
                                             <AiFillEye
                                                 size={30}
                                                 className="text-danger p-1 cursor-pointer "
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#topThreeServiceId"
                                             />   View Details
                                         </small>
                                         <MdDelete
