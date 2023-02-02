@@ -24,7 +24,7 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                         return (
                             <div
                                 key={service._id}
-                                className={`${styles.serviceCard} col-12 col-md-4 mx-auto p-4 mt-md-5`}
+                                className={`${styles.serviceCard} col-12 col-md-4 mx-auto mt-md-5`}
                             >
                                 <div className="d-flex justify-content-center">
                                     {service.imgURL ? (
@@ -44,18 +44,20 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                         />
                                     )}
                                 </div>
-                                <h3 className="text-center mt-5 font-family-roboto fs-18 fs-600 lh-28">
-                                    {service.title}
-                                </h3>
-                                <p className="text-center fs-15 lh-30 mt-3 text-color ">
-                                    {service.description}
-                                </p>
-                                <Link
-                                    href="/order"
-                                    className="text-center order-color d-block buttonLink px-3 fs-14">
-                                    Order Now<RiArrowRightSLine />
+                                <div className="boxShadow p-2 rounded">
+                                    <h3 className="text-center mt-5 font-family-roboto fs-18 fs-600 lh-28">
+                                        {service.title}
+                                    </h3>
+                                    <p style={{height:"200px"}} className="text-justify fs-15 lh-24 mt-3 text-color ">
+                                        {service.description}
+                                    </p>
+                                    <Link
+                                        href="/order"
+                                        className="text-center order-color d-block buttonLink px-3 fs-14">
+                                        Order Now<RiArrowRightSLine />
 
-                                </Link>
+                                    </Link>
+                                </div>
                             </div>
                         );
                     })}
