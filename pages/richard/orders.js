@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { AiFillEye, AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
-import { GiCrossedPistols } from "react-icons/gi";
 import { MdDelete } from "react-icons/md";
 import ReactPaginate from "react-paginate";
 import { toast, ToastContainer } from "react-toastify";
@@ -92,7 +92,7 @@ const Orders = () => {
                             aria-labelledby="offcanvasRightLabel"
                         >
                             <div className="offcanvas-header">
-                                <GiCrossedPistols
+                                <AiOutlineClose
                                     size={32}
                                     className="text-reset d-block ms-auto mt-2"
                                     style={{ color: "#fff!important" }}
@@ -126,7 +126,12 @@ const Orders = () => {
                                             data-bs-toggle="modal"
                                             data-bs-target={`#order${index + 100}`}
                                         >
-                                            View Details
+                                            <AiFillEye
+                                                size={30}
+                                                className="text-danger p-1 cursor-pointer "
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#topThreeServiceId"
+                                            />   View Details
                                         </small>
                                         <MdDelete
                                             size={30}
