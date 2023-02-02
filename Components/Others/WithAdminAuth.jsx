@@ -11,7 +11,7 @@ const WithAdminAuth = (Component) => {
     }
     return <Component {...props} />;
   };
-
+ 
   if (Component.getInitialsProps) {
     Auth.getInitialsProps = Component.getInitialsProps;
   }

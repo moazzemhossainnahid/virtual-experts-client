@@ -7,6 +7,7 @@ import { MdDelete } from "react-icons/md";
 import ReactPaginate from "react-paginate";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 
 
 const Orders = () => {

@@ -116,7 +116,7 @@ const Sidebar = () => {
             pathname === "/richard/footer" ? "bg-orange" : ""
           } px-3 rounded-3 text-white my-2 navHover`}>
           
-            Footer
+            Footer  
           
         </Link>
         <Link
