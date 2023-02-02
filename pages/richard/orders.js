@@ -106,17 +106,17 @@ const Orders = () => {
             </div>
           </div>
 
-          <div className="col-12 col-md-10 py-4 vh-100 scroll">
+          <div className="col-12 col-md-10 boxShadow bg-gray py-4 vh-100 scroll">
             {/*  */}
-            <div className="p-3 boxShadow">
-              <h2 className="fs-18 roboto-font-family">
+            <div className="p-3 d-flex justify-content-center">
+              <h2 className="fs-22 roboto-font-family spacing-3">
                 Total Orders - {totalData}
               </h2>
             </div>
             {/*  */}
             {orderData.map((info, index) => (
               <div key={info._id}>
-                <div className="boxShadow p-3 my-3 d-flex justify-content-between align-items-center">
+                <div className="boxShadow bg-gray2 rounded p-3 my-3 d-flex justify-content-between align-items-center">
                   <p className="fs-14">
                     <span className="fw-bold">Order Id</span> - {info._id}
                   </p>
