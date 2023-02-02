@@ -167,8 +167,12 @@ const Orders = () => {
                                                     <span className="fw-bold">Email : </span> {info.email}
                                                 </p>
                                                 <p className="fs-14">
-                                                    <span className="fw-bold">ProductLink/ASIN : </span>{" "}
+                                                    <span className="fw-bold">ProductLink : </span>{" "}
                                                     {info.productLinkOrASIN}
+                                                </p>
+                                                <p className="fs-14">
+                                                    <span className="fw-bold">Description : </span>{" "}
+                                                    {info.description}
                                                 </p>
                                                 <p className="fs-14 fw-bold">Selected Services</p>
                                                 {info.selectedServices.map((service, index) => (

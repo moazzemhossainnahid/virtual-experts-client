@@ -8,6 +8,7 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import swal from "sweetalert";
 import cardHeaderBg from "../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../Assets/Images/others/v-logo.svg";
 import SideLink from "../../Components/Home/Banner/SideLink/SideLink";
@@ -59,8 +60,22 @@ const Blog = () => {
         body: JSON.stringify(Info),
     });
     if (res.status === 200) {
-        toast.success("Data Sent Successfully");
-        reset();
+      const msgTemplate = {
+        service_id: "service_rluy6hk",
+        template_id: "template_4errde5",
+        user_id: "seFfSonT2U8bIGJ8J",
+        template_params: Info,
+      };
+
+      fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(msgTemplate),
+      })
+        .then((res) => res.json())
+        .then((data) => { });
+      reset();
+      return swal("Thank You", "Lead Place Successfully.", "success");
     }
 };
 
