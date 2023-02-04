@@ -29,17 +29,18 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                             >
                                 <div className="card h-100 border-0 borderRadius overflow-hidden">
                                     <div className="background-color-skyblue overflow-hidden">
-                                        {servicesCard.imgURL ? (
+                                        {servicesCard.img ? (
                                             <Image
-                                                src={servicesCard.imgURL}
+                                                src={`${imgType} ; base64, ${servicesCard.img.img}`}
                                                 alt={servicesCard.imgAlt}
                                                 title={servicesCard.imgTitle}
                                                 width={200}
                                                 height={200}
                                             />
+
                                         ) : (
                                             <Image
-                                                src={`${imgType} ; base64, ${servicesCard.img.img}`}
+                                                src={servicesCard.imgURL}
                                                 alt={servicesCard.imgAlt}
                                                 title={servicesCard.imgTitle}
                                                 width={200}

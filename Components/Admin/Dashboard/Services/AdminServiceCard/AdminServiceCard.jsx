@@ -30,9 +30,13 @@ const AdminServiceCard = ({
   const [showSpinner, setShowSpinner] = useState(false);
 
   const handleFileChange = (e) => {
+    console.log(e)
+    console.log(e.target.files)
     const newFile = e.target.files[0];
     setFile(newFile);
   };
+
+  // console.log(file)
 
   const deleteService = (id) => {
     fetch(`http://localhost:5000/servicesCard/delete/${id}`, {
@@ -84,7 +88,7 @@ const AdminServiceCard = ({
     };
 
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("img", file);
     formData.append("_id", _id);
     formData.append("title", newTitle);
     formData.append("subTitle", newSubTitle);
@@ -125,13 +129,24 @@ const AdminServiceCard = ({
   return (
     <div className="col-md-6" key={servicesCard._id}>
       <div className="my-3 mx-1 p-3 border bg-gray2 rounded-3">
-        <Image
-          src={`${imgType} ; base64, ${servicesCard.img.img}`}
-          title={imgTitle}
-          alt={imgAlt}
-          width={70}
-          height={70}
-        />
+        {servicesCard.img ? (
+          <Image
+            src={`${imgType} ; base64, ${servicesCard.img.img}`}
+            alt={servicesCard.imgAlt}
+            title={servicesCard.imgTitle}
+            width={100}
+            height={100}
+          />
+
+        ) : (
+          <Image
+            src={servicesCard.imgURL}
+            alt={servicesCard.imgAlt}
+            title={servicesCard.imgTitle}
+            width={100}
+            height={100}
+          />
+        )}
         <div className="boxShadow p-3 borderRadius" style={{ height: "270px" }}>
           <h6 className="fs-18">{servicesCard.title}</h6>
           <h6 className="fs-14 mt-2">{servicesCard.subTitle}</h6>
