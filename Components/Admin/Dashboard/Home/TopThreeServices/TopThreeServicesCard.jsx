@@ -32,7 +32,10 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
     formData.append("_id", _id);
     formData.append("description", newDescription);
 
-    console.log(formData)
+    // console.log(formData.entries())
+    for (var key of formData.entries()) {
+      console.log(key[0] + ', ' + key[1]);
+  }
 
     if (file === null) {
       fetch("http://localhost:5000/topServices/update", {
@@ -120,7 +123,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
             <div className="modal-body">
               <form onSubmit={handleSubmit(handleUpdateInfo)}>
                 <textarea
-                  rows="5"
+                  rows="3"
                   cols="5"
                   defaultValue={serviceCard.title}
                   {...register("title")}
@@ -129,7 +132,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
                   className="form-control mb-2"
                 ></textarea>
                 <textarea
-                  rows="5"
+                  rows="7"
                   cols="5"
                   defaultValue={serviceCard.description}
                   {...register("description")}
@@ -137,13 +140,13 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
                   id="description"
                   className="form-control mb-2"
                 ></textarea>
-                <input
+                {/* <input
                   type="file"
                   className="form-control mb-2"
                   name="file"
                   onChange={handleFileChange}
                   id="img"
-                />
+                /> */}
                 <input
                   type="submit"
                   className="btn btn-primary"
