@@ -26,11 +26,13 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
       uploadImage: false,
     };
 
-    const formData = new FormData();
+    let formData = new FormData();
     formData.append("file", file);
     formData.append("title", newTitle);
     formData.append("_id", _id);
     formData.append("description", newDescription);
+
+    console.log(formData)
 
     if (file === null) {
       fetch("http://localhost:5000/topServices/update", {
@@ -40,16 +42,20 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data)
           toast.success("Updated Successful");
           setNumber((prvState) => prvState + 1);
         });
+
     } else {
+
       fetch("http://localhost:5000/topServices/update", {
         method: "PUT",
         body: formData,
       })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data)
           toast.success("Updated Successful");
           setNumber((prvState) => prvState + 1);
         });
@@ -70,7 +76,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
       <div className="col-12 col-md-6 my-2" key={serviceCard._id}>
         <div className="boxShadow bg-gray2 rounded p-3 h-100">
           <Image
-          className="d-flex justify-content-center mx-auto w-25 h-25"
+            className="d-flex justify-content-center mx-auto w-25 h-25"
             src={`${imgType} ; base64, ${serviceCard.img.img}`}
             alt="Loading..."
             height="150"
@@ -81,13 +87,13 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
           <h6 className="fs-18">Subtitle</h6>
           <p>{serviceCard.description}</p>
           <div className="d-flex justify-content-end">
-          <AiFillEdit
-            size={30}
-            className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
-            data-bs-toggle="modal"
-            data-bs-target={`#topService${index + 1}`}
-          />
-        </div>
+            <AiFillEdit
+              size={30}
+              className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+              data-bs-toggle="modal"
+              data-bs-target={`#topService${index + 1}`}
+            />
+          </div>
         </div>
       </div>
 

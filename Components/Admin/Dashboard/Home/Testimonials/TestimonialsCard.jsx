@@ -47,6 +47,7 @@ const TestimonialsCard = ({ testimonial, index, setNumber }) => {
     } else {
       fetch("http://localhost:5000/testimonials/update", {
         method: "PUT",
+        headers: { "content-type": "application/json" },
         body: formData,
       })
         .then((res) => res.json())
