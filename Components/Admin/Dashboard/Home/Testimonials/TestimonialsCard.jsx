@@ -3,13 +3,31 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 
-const TestimonialsCard = ({ testimonial, index, setNumber }) => {
+const TestimonialsCard = ({ testimonial, testimonials, setTestimonials, index, setNumber }) => {
   const { register, handleSubmit } = useForm();
   const [file, setFile] = useState(null);
 
   const handleFileChange = (e) => {
     const newFile = e.target.files[0];
     setFile(newFile);
+  };
+
+
+  const deleteTestimonial = (id) => {
+    fetch(`http://localhost:5000/testimonials/delete/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result) {
+          toast.error("Testimonial Delete Successfully");
+          const newTesimonialCard = testimonials.filter(
+            (testiCard) => testiCard._id !== id
+          );
+          setTestimonials(newTesimonialCard);
+          setNumber((prevState) => prevState + 1);
+        }
+      });
   };
 
   const handleUpdateInfo = (data) => {

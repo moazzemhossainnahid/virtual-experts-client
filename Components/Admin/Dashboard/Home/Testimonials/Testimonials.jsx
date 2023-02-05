@@ -65,6 +65,8 @@ const AdminTestimonials = () => {
             {testimonials.map((testimonial, index) => (
               <TestimonialsCard
                 testimonial={testimonial}
+                testimonials={testimonials}
+                setTestimonials={setTestimonials}
                 key={testimonial._id}
                 index={index}
                 setNumber={setNumber}
