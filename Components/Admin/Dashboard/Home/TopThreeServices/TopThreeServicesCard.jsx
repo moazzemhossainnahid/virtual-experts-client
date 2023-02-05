@@ -33,9 +33,9 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
     formData.append("description", newDescription);
 
     // console.log(formData.entries())
-    for (var key of formData.entries()) {
-      console.log(key[0] + ', ' + key[1]);
-  }
+  //   for (var key of formData.entries()) {
+  //     console.log(key[0] + ', ' + key[1]);
+  // }
 
     if (file === null) {
       fetch("http://localhost:5000/topServices/update", {
@@ -45,7 +45,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
+          // console.log(data)
           toast.success("Updated Successful");
           setNumber((prvState) => prvState + 1);
         });
@@ -58,7 +58,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
+          // console.log(data)
           toast.success("Updated Successful");
           setNumber((prvState) => prvState + 1);
         });
@@ -140,13 +140,13 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
                   id="description"
                   className="form-control mb-2"
                 ></textarea>
-                {/* <input
+                <input
                   type="file"
                   className="form-control mb-2"
                   name="file"
                   onChange={handleFileChange}
                   id="img"
-                /> */}
+                />
                 <input
                   type="submit"
                   className="btn btn-primary"
