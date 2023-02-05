@@ -111,7 +111,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Edit Banner
+                Edit Card
               </h5>
               <button
                 type="button"

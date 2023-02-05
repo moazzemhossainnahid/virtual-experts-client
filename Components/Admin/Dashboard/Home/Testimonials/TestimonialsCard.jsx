@@ -144,13 +144,13 @@ const TestimonialsCard = ({ testimonial, index, setNumber }) => {
                   id="review"
                   className="form-control mb-2"
                 ></textarea>
-                <input
+                {/* <input
                   type="file"
                   className="form-control mb-2"
                   name="file"
                   onChange={handleFileChange}
                   id="img"
-                />
+                /> */}
                 <input
                   type="submit"
                   className="btn btn-primary"
