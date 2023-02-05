@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlinePlus } from "react-icons/ai";
+import { toast } from "react-toastify";
 import Spinner from "../../../../Others/Spinner";
 import TestimonialsCard from "./TestimonialsCard";
 
@@ -8,7 +9,7 @@ const AdminTestimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [showSpinner, setShowSpinner] = useState(false);
   const [number, setNumber] = useState(0);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [file, setFile] = useState(null);
 
   useEffect(() => {
@@ -43,6 +44,10 @@ const AdminTestimonials = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        // console.log(data);
+        toast.success(data);
+        reset();
+        window.location.reload();
         // setNumber((prvState) => prvState + 1);
       });
   };
