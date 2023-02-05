@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { AiFillEdit } from "react-icons/ai";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const TestimonialsCard = ({ testimonial, testimonials, setTestimonials, index, setNumber }) => {
   const { register, handleSubmit } = useForm();
@@ -105,6 +106,12 @@ const TestimonialsCard = ({ testimonial, testimonials, setTestimonials, index, s
               data-bs-toggle="modal"
               data-bs-target={`#testimonial${index + 1}`}
             />
+            <AiFillDelete
+              size={30}
+              className="text-danger mx-1 bg-dark rounded-circle p-1 cursor-pointer "
+              data-bs-toggle="modal"
+              data-bs-target={`#testimonialDelete${index + 1}`}
+            />
           </div>
         </div>
       </div>
@@ -185,7 +192,7 @@ const TestimonialsCard = ({ testimonial, testimonials, setTestimonials, index, s
       {/* For Delete Card data Start */}
       <div
         className="modal fade"
-        id={`cardDelete${index + 1}`}
+        id={`testimonialDelete${index + 1}`}
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
