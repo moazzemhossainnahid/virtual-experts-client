@@ -6,11 +6,7 @@ import { toast } from "react-toastify";
 const AdminAddServices = ({ setNumber }) => {
   const [file, setFile] = useState(null);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   const handleFileChange = (e) => {
     const newFile = e.target.files[0];
@@ -18,8 +14,9 @@ const AdminAddServices = ({ setNumber }) => {
   };
 
   const onSubmit = (data, e) => {
+
     const formData = new FormData();
-    formData.append("img", file);
+    formData.append("file", file);
     formData.append("title", data.title);
     formData.append("subTitle", data.subTitle);
     formData.append("regularReview", data.regularReview);

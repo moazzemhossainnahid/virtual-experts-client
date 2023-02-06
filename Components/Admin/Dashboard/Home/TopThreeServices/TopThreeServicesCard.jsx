@@ -33,9 +33,9 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
     formData.append("description", newDescription);
 
     // console.log(formData.entries())
-  //   for (var key of formData.entries()) {
-  //     console.log(key[0] + ', ' + key[1]);
-  // }
+    //   for (var key of formData.entries()) {
+    //     console.log(key[0] + ', ' + key[1]);
+    // }
 
     if (file === null) {
       fetch("http://localhost:5000/topServices/update", {
