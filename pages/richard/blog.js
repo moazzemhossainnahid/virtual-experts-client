@@ -4,6 +4,7 @@ import { BiMenu } from "react-icons/bi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AdminAddBlogs from "../../Components/Admin/Dashboard/Blogs/AdminAddBlogs/AdminAddBlogs";
+import AdminBlogCard from "../../Components/Admin/Dashboard/Blogs/AdminServiceCard/AdminServiceCard";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
@@ -80,7 +81,7 @@ const Blog = () => {
                       imgType = "data:image/jpg";
                     }
                     return (
-                      <AdminServiceCard
+                      <AdminBlogCard
                         key={servicesCard._id}
                         servicesCard={servicesCard}
                         imgType={imgType}

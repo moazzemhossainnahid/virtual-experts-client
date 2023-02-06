@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
-const AdminServiceCard = ({
+const AdminBlogCard = ({
   imgType,
   servicesCard,
   index,
@@ -440,4 +440,4 @@ const AdminServiceCard = ({
   );
 };
 
-export default AdminServiceCard;
+export default AdminBlogCard;
