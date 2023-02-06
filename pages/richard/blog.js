@@ -3,6 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AdminAddBlogs from "../../Components/Admin/Dashboard/Blogs/AdminAddBlogs/AdminAddBlogs";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
@@ -45,7 +46,7 @@ const Blog = () => {
               aria-labelledby="offcanvasRightLabel"
             >
               <div className="offcanvas-header">
-              <AiOutlineClose
+                <AiOutlineClose
                   size={32}
                   className="text-reset d-block ms-auto mt-2"
                   style={{ color: "#fff!important" }}
@@ -63,6 +64,44 @@ const Blog = () => {
             <AdminWhyWeAreUnique />
             <AdminTeamSection />
             <AdminTeams /> */}
+            <div className="p-3 boxShadow bg-gray rounded me-4 mb-5">
+              <AdminAddBlogs setNumber={setNumber} />
+              {!showSpinner ? (
+                <Spinner />
+              ) : (
+                <div className="row">
+                  {servicesCardData.map((servicesCard, index) => {
+                    let imgType;
+                    if (servicesCard.img.contentType === "image/svg+xml") {
+                      imgType = "data:image/svg+xml";
+                    } else if (servicesCard.img.contentType === "image/png") {
+                      imgType = "data:image/png";
+                    } else {
+                      imgType = "data:image/jpg";
+                    }
+                    return (
+                      <AdminServiceCard
+                        key={servicesCard._id}
+                        servicesCard={servicesCard}
+                        imgType={imgType}
+                        index={index}
+                        servicesCardData={servicesCardData}
+                        setServicesCardData={setServicesCardData}
+                        setNumber={setNumber}
+                      />
+                    );
+                  })}
+                </div>
+              )}
+              <div className="d-flex justify-content-end">
+                <GoPlus
+                  size={30}
+                  className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
+                  data-bs-toggle="modal"
+                  data-bs-target="#addServiceModal"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
