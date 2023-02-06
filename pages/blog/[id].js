@@ -221,7 +221,7 @@ const BlogDetails = () => {
         </div>
       </div>
 
-      <div className={`position-fixed left-0 top-30`}>
+      <div className={`position-fixed bg-light rounded m-3 shadow-lg py-3 left-0 top-30`}>
         <FacebookShareButton
           url="https://virtualexperts.net/"
           className="d-block p-2"
@@ -229,12 +229,12 @@ const BlogDetails = () => {
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
 
-        <LinkedinShareButton
+        {/* <LinkedinShareButton
           url="https://virtualexperts.net/"
           className="d-block p-2"
         >
           <LinkedinIcon size={32} round={true} />
-        </LinkedinShareButton>
+        </LinkedinShareButton> */}
 
         {/* <PinterestShareButton
           url="https://virtualexperts.net/"
