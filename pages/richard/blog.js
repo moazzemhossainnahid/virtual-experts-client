@@ -1,15 +1,41 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
+import { GoPlus } from "react-icons/go";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AdminAddBlogs from "../../Components/Admin/Dashboard/Blogs/AdminAddBlogs/AdminAddBlogs";
 import AdminBlogCard from "../../Components/Admin/Dashboard/Blogs/AdminServiceCard/AdminServiceCard";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
+import Spinner from "../../Components/Others/Spinner";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
 
 const Blog = () => {
+  const [serviceBanner, setServiceBanner] = useState({});
+  const [servicesCardData, setServicesCardData] = useState([]);
+  const [serviceCardHeader, setServiceCardHeader] = useState({});
+  const [showSpinner, setShowSpinner] = useState(false);
+  const [number, setNumber] = useState(0);
+
+  useEffect(() => {
+    setShowSpinner(true);
+    fetch("http://localhost:5000/whatWeDo")
+      .then((res) => res.json())
+      .then((data) => setServiceBanner(data));
+
+    fetch("http://localhost:5000/serviceCardHeader")
+      .then((res) => res.json())
+      .then((data) => setServiceCardHeader(data));
+
+    fetch("http://localhost:5000/servicesCard")
+      .then((res) => res.json())
+      .then((data) => {
+        setServicesCardData(data);
+      });
+    setServiceBanner(false);
+  }, [number]);
   return (
     <>
       <Head>

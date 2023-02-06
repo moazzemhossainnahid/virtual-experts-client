@@ -45,7 +45,7 @@ const AdminAddBlogs = ({ setNumber }) => {
   return (
     <>
       <div className="d-flex justify-content-center mb-4">
-        <h6 className="fs-24 spacing-3">Service Card</h6>
+        <h6 className="fs-24 spacing-3">Blog Card</h6>
       </div>
       {/* For Add Card data Start */}
       <div
