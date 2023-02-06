@@ -19,30 +19,6 @@ const Blog = () => {
   const { register, handleSubmit, formState: { errors }, reset} = useForm();
   const [txt, setTxt] = useState("");
 
-  // const onSubmit = async (data, e) => {
-  //   data.subject = `You got a new mail from ${data.name}`;
-  //   const msgTemplate = {
-  //     service_id: "service_jpr5wh2",
-  //     template_id: "template_445qkqh",
-  //     user_id: "user_Gj21qvrXg9jH4lGJolreq",
-  //     template_params: data,
-  //   };
-
-  //   const sendMessage = async () => {
-  //     const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-  //       method: "POST",
-  //       headers: { "content-type": "application/json" },
-  //       body: JSON.stringify(msgTemplate),
-  //     });
-  //     if (res.status === 200) {
-  //       toast.success("Message Sent Successfully");
-  //     }
-  //   };
-
-  //   sendMessage();
-  //   e.target.reset();
-  // };
-
   
   const onSubmit = async (data) => {
     const Info = {
