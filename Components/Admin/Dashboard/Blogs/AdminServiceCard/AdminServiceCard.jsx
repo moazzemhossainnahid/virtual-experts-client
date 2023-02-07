@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
-import JoditEditor from 'jodit-react';
 
 const AdminBlogCard = ({
   imgType,
@@ -13,9 +12,6 @@ const AdminBlogCard = ({
   setBlogsCardData,
   setNumber,
 }) => {
-  const editor = useRef(null);
-  const [content, setContent] = useState('');
-
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
 
@@ -117,7 +113,7 @@ const AdminBlogCard = ({
         <div className="boxShadow p-3 borderRadius" style={{ height: "270px" }}>
           <h6 className="fs-20 font-bold">{blogsCard.title}</h6>
           <h6 className="fs-16 mt-3">Author: {blogsCard.writerName}</h6>
-          <h6 className="fs-14 mt-3">{blogsCard.description}</h6>
+          <h6 className="fs-14 mt-3">{blogsCard.description.slice(0,100)}</h6>
           <h6 className="fs-14 mt-5">Published Date: {original_date}</h6>
           <div className="d-flex justify-content-end">
             <AiFillEdit
@@ -210,27 +206,6 @@ const AdminBlogCard = ({
                       className="form-control"
                     />
                   </div>
-
-                  <div className="form-group">
-                    <label htmlFor="description">Description</label>
-                    {/* <textarea
-                      rows="5"
-                      cols="5"
-                      defaultValue={blogsCard.description}
-                      name="description"
-                      id="description"
-                      className="form-control"
-                      {...register("description")}
-                    ></textarea> */}
-                    <JoditEditor
-                      ref={editor}
-                      value={content}
-                      // tabIndex={1} // tabIndex of textarea
-                      onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
-
-                    />
-                  </div>
-
 
                   <div className="form-group mt-3">
                     <input

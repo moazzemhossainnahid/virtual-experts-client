@@ -1,259 +1,276 @@
-// import React from "react";
-// import React, { useState } from 'react';
-// import { useForm } from 'react-hook-form';
-// import { useRouter } from "next/router";
-// import ReactHtmlParser from "react-html-parser";
-// import swal from 'sweetalert';
+import Image from "next/image";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { toast } from "react-toastify";
 
-// const AdminUpdateBlog = () => {
-//     const { register, handleSubmit, reset } = useForm();
-//     const [btnSpinner, setBtnSpinner] = useState(false);
-//     const [get, setGet] = useState(false);
-//     const { id } = useParams();
-//     const [title, setTitle] = useState();
-//     const [desc, setDesc] = useState();
-//     const [cate, setCate] = useState();
-//     const [img, setImg] = useState('');
-//     const [price, setPrice] = useState();
-//     const [link, setLink] = useState();
-
-//     const { data: products, refetch, isLoading } = useQuery(["Products"], () =>
-//         primaryAxios.get(`/products?_id=${id}`)
-//     );
-
-//     const product = products?.data && products?.data?.data?.Products[0];
-//     // console.log(product);
-
-//     if (isLoading) {
-//         return <Loading></Loading>;
-//     };
+const AdminUpdateBlog = ({
+  imgType,
+  blogsCard,
+  index,
+  blogsCardData,
+  setBlogsCardData,
+  setNumber,
+}) => {
+  const [file, setFile] = useState(null);
+  const { register, handleSubmit } = useForm();
 
 
-//     const handleUpdateProduct = () => {
-//         setBtnSpinner(true);
-//         const productTitle = title;
-//         const productImage = img;
-//         const productPrice = price;
-//         const productCategory = cate;
-//         const productDesc = desc;
-//         const BuyAmazon = link;
-//         const productData = { productTitle, productPrice, productCategory, productImage, productDesc, BuyAmazon };
-
-//         console.log(productData);
-//         swal({
-//             title: "Are you sure?",
-//             text: "Once updated, you will not be able to recover this imaginary file!",
-//             icon: "warning",
-//             buttons: true,
-//             dangerMode: true,
-//         }).then((willDelete) => {
-//             if (willDelete) {
-//                 (async () => {
-//                     const { data } = await primaryAxios.patch(`/products?_id=${product?._id}`, productData);
-//                     // console.log(data);
-//                     if (data?.data?.modifiedCount > 0) {
-//                         swal("The Product has been successfully Saved", {
-//                             icon: "success",
-//                             className: "rounded-xl",
-//                         });
-
-//                         reset();
-//                         refetch();
-//                         window.location.href="/dashboard/addashboard";
-//                     }
-//                 })();
-//             } else {
-//                 swal("Your imaginary file is safe!");
-//             }
-//         })
-//     };
-
-//     const handleTitleInput = (e) => {
-//         setTitle(e.target.value)
-//     }
-
-//     const handleDescInput = (e) => {
-//         setDesc(e.target.value)
-//     }
-
-//     const handleCateInput = (e) => {
-//         setCate(e.target.value)
-//     }
-
-//     const handleImgInput = (e) => {
-//         setImg(e.target.value)
-//     }
-
-//     const handlePriceInput = (e) => {
-//         setPrice(e.target.value)
-//     }
-
-//     const handleLinkInput = (e) => {
-//         setLink(e.target.value)
-//     }
+  var date = new Date(blogsCard?.createdAt)
+  var original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
 
 
+  // console.log(original_date);
+
+  const handleFileChange = (e) => {
+    // console.log(e)
+    console.log(e.target.files)
+    const newFile = e.target.files[0];
+    setFile(newFile);
+  };
+
+  // console.log(file)
+
+  const deleteBlog = (id) => {
+    fetch(`http://localhost:5000/blogs/delete/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result) {
+          toast.error("Blog Delete Successfully");
+          const newblogsCard = blogsCardData.filter(
+            (blog) => blog._id !== id
+          );
+          setBlogsCardData(newblogsCard);
+          setNumber((prevState) => prevState + 1);
+        }
+      });
+  };
+
+  const onSubmitEdit = (data) => {
+    const newTitle = data.title || blogsCard.title;
+    const newDescription = data.description || blogsCard.description;
+    const newWriterName = data.writerName || blogsCard.writerName;
+    const newImgAlt = data.imgAlt || blogsCard.imgAlt;
+    const _id = blogsCard._id;
+
+    const newData = {
+      _id: _id,
+      title: newTitle,
+      description: newDescription,
+      writerName: newWriterName,
+      imgAlt: newImgAlt,
+      img: blogsCard.img,
+      uploadImage: false,
+    };
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("_id", _id);
+    formData.append("title", newTitle);
+    formData.append("description", newDescription);
+    formData.append("writerName", newWriterName);
+    formData.append("imgAlt", newImgAlt);
+
+    if (file === null) {
+      fetch("http://localhost:5000/blogs/update", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          toast.success("Blog Update Successfully");
+          setNumber((prvState) => prvState + 1);
+        });
+    } else {
+      fetch("http://localhost:5000/blogs/update", {
+        method: "PUT",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          toast.success("Blog Update Successfully");
+          setNumber((prvState) => prvState + 1);
+        });
+    }
+  };
+
+  return (
+    <div className="col-md-6" key={blogsCard._id}>
+      <div className="my-3 mx-1 p-3 border bg-gray2 rounded-3">
+        {blogsCard.img && (
+          <Image
+            src={`${imgType} ; base64, ${blogsCard.img.img}`}
+            alt={blogsCard.imgAlt}
+            title={blogsCard.imgTitle}
+            width={100}
+            height={100}
+          />
+
+        )}
+        <div className="boxShadow p-3 borderRadius" style={{ height: "270px" }}>
+          <h6 className="fs-20 font-bold">{blogsCard.title}</h6>
+          <h6 className="fs-16 mt-3">Author: {blogsCard.writerName}</h6>
+          <h6 className="fs-14 mt-3">{blogsCard.description.slice(0,100)}</h6>
+          <h6 className="fs-14 mt-5">Published Date: {original_date}</h6>
+          <div className="d-flex justify-content-end">
+            <AiFillEdit
+              size={30}
+              className="text-warning bg-dark mx-1 rounded-circle p-1 cursor-pointer "
+              data-bs-toggle="modal"
+              data-bs-target={`#blog${index + 1}`}
+            />
+            <AiFillDelete
+              size={30}
+              className="text-danger mx-1 bg-dark rounded-circle p-1 cursor-pointer "
+              data-bs-toggle="modal"
+              data-bs-target={`#blogDelete${index + 1}`}
+            />
+          </div>
+
+        </div>
+
+        {/* For Edit Card data Start */}
+        <div
+          className="modal fade"
+          id={`blog${index + 1}`}
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  EDIT - {blogsCard.title}
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="modal-body">
+                <form onSubmit={handleSubmit(onSubmitEdit)}>
+                  <div className="form-group">
+                    <label htmlFor="title">Title</label>
+                    <textarea
+                      rows="2"
+                      cols="5"
+                      defaultValue={blogsCard.title}
+                      name="title"
+                      id="title"
+                      className="form-control"
+                      {...register("title")}
+                    ></textarea>
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="writerName">Writer Name</label>
+                    <input
+                      type="text"
+                      defaultValue={blogsCard.writerName}
+                      {...register("writerName")}
+                      name="writerName"
+                      id="writerName"
+                      autoComplete="off"
+                      className="form-control"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="img">Image</label>
+                    <input
+                      type="file"
+                      name="img"
+                      id="img"
+                      className="form-control"
+                      {...register("img")}
+                      onChange={handleFileChange}
+                    />
+                  </div>
 
 
-//     const handleGetValues = (e) => {
-//         e.preventDefault();
-//         console.log(product);
-//         setTitle(product?.productTitle);
-//         setDesc(product?.productDesc);
-//         setCate(product?.productCategory);
-//         setImg(product?.productImage);
-//         setPrice(product?.productPrice);
-//         setLink(product?.BuyAmazon);
-//         setGet(true);
-//     }
+                  <div className="form-group">
+                    <label htmlFor="imgAlt">Image Alt</label>
+                    <input
+                      type="text"
+                      defaultValue={blogsCard.imgAlt}
+                      {...register("imgAlt")}
+                      name="imgAlt"
+                      id="imgAlt"
+                      autoComplete="off"
+                      className="form-control"
+                    />
+                  </div>
 
-//     return (
-//         <div className=" bg-gray-200 text-left h-full w-full lg:pt-20 -mt-16">
-//             <div className="w-full bg-gray-200 flex items-center justify-center my-12">
-//                 <div className="bg-white shadow rounded py-12 lg:px-28 px-8">
-//                     <p className="md:text-3xl text-xl font-bold leading-7 text-center text-gray-700">
-//                         Update <span className="text-primary">{product?.productTitle}</span> Product
-//                     </p>
-//                     <form
-//                         onSubmit={handleSubmit(handleUpdateProduct)}
-//                         className="mb-32"
-//                         action=""
-//                     >
-//                         <div className="md:flex items-center mt-12">
-//                             <div className="md:w-72 flex flex-col">
-//                                 <label className="text-base font-semibold leading-none text-gray-800">
-//                                     Product Name
-//                                 </label>
-//                                 <input
-//                                     {...register('productTitle')}
-//                                     defaultValue={title}
-//                                     onChange={handleTitleInput}
-//                                     required
-//                                     tabIndex={0}
-//                                     arial-label="Please input name"
-//                                     type="name"
-//                                     className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
-//                                     placeholder="Please Input Product Name"
-//                                 />
-//                             </div>
-//                             <div className="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
-//                                 <label className="text-base font-semibold leading-none text-gray-800">
-//                                     Product Category
-//                                 </label>
+                  <div className="form-group mt-3">
+                    <input
+                      type="submit"
+                      name="submit"
+                      className="btn btn-primary"
+                      value="Save Changes"
+                      data-bs-dismiss="modal"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* For Edit Card data Finish */}
 
-//                                 <select {...register('productCategory')} defaultValue={cate} onChange={handleCateInput} className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500">
-//                                     <option disabled selected>Select Product Category</option>
-//                                     <option>Wind Chimes</option>
-//                                     <option>Urinal Screen</option>
-//                                     <option>Pest Repeller</option>
-//                                     <option>Wrap Organizer</option>
-//                                     <option>Scrab Brush</option>
-//                                 </select>
-//                             </div>
-//                         </div>
+        {/* For Delete Card data Start */}
+        <div
+          className="modal fade"
+          id={`blogDelete${index + 1}`}
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  DELETE - {blogsCard.title}
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="modal-body">
+                <p>Are you want to delete this?</p>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  data-bs-dismiss="modal"
+                  onClick={() => deleteBlog(blogsCard._id)}
+                >
+                  Yes
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  data-bs-dismiss="modal"
+                >
+                  No
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* For Delete Card data Finish */}
+      </div>
+    </div>
+  );
+};
 
-//                         <div className="md:flex items-center mt-12">
-//                             <div className="md:w-72 flex flex-col">
-//                                 <label className="text-base font-semibold leading-none text-gray-800">
-//                                     Product Price
-//                                 </label>
-//                                 <input
-//                                     {...register('productPrice')}
-//                                     value={price}
-//                                     required
-//                                     onChange={handlePriceInput}
-//                                     tabIndex={0}
-//                                     arial-label="Please input price"
-//                                     type="name"
-//                                     className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
-//                                     placeholder="Please Input Product Price"
-//                                 />
-//                             </div>
-//                             <div className="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
-//                                 <label className="text-base font-semibold leading-none text-gray-800">
-//                                     Product Image
-//                                 </label>
-
-//                                 {
-//                                     img === '' ?
-//                                         <input
-//                                             {...register('photoURL')}
-//                                             defaultValue={img}
-//                                             onChange={handleImgInput}
-//                                             required
-//                                             tabIndex={0}
-//                                             arial-label="Please Input Price"
-//                                             type="file"
-//                                             className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
-//                                             placeholder="Please Input Product Image"
-//                                         /> :
-//                                         <div className="w-full h-32 rounded">
-//                                             <img src={img} alt="" className="object-cover h-full rounded" />
-//                                         </div>
-//                                 }
-
-//                             </div>
-//                         </div>
-
-//                         <div className="md:flex items-center mt-12">
-//                             <div className="md:w-full flex flex-col">
-//                                 <label className="text-base font-semibold leading-none text-gray-800">
-//                                     Amazon Link
-//                                 </label>
-//                                 <input
-//                                     {...register('amazonLink')}
-//                                     defaultValue={link}
-//                                     required
-//                                     onChange={handleLinkInput}
-//                                     tabIndex={0}
-//                                     arial-label="Please input email address"
-//                                     type="name"
-//                                     className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
-//                                     placeholder="Please Input Amazon Link"
-//                                 />
-//                             </div>
-//                         </div>
-
-//                         <div>
-//                             <div className="w-full flex flex-col mt-8">
-//                                 <label className="text-base font-semibold leading-none text-gray-800">
-//                                     Product Description
-//                                 </label>
-//                                 <textarea
-//                                     {...register("productDescription")}
-//                                     defaultValue={desc}
-//                                     required
-//                                     onChange={handleDescInput}
-//                                     tabIndex={0}
-//                                     aria-label="leave a message"
-//                                     type="text"
-//                                     className="h-36 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200  resize-none"
-//                                     placeholder="Input Product Description"
-//                                 />
-//                             </div>
-//                         </div>
-
-//                         <div className="flex items-center justify-around w-full">
-//                             <button
-//                                 onClick={handleGetValues}
-//                                 type="submit"
-//                                 className="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-primary rounded hover:bg-warning focus:ring-2 focus:ring-offset-2 focus:ring-secondary focus:outline-none"
-//                             >
-//                                 get Product Values
-//                             </button>
-//                             <button
-//                                 disabled={!get || btnSpinner}
-//                                 type="submit"
-//                                 className="mt-9 text-base disabled:bg-gray-300 font-semibold leading-none text-white py-4 px-10 bg-warning rounded hover:bg-primary focus:ring-2 focus:ring-offset-2 focus:ring-secondary focus:outline-none"
-//                             >
-//                                 Update Product
-//                             </button>
-//                         </div>
-//                     </form>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default AdminUpdateBlog;
+export default AdminUpdateBlog;
