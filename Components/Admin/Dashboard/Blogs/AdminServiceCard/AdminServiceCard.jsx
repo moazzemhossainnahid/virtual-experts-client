@@ -103,24 +103,24 @@ const AdminBlogCard = ({
     formData.append("imgAlt", newImgAlt);
 
     if (file === null) {
-      fetch("http://localhost:5000/servicesCard/update", {
+      fetch("http://localhost:5000/blogs/update", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newData),
       })
         .then((res) => res.json())
         .then((data) => {
-          toast.success("Service Edit Successfully");
+          toast.success("Blog Edit Successfully");
           setNumber((prvState) => prvState + 1);
         });
     } else {
-      fetch("http://localhost:5000/servicesCard/update", {
+      fetch("http://localhost:5000/blogs/update", {
         method: "PUT",
         body: formData,
       })
         .then((res) => res.json())
         .then((data) => {
-          toast.success("Service Edit Successfully");
+          toast.success("Blog Edit Successfully");
           setNumber((prvState) => prvState + 1);
         });
     }

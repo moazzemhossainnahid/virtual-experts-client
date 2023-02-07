@@ -5,5 +5,12 @@
         "imgURL": "https://res.cloudinary.com/dhhcesyn3/image/upload/v1630496515/v-expert/Blog/upc-code-for-amazon_bdghty.png",
         "imgAlt": "upc-code-for-amazon",
         "writerName": "Richard"
+    },
+    {
+        "title":"Amazon Product Review",
+        "description":"About Amazon Product Review",
+        "imgURL": "https://res.cloudinary.com/dhhcesyn3/image/upload/v1630496516/v-expert/Blog/Amazon-Product-Review-The-ultimate-guide_uhpi2s.png",
+        "imgAlt": "upc-code-for-amazon",
+        "writerName": "Nahid"
     }
 ]

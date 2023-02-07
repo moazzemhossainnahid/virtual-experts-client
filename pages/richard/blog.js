@@ -13,28 +13,17 @@ import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
 
 const Blog = () => {
-  const [serviceBanner, setServiceBanner] = useState({});
-  const [servicesCardData, setServicesCardData] = useState([]);
-  const [serviceCardHeader, setServiceCardHeader] = useState({});
+  const [blogsCardData, setBlogsCardData] = useState([]);
   const [showSpinner, setShowSpinner] = useState(false);
   const [number, setNumber] = useState(0);
 
   useEffect(() => {
     setShowSpinner(true);
-    fetch("http://localhost:5000/whatWeDo")
-      .then((res) => res.json())
-      .then((data) => setServiceBanner(data));
-
-    fetch("http://localhost:5000/serviceCardHeader")
-      .then((res) => res.json())
-      .then((data) => setServiceCardHeader(data));
-
-    fetch("http://localhost:5000/servicesCard")
+    fetch("http://localhost:5000/blogs")
       .then((res) => res.json())
       .then((data) => {
-        setServicesCardData(data);
+        setBlogsCardData(data);
       });
-    setServiceBanner(false);
   }, [number]);
   return (
     <>
@@ -87,33 +76,30 @@ const Blog = () => {
             </div>
           </div>
           <div className="col-12 col-md-10 scroll vh-100">
-            {/* <AdminWhoAreVirtualExperts />
-            <AdminWhyWeAreUnique />
-            <AdminTeamSection />
-            <AdminTeams /> */}
+
             <div className="p-3 boxShadow bg-gray rounded me-4 mb-5">
               <AdminAddBlogs setNumber={setNumber} />
               {!showSpinner ? (
                 <Spinner />
               ) : (
                 <div className="row">
-                  {servicesCardData.map((servicesCard, index) => {
+                  {blogsCardData.map((blogsCard, index) => {
                     let imgType;
-                    if (servicesCard.img.contentType === "image/svg+xml") {
+                    if (blogsCard.img.contentType === "image/svg+xml") {
                       imgType = "data:image/svg+xml";
-                    } else if (servicesCard.img.contentType === "image/png") {
+                    } else if (blogsCard.img.contentType === "image/png") {
                       imgType = "data:image/png";
                     } else {
                       imgType = "data:image/jpg";
                     }
                     return (
                       <AdminBlogCard
-                        key={servicesCard._id}
-                        servicesCard={servicesCard}
+                        key={blogsCard._id}
+                        blogsCard={blogsCard}
                         imgType={imgType}
                         index={index}
-                        servicesCardData={servicesCardData}
-                        setServicesCardData={setServicesCardData}
+                        blogsCardData={blogsCardData}
+                        setBlogsCardData={setBlogsCardData}
                         setNumber={setNumber}
                       />
                     );
