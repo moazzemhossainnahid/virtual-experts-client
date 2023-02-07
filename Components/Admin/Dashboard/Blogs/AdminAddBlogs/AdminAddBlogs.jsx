@@ -17,25 +17,18 @@ const AdminAddBlogs = ({ setNumber }) => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("title", data.title);
-    formData.append("subTitle", data.subTitle);
-    formData.append("regularReview", data.regularReview);
-    formData.append("videoReview", data.videoReview);
-    formData.append("top50Reviewers", data.top50Reviewers);
-    formData.append("delivery", data.delivery);
-    formData.append("warranty", data.warranty);
-    formData.append("price", data.price);
-    formData.append("maintenance", data.maintenance);
-    formData.append("imgTitle", data.imgTitle);
+    formData.append("writerName", data.writerName);
+    formData.append("description", data.description);
     formData.append("imgAlt", data.imgAlt);
 
-    fetch(`http://localhost:5000/blog/post`, {
+    fetch(`http://localhost:5000/blogs/post`, {
       method: "POST",
       body: formData,
     })
       .then((res) => res.json())
       .then((result) => {
         if (result) {
-          toast.success("Service Add Successfully");
+          toast.success("Blogs Add Successfully");
           e.target.reset();
           setNumber((prvState) => prvState + 1);
         }
@@ -59,7 +52,7 @@ const AdminAddBlogs = ({ setNumber }) => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Add Service Card
+                Add - Blog Card
               </h5>
               <button
                 type="button"
@@ -87,110 +80,19 @@ const AdminAddBlogs = ({ setNumber }) => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="title">Sub Title</label>
+                  <label htmlFor="title">Writer Name</label>
                   <input
                     type="text"
                     defaultValue=""
-                    {...register("subTitle", { required: true })}
-                    name="subTitle"
-                    id="subTitle"
+                    {...register("writerName", { required: true })}
+                    name="writerName"
+                    id="writerName"
                     autoComplete="off"
                     className="form-control"
                   />
-                  {errors.subTitle && (
+                  {errors.writerName && (
                     <span className="text-danger">This field is required</span>
                   )}
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="title">Regular Review</label>
-                  <input
-                    type="text"
-                    defaultValue=""
-                    {...register("regularReview")}
-                    name="regularReview"
-                    id="regularReview"
-                    autoComplete="off"
-                    className="form-control"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="title">Video Review</label>
-                  <input
-                    type="text"
-                    defaultValue=""
-                    {...register("videoReview")}
-                    name="videoReview"
-                    id="videoReview"
-                    autoComplete="off"
-                    className="form-control"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="title">Top 50 Reviewers</label>
-                  <input
-                    type="text"
-                    defaultValue=""
-                    {...register("top50Reviewers")}
-                    name="top50Reviewers"
-                    id="top50Reviewers"
-                    autoComplete="off"
-                    className="form-control"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="title">Delivery</label>
-                  <input
-                    type="text"
-                    defaultValue=""
-                    {...register("delivery")}
-                    name="delivery"
-                    id="delivery"
-                    autoComplete="off"
-                    className="form-control"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="title">Warranty</label>
-                  <input
-                    type="text"
-                    defaultValue=""
-                    {...register("warranty")}
-                    name="warranty"
-                    id="warranty"
-                    autoComplete="off"
-                    className="form-control"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="title">Price</label>
-                  <input
-                    type="text"
-                    defaultValue=""
-                    {...register("price")}
-                    name="price"
-                    id="price"
-                    autoComplete="off"
-                    className="form-control"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="title">Maintenance</label>
-                  <input
-                    type="text"
-                    defaultValue=""
-                    {...register("maintenance")}
-                    name="maintenance"
-                    id="maintenance"
-                    autoComplete="off"
-                    className="form-control"
-                  />
                 </div>
 
                 <div className="form-group">
@@ -209,22 +111,6 @@ const AdminAddBlogs = ({ setNumber }) => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="imgTitle">Image Title</label>
-                  <input
-                    type="text"
-                    defaultValue=""
-                    {...register("imgTitle", { required: true })}
-                    name="imgTitle"
-                    id="imgTitle"
-                    autoComplete="off"
-                    className="form-control"
-                  />
-                  {errors.imgTitle && (
-                    <span className="text-danger">This field is required</span>
-                  )}
-                </div>
-
-                <div className="form-group">
                   <label htmlFor="imgAlt">Image Alt</label>
                   <input
                     type="text"
@@ -236,6 +122,24 @@ const AdminAddBlogs = ({ setNumber }) => {
                     className="form-control"
                   />
                   {errors.imgAlt && (
+                    <span className="text-danger">This field is required</span>
+                  )}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="imgAlt">Description</label>
+                  <textarea
+                    rows="3"
+                    cols="5"
+                    type="text"
+                    defaultValue=""
+                    {...register("description", { required: true })}
+                    name="description"
+                    id="description"
+                    autoComplete="off"
+                    className="form-control"
+                  ></textarea>
+                  {errors.description && (
                     <span className="text-danger">This field is required</span>
                   )}
                 </div>
