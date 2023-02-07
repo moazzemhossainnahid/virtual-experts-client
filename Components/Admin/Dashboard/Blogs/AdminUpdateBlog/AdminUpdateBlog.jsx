@@ -100,179 +100,152 @@ const AdminUpdateBlog = ({
   };
 
   return (
-    // <div className="col-md-6" key={currentBlog._id}>
-    //   <div className="my-3 mx-1 p-3 border bg-gray2 rounded-3">
-    //     {/* {currentBlog.img && (
-    //       <Image
-    //         src={`${imgType} ; base64, ${currentBlog.img.img}`}
-    //         alt={currentBlog.imgAlt}
-    //         title={currentBlog.imgTitle}
-    //         width={100}
-    //         height={100}
-    //       />
+    <div className=" bg-white text-left h-100 w-100 pt-lg-20 -mt-16">
+      {/* <div className="w-full bg-gray-200 flex items-center justify-center my-12">
+        <div className="bg-white shadow rounded py-12 lg:px-28 px-8"> */}
+          <p className="md:text-3xl text-xl font-bold text-center text-dark">
+            Update <span className="text-danger">{currentBlog?.title}</span> currentBlog
+          </p>
+          <h2 className="">{original_date}</h2>
+          {/* <form
+            onSubmit={handleSubmit()}
+            className="mb-32"
+            action=""
+          >
+            <div className="md:flex items-center mt-12">
+              <div className="md:w-72 flex flex-col">
+                <label className="text-base font-semibold leading-none text-gray-800">
+                  currentBlog Name
+                </label>
+                <input
+                  {...register('currentBlogTitle')}
+                  // defaultValue={title}
+                  // onChange={handleTitleInput}
+                  required
+                  tabIndex={0}
+                  arial-label="Please input name"
+                  type="name"
+                  className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
+                  placeholder="Please Input currentBlog Name"
+                />
+              </div>
+              <div className="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
+                <label className="text-base font-semibold leading-none text-gray-800">
+                  currentBlog Category
+                </label>
 
-    //     )} */}
-    //     <div className="boxShadow p-3 borderRadius" style={{ height: "270px" }}>
-    //       <h6 className="fs-20 font-bold">{currentBlog.title}</h6>
-    //       <h6 className="fs-16 mt-3">Author: {currentBlog.writerName}</h6>
-    //       <h6 className="fs-14 mt-3">{currentBlog.description.slice(0,100)}</h6>
-    //       <h6 className="fs-14 mt-5">Published Date: {original_date}</h6>
-    //       <div className="d-flex justify-content-end">
-    //         <AiFillEdit
-    //           size={30}
-    //           className="text-warning bg-dark mx-1 rounded-circle p-1 cursor-pointer "
-    //           data-bs-toggle="modal"
-    //           data-bs-target={`#blog${index + 1}`}
-    //         />
-    //         <AiFillDelete
-    //           size={30}
-    //           className="text-danger mx-1 bg-dark rounded-circle p-1 cursor-pointer "
-    //           data-bs-toggle="modal"
-    //           data-bs-target={`#blogDelete${index + 1}`}
-    //         />
-    //       </div>
+                <select {...register('currentBlogCategory')} defaultValue={cate} onChange={handleCateInput} className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500">
+                  <option disabled selected>Select currentBlog Category</option>
+                  <option>Wind Chimes</option>
+                  <option>Urinal Screen</option>
+                  <option>Pest Repeller</option>
+                  <option>Wrap Organizer</option>
+                  <option>Scrab Brush</option>
+                </select>
+              </div>
+            </div>
 
-    //     </div>
+            <div className="md:flex items-center mt-12">
+              <div className="md:w-72 flex flex-col">
+                <label className="text-base font-semibold leading-none text-gray-800">
+                  currentBlog Price
+                </label>
+                <input
+                  {...register('currentBlogPrice')}
+                  value={price}
+                  required
+                  onChange={handlePriceInput}
+                  tabIndex={0}
+                  arial-label="Please input price"
+                  type="name"
+                  className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
+                  placeholder="Please Input currentBlog Price"
+                />
+              </div>
+              <div className="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
+                <label className="text-base font-semibold leading-none text-gray-800">
+                  currentBlog Image
+                </label>
 
-    //     {/* For Edit Card data Start */}
-    //     <div
-    //       className="modal fade"
-    //       id={`blog${index + 1}`}
-    //       tabIndex="-1"
-    //       aria-labelledby="exampleModalLabel"
-    //       aria-hidden="true"
-    //     >
-    //       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    //         <div className="modal-content">
-    //           <div className="modal-header">
-    //             <h5 className="modal-title" id="exampleModalLabel">
-    //               EDIT - {currentBlog.title}
-    //             </h5>
-    //             <button
-    //               type="button"
-    //               className="btn-close"
-    //               data-bs-dismiss="modal"
-    //               aria-label="Close"
-    //             ></button>
-    //           </div>
-    //           <div className="modal-body">
-    //             <form onSubmit={handleSubmit(onSubmitEdit)}>
-    //               <div className="form-group">
-    //                 <label htmlFor="title">Title</label>
-    //                 <textarea
-    //                   rows="2"
-    //                   cols="5"
-    //                   defaultValue={currentBlog.title}
-    //                   name="title"
-    //                   id="title"
-    //                   className="form-control"
-    //                   {...register("title")}
-    //                 ></textarea>
-    //               </div>
+                {
+                  img === '' ?
+                    <input
+                      {...register('photoURL')}
+                      defaultValue={img}
+                      onChange={handleImgInput}
+                      required
+                      tabIndex={0}
+                      arial-label="Please Input Price"
+                      type="file"
+                      className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
+                      placeholder="Please Input currentBlog Image"
+                    /> :
+                    <div className="w-full h-32 rounded">
+                      <img src={img} alt="" className="object-cover h-full rounded" />
+                    </div>
+                }
 
-    //               <div className="form-group">
-    //                 <label htmlFor="writerName">Writer Name</label>
-    //                 <input
-    //                   type="text"
-    //                   defaultValue={currentBlog.writerName}
-    //                   {...register("writerName")}
-    //                   name="writerName"
-    //                   id="writerName"
-    //                   autoComplete="off"
-    //                   className="form-control"
-    //                 />
-    //               </div>
+              </div>
+            </div>
 
-    //               <div className="form-group">
-    //                 <label htmlFor="img">Image</label>
-    //                 <input
-    //                   type="file"
-    //                   name="img"
-    //                   id="img"
-    //                   className="form-control"
-    //                   {...register("img")}
-    //                   onChange={handleFileChange}
-    //                 />
-    //               </div>
+            <div className="md:flex items-center mt-12">
+              <div className="md:w-full flex flex-col">
+                <label className="text-base font-semibold leading-none text-gray-800">
+                  Amazon Link
+                </label>
+                <input
+                  {...register('amazonLink')}
+                  defaultValue={link}
+                  required
+                  onChange={handleLinkInput}
+                  tabIndex={0}
+                  arial-label="Please input email address"
+                  type="name"
+                  className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
+                  placeholder="Please Input Amazon Link"
+                />
+              </div>
+            </div>
 
+            <div>
+              <div className="w-full flex flex-col mt-8">
+                <label className="text-base font-semibold leading-none text-gray-800">
+                  currentBlog Description
+                </label>
+                <textarea
+                  {...register("currentBlogDescription")}
+                  defaultValue={desc}
+                  required
+                  onChange={handleDescInput}
+                  tabIndex={0}
+                  aria-label="leave a message"
+                  type="text"
+                  className="h-36 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200  resize-none"
+                  placeholder="Input currentBlog Description"
+                />
+              </div>
+            </div>
 
-    //               <div className="form-group">
-    //                 <label htmlFor="imgAlt">Image Alt</label>
-    //                 <input
-    //                   type="text"
-    //                   defaultValue={currentBlog.imgAlt}
-    //                   {...register("imgAlt")}
-    //                   name="imgAlt"
-    //                   id="imgAlt"
-    //                   autoComplete="off"
-    //                   className="form-control"
-    //                 />
-    //               </div>
-
-    //               <div className="form-group mt-3">
-    //                 <input
-    //                   type="submit"
-    //                   name="submit"
-    //                   className="btn btn-primary"
-    //                   value="Save Changes"
-    //                   data-bs-dismiss="modal"
-    //                 />
-    //               </div>
-    //             </form>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     {/* For Edit Card data Finish */}
-
-    //     {/* For Delete Card data Start */}
-    //     <div
-    //       className="modal fade"
-    //       id={`blogDelete${index + 1}`}
-    //       tabIndex="-1"
-    //       aria-labelledby="exampleModalLabel"
-    //       aria-hidden="true"
-    //     >
-    //       <div className="modal-dialog modal-dialog-centered">
-    //         <div className="modal-content">
-    //           <div className="modal-header">
-    //             <h5 className="modal-title" id="exampleModalLabel">
-    //               DELETE - {currentBlog.title}
-    //             </h5>
-    //             <button
-    //               type="button"
-    //               className="btn-close"
-    //               data-bs-dismiss="modal"
-    //               aria-label="Close"
-    //             ></button>
-    //           </div>
-    //           <div className="modal-body">
-    //             <p>Are you want to delete this?</p>
-    //           </div>
-    //           <div className="modal-footer">
-    //             <button
-    //               type="button"
-    //               className="btn btn-danger"
-    //               data-bs-dismiss="modal"
-    //               onClick={() => deleteBlog(currentBlog._id)}
-    //             >
-    //               Yes
-    //             </button>
-    //             <button
-    //               type="button"
-    //               className="btn btn-success"
-    //               data-bs-dismiss="modal"
-    //             >
-    //               No
-    //             </button>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //     {/* For Delete Card data Finish */}
-    //   </div>
-    // </div>
-    <div className=""></div>
+            <div className="flex items-center justify-around w-full">
+              <button
+                onClick={handleGetValues}
+                type="submit"
+                className="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-primary rounded hover:bg-warning focus:ring-2 focus:ring-offset-2 focus:ring-secondary focus:outline-none"
+              >
+                get currentBlog Values
+              </button>
+              <button
+                disabled={!get || btnSpinner}
+                type="submit"
+                className="mt-9 text-base disabled:bg-gray-300 font-semibold leading-none text-white py-4 px-10 bg-warning rounded hover:bg-primary focus:ring-2 focus:ring-offset-2 focus:ring-secondary focus:outline-none"
+              >
+                Update currentBlog
+              </button>
+            </div>
+          </form> */}
+        {/* </div>
+      </div> */}
+    </div>
   );
 };
 
