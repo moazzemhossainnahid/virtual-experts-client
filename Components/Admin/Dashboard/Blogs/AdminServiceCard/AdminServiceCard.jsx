@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
@@ -12,6 +13,7 @@ const AdminBlogCard = ({
   setBlogsCardData,
   setNumber,
 }) => {
+  const router = useRouter();
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
 
@@ -119,8 +121,7 @@ const AdminBlogCard = ({
             <AiFillEdit
               size={30}
               className="text-warning bg-dark mx-1 rounded-circle p-1 cursor-pointer "
-              data-bs-toggle="modal"
-              data-bs-target={`#blog${index + 1}`}
+              onClick={() => router.push(`/richard/blog/${blogsCard._id}`)}
             />
             <AiFillDelete
               size={30}
