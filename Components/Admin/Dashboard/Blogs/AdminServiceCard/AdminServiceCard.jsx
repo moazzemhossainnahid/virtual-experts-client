@@ -8,29 +8,16 @@ const AdminBlogCard = ({
   imgType,
   blogsCard,
   index,
-  setblogsCardData,
   blogsCardData,
+  setBlogsCardData,
   setNumber,
 }) => {
-  const {
-    title,
-    subTitle,
-    regularReview,
-    videoReview,
-    top50Reviewers,
-    delivery,
-    warranty,
-    price,
-    maintenance,
-    imgTitle,
-    imgAlt,
-  } = blogsCard;
+
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
-  const [showSpinner, setShowSpinner] = useState(false);
 
   const handleFileChange = (e) => {
-    console.log(e)
+    // console.log(e)
     console.log(e.target.files)
     const newFile = e.target.files[0];
     setFile(newFile);
@@ -38,18 +25,18 @@ const AdminBlogCard = ({
 
   // console.log(file)
 
-  const deleteService = (id) => {
-    fetch(`http://localhost:5000/blogsCard/delete/${id}`, {
+  const deleteBlog = (id) => {
+    fetch(`http://localhost:5000/blogs/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((result) => {
         if (result) {
-          toast.error("Service Delete Successfully");
+          toast.error("Blog Delete Successfully");
           const newblogsCard = blogsCardData.filter(
-            (blogsCard) => blogsCard._id !== id
+            (blog) => blog._id !== id
           );
-          setblogsCardData(newblogsCard);
+          setBlogsCardData(newblogsCard);
           setNumber((prevState) => prevState + 1);
         }
       });
@@ -107,7 +94,7 @@ const AdminBlogCard = ({
   return (
     <div className="col-md-6" key={blogsCard._id}>
       <div className="my-3 mx-1 p-3 border bg-gray2 rounded-3">
-        {blogsCard.img ? (
+        {blogsCard.img && (
           <Image
             src={`${imgType} ; base64, ${blogsCard.img.img}`}
             alt={blogsCard.imgAlt}
@@ -116,59 +103,23 @@ const AdminBlogCard = ({
             height={100}
           />
 
-        ) : (
-          <Image
-            src={blogsCard.imgURL}
-            alt={blogsCard.imgAlt}
-            title={blogsCard.imgTitle}
-            width={100}
-            height={100}
-          />
         )}
         <div className="boxShadow p-3 borderRadius" style={{ height: "270px" }}>
-          <h6 className="fs-18">{blogsCard.title}</h6>
-          <h6 className="fs-14 mt-2">{blogsCard.subTitle}</h6>
-          {blogsCard.regularReview && (
-            <p className="fs-14">
-              Regular Review : ${blogsCard.regularReview} each
-            </p>
-          )}
-          {blogsCard.videoReview && (
-            <p className="fs-14">
-              Video Review : ${blogsCard.videoReview} each
-            </p>
-          )}
-          {blogsCard.top50Reviewers && (
-            <p className="fs-14">
-              Top 50 Reviewers : ${blogsCard.top50Reviewers} each
-            </p>
-          )}
-          {blogsCard.price && (
-            <p className="fs-14">Price : ${blogsCard.price}</p>
-          )}
-          {blogsCard.delivery && (
-            <p className="fs-14">Delivery : {blogsCard.delivery} days</p>
-          )}
-          {blogsCard.warranty && (
-            <p className="fs-14">Warranty : {blogsCard.warranty}</p>
-          )}
-          {blogsCard.maintenance && (
-            <p className="fs-14">
-              Maintenence : ${blogsCard.maintenance} per month
-            </p>
-          )}
+          <h6 className="fs-20 font-bold">{blogsCard.title}</h6>
+          <h6 className="fs-16 mt-3">Author: {blogsCard.writerName}</h6>
+          <h6 className="fs-14 mt-3">{blogsCard.description}</h6>
           <div className="d-flex justify-content-end">
             <AiFillEdit
               size={30}
               className="text-warning bg-dark mx-1 rounded-circle p-1 cursor-pointer "
               data-bs-toggle="modal"
-              data-bs-target={`#card${index + 1}`}
+              data-bs-target={`#blog${index + 1}`}
             />
             <AiFillDelete
               size={30}
               className="text-danger mx-1 bg-dark rounded-circle p-1 cursor-pointer "
               data-bs-toggle="modal"
-              data-bs-target={`#cardDelete${index + 1}`}
+              data-bs-target={`#blogDelete${index + 1}`}
             />
           </div>
 
@@ -177,7 +128,7 @@ const AdminBlogCard = ({
         {/* For Edit Card data Start */}
         <div
           className="modal fade"
-          id={`card${index + 1}`}
+          id={`blog${index + 1}`}
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
@@ -200,9 +151,9 @@ const AdminBlogCard = ({
                   <div className="form-group">
                     <label htmlFor="title">Title</label>
                     <textarea
-                      rows="5"
+                      rows="2"
                       cols="5"
-                      defaultValue={title}
+                      defaultValue={blogsCard.title}
                       name="title"
                       id="title"
                       className="form-control"
@@ -211,104 +162,13 @@ const AdminBlogCard = ({
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="subTitle">Sub Title</label>
-                    <textarea
-                      rows="5"
-                      cols="5"
-                      defaultValue={subTitle}
-                      name="subTitle"
-                      id="subTitle"
-                      className="form-control"
-                      {...register("subTitle")}
-                    ></textarea>
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="regularReview">Regular Review</label>
+                    <label htmlFor="writerName">Writer Name</label>
                     <input
                       type="text"
-                      defaultValue={regularReview}
-                      {...register("regularReview")}
-                      name="regularReview"
-                      id="regularReview"
-                      autoComplete="off"
-                      className="form-control"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="videoReview">Video Review</label>
-                    <input
-                      type="text"
-                      defaultValue={videoReview}
-                      {...register("videoReview")}
-                      name="videoReview"
-                      id="videoReview"
-                      autoComplete="off"
-                      className="form-control"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="top50Reviewers">Top 50 Reviewers</label>
-                    <input
-                      type="text"
-                      defaultValue={top50Reviewers}
-                      {...register("top50Reviewers")}
-                      name="top50Reviewers"
-                      id="top50Reviewers"
-                      autoComplete="off"
-                      className="form-control"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="delivery">Delivery</label>
-                    <input
-                      type="text"
-                      defaultValue={delivery}
-                      {...register("delivery")}
-                      name="delivery"
-                      id="delivery"
-                      autoComplete="off"
-                      className="form-control"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="warranty">Warranty</label>
-                    <input
-                      type="text"
-                      defaultValue={warranty}
-                      {...register("warranty")}
-                      name="warranty"
-                      id="warranty"
-                      autoComplete="off"
-                      className="form-control"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="price">Price</label>
-                    <input
-                      type="text"
-                      defaultValue={price}
-                      {...register("price")}
-                      name="price"
-                      id="price"
-                      autoComplete="off"
-                      className="form-control"
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="maintenance">Maintenance</label>
-                    <input
-                      type="text"
-                      defaultValue={maintenance}
-                      {...register("maintenance")}
-                      name="maintenance"
-                      id="maintenance"
+                      defaultValue={blogsCard.writerName}
+                      {...register("writerName")}
+                      name="writerName"
+                      id="writerName"
                       autoComplete="off"
                       className="form-control"
                     />
@@ -326,24 +186,12 @@ const AdminBlogCard = ({
                     />
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="imgTitle">Image Title</label>
-                    <input
-                      type="text"
-                      defaultValue={imgTitle}
-                      {...register("imgTitle")}
-                      name="imgTitle"
-                      id="imgTitle"
-                      autoComplete="off"
-                      className="form-control"
-                    />
-                  </div>
 
                   <div className="form-group">
                     <label htmlFor="imgAlt">Image Alt</label>
                     <input
                       type="text"
-                      defaultValue={imgAlt}
+                      defaultValue={blogsCard.imgAlt}
                       {...register("imgAlt")}
                       name="imgAlt"
                       id="imgAlt"
@@ -351,6 +199,20 @@ const AdminBlogCard = ({
                       className="form-control"
                     />
                   </div>
+
+                  <div className="form-group">
+                    <label htmlFor="description">Description</label>
+                    <textarea
+                      rows="5"
+                      cols="5"
+                      defaultValue={blogsCard.description}
+                      name="description"
+                      id="description"
+                      className="form-control"
+                      {...register("description")}
+                    ></textarea>
+                  </div>
+
 
                   <div className="form-group mt-3">
                     <input
@@ -371,7 +233,7 @@ const AdminBlogCard = ({
         {/* For Delete Card data Start */}
         <div
           className="modal fade"
-          id={`cardDelete${index + 1}`}
+          id={`blogDelete${index + 1}`}
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
@@ -397,7 +259,7 @@ const AdminBlogCard = ({
                   type="button"
                   className="btn btn-danger"
                   data-bs-dismiss="modal"
-                  onClick={() => deleteService(blogsCard._id)}
+                  onClick={() => deleteBlog(blogsCard._id)}
                 >
                   Yes
                 </button>
