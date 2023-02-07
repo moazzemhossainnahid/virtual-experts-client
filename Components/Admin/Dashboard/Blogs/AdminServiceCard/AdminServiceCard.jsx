@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
+import JoditEditor from 'jodit-react';
 
 const AdminBlogCard = ({
   imgType,
@@ -12,6 +13,8 @@ const AdminBlogCard = ({
   setBlogsCardData,
   setNumber,
 }) => {
+  const editor = useRef(null);
+  const [content, setContent] = useState('');
 
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
@@ -210,7 +213,7 @@ const AdminBlogCard = ({
 
                   <div className="form-group">
                     <label htmlFor="description">Description</label>
-                    <textarea
+                    {/* <textarea
                       rows="5"
                       cols="5"
                       defaultValue={blogsCard.description}
@@ -218,7 +221,14 @@ const AdminBlogCard = ({
                       id="description"
                       className="form-control"
                       {...register("description")}
-                    ></textarea>
+                    ></textarea> */}
+                    <JoditEditor
+                      ref={editor}
+                      value={content}
+                      // tabIndex={1} // tabIndex of textarea
+                      onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
+
+                    />
                   </div>
 
 
