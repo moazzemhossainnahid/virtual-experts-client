@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const AdminUpdateBlog = ({
   imgType,
-  blogsCard,
+  currentBlog,
   index,
   blogsCardData,
   setBlogsCardData,
@@ -15,8 +15,10 @@ const AdminUpdateBlog = ({
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
 
+  console.log(currentBlog)
 
-  var date = new Date(blogsCard?.createdAt)
+
+  var date = new Date(currentBlog?.createdAt)
   var original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
 
 
@@ -49,11 +51,11 @@ const AdminUpdateBlog = ({
   };
 
   const onSubmitEdit = (data) => {
-    const newTitle = data.title || blogsCard.title;
-    const newDescription = data.description || blogsCard.description;
-    const newWriterName = data.writerName || blogsCard.writerName;
-    const newImgAlt = data.imgAlt || blogsCard.imgAlt;
-    const _id = blogsCard._id;
+    const newTitle = data.title || currentBlog.title;
+    const newDescription = data.description || currentBlog.description;
+    const newWriterName = data.writerName || currentBlog.writerName;
+    const newImgAlt = data.imgAlt || currentBlog.imgAlt;
+    const _id = currentBlog._id;
 
     const newData = {
       _id: _id,
@@ -61,7 +63,7 @@ const AdminUpdateBlog = ({
       description: newDescription,
       writerName: newWriterName,
       imgAlt: newImgAlt,
-      img: blogsCard.img,
+      img: currentBlog.img,
       uploadImage: false,
     };
 
@@ -98,178 +100,179 @@ const AdminUpdateBlog = ({
   };
 
   return (
-    <div className="col-md-6" key={blogsCard._id}>
-      <div className="my-3 mx-1 p-3 border bg-gray2 rounded-3">
-        {blogsCard.img && (
-          <Image
-            src={`${imgType} ; base64, ${blogsCard.img.img}`}
-            alt={blogsCard.imgAlt}
-            title={blogsCard.imgTitle}
-            width={100}
-            height={100}
-          />
+    // <div className="col-md-6" key={currentBlog._id}>
+    //   <div className="my-3 mx-1 p-3 border bg-gray2 rounded-3">
+    //     {/* {currentBlog.img && (
+    //       <Image
+    //         src={`${imgType} ; base64, ${currentBlog.img.img}`}
+    //         alt={currentBlog.imgAlt}
+    //         title={currentBlog.imgTitle}
+    //         width={100}
+    //         height={100}
+    //       />
 
-        )}
-        <div className="boxShadow p-3 borderRadius" style={{ height: "270px" }}>
-          <h6 className="fs-20 font-bold">{blogsCard.title}</h6>
-          <h6 className="fs-16 mt-3">Author: {blogsCard.writerName}</h6>
-          <h6 className="fs-14 mt-3">{blogsCard.description.slice(0,100)}</h6>
-          <h6 className="fs-14 mt-5">Published Date: {original_date}</h6>
-          <div className="d-flex justify-content-end">
-            <AiFillEdit
-              size={30}
-              className="text-warning bg-dark mx-1 rounded-circle p-1 cursor-pointer "
-              data-bs-toggle="modal"
-              data-bs-target={`#blog${index + 1}`}
-            />
-            <AiFillDelete
-              size={30}
-              className="text-danger mx-1 bg-dark rounded-circle p-1 cursor-pointer "
-              data-bs-toggle="modal"
-              data-bs-target={`#blogDelete${index + 1}`}
-            />
-          </div>
+    //     )} */}
+    //     <div className="boxShadow p-3 borderRadius" style={{ height: "270px" }}>
+    //       <h6 className="fs-20 font-bold">{currentBlog.title}</h6>
+    //       <h6 className="fs-16 mt-3">Author: {currentBlog.writerName}</h6>
+    //       <h6 className="fs-14 mt-3">{currentBlog.description.slice(0,100)}</h6>
+    //       <h6 className="fs-14 mt-5">Published Date: {original_date}</h6>
+    //       <div className="d-flex justify-content-end">
+    //         <AiFillEdit
+    //           size={30}
+    //           className="text-warning bg-dark mx-1 rounded-circle p-1 cursor-pointer "
+    //           data-bs-toggle="modal"
+    //           data-bs-target={`#blog${index + 1}`}
+    //         />
+    //         <AiFillDelete
+    //           size={30}
+    //           className="text-danger mx-1 bg-dark rounded-circle p-1 cursor-pointer "
+    //           data-bs-toggle="modal"
+    //           data-bs-target={`#blogDelete${index + 1}`}
+    //         />
+    //       </div>
 
-        </div>
+    //     </div>
 
-        {/* For Edit Card data Start */}
-        <div
-          className="modal fade"
-          id={`blog${index + 1}`}
-          tabIndex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                  EDIT - {blogsCard.title}
-                </h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div className="modal-body">
-                <form onSubmit={handleSubmit(onSubmitEdit)}>
-                  <div className="form-group">
-                    <label htmlFor="title">Title</label>
-                    <textarea
-                      rows="2"
-                      cols="5"
-                      defaultValue={blogsCard.title}
-                      name="title"
-                      id="title"
-                      className="form-control"
-                      {...register("title")}
-                    ></textarea>
-                  </div>
+    //     {/* For Edit Card data Start */}
+    //     <div
+    //       className="modal fade"
+    //       id={`blog${index + 1}`}
+    //       tabIndex="-1"
+    //       aria-labelledby="exampleModalLabel"
+    //       aria-hidden="true"
+    //     >
+    //       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    //         <div className="modal-content">
+    //           <div className="modal-header">
+    //             <h5 className="modal-title" id="exampleModalLabel">
+    //               EDIT - {currentBlog.title}
+    //             </h5>
+    //             <button
+    //               type="button"
+    //               className="btn-close"
+    //               data-bs-dismiss="modal"
+    //               aria-label="Close"
+    //             ></button>
+    //           </div>
+    //           <div className="modal-body">
+    //             <form onSubmit={handleSubmit(onSubmitEdit)}>
+    //               <div className="form-group">
+    //                 <label htmlFor="title">Title</label>
+    //                 <textarea
+    //                   rows="2"
+    //                   cols="5"
+    //                   defaultValue={currentBlog.title}
+    //                   name="title"
+    //                   id="title"
+    //                   className="form-control"
+    //                   {...register("title")}
+    //                 ></textarea>
+    //               </div>
 
-                  <div className="form-group">
-                    <label htmlFor="writerName">Writer Name</label>
-                    <input
-                      type="text"
-                      defaultValue={blogsCard.writerName}
-                      {...register("writerName")}
-                      name="writerName"
-                      id="writerName"
-                      autoComplete="off"
-                      className="form-control"
-                    />
-                  </div>
+    //               <div className="form-group">
+    //                 <label htmlFor="writerName">Writer Name</label>
+    //                 <input
+    //                   type="text"
+    //                   defaultValue={currentBlog.writerName}
+    //                   {...register("writerName")}
+    //                   name="writerName"
+    //                   id="writerName"
+    //                   autoComplete="off"
+    //                   className="form-control"
+    //                 />
+    //               </div>
 
-                  <div className="form-group">
-                    <label htmlFor="img">Image</label>
-                    <input
-                      type="file"
-                      name="img"
-                      id="img"
-                      className="form-control"
-                      {...register("img")}
-                      onChange={handleFileChange}
-                    />
-                  </div>
+    //               <div className="form-group">
+    //                 <label htmlFor="img">Image</label>
+    //                 <input
+    //                   type="file"
+    //                   name="img"
+    //                   id="img"
+    //                   className="form-control"
+    //                   {...register("img")}
+    //                   onChange={handleFileChange}
+    //                 />
+    //               </div>
 
 
-                  <div className="form-group">
-                    <label htmlFor="imgAlt">Image Alt</label>
-                    <input
-                      type="text"
-                      defaultValue={blogsCard.imgAlt}
-                      {...register("imgAlt")}
-                      name="imgAlt"
-                      id="imgAlt"
-                      autoComplete="off"
-                      className="form-control"
-                    />
-                  </div>
+    //               <div className="form-group">
+    //                 <label htmlFor="imgAlt">Image Alt</label>
+    //                 <input
+    //                   type="text"
+    //                   defaultValue={currentBlog.imgAlt}
+    //                   {...register("imgAlt")}
+    //                   name="imgAlt"
+    //                   id="imgAlt"
+    //                   autoComplete="off"
+    //                   className="form-control"
+    //                 />
+    //               </div>
 
-                  <div className="form-group mt-3">
-                    <input
-                      type="submit"
-                      name="submit"
-                      className="btn btn-primary"
-                      value="Save Changes"
-                      data-bs-dismiss="modal"
-                    />
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* For Edit Card data Finish */}
+    //               <div className="form-group mt-3">
+    //                 <input
+    //                   type="submit"
+    //                   name="submit"
+    //                   className="btn btn-primary"
+    //                   value="Save Changes"
+    //                   data-bs-dismiss="modal"
+    //                 />
+    //               </div>
+    //             </form>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //     {/* For Edit Card data Finish */}
 
-        {/* For Delete Card data Start */}
-        <div
-          className="modal fade"
-          id={`blogDelete${index + 1}`}
-          tabIndex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
-                  DELETE - {blogsCard.title}
-                </h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div className="modal-body">
-                <p>Are you want to delete this?</p>
-              </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-danger"
-                  data-bs-dismiss="modal"
-                  onClick={() => deleteBlog(blogsCard._id)}
-                >
-                  Yes
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-success"
-                  data-bs-dismiss="modal"
-                >
-                  No
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* For Delete Card data Finish */}
-      </div>
-    </div>
+    //     {/* For Delete Card data Start */}
+    //     <div
+    //       className="modal fade"
+    //       id={`blogDelete${index + 1}`}
+    //       tabIndex="-1"
+    //       aria-labelledby="exampleModalLabel"
+    //       aria-hidden="true"
+    //     >
+    //       <div className="modal-dialog modal-dialog-centered">
+    //         <div className="modal-content">
+    //           <div className="modal-header">
+    //             <h5 className="modal-title" id="exampleModalLabel">
+    //               DELETE - {currentBlog.title}
+    //             </h5>
+    //             <button
+    //               type="button"
+    //               className="btn-close"
+    //               data-bs-dismiss="modal"
+    //               aria-label="Close"
+    //             ></button>
+    //           </div>
+    //           <div className="modal-body">
+    //             <p>Are you want to delete this?</p>
+    //           </div>
+    //           <div className="modal-footer">
+    //             <button
+    //               type="button"
+    //               className="btn btn-danger"
+    //               data-bs-dismiss="modal"
+    //               onClick={() => deleteBlog(currentBlog._id)}
+    //             >
+    //               Yes
+    //             </button>
+    //             <button
+    //               type="button"
+    //               className="btn btn-success"
+    //               data-bs-dismiss="modal"
+    //             >
+    //               No
+    //             </button>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //     {/* For Delete Card data Finish */}
+    //   </div>
+    // </div>
+    <div className=""></div>
   );
 };
 
