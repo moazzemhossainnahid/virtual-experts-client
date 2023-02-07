@@ -16,6 +16,13 @@ const AdminBlogCard = ({
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
 
+
+  var date = new Date(blogsCard?.createdAt)
+  var original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
+
+
+  // console.log(original_date);
+
   const handleFileChange = (e) => {
     // console.log(e)
     console.log(e.target.files)
@@ -108,6 +115,7 @@ const AdminBlogCard = ({
           <h6 className="fs-20 font-bold">{blogsCard.title}</h6>
           <h6 className="fs-16 mt-3">Author: {blogsCard.writerName}</h6>
           <h6 className="fs-14 mt-3">{blogsCard.description}</h6>
+          <h6 className="fs-14 mt-5">Published Date: {original_date}</h6>
           <div className="d-flex justify-content-end">
             <AiFillEdit
               size={30}
