@@ -6,10 +6,10 @@ import { toast } from "react-toastify";
 
 const AdminBlogCard = ({
   imgType,
-  servicesCard,
+  blogsCard,
   index,
-  setServicesCardData,
-  servicesCardData,
+  setblogsCardData,
+  blogsCardData,
   setNumber,
 }) => {
   const {
@@ -24,7 +24,7 @@ const AdminBlogCard = ({
     maintenance,
     imgTitle,
     imgAlt,
-  } = servicesCard;
+  } = blogsCard;
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
   const [showSpinner, setShowSpinner] = useState(false);
@@ -39,67 +39,45 @@ const AdminBlogCard = ({
   // console.log(file)
 
   const deleteService = (id) => {
-    fetch(`http://localhost:5000/servicesCard/delete/${id}`, {
+    fetch(`http://localhost:5000/blogsCard/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((result) => {
         if (result) {
           toast.error("Service Delete Successfully");
-          const newServicesCard = servicesCardData.filter(
-            (servicesCard) => servicesCard._id !== id
+          const newblogsCard = blogsCardData.filter(
+            (blogsCard) => blogsCard._id !== id
           );
-          setServicesCardData(newServicesCard);
+          setblogsCardData(newblogsCard);
           setNumber((prevState) => prevState + 1);
         }
       });
   };
 
   const onSubmitEdit = (data) => {
-    const newTitle = data.title || servicesCard.title;
-    const newSubTitle = data.subTitle || servicesCard.subTitle;
-    const newRegularReview = data.regularReview || servicesCard.regularReview;
-    const newVideoReview = data.videoReview || servicesCard.videoReview;
-    const newTop50Reviewers =
-      data.top50Reviewers || servicesCard.top50Reviewers;
-    const newDelivery = data.delivery || servicesCard.delivery;
-    const newWarranty = data.warranty || servicesCard.warranty;
-    const newPrice = data.price || servicesCard.price;
-    const newMaintenance = data.maintenance || servicesCard.maintenance;
-    const newImgTitle = data.imgTitle || servicesCard.imgTitle;
-    const newImgAlt = data.imgAlt || servicesCard.imgAlt;
-    const _id = servicesCard._id;
+    const newTitle = data.title || blogsCard.title;
+    const newDescription = data.description || blogsCard.description;
+    const newWriterName = data.writerName || blogsCard.writerName;
+    const newImgAlt = data.imgAlt || blogsCard.imgAlt;
+    const _id = blogsCard._id;
 
     const newData = {
       _id: _id,
       title: newTitle,
-      subTitle: newSubTitle,
-      regularReview: newRegularReview,
-      videoReview: newVideoReview,
-      top50Reviewers: newTop50Reviewers,
-      delivery: newDelivery,
-      warranty: newWarranty,
-      price: newPrice,
-      maintenance: newMaintenance,
-      imgTitle: newImgTitle,
+      description: newDescription,
+      writerName: newWriterName,
       imgAlt: newImgAlt,
-      img: servicesCard.img,
+      img: blogsCard.img,
       uploadImage: false,
     };
 
     const formData = new FormData();
-    formData.append("img", file);
+    formData.append("file", file);
     formData.append("_id", _id);
     formData.append("title", newTitle);
-    formData.append("subTitle", newSubTitle);
-    formData.append("regularReview", newRegularReview);
-    formData.append("videoReview", newVideoReview);
-    formData.append("top50Reviewers", newTop50Reviewers);
-    formData.append("delivery", newDelivery);
-    formData.append("warranty", newWarranty);
-    formData.append("price", newPrice);
-    formData.append("maintenance", newMaintenance);
-    formData.append("imgTitle", newImgTitle);
+    formData.append("description", newDescription);
+    formData.append("writerName", newWriterName);
     formData.append("imgAlt", newImgAlt);
 
     if (file === null) {
@@ -110,7 +88,7 @@ const AdminBlogCard = ({
       })
         .then((res) => res.json())
         .then((data) => {
-          toast.success("Blog Edit Successfully");
+          toast.success("Blog Update Successfully");
           setNumber((prvState) => prvState + 1);
         });
     } else {
@@ -120,63 +98,63 @@ const AdminBlogCard = ({
       })
         .then((res) => res.json())
         .then((data) => {
-          toast.success("Blog Edit Successfully");
+          toast.success("Blog Update Successfully");
           setNumber((prvState) => prvState + 1);
         });
     }
   };
 
   return (
-    <div className="col-md-6" key={servicesCard._id}>
+    <div className="col-md-6" key={blogsCard._id}>
       <div className="my-3 mx-1 p-3 border bg-gray2 rounded-3">
-        {servicesCard.img ? (
+        {blogsCard.img ? (
           <Image
-            src={`${imgType} ; base64, ${servicesCard.img.img}`}
-            alt={servicesCard.imgAlt}
-            title={servicesCard.imgTitle}
+            src={`${imgType} ; base64, ${blogsCard.img.img}`}
+            alt={blogsCard.imgAlt}
+            title={blogsCard.imgTitle}
             width={100}
             height={100}
           />
 
         ) : (
           <Image
-            src={servicesCard.imgURL}
-            alt={servicesCard.imgAlt}
-            title={servicesCard.imgTitle}
+            src={blogsCard.imgURL}
+            alt={blogsCard.imgAlt}
+            title={blogsCard.imgTitle}
             width={100}
             height={100}
           />
         )}
         <div className="boxShadow p-3 borderRadius" style={{ height: "270px" }}>
-          <h6 className="fs-18">{servicesCard.title}</h6>
-          <h6 className="fs-14 mt-2">{servicesCard.subTitle}</h6>
-          {servicesCard.regularReview && (
+          <h6 className="fs-18">{blogsCard.title}</h6>
+          <h6 className="fs-14 mt-2">{blogsCard.subTitle}</h6>
+          {blogsCard.regularReview && (
             <p className="fs-14">
-              Regular Review : ${servicesCard.regularReview} each
+              Regular Review : ${blogsCard.regularReview} each
             </p>
           )}
-          {servicesCard.videoReview && (
+          {blogsCard.videoReview && (
             <p className="fs-14">
-              Video Review : ${servicesCard.videoReview} each
+              Video Review : ${blogsCard.videoReview} each
             </p>
           )}
-          {servicesCard.top50Reviewers && (
+          {blogsCard.top50Reviewers && (
             <p className="fs-14">
-              Top 50 Reviewers : ${servicesCard.top50Reviewers} each
+              Top 50 Reviewers : ${blogsCard.top50Reviewers} each
             </p>
           )}
-          {servicesCard.price && (
-            <p className="fs-14">Price : ${servicesCard.price}</p>
+          {blogsCard.price && (
+            <p className="fs-14">Price : ${blogsCard.price}</p>
           )}
-          {servicesCard.delivery && (
-            <p className="fs-14">Delivery : {servicesCard.delivery} days</p>
+          {blogsCard.delivery && (
+            <p className="fs-14">Delivery : {blogsCard.delivery} days</p>
           )}
-          {servicesCard.warranty && (
-            <p className="fs-14">Warranty : {servicesCard.warranty}</p>
+          {blogsCard.warranty && (
+            <p className="fs-14">Warranty : {blogsCard.warranty}</p>
           )}
-          {servicesCard.maintenance && (
+          {blogsCard.maintenance && (
             <p className="fs-14">
-              Maintenence : ${servicesCard.maintenance} per month
+              Maintenence : ${blogsCard.maintenance} per month
             </p>
           )}
           <div className="d-flex justify-content-end">
@@ -208,7 +186,7 @@ const AdminBlogCard = ({
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  EDIT - {servicesCard.title}
+                  EDIT - {blogsCard.title}
                 </h5>
                 <button
                   type="button"
@@ -402,7 +380,7 @@ const AdminBlogCard = ({
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  DELETE - {servicesCard.title}
+                  DELETE - {blogsCard.title}
                 </h5>
                 <button
                   type="button"
@@ -419,7 +397,7 @@ const AdminBlogCard = ({
                   type="button"
                   className="btn btn-danger"
                   data-bs-dismiss="modal"
-                  onClick={() => deleteService(servicesCard._id)}
+                  onClick={() => deleteService(blogsCard._id)}
                 >
                   Yes
                 </button>

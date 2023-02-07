@@ -88,7 +88,7 @@ const AdminServiceCard = ({
     };
 
     const formData = new FormData();
-    formData.append("img", file);
+    formData.append("file", file);
     formData.append("_id", _id);
     formData.append("title", newTitle);
     formData.append("subTitle", newSubTitle);
