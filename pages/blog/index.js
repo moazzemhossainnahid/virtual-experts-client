@@ -173,6 +173,7 @@ const Blog = () => {
                 }
                 var date = new Date(blog?.createdAt);
                 var original_date = date.toLocaleString('default', { month: 'long' }) + " " + date.getDate() + "," + " " + date.getFullYear();
+                console.log(blog.description.slice(100,500))
                 return (
                   <div
                     className="col-12 col-md-6 my-2 cursor-pointer"
@@ -209,7 +210,7 @@ const Blog = () => {
                       <div className="px-3 mb-3">
                         <h3 className="fs-18 lh-36 m-0">{blog.title}</h3>
                         <p className="fs-14 lh-36 m-0">
-                          {ReactHtmlParser(blog.description)}
+                          {ReactHtmlParser(blog.cardDescription)}
                         </p>
                         <button
                           className="fs-14 my-2 px-3 py-2 d-inline-block mb-3 btn btn-orange btn-outline-warning"
