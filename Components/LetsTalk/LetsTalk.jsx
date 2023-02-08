@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useForm } from "react-hook-form";
 import {
     AiFillInstagram
@@ -19,6 +20,7 @@ import SideLink from "../Home/banner/SideLink/SideLink";
 const LetsTalk = ({ footerData }) => {
     const router = useRouter();
     const [footerLink, setFooterLink] = useState({});
+    const [verfied, setVerifed] = useState(false);
     const [txt, setTxt] = useState("");
 
 
@@ -64,7 +66,13 @@ const LetsTalk = ({ footerData }) => {
     //         e.target.reset();
     //     }
     // };
-
+  
+  
+    //recaptcha function
+  function onChange(value) {
+    console.log("Captcha value:", value);
+    setVerifed(true);
+  }
 
     const onSubmit = async (data, e) => {
         const emailInfo = {
@@ -86,7 +94,7 @@ const LetsTalk = ({ footerData }) => {
         }
     };
 
-    
+
     const onInputChange = e => {
         const { value } = e.target;
         console.log('Input value: ', value);
@@ -289,9 +297,13 @@ const LetsTalk = ({ footerData }) => {
                                     <p className="fs-14 text-danger">Message field required</p>
                                 )}
                             </div>
-
+                            <ReCAPTCHA
+                                sitekey="6LfcpGQkAAAAACUIxoFBVl6ImItvJnSCJQtLxHJi"
+                                onChange={onChange}
+                            />
                             <input
-                                className={`${styles.button}`}
+                                className={`${styles.button} mt-3`}
+                                disabled={!verfied}
                                 type="submit"
                                 value="send"
                             />
