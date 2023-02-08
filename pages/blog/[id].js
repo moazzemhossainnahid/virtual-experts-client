@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import ReactHtmlParser from "react-html-parser";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
@@ -23,8 +24,35 @@ import { BlogData } from "../../Data/BlogData";
 const BlogDetails = () => {
   const router = useRouter();
   const id = router.query.id;
+  const [newBlog, setNewBlog] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        // setBlogsData(data);
+        const cBlog = data.find((blog) => blog._id === id);
+        // console.log(currentBlog)
+        setNewBlog(cBlog);
+
+      });
+  }, [id]);
+
+  console.log(newBlog);
   const currentBlog = BlogData?.find((blog) => blog.id === id);
 
+  var date = new Date(newBlog?.createdAt)
+  var original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
+
+
+  let imgType;
+  if (newBlog?.img?.contentType === "image/svg+xml") {
+    imgType = "data:image/svg+xml";
+  } else if (newBlog?.img?.contentType === "image/png") {
+    imgType = "data:image/png";
+  } else {
+    imgType = "data:image/jpg";
+  }
   return (
     <>
       <Head>
@@ -49,14 +77,14 @@ const BlogDetails = () => {
               Blog
             </span>
             <span className="text-warning mx-2">{`>`}</span>{" "}
-            <span>{currentBlog?.title}</span>
+            <span>{currentBlog?.title || newBlog?.title}</span>
           </p>
         </div>
       </div>
 
       <div className="blog-title-background py-md-5">
         <div className="container py-5">
-          <h1 className="text-center text-white">{currentBlog?.metaTitle}</h1>
+          <h1 className="text-center text-white">{currentBlog?.title || newBlog?.title}</h1>
         </div>
       </div>
 
@@ -77,8 +105,27 @@ const BlogDetails = () => {
                       className="borderRadius mt-4"
                     />
                   )}
+                  {newBlog?.img && (
+                    <Image
+                      src={`${imgType} ; base64, ${newBlog.img.img}`}
+                      alt={newBlog.imgAlt}
+                      title={newBlog.imgTitle}
+                      width={100}
+                      height={100}
+                    />)}
                 </div>
                 <div className="d-block d-md-none">
+                  {newBlog?.img && (
+                    <Image
+                      src={`${imgType} ; base64, ${newBlog.img.img}`}
+                      alt={newBlog?.imgAlt}
+                      title={newBlog?.imgAlt}
+                      layout="responsive"
+                      height="450"
+                      width="1000"
+                      className="borderRadius"
+                    />
+                  )}
                   {currentBlog && (
                     <Image
                       src={currentBlog?.img}
@@ -94,29 +141,31 @@ const BlogDetails = () => {
                 <div className="d-flex align-items-center justify-content-evenly mt-4 ">
                   <p style={{ fontSize: "14px" }}>
                     {" "}
-                    <FaUser className="me-1" /> {currentBlog?.writerName}
+                    <FaUser className="me-1" /> {currentBlog?.writerName || newBlog?.writerName}
                   </p>
                   <p style={{ fontSize: "14px" }}>
                     {" "}
                     <AiOutlineClockCircle className="me-1" />{" "}
-                    {currentBlog?.publishedDate}
+                    {currentBlog?.publishedDate || original_date}
                   </p>
                 </div>
 
                 <h1 className="fs-32 my-4 lh-36">
-                  {ReactHtmlParser(currentBlog?.title)}
+                  {ReactHtmlParser(currentBlog?.title || newBlog?.title)}
                 </h1>
 
-                <h6 className="my-3">Table Of Contents</h6>
+                {(currentBlog?.tableOfContent || newBlog?.tableOfContent) &&
+                  <h6 className="my-3">Table Of Contents</h6>
+                }
                 <p className="table-of-content cursor-pointer d-inline-block">
-                  {ReactHtmlParser(currentBlog?.tableOfContent)}
+                  {ReactHtmlParser(currentBlog?.tableOfContent || newBlog?.tableOfContent)}
                 </p>
 
                 <div className="fs-28 my-4 lh-30">
                   {ReactHtmlParser(currentBlog?.subTitle)}
                 </div>
                 <p className="fs-14 lh-36 text-justify mb-5">
-                  {ReactHtmlParser(currentBlog?.description)}
+                  {ReactHtmlParser(currentBlog?.description || newBlog?.description)}
                 </p>
 
                 <div className="fs-28 my-4 lh-30">
