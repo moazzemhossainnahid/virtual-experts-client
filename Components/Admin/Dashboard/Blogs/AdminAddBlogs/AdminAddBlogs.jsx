@@ -19,6 +19,7 @@ const AdminAddBlogs = ({ setNumber }) => {
     formData.append("title", data.title);
     formData.append("writerName", data.writerName);
     formData.append("description", data.description);
+    formData.append("cardDescription", data.cardDescription);
     formData.append("imgAlt", data.imgAlt);
 
     fetch(`http://localhost:5000/blogs/post`, {
@@ -122,6 +123,24 @@ const AdminAddBlogs = ({ setNumber }) => {
                     className="form-control"
                   />
                   {errors.imgAlt && (
+                    <span className="text-danger">This field is required</span>
+                  )}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="cardDescription">Card Description</label>
+                  <textarea
+                    rows="2"
+                    cols="5"
+                    type="text"
+                    defaultValue=""
+                    {...register("cardDescription", { required: true })}
+                    name="cardDescription"
+                    id="cardDescription"
+                    autoComplete="off"
+                    className="form-control"
+                  ></textarea>
+                  {errors.cardDescription && (
                     <span className="text-danger">This field is required</span>
                   )}
                 </div>
