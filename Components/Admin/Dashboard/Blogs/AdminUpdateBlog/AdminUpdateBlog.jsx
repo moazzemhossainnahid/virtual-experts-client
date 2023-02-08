@@ -38,6 +38,7 @@ const AdminUpdateBlog = ({
   const onSubmitEdit = (data) => {
     const newTitle = data.title || blogsData.title;
     const newDescription = content || blogsData.description;
+    const newCardDescription = data.cardDescription || blogsData.cardDescription;
     const newWriterName = data.writerName || blogsData.writerName;
     const newImgAlt = data.imgAlt || blogsData.imgAlt;
     const _id = blogsData._id;
@@ -46,6 +47,7 @@ const AdminUpdateBlog = ({
       _id: _id,
       title: newTitle,
       description: newDescription,
+      cardDescription: newCardDescription,
       writerName: newWriterName,
       imgAlt: newImgAlt,
       img: blogsData.img,
@@ -57,6 +59,7 @@ const AdminUpdateBlog = ({
     formData.append("_id", _id);
     formData.append("title", newTitle);
     formData.append("description", newDescription);
+    formData.append("cardDescription", newCardDescription);
     formData.append("writerName", newWriterName);
     formData.append("imgAlt", newImgAlt);
 
@@ -110,6 +113,12 @@ const AdminUpdateBlog = ({
               <div class="form-group col-md-5 mx-auto m-1">
                 <label for="imgAlt">Image Alt</label>
                 <input {...register("imgAlt")} defaultValue={blogsData.imgAlt} type="text" class="form-control" id="imgAlt" placeholder="Image Alt" />
+              </div>
+            </div>
+            <div class="form-row col-11 mx-auto p-2">
+              <div class="form-group m-1">
+                <label for="desc">Blog Card Descriptions</label>
+                <textarea {...register("cardDescription")} defaultValue={blogsData.cardDescription} type="text" class="form-control" id="desc" placeholder="Blog Card Descriptions"/>
               </div>
             </div>
             <div class="form-row col-11 mx-auto p-2">
