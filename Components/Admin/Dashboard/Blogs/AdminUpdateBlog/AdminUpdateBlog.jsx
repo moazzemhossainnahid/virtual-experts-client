@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import JoditEditor from 'jodit-react';
 import { toast } from "react-toastify";
 
 const AdminUpdateBlog = ({
@@ -14,6 +14,8 @@ const AdminUpdateBlog = ({
 }) => {
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
+  const editor = useRef(null);
+	const [content, setContent] = useState('');
 
   console.log(blogsData);
 
@@ -108,29 +110,34 @@ const AdminUpdateBlog = ({
           <form onSubmit={handleSubmit()} className="mb-32" action="" >
 
             <div class="form-row d-flex flex-column flex-md-row p-2">
-              <div class="form-group col-md-6 m-1">
+              <div class="form-group col-md-5 mx-auto m-1">
                 <label for="title">Blog Title</label>
                 <input type="text" class="form-control" id="title" placeholder="Blog Title"/>
               </div>
-              <div class="form-group col-md-6 m-1">
+              <div class="form-group col-md-5 mx-auto m-1">
                 <label for="author">Writer Name</label>
                 <input type="text" class="form-control" id="author" placeholder="Writer Name"/>
               </div>
             </div>
             <div class="form-row d-flex flex-column flex-md-row p-2">
-              <div class="form-group col-md-6 m-1">
+              <div class="form-group col-md-5 mx-auto m-1">
                 <label for="img">Blog Image</label>
                 <input type="file" class="form-control" id="img" placeholder="Blog Image"/>
               </div>
-              <div class="form-group col-md-6 m-1">
+              <div class="form-group col-md-5 mx-auto m-1">
                 <label for="imgAlt">Image Alt</label>
                 <input type="text" class="form-control" id="imgAlt" placeholder="Image Alt"/>
               </div>
             </div>
-            <div class="form-row p-2">
+            <div class="form-row col-11 mx-auto p-2">
               <div class="form-group m-1">
                 <label for="desc">Blog Descriptions</label>
-                <textarea type="text" class="form-control" id="desc" placeholder="Blog Descriptions"/>
+                <JoditEditor type="text" ref={editor} value={content} onBlur={newContent => setContent(newContent)} class="form-control" id="desc" placeholder="Blog Descriptions"/>
+              </div>
+            </div>
+            <div class="form-row col-11 mx-auto p-2">
+              <div class="form-group m-1 d-flex justify-content-center">
+              <button type="button" class="btn btn-warning px-5">Update</button>
               </div>
             </div>
 
