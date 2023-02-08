@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import ReactHtmlParser from "react-html-parser";
 import { AiOutlineClockCircle } from "react-icons/ai";
@@ -16,24 +16,33 @@ import { BlogData } from "../../Data/BlogData";
 
 const Blog = () => {
   const router = useRouter();
-  const { register, handleSubmit, formState: { errors }, reset} = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [txt, setTxt] = useState("");
+  const [blogsCardData, setBlogsCardData] = useState([]);
+  const [number, setNumber] = useState(0);
 
-  
+  useEffect(() => {
+    fetch("http://localhost:5000/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        setBlogsCardData(data);
+      });
+  }, [number]);
+
   const onSubmit = async (data) => {
     const Info = {
-        name: data.name,
-        email: data.email,
-        productlink: data.productlink,
-        description: txt,
+      name: data.name,
+      email: data.email,
+      productlink: data.productlink,
+      description: txt,
     };
 
     console.log(Info)
 
     const res = await fetch("http://localhost:5000/leads/post", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(Info),
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(Info),
     });
     if (res.status === 200) {
       const msgTemplate = {
@@ -53,18 +62,18 @@ const Blog = () => {
       reset();
       return swal("Thank You", "Lead Place Successfully.", "success");
     }
-};
+  };
 
 
-const onInputChange = e => {
+  const onInputChange = e => {
     const { value } = e.target;
     console.log('Input value: ', value);
 
     const re = /^[A-Za-z. ]+(?:[ .-][A-Za-z]+)*$/;
     if (value === "" || re.test(value)) {
-        setTxt(value);
+      setTxt(value);
     }
-};
+  };
 
 
   return (
@@ -153,6 +162,66 @@ const onInputChange = e => {
                   </div>
                 </div>
               ))}
+              {blogsCardData?.map((blog) => {
+                let imgType;
+                if (blog.img.contentType === "image/svg+xml") {
+                  imgType = "data:image/svg+xml";
+                } else if (blog.img.contentType === "image/png") {
+                  imgType = "data:image/png";
+                } else {
+                  imgType = "data:image/jpg";
+                }
+                var date = new Date(blog?.createdAt);
+                var original_date = date.toLocaleString('default', { month: 'long' }) + " " + date.getDate() + "," + " " + date.getFullYear();
+                return (
+                  <div
+                    className="col-12 col-md-6 my-2 cursor-pointer"
+                    key={blog._id}
+                    onClick={() => router.push(`/blog/${blog._id}`)}
+                  >
+                    <div className="mx-1 boxShadow borderRadius h-100">
+                      {blog.img && (
+                        <div style={{height:"200px", overflow: "hidden"}} className="">
+                          <Image
+                            src={`${imgType} ; base64, ${blog.img.img}`}
+                            title={blog.imgAlt}
+                            alt={blog.imgAlt}
+                            width="200"
+                            height="150"
+                            layout="responsive"
+                            className="rounded-3"
+                          />
+                        </div>
+
+                      )}
+                      <div className="d-flex align-items-center justify-content-evenly mt-2 ">
+                        <p style={{ fontSize: "14px" }}>
+                          {" "}
+                          <FaUser className="me-1" /> {blog.writerName}
+                        </p>
+                        <p style={{ fontSize: "14px" }}>
+                          {" "}
+                          <AiOutlineClockCircle className="me-1" />{" "}
+                          {original_date}
+                        </p>
+
+                      </div>
+                      <div className="px-3 mb-3">
+                        <h3 className="fs-18 lh-36 m-0">{blog.title}</h3>
+                        <p className="fs-14 lh-36 m-0">
+                          {ReactHtmlParser(blog.description)}
+                        </p>
+                        <button
+                          className="fs-14 my-2 px-3 py-2 d-inline-block mb-3 btn btn-orange btn-outline-warning"
+                          onClick={() => router.push(`/blog/${blog._id}`)}
+                        >
+                          See More
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
 
