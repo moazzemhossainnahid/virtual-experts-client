@@ -5,108 +5,108 @@ import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const AdminUpdateBlog = ({
-  imgType,
-  currentBlog,
-  index,
-  blogsCardData,
-  setBlogsCardData,
-  setNumber,
+  // imgType,
+  blogsData,
+  // index,
+  // blogsCardData,
+  // setBlogsCardData,
+  // setNumber,
 }) => {
-  const [file, setFile] = useState(null);
-  const { register, handleSubmit } = useForm();
+  // const [file, setFile] = useState(null);
+  // const { register, handleSubmit } = useForm();
 
-  console.log(currentBlog)
-
-
-  var date = new Date(currentBlog?.createdAt)
-  var original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
+  // console.log(currentBlog)
 
 
-  // console.log(original_date);
+  // var date = new Date(currentBlog?.createdAt)
+  // var original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
 
-  const handleFileChange = (e) => {
-    // console.log(e)
-    console.log(e.target.files)
-    const newFile = e.target.files[0];
-    setFile(newFile);
-  };
 
-  // console.log(file)
+  // // console.log(original_date);
 
-  const deleteBlog = (id) => {
-    fetch(`http://localhost:5000/blogs/delete/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        if (result) {
-          toast.error("Blog Delete Successfully");
-          const newblogsCard = blogsCardData.filter(
-            (blog) => blog._id !== id
-          );
-          setBlogsCardData(newblogsCard);
-          setNumber((prevState) => prevState + 1);
-        }
-      });
-  };
+  // const handleFileChange = (e) => {
+  //   // console.log(e)
+  //   console.log(e.target.files)
+  //   const newFile = e.target.files[0];
+  //   setFile(newFile);
+  // };
 
-  const onSubmitEdit = (data) => {
-    const newTitle = data.title || currentBlog.title;
-    const newDescription = data.description || currentBlog.description;
-    const newWriterName = data.writerName || currentBlog.writerName;
-    const newImgAlt = data.imgAlt || currentBlog.imgAlt;
-    const _id = currentBlog._id;
+  // // console.log(file)
 
-    const newData = {
-      _id: _id,
-      title: newTitle,
-      description: newDescription,
-      writerName: newWriterName,
-      imgAlt: newImgAlt,
-      img: currentBlog.img,
-      uploadImage: false,
-    };
+  // const deleteBlog = (id) => {
+  //   fetch(`http://localhost:5000/blogs/delete/${id}`, {
+  //     method: "DELETE",
+  //   })
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       if (result) {
+  //         toast.error("Blog Delete Successfully");
+  //         const newblogsCard = blogsCardData.filter(
+  //           (blog) => blog._id !== id
+  //         );
+  //         setBlogsCardData(newblogsCard);
+  //         setNumber((prevState) => prevState + 1);
+  //       }
+  //     });
+  // };
 
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("_id", _id);
-    formData.append("title", newTitle);
-    formData.append("description", newDescription);
-    formData.append("writerName", newWriterName);
-    formData.append("imgAlt", newImgAlt);
+  // const onSubmitEdit = (data) => {
+  //   const newTitle = data.title || currentBlog.title;
+  //   const newDescription = data.description || currentBlog.description;
+  //   const newWriterName = data.writerName || currentBlog.writerName;
+  //   const newImgAlt = data.imgAlt || currentBlog.imgAlt;
+  //   const _id = currentBlog._id;
 
-    if (file === null) {
-      fetch("http://localhost:5000/blogs/update", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newData),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          toast.success("Blog Update Successfully");
-          setNumber((prvState) => prvState + 1);
-        });
-    } else {
-      fetch("http://localhost:5000/blogs/update", {
-        method: "PUT",
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          toast.success("Blog Update Successfully");
-          setNumber((prvState) => prvState + 1);
-        });
-    }
-  };
+  //   const newData = {
+  //     _id: _id,
+  //     title: newTitle,
+  //     description: newDescription,
+  //     writerName: newWriterName,
+  //     imgAlt: newImgAlt,
+  //     img: currentBlog.img,
+  //     uploadImage: false,
+  //   };
+
+  //   const formData = new FormData();
+  //   formData.append("file", file);
+  //   formData.append("_id", _id);
+  //   formData.append("title", newTitle);
+  //   formData.append("description", newDescription);
+  //   formData.append("writerName", newWriterName);
+  //   formData.append("imgAlt", newImgAlt);
+
+  //   if (file === null) {
+  //     fetch("http://localhost:5000/blogs/update", {
+  //       method: "PUT",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(newData),
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         toast.success("Blog Update Successfully");
+  //         setNumber((prvState) => prvState + 1);
+  //       });
+  //   } else {
+  //     fetch("http://localhost:5000/blogs/update", {
+  //       method: "PUT",
+  //       body: formData,
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         toast.success("Blog Update Successfully");
+  //         setNumber((prvState) => prvState + 1);
+  //       });
+  //   }
+  // };
 
   return (
     <div className=" bg-white text-left h-100 w-100 pt-lg-20 -mt-16">
       {/* <div className="w-full bg-gray-200 flex items-center justify-center my-12">
         <div className="bg-white shadow rounded py-12 lg:px-28 px-8"> */}
           <p className="md:text-3xl text-xl font-bold text-center text-dark">
-            Update <span className="text-danger">{currentBlog?.title}</span> currentBlog
+            Update <span className="text-danger">{blogsData?.title}</span>
           </p>
-          <h2 className="">{original_date}</h2>
+          {/* <h2 className="">{original_date}</h2>   */}
           <h2 className="bg-warning fs-30 font-weight-bold">Update Blog</h2>
           {/* <form
             onSubmit={handleSubmit()}

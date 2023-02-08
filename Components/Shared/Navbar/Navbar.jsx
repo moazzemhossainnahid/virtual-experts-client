@@ -5,25 +5,34 @@ import { AiOutlineClose } from "react-icons/ai";
 import logo from "../../../Assets/Images/others/Logo.svg";
 import mobileLogo from "../../../Assets/Images/others/v-logo.svg";
 import { NavbarData } from "../../../Data/NavbarData";
-import styles from "../../../styles/Navbar.module.css";  
+import styles from "../../../styles/Navbar.module.css";
 
 const Navbar = () => {
   const router = useRouter();
   const currentPath = router.pathname;
+  const id = router.query.id;
+
+  // if( == `/richard/blog/${id}`){
+
+  //   console.log(`/richard/blog/${id}`)
+  // }
+
+  console.log(router)
   return (
     <nav
       className={
         router.pathname === "/richard" ||
-        router.pathname === "/richard/fba" ||
-        router.pathname === "/richard/service" ||
-        router.pathname === "/richard/about" ||
-        router.pathname === "/richard/blog" ||
-        router.pathname === "/richard/cform" ||
-        router.pathname === "/richard/leads" ||
-        router.pathname === "/richard/footer" ||
-        router.pathname === "/richard/orders" ||
-        router.pathname === "/richard/invoice" ||
-        router.pathname === "/richard/meta"
+          router.pathname === "/richard/fba" ||
+          router.pathname === "/richard/service" ||
+          router.pathname === "/richard/about" ||
+          router.pathname === "/richard/blog" ||
+          router.pathname === "/richard/blog/[id]" ||
+          router.pathname === "/richard/cform" ||
+          router.pathname === "/richard/leads" ||
+          router.pathname === "/richard/footer" ||
+          router.pathname === "/richard/orders" ||
+          router.pathname === "/richard/invoice" ||
+          router.pathname === "/richard/meta"
           ? "d-none"
           : ""
       }
@@ -57,9 +66,8 @@ const Navbar = () => {
                   <li key={nav.id} className="mx-3 position-relative">
                     <Link
                       href={nav.link}
-                      className={`${
-                        currentPath === nav.link ? `${styles.active}` : ""
-                      } ${styles.navItem}`}
+                      className={`${currentPath === nav.link ? `${styles.active}` : ""
+                        } ${styles.navItem}`}
                       legacyBehavior>
 
                       {nav.title}
@@ -83,7 +91,7 @@ const Navbar = () => {
       </div>
       <div className="d-block d-md-none">
         <div
-        style={{backgroundColor:"#828B9A"}}
+          style={{ backgroundColor: "#828B9A" }}
           className={`offcanvas offcanvas-end ${styles.zIndex}`}
           tabIndex="-1"
           id="offcanvasRight"

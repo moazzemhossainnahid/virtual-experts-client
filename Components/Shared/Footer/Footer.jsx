@@ -42,6 +42,7 @@ const Footer = () => {
         router.pathname === "/richard/fba" ||
         router.pathname === "/richard/about" ||
         router.pathname === "/richard/blog" ||
+        router.pathname === "/richard/blog/[id]" ||
         router.pathname === "/richard/cform" ||
         router.pathname === "/richard/leads" ||
         router.pathname === "/richard/footer" ||

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import { BiMenu } from "react-icons/bi";
+import { BiCloudLightRain, BiMenu } from "react-icons/bi";
 import AdminUpdateBlog from "../../../Components/Admin/Dashboard/Blogs/AdminUpdateBlog/AdminUpdateBlog";
 import Sidebar from "../../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 
@@ -18,12 +18,18 @@ const BlogDetails = () => {
     fetch("http://localhost:5000/blogs")
       .then((res) => res.json())
       .then((data) => {
-        setBlogsData(data);
+        // setBlogsData(data);
+        const currentBlog = data.find((blog) => blog._id === id);
+        // console.log(currentBlog)
+        setBlogsData(currentBlog);
+
       });
-  }, [number]);
+  }, [id]);
 
 
-  const currentBlog = blogsData?.find((blog) => blog.id === id);
+  // const currentBlog = blogsData && blogsData?.find((blog) => blog.id === id);
+
+  console.log(blogsData);
 
   return (
     <>
@@ -62,11 +68,13 @@ const BlogDetails = () => {
           </div>
           <div className="col-12 col-md-10 scroll vh-100">
 
-            {/* <div className="p-3 boxShadow bg-gray rounded me-4 mb-5"> */}
+            <div className="p-3 boxShadow bg-gray rounded me-4 mb-5">
+
               {
-                currentBlog && <AdminUpdateBlog currentBlog={currentBlog} />
+                blogsData && <AdminUpdateBlog blogsData={blogsData} />
               }
-            {/* </div> */}
+
+            </div>
           </div>
         </div>
       </section>
