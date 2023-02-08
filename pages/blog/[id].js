@@ -24,13 +24,14 @@ import { BlogData } from "../../Data/BlogData";
 const BlogDetails = () => {
   const router = useRouter();
   const id = router.query.id;
+  const [sBlog, setSBlog] = useState([]);
   const [newBlog, setNewBlog] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/blogs")
       .then((res) => res.json())
       .then((data) => {
-        // setBlogsData(data);
+        setSBlog(data);
         const cBlog = data.find((blog) => blog._id === id);
         // console.log(currentBlog)
         setNewBlog(cBlog);
@@ -264,6 +265,50 @@ const BlogDetails = () => {
                     </div>
                   </div>
                 ))}
+                {sBlog?.map((blog) => {
+                  var date = new Date(blog?.createdAt)
+                  var original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
+
+                  let imgType;
+                  if (blog?.img?.contentType === "image/svg+xml") {
+                    imgType = "data:image/svg+xml";
+                  } else if (blog?.img?.contentType === "image/png") {
+                    imgType = "data:image/png";
+                  } else {
+                    imgType = "data:image/jpg";
+                  }
+                  return (
+                    <div
+                      className="col-12 cursor-pointer p-3 mb-4 border boxShadow rounded-1"
+                      key={blog._id}
+                      onClick={() => router.push(`/blog/${blog._id}`)}
+                    >
+                      <div className="row">
+                        <div className="col-md-4">
+                          {blog?.img && (
+                            <Image
+                              src={`${imgType} ; base64, ${blog.img.img}`}
+                              title={blog.imgAlt}
+                              alt={blog.imgAlt}
+                              width="200"
+                              height="150"
+                              layout="responsive"
+                              className="rounded-3 mt-3"
+                            />)}
+                        </div>
+                        <div className="col-md-8">
+                          <div className="px-3">
+                            <h3 className="fs-18 lh-36 m-0">{blog?.title}</h3>
+                            <div className="d-flex justify-content-between">
+                              <p>{blog?.writerName}</p>
+                              <p>{original_date}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </div>
