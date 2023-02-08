@@ -11,6 +11,7 @@ const BlogDetails = () => {
   const id = router.query.id;
   const [blogsData, setBlogsData] = useState([]);
   const [showSpinner, setShowSpinner] = useState(false);
+  const [number, setNumber] = useState(0);
 
   useEffect(() => {
     setShowSpinner(true);
@@ -23,7 +24,7 @@ const BlogDetails = () => {
         setBlogsData(currentBlog);
 
       });
-  }, [id]);
+  }, [id, number]);
 
   console.log(blogsData);
 
@@ -67,7 +68,7 @@ const BlogDetails = () => {
             <div className="p-3 boxShadow bg-gray rounded me-4 mb-5">
 
               {
-                blogsData && <AdminUpdateBlog blogsData={blogsData} />
+                blogsData && <AdminUpdateBlog setNumber={setNumber} blogsData={blogsData} />
               }
 
             </div>
