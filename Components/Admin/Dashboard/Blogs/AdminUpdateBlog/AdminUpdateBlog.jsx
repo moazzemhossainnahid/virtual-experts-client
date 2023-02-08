@@ -106,136 +106,34 @@ const AdminUpdateBlog = ({
           {/* <h2 className="">{original_date}</h2> */}
           <h2 className="bg-warning fs-24 py-2 text-center rounded font-weight-bold">Update Blog - {blogsData?.title}</h2>
           <form onSubmit={handleSubmit()} className="mb-32" action="" >
-            <div className="md:flex items-center mt-12">
-              <div className="md:w-72 flex flex-col">
-                <label className="text-base font-semibold leading-none text-gray-800">
-                  currentBlog Name
-                </label>
-                <input
-                  {...register('currentBlogTitle')}
-                  // defaultValue={title}
-                  // onChange={handleTitleInput}
-                  required
-                  tabIndex={0}
-                  arial-label="Please input name"
-                  type="name"
-                  className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
-                  placeholder="Please Input currentBlog Name"
-                />
-              </div>
-              <div className="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
-                <label className="text-base font-semibold leading-none text-gray-800">
-                  currentBlog Category
-                </label>
 
-                {/* <select {...register('currentBlogCategory')} defaultValue={cate} onChange={handleCateInput} className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500">
-                  <option disabled selected>Select currentBlog Category</option>
-                  <option>Wind Chimes</option>
-                  <option>Urinal Screen</option>
-                  <option>Pest Repeller</option>
-                  <option>Wrap Organizer</option>
-                  <option>Scrab Brush</option>
-                </select> */}
+            <div class="form-row d-flex flex-column flex-md-row p-2">
+              <div class="form-group col-md-6 m-1">
+                <label for="title">Blog Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Blog Title"/>
+              </div>
+              <div class="form-group col-md-6 m-1">
+                <label for="author">Writer Name</label>
+                <input type="text" class="form-control" id="author" placeholder="Writer Name"/>
               </div>
             </div>
-{/* 
-            <div className="md:flex items-center mt-12">
-              <div className="md:w-72 flex flex-col">
-                <label className="text-base font-semibold leading-none text-gray-800">
-                  currentBlog Price
-                </label>
-                <input
-                  {...register('currentBlogPrice')}
-                  value={price}
-                  required
-                  onChange={handlePriceInput}
-                  tabIndex={0}
-                  arial-label="Please input price"
-                  type="name"
-                  className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
-                  placeholder="Please Input currentBlog Price"
-                />
+            <div class="form-row d-flex flex-column flex-md-row p-2">
+              <div class="form-group col-md-6 m-1">
+                <label for="img">Blog Image</label>
+                <input type="file" class="form-control" id="img" placeholder="Blog Image"/>
               </div>
-              <div className="md:w-72 flex flex-col md:ml-6 md:mt-0 mt-4">
-                <label className="text-base font-semibold leading-none text-gray-800">
-                  currentBlog Image
-                </label>
-
-                {
-                  img === '' ?
-                    <input
-                      {...register('photoURL')}
-                      defaultValue={img}
-                      onChange={handleImgInput}
-                      required
-                      tabIndex={0}
-                      arial-label="Please Input Price"
-                      type="file"
-                      className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
-                      placeholder="Please Input currentBlog Image"
-                    /> :
-                    <div className="w-full h-32 rounded">
-                      <img src={img} alt="" className="object-cover h-full rounded" />
-                    </div>
-                }
-
+              <div class="form-group col-md-6 m-1">
+                <label for="imgAlt">Image Alt</label>
+                <input type="text" class="form-control" id="imgAlt" placeholder="Image Alt"/>
+              </div>
+            </div>
+            <div class="form-row p-2">
+              <div class="form-group m-1">
+                <label for="desc">Blog Descriptions</label>
+                <textarea type="text" class="form-control" id="desc" placeholder="Blog Descriptions"/>
               </div>
             </div>
 
-            <div className="md:flex items-center mt-12">
-              <div className="md:w-full flex flex-col">
-                <label className="text-base font-semibold leading-none text-gray-800">
-                  Amazon Link
-                </label>
-                <input
-                  {...register('amazonLink')}
-                  defaultValue={link}
-                  required
-                  onChange={handleLinkInput}
-                  tabIndex={0}
-                  arial-label="Please input email address"
-                  type="name"
-                  className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500"
-                  placeholder="Please Input Amazon Link"
-                />
-              </div>
-            </div>
-
-            <div>
-              <div className="w-full flex flex-col mt-8">
-                <label className="text-base font-semibold leading-none text-gray-800">
-                  currentBlog Description
-                </label>
-                <textarea
-                  {...register("currentBlogDescription")}
-                  defaultValue={desc}
-                  required
-                  onChange={handleDescInput}
-                  tabIndex={0}
-                  aria-label="leave a message"
-                  type="text"
-                  className="h-36 text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200  resize-none"
-                  placeholder="Input currentBlog Description"
-                />
-              </div>
-            </div>
-
-            <div className="flex items-center justify-around w-full">
-              <button
-                onClick={handleGetValues}
-                type="submit"
-                className="mt-9 text-base font-semibold leading-none text-white py-4 px-10 bg-primary rounded hover:bg-warning focus:ring-2 focus:ring-offset-2 focus:ring-secondary focus:outline-none"
-              >
-                get currentBlog Values
-              </button>
-              <button
-                disabled={!get || btnSpinner}
-                type="submit"
-                className="mt-9 text-base disabled:bg-gray-300 font-semibold leading-none text-white py-4 px-10 bg-warning rounded hover:bg-primary focus:ring-2 focus:ring-offset-2 focus:ring-secondary focus:outline-none"
-              >
-                Update currentBlog
-              </button>
-            </div> */}
           </form>
         </div>
       </div>

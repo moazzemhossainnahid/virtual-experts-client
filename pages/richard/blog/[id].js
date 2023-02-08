@@ -11,7 +11,6 @@ const BlogDetails = () => {
   const id = router.query.id;
   const [blogsData, setBlogsData] = useState([]);
   const [showSpinner, setShowSpinner] = useState(false);
-  const [number, setNumber] = useState(0);
 
   useEffect(() => {
     setShowSpinner(true);
@@ -25,9 +24,6 @@ const BlogDetails = () => {
 
       });
   }, [id]);
-
-
-  // const currentBlog = blogsData && blogsData?.find((blog) => blog.id === id);
 
   console.log(blogsData);
 
