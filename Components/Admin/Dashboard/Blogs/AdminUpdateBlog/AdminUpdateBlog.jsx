@@ -12,26 +12,26 @@ const AdminUpdateBlog = ({
   // setBlogsCardData,
   // setNumber,
 }) => {
-  // const [file, setFile] = useState(null);
-  // const { register, handleSubmit } = useForm();
+  const [file, setFile] = useState(null);
+  const { register, handleSubmit } = useForm();
 
-  // console.log(currentBlog)
-
-
-  // var date = new Date(currentBlog?.createdAt)
-  // var original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
+  console.log(blogsData);
 
 
-  // // console.log(original_date);
+  var date = new Date(blogsData?.createdAt);
+  var original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
 
-  // const handleFileChange = (e) => {
-  //   // console.log(e)
-  //   console.log(e.target.files)
-  //   const newFile = e.target.files[0];
-  //   setFile(newFile);
-  // };
 
-  // // console.log(file)
+  // console.log(original_date);
+
+  const handleFileChange = (e) => {
+    // console.log(e)
+    console.log(e.target.files)
+    const newFile = e.target.files[0];
+    setFile(newFile);
+  };
+
+  // console.log(file)
 
   // const deleteBlog = (id) => {
   //   fetch(`http://localhost:5000/blogs/delete/${id}`, {
@@ -101,18 +101,11 @@ const AdminUpdateBlog = ({
 
   return (
     <div className=" bg-white text-left h-100 w-100 pt-lg-20 -mt-16">
-      {/* <div className="w-full bg-gray-200 flex items-center justify-center my-12">
-        <div className="bg-white shadow rounded py-12 lg:px-28 px-8"> */}
-          <p className="md:text-3xl text-xl font-bold text-center text-dark">
-            Update <span className="text-danger">{blogsData?.title}</span>
-          </p>
-          {/* <h2 className="">{original_date}</h2>   */}
-          <h2 className="bg-warning fs-30 font-weight-bold">Update Blog</h2>
-          {/* <form
-            onSubmit={handleSubmit()}
-            className="mb-32"
-            action=""
-          >
+      <div className="w-full px-0 py-3 px-md-4 bg-gray-200 flex items-center justify-center my-12">
+        <div className="bg-white shadow rounded py-12 lg:px-28 px-8">
+          {/* <h2 className="">{original_date}</h2> */}
+          <h2 className="bg-warning fs-24 py-2 text-center rounded font-weight-bold">Update Blog - {blogsData?.title}</h2>
+          <form onSubmit={handleSubmit()} className="mb-32" action="" >
             <div className="md:flex items-center mt-12">
               <div className="md:w-72 flex flex-col">
                 <label className="text-base font-semibold leading-none text-gray-800">
@@ -135,17 +128,17 @@ const AdminUpdateBlog = ({
                   currentBlog Category
                 </label>
 
-                <select {...register('currentBlogCategory')} defaultValue={cate} onChange={handleCateInput} className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500">
+                {/* <select {...register('currentBlogCategory')} defaultValue={cate} onChange={handleCateInput} className="text-base leading-none text-gray-900 p-3 focus:oultine-none focus:border-indigo-700 mt-4 bg-gray-100 border rounded border-gray-200 placeholder-gray-500">
                   <option disabled selected>Select currentBlog Category</option>
                   <option>Wind Chimes</option>
                   <option>Urinal Screen</option>
                   <option>Pest Repeller</option>
                   <option>Wrap Organizer</option>
                   <option>Scrab Brush</option>
-                </select>
+                </select> */}
               </div>
             </div>
-
+{/* 
             <div className="md:flex items-center mt-12">
               <div className="md:w-72 flex flex-col">
                 <label className="text-base font-semibold leading-none text-gray-800">
@@ -242,10 +235,10 @@ const AdminUpdateBlog = ({
               >
                 Update currentBlog
               </button>
-            </div>
-          </form> */}
-        {/* </div>
-      </div> */}
+            </div> */}
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
