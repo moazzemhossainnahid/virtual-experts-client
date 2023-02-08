@@ -107,6 +107,7 @@ const AdminUpdateBlog = ({
             Update <span className="text-danger">{currentBlog?.title}</span> currentBlog
           </p>
           <h2 className="">{original_date}</h2>
+          <h2 className="bg-warning fs-30 font-weight-bold">Update Blog</h2>
           {/* <form
             onSubmit={handleSubmit()}
             className="mb-32"

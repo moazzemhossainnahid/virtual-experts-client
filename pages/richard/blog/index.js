@@ -111,7 +111,7 @@ return (
                 size={30}
                 className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
                 data-bs-toggle="modal"
-                data-bs-target="#addServiceModal"
+                data-bs-target="#addBlogModal"
               />
             </div>
           </div>

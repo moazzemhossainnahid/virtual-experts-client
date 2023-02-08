@@ -43,7 +43,7 @@ const AdminAddBlogs = ({ setNumber }) => {
       {/* For Add Card data Start */}
       <div
         className="modal fade"
-        id="addServiceModal"
+        id="addBlogModal"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"

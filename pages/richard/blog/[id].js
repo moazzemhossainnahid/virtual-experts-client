@@ -62,11 +62,11 @@ const BlogDetails = () => {
           </div>
           <div className="col-12 col-md-10 scroll vh-100">
 
-            <div className="p-3 boxShadow bg-gray rounded me-4 mb-5">
+            {/* <div className="p-3 boxShadow bg-gray rounded me-4 mb-5"> */}
               {
                 currentBlog && <AdminUpdateBlog currentBlog={currentBlog} />
               }
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </section>
