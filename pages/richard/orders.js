@@ -114,9 +114,9 @@ const Orders = () => {
                                 Total Orders - {totalData}
                             </h2>
                         </div>
-                        <div className="">
+                        {/* <div className="">
                             <Invoice />
-                        </div>
+                        </div> */}
                         {/*  */}
                         {orderData.map((info, index) => (
                             <div key={info._id}>
