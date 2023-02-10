@@ -23,6 +23,7 @@ const Home = ({ homeData, setNumber }) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         toast.success("Updates Successfully");
         setNumber((preState) => preState + 1);
       });
@@ -96,7 +97,7 @@ const Home = ({ homeData, setNumber }) => {
                 ></textarea>
                 <label htmlFor="keywords">Meta Keywords</label>
                 <textarea
-                  rows="2"
+                  rows="3"
                   cols="2"
                   defaultValue={keywords}
                   {...register("keywords")}
