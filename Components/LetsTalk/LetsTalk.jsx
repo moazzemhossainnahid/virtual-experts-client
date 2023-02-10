@@ -4,9 +4,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useForm } from "react-hook-form";
-import {
-    AiFillInstagram
-} from "react-icons/ai";
+import {AiFillInstagram} from "react-icons/ai";
 import { FaEnvelope, FaFacebook, FaSkype, FaTelegram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { HiLocationMarker, HiOutlineMail } from "react-icons/hi";
@@ -172,12 +170,12 @@ const LetsTalk = ({ footerData }) => {
                             <p className="fs-15 d-flex align-items-center lh-40 m-0">
                                 {" "}
                                 <FaSkype className={`${styles.logo}`} />
-                                <span className="fw-500">Email</span>: {footerData[0].skypeTitle}
+                                <span className="fw-500">Skype</span>: {footerData[0].skypeTitle}
                             </p>
                             <p className="fs-15 d-flex align-items-center lh-40 m-0">
                                 {" "}
                                 <FaWhatsapp className={`${styles.logo}`} />
-                                <span className="fw-500">Email</span>: {footerData[0].whatsAppTitle}
+                                <span className="fw-500">WhatsApp</span>: {footerData[0].whatsAppTitle}
                             </p>
                         </div>
                         <div>
