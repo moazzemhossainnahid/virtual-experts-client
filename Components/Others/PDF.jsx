@@ -162,7 +162,7 @@ const MyDoc = ({ info, selectedServices }) => (
             }}
           >
             <Image
-              src="https://scontent.xx.fbcdn.net/v/t1.15752-9/p206x206/235561233_519976809302774_7008316821987883769_n.png?_nc_cat=110&ccb=1-5&_nc_sid=aee45a&_nc_eui2=AeF6EPJar5jOkYA8k_IdhRd7j2j3AdLwew6PaPcB0vB7DuSWgCuUp9JPGx_PCamz6GjMZ8_XvfKobfktX8_xOjhD&_nc_ohc=LKh6J8PA7oMAX-rMMqD&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=6205ab8005f6c16f3af639409d208dd2&oe=614FEE73"
+              src="https://i.ibb.co/Y35gBHh/amazon-icon.png"
               alt="logo"
               style={{
                 height: "80px",
