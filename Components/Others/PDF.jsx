@@ -149,7 +149,27 @@ const MyDoc = ({ info, selectedServices }) => (
                 PHONE:
               </Text>{" "}
               <Text style={{ marginLeft: "100px", fontWeight: 300 }}>
-                +13473528622
+              +13478713917
+              </Text>
+            </Text>
+            <Text
+              style={{
+                marginBottom: "5px",
+                fontSize: "11px",
+                letterSpacing: "1px",
+              }}
+            >
+              <Text
+                style={{
+                  fontWeight: 400,
+                  fontSize: "11px",
+                  letterSpacing: "1px",
+                }}
+              >
+                WhatsApp:
+              </Text>{" "}
+              <Text style={{ marginLeft: "100px", fontWeight: 300 }}>
+              +15099035120
               </Text>
             </Text>
           </View>
@@ -584,7 +604,10 @@ const MyDoc = ({ info, selectedServices }) => (
               }}
             >
               <Text style={{ fontSize: "12px", marginBottom: "4px" }}>
-                or call us at ++1 347 352 8622
+                or call us at +13478713917
+              </Text>
+              <Text style={{ fontSize: "12px", marginBottom: "4px" }}>
+                Contact on WhatsApp at +15099035120
               </Text>
             </Text>
           </View>
