@@ -4,20 +4,24 @@ import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const LetsTalk = ({ letsTalkData, setNumber }) => {
-    const { _id, title, description } = letsTalkData;
+    const { _id, title, description, keywords } = letsTalkData;
     const newTitle = title;
     const newDescription = description;
+    const newKeywords = keywords;
+
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
         const title = data.title || newTitle;
         const description = data.description || newDescription;
+        const keywords = data.keywords || newKeywords;
+
 
         fetch("http://localhost:5000/metaletsTalk/update", {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
             },
-            body: JSON.stringify({ _id, title, description }),
+            body: JSON.stringify({ _id, title, description, keywords }),
         })
             .then((res) => res.json())
             .then((data) => {
@@ -36,6 +40,8 @@ const LetsTalk = ({ letsTalkData, setNumber }) => {
                 <p className="fs-14">{title}</p>
                 <h6 className="fs-18 mt-2">Description</h6>
                 <p className="fs-14">{description}</p>
+                <h6 className="fs-18 mt-2">Keywords</h6>
+        <p className="fs-14">{keywords}</p>
                 <div className="d-flex py-3 justify-content-end">
                     <AiFillEdit
                         size={30}
