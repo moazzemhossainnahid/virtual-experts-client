@@ -80,7 +80,7 @@ const Service = ({ serviceData, setNumber }) => {
                                     id="title"
                                     className="form-control mb-2"
                                 ></textarea>
-                                <label htmlFor="title">Meta description</label>
+                                <label htmlFor="description">Meta description</label>
                                 <textarea
                                     rows="2"
                                     cols="2"
@@ -88,6 +88,16 @@ const Service = ({ serviceData, setNumber }) => {
                                     {...register("description")}
                                     name="description"
                                     id="description"
+                                    className="form-control mb-2"
+                                ></textarea>
+                                <label htmlFor="keywords">Meta Keywords</label>
+                                <textarea
+                                    rows="2"
+                                    cols="2"
+                                    defaultValue={keywords}
+                                    {...register("keywords")}
+                                    name="keywords"
+                                    id="keywords"
                                     className="form-control mb-2"
                                 ></textarea>
 

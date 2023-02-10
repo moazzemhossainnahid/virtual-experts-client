@@ -4,20 +4,22 @@ import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const Home = ({ homeData, setNumber }) => {
-  const { _id, title, description } = homeData;
+  const { _id, title, description, keywords } = homeData;
   const newTitle = title;
   const newDescription = description;
+  const newKeywords = keywords;
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     const title = data.title || newTitle;
     const description = data.description || newDescription;
+    const keywords = data.keywords || newKeywords;
 
     fetch("http://localhost:5000/metaHome/update", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ _id, title, description }),
+      body: JSON.stringify({ _id, title, description, keywords }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -36,6 +38,8 @@ const Home = ({ homeData, setNumber }) => {
         <p className="fs-14">{title}</p>
         <h6 className="fs-18 mt-2">Description</h6>
         <p className="fs-14">{description}</p>
+        <h6 className="fs-18 mt-2">Keywords</h6>
+        <p className="fs-14">{keywords}</p>
         <div className="d-flex py-3 justify-content-end">
           <AiFillEdit
             size={30}
@@ -80,7 +84,7 @@ const Home = ({ homeData, setNumber }) => {
                   id="title"
                   className="form-control mb-2"
                 ></textarea>
-                <label htmlFor="title">Meta description</label>
+                <label htmlFor="description">Meta description</label>
                 <textarea
                   rows="2"
                   cols="2"
@@ -88,6 +92,16 @@ const Home = ({ homeData, setNumber }) => {
                   {...register("description")}
                   name="description"
                   id="description"
+                  className="form-control mb-2"
+                ></textarea>
+                <label htmlFor="keywords">Meta Keywords</label>
+                <textarea
+                  rows="2"
+                  cols="2"
+                  defaultValue={keywords}
+                  {...register("keywords")}
+                  name="keywords"
+                  id="keywords"
                   className="form-control mb-2"
                 ></textarea>
 
