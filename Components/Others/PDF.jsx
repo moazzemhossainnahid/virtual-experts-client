@@ -604,8 +604,17 @@ const MyDoc = ({ info, selectedServices }) => (
               }}
             >
               <Text style={{ fontSize: "12px", marginBottom: "4px" }}>
-                or call us at +13478713917
+                call us at +13478713917
               </Text>
+            </Text>
+            <Text
+              style={{
+                fontSize: "12px",
+                marginBottom: "4px",
+                letterSpacing: "1px",
+                fontWeight: 300,
+              }}
+            >
               <Text style={{ fontSize: "12px", marginBottom: "4px" }}>
                 Contact on WhatsApp at +15099035120
               </Text>
