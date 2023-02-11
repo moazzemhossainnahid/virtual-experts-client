@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { AiFillEye, AiOutlineClose } from "react-icons/ai";
+import { AiFillEye, AiFillFilePdf, AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import ReactPaginate from "react-paginate";
@@ -124,16 +124,19 @@ const Invoice = () => {
                                     <p className="fs-14">
                                         <span className="fw-bold">Invoice Id</span> - {info._id}
                                     </p>
+                                    <p className="fs-14">
+                                        <span className="fw-bold">Invoice Date</span> - {info?.date}
+                                    </p>
                                     <div className="d-flex align-items-center">
                                         <small
                                             className="cursor-pointer bg-info px-5 py-2 mx-2 rounded"
                                             data-bs-toggle="modal"
                                             data-bs-target={`#order${index + 100}`}
                                         >
-                                            <AiFillEye
+                                            <AiFillFilePdf
                                                 size={30}
                                                 className="text-danger p-1 cursor-pointer "
-                                            />   View Details
+                                            />   Download PDF
                                         </small>
                                         <MdDelete
                                             size={30}

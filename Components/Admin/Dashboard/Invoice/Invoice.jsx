@@ -46,6 +46,8 @@ const AdminInvoice = () => {
         setSelectedServices([]);
     };
 
+    // console.log(info);
+
     return (
         <>
             <ToastContainer

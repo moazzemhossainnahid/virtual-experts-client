@@ -7,6 +7,7 @@ const AdminBanner = () => {
     const [number, setNumber] = useState(0);
     const [bannerData, setBannerData] = useState({});
 
+
     const titleData = bannerData.title;
     const descriptionData = bannerData.description;
 
