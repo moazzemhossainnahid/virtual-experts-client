@@ -7,7 +7,6 @@ import { MdDelete } from "react-icons/md";
 import ReactPaginate from "react-paginate";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Invoice from "../../Components/Admin/Dashboard/Others/Invoice/Invoice";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
@@ -114,9 +113,9 @@ const Orders = () => {
                                 Total Orders - {totalData}
                             </h2>
                         </div>
-                        <div className="">
+                        {/* <div className="">
                             <Invoice />
-                        </div>
+                        </div> */}
                         {/*  */}
                         {orderData.map((info, index) => (
                             <div key={info._id}>

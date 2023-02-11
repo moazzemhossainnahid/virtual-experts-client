@@ -7,7 +7,7 @@ import { MdDelete } from "react-icons/md";
 import ReactPaginate from "react-paginate";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Invoice from "../../Components/Admin/Dashboard/Others/Invoice/Invoice";
+import AdminInvoice from "../../Components/Admin/Dashboard/Invoice/Invoice";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
@@ -59,7 +59,7 @@ const Invoice = () => {
     return (
         <>
             <Head>
-                <title>Virtual Experts | Admin-Orders</title>
+                <title>Virtual Experts | Admin-Invoice</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <ToastContainer
@@ -111,18 +111,18 @@ const Invoice = () => {
                         {/*  */}
                         <div className="pt-2 d-flex justify-content-center">
                             <h2 className="fs-22 roboto-font-family spacing-3">
-                                Total Orders - {totalData}
+                                Total Invoice - {totalData}
                             </h2>
                         </div>
                         <div className="">
-                            <Invoice />
+                            <AdminInvoice />
                         </div>
                         {/*  */}
                         {orderData.map((info, index) => (
                             <div key={info._id}>
                                 <div className="boxShadow bg-gray2 rounded p-3 my-3 d-flex  flex-column flex-md-row justify-content-between align-items-center">
                                     <p className="fs-14">
-                                        <span className="fw-bold">Order Id</span> - {info._id}
+                                        <span className="fw-bold">Invoice Id</span> - {info._id}
                                     </p>
                                     <div className="d-flex align-items-center">
                                         <small

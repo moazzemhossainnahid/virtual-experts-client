@@ -5,11 +5,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
-const MyDocument = dynamic(import("../../../../Others/PDF"), {
+const MyDocument = dynamic(import("../../../Others/PDF"), {
     ssr: false,
 });
 
-const Invoice = () => {
+const AdminInvoice = () => {
     const [selectedServices, setSelectedServices] = useState([]);
     const [info, setInfo] = useState({});
     const [data, setData] = useState([]);
@@ -325,7 +325,7 @@ const Invoice = () => {
     );
 };
 
-export default Invoice;
+export default AdminInvoice;
 
 // export async function getServerSideProps() {
 //     const res = await fetch(
