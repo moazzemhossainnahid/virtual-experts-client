@@ -10,9 +10,11 @@ import cardHeaderBg from "../../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../../Assets/Images/others/v-logo.svg";
 import SideLink from "./SideLink/SideLink";
 import swal from "sweetalert";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Banner = ({ bannerData, footerLink }) => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const [verfied, setVerifed] = useState(false);
   const [txt, setTxt] = useState("");
 
   // const onSubmit = async (data, e) => {
@@ -39,6 +41,13 @@ const Banner = ({ bannerData, footerLink }) => {
   //   e.target.reset();
   // };
 
+
+    //recaptcha function
+    
+    function onChange(value) {
+      console.log("Captcha value:", value);
+      setVerifed(true);
+    }
 
   const onSubmit = async (data) => {
     const Info = {
@@ -109,6 +118,7 @@ const Banner = ({ bannerData, footerLink }) => {
               <p className="fs-15 lh-30 text-justify">
                 {bannerData[0].description}
               </p>
+
               <button
                 className="button px-4 py-1 slide_right"
                 data-bs-toggle="modal"
@@ -222,8 +232,11 @@ const Banner = ({ bannerData, footerLink }) => {
                       <p className="fs-14 text-danger">Description Required</p>
                     )}
                   </div>
-
-                  <button className="card-button mt-2 d-block" type="submit">
+                  <ReCAPTCHA
+                    sitekey="6LfcpGQkAAAAACUIxoFBVl6ImItvJnSCJQtLxHJi"
+                    onChange={onChange}
+                  />
+                  <button disabled={!verfied} className={`cursor-pointer card-button mt-2 d-block`} type="submit">
                     Submit
                   </button>
                 </form>

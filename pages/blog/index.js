@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useForm } from "react-hook-form";
 import ReactHtmlParser from "react-html-parser";
 import { AiOutlineClockCircle } from "react-icons/ai";
@@ -19,6 +20,7 @@ const Blog = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [txt, setTxt] = useState("");
   const [blogsCardData, setBlogsCardData] = useState([]);
+  const [verfied, setVerifed] = useState(false);
   const [number, setNumber] = useState(0);
 
   useEffect(() => {
@@ -28,6 +30,13 @@ const Blog = () => {
         setBlogsCardData(data);
       });
   }, [number]);
+
+    
+    //recaptcha function
+    function onChange(value) {
+      console.log("Captcha value:", value);
+      setVerifed(true);
+    }
 
   const onSubmit = async (data) => {
     const Info = {
@@ -173,7 +182,7 @@ const Blog = () => {
                 }
                 var date = new Date(blog?.createdAt);
                 var original_date = date.toLocaleString('default', { month: 'long' }) + " " + date.getDate() + "," + " " + date.getFullYear();
-                console.log(blog.description.slice(100,500))
+                console.log(blog.description.slice(100, 500))
                 return (
                   <div
                     className="col-12 col-md-6 my-2 cursor-pointer"
@@ -182,7 +191,7 @@ const Blog = () => {
                   >
                     <div className="mx-1 boxShadow borderRadius h-100">
                       {blog.img && (
-                        <div style={{height:"200px", overflow: "hidden"}} className="">
+                        <div style={{ height: "200px", overflow: "hidden" }} className="">
                           <Image
                             src={`${imgType} ; base64, ${blog.img.img}`}
                             title={blog.imgAlt}
@@ -303,8 +312,11 @@ const Blog = () => {
                       <p className="fs-14 text-danger">Description Required</p>
                     )}
                   </div>
-
-                  <button className="card-button mt-2 d-block" type="submit">
+                  <ReCAPTCHA
+                    sitekey="6LfcpGQkAAAAACUIxoFBVl6ImItvJnSCJQtLxHJi"
+                    onChange={onChange}
+                  />
+                  <button disabled={!verfied} className="card-button mt-2 d-block" type="submit">
                     Submit
                   </button>
                 </form>
