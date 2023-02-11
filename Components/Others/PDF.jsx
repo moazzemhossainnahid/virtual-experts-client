@@ -149,7 +149,7 @@ const MyDoc = ({ info, selectedServices }) => (
                 PHONE:
               </Text>{" "}
               <Text style={{ marginLeft: "100px", fontWeight: 300 }}>
-                +13478713917
+              +13478713917
               </Text>
             </Text>
             <Text
@@ -169,7 +169,7 @@ const MyDoc = ({ info, selectedServices }) => (
                 WhatsApp:
               </Text>{" "}
               <Text style={{ marginLeft: "100px", fontWeight: 300 }}>
-                +15099035120
+              +15099035120
               </Text>
             </Text>
           </View>
@@ -659,10 +659,8 @@ const MyDocument = ({ info, selectedServices, handelClear }) => (
       document={<MyDoc info={info} selectedServices={selectedServices} />}
       fileName={`${info.clientName}.pdf`}
     >
-      {({ blob, url, loading, error }) => {
-        loading ? "Loading Document..." : "Download Now"
-        console.log(<MyDoc info={info} selectedServices={selectedServices} />)
-      }
+      {({ blob, url, loading, error }) =>
+        loading ? "Loading document..." : "Download Now"
       }
     </PDFDownloadLink>
   </div>

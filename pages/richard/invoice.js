@@ -1,3 +1,4 @@
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -138,6 +139,7 @@ const Invoice = () => {
                                                 className="text-danger p-1 cursor-pointer "
                                             />   Download PDF
                                         </small>
+
                                         <MdDelete
                                             size={30}
                                             className="text-warning bg-dark rounded-circle p-1 mx-2 cursor-pointer"
