@@ -149,7 +149,7 @@ const MyDoc = ({ info, selectedServices }) => (
                 PHONE:
               </Text>{" "}
               <Text style={{ marginLeft: "100px", fontWeight: 300 }}>
-              +13478713917
+                +13478713917
               </Text>
             </Text>
             <Text
@@ -169,7 +169,7 @@ const MyDoc = ({ info, selectedServices }) => (
                 WhatsApp:
               </Text>{" "}
               <Text style={{ marginLeft: "100px", fontWeight: 300 }}>
-              +15099035120
+                +15099035120
               </Text>
             </Text>
           </View>
@@ -340,7 +340,7 @@ const MyDoc = ({ info, selectedServices }) => (
             </View>
           </View>
           {/* loop will be continue here */}
-          {selectedServices.map((service, index) => (
+          {selectedServices?.map((service, index) => (
             <View
               style={{
                 flexDirection: "row",
@@ -653,10 +653,10 @@ const MyDoc = ({ info, selectedServices }) => (
   </Document>
 );
 
-const MyDocument = ({ info, selectedServices, handelClear }) => (
+const MyDocument = ({ info, handelClear }) => (
   <div className="btn btn-dark" onClick={handelClear}>
     <PDFDownloadLink
-      document={<MyDoc info={info} selectedServices={selectedServices} />}
+      document={<MyDoc info={info} selectedServices={info?.selectedServices} />}
       fileName={`${info.clientName}.pdf`}
     >
       {({ blob, url, loading, error }) =>

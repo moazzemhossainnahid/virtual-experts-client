@@ -13,7 +13,6 @@ const AdminInvoice = () => {
     const [selectedServices, setSelectedServices] = useState([]);
     const [info, setInfo] = useState({});
     const [data, setData] = useState([]);
-    const [ord, setOrd] = useState([]);
 
     useEffect(() => {
         fetch( "http://localhost:5000/servicesCard" )
@@ -23,13 +22,6 @@ const AdminInvoice = () => {
           })
     },[]);
 
-    useEffect(() => {
-        fetch( "http://localhost:5000/orders" )
-        .then(res => res.json())
-        .then((data) => {
-            setOrd(data)
-          })
-    },[]);
 
     const date = new Date();
 

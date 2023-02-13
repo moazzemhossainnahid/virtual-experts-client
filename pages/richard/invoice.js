@@ -10,6 +10,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AdminInvoice from "../../Components/Admin/Dashboard/Invoice/Invoice";
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
+import MyDocument from "../../Components/Others/PDF";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
 
@@ -20,6 +21,8 @@ const Invoice = () => {
 
     const router = useRouter();
     const page = router.query.page;
+
+    console.log(invoiceData);
 
     useEffect(() => {
         const loadData = async () => {
@@ -36,6 +39,7 @@ const Invoice = () => {
         };
         loadData();
     }, [page, number]);
+
 
     const totalPage = Math.ceil(totalData / 5);
 
@@ -137,7 +141,9 @@ const Invoice = () => {
                                             <AiFillFilePdf
                                                 size={30}
                                                 className="text-danger p-1 cursor-pointer "
-                                            />   Download PDF
+                                            />                               
+                                            <MyDocument info={info} selectedServices={info?.selectedServices} />
+
                                         </small>
 
                                         <MdDelete
