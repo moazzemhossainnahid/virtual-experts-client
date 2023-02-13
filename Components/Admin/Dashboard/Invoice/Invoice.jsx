@@ -13,6 +13,7 @@ const AdminInvoice = () => {
     const [selectedServices, setSelectedServices] = useState([]);
     const [info, setInfo] = useState({});
     const [data, setData] = useState([]);
+    const [ord, setOrd] = useState([]);
 
     useEffect(() => {
         fetch( "http://localhost:5000/servicesCard" )
@@ -22,13 +23,22 @@ const AdminInvoice = () => {
           })
     },[]);
 
+    useEffect(() => {
+        fetch( "http://localhost:5000/orders" )
+        .then(res => res.json())
+        .then((data) => {
+            setOrd(data)
+          })
+    },[]);
+
     const date = new Date();
 
-let day = date.getDate();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
-let currentDate = `${day}-${month}-${year}`;
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let currentDate = `${day}-${month}-${year}`;
 
+    const randomNumber = Math.ceil((Math.random() * 10000000000) + 1);
 
 
     console.log("Info",info);
@@ -142,7 +152,7 @@ let currentDate = `${day}-${month}-${year}`;
                                     <label htmlFor="invoiceNo">Invoice No</label>
                                     <input
                                         type="text"
-                                        defaultValue=""
+                                        defaultValue={randomNumber}
                                         name="invoiceNo"
                                         id="invoiceNo"
                                         autoComplete="off"
