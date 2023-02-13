@@ -130,18 +130,21 @@ const Invoice = () => {
                                         <span className="fw-bold">Invoice Id</span> - {info._id}
                                     </p>
                                     <p className="fs-14">
+                                        <span className="fw-bold">Client Name</span> - {info?.clientName}
+                                    </p>
+                                    <p className="fs-14">
                                         <span className="fw-bold">Invoice Date</span> - {info?.date}
                                     </p>
                                     <div className="d-flex align-items-center">
                                         <small
                                             className="cursor-pointer bg-info px-5 py-2 mx-2 rounded"
-                                            data-bs-toggle="modal"
-                                            data-bs-target={`#order${index + 100}`}
+                                        // data-bs-toggle="modal"
+                                        // data-bs-target={`#order${index + 100}`}
                                         >
                                             <AiFillFilePdf
                                                 size={30}
                                                 className="text-danger p-1 cursor-pointer "
-                                            />                               
+                                            />
                                             <MyDocument info={info} selectedServices={info?.selectedServices} />
 
                                         </small>
