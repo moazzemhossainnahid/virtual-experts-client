@@ -127,7 +127,7 @@ const Invoice = () => {
                             <div key={info._id}>
                                 <div className="boxShadow bg-gray2 rounded p-3 my-3 d-flex  flex-column flex-md-row justify-content-between align-items-center">
                                     <p className="fs-14">
-                                        <span className="fw-bold">Invoice Id</span> - {info._id}
+                                        <span className="fw-bold">Invoice No</span> - {info.invoiceNo}
                                     </p>
                                     <p className="fs-14">
                                         <span className="fw-bold">Client Name</span> - {info?.clientName}
@@ -247,10 +247,13 @@ const Invoice = () => {
                             </div>
                         ))}
                         <div className="d-flex justify-content-center">
-                            <ReactPaginate
-                                pageCount={totalPage}
-                                onPageChange={handlePageChange}
-                            />
+                            {
+                                totalData > 5 &&
+                                <ReactPaginate
+                                    pageCount={totalPage}
+                                    onPageChange={handlePageChange}
+                                />
+                            }
                         </div>
                     </div>
                 </div>
