@@ -14,7 +14,7 @@ import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
 
 const Invoice = () => {
-    const [orderData, setOrderData] = useState([]);
+    const [invoiceData, setInvoiceData] = useState([]);
     const [totalData, setTotalData] = useState(0);
     const [number, setNumber] = useState(0);
 
@@ -23,15 +23,15 @@ const Invoice = () => {
 
     useEffect(() => {
         const loadData = async () => {
-            const res = await fetch("http://localhost:5000/order", {
+            const res = await fetch("http://localhost:5000/invoice", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({ page: page }),
             });
-            const ordersData = await res.json();
-            const orderData = ordersData.result;
-            setOrderData(orderData);
-            const totalData = ordersData.totalData;
+            const invoicesData = await res.json();
+            const invoiceData = invoicesData.result;
+            setInvoiceData(invoiceData);
+            const totalData = invoicesData.totalData;
             setTotalData(totalData);
         };
         loadData();
@@ -40,12 +40,12 @@ const Invoice = () => {
     const totalPage = Math.ceil(totalData / 5);
 
     const handlePageChange = (page) => {
-        router.push(`/dashboard/orders?page=${page.selected + 1}`);
+        router.push(`/richard/orders?page=${page.selected + 1}`);
     };
 
-    const handleDeleteOrder = (id) => {
+    const handleDeleteInvoice = (id) => {
         const _id = id;
-        fetch("http://localhost:5000/order/delete", {
+        fetch("http://localhost:5000/invoice/delete", {
             method: "DELETE",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ _id }),
@@ -119,7 +119,7 @@ const Invoice = () => {
                             <AdminInvoice />
                         </div>
                         {/*  */}
-                        {orderData.map((info, index) => (
+                        {invoiceData.map((info, index) => (
                             <div key={info._id}>
                                 <div className="boxShadow bg-gray2 rounded p-3 my-3 d-flex  flex-column flex-md-row justify-content-between align-items-center">
                                     <p className="fs-14">
@@ -223,7 +223,7 @@ const Invoice = () => {
                                                     <button className="btn btn-primary px-4">No</button>
                                                     <button
                                                         className="btn btn-danger px-4 ms-3"
-                                                        onClick={() => handleDeleteOrder(info._id)}
+                                                        onClick={() => handleDeleteInvoice(info._id)}
                                                         data-bs-dismiss="modal"
                                                         aria-label="Close"
                                                     >
