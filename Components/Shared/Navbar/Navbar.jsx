@@ -17,7 +17,7 @@ const Navbar = () => {
   //   console.log(`/richard/blog/${id}`)
   // }
 
-  console.log(router)
+  // console.log(router);
   return (
     <nav
       className={

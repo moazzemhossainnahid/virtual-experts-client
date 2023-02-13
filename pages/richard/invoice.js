@@ -40,7 +40,7 @@ const Invoice = () => {
     const totalPage = Math.ceil(totalData / 5);
 
     const handlePageChange = (page) => {
-        router.push(`/richard/orders?page=${page.selected + 1}`);
+        router.push(`/richard/invoice?page=${page.selected + 1}`);
     };
 
     const handleDeleteInvoice = (id) => {

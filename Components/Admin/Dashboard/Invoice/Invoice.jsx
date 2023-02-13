@@ -22,17 +22,42 @@ const AdminInvoice = () => {
           })
     },[]);
 
-    // console.log("Services Data",data);
+    const date = new Date();
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+let currentDate = `${day}-${month}-${year}`;
 
 
-    const onSubmit = (data, e) => {
+
+    console.log("Info",info);
+    console.log("Services Data",selectedServices);
+
+    const { register, handleSubmit, formState: { errors }, } = useForm();
+
+
+    const onSubmit = async(data, e) => {
         setInfo(data);
+
+        const invoiceInfo = {
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            subject: data.subject,
+            message: txt,
+        };
+        
+        const res = await fetch("http://localhost:5000/invoice/post", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(invoiceInfo),
+        });
+        if (res.status === 200) {
+            toast.success("Data add Successfully");
+            e.target.reset();
+        }
+
         toast.success("Please Download the invoice");
         e.target.reset();
     };
@@ -101,7 +126,7 @@ const AdminInvoice = () => {
                                     <label htmlFor="date">Date</label>
                                     <input
                                         type="text"
-                                        defaultValue=""
+                                        defaultValue={currentDate}
                                         name="date"
                                         id="date"
                                         autoComplete="off"
