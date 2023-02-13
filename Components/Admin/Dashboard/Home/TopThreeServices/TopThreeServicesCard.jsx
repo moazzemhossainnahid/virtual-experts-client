@@ -38,7 +38,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
     // }
 
     if (file === null) {
-      fetch("http://localhost:5000/topServices/update", {
+      fetch("https://virtual-experts-server.cyclic.app/topServices/update", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(newData),
@@ -52,7 +52,7 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
 
     } else {
 
-      fetch("http://localhost:5000/topServices/update", {
+      fetch("https://virtual-experts-server.cyclic.app/topServices/update", {
         method: "PUT",
         body: formData,
       })

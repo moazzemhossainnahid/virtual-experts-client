@@ -8,7 +8,7 @@ const AdminWhyShouldHireFBA = () => {
   useEffect(() => {
     const loadData = async () => {
       const whyShouldHireResponse = await fetch(
-        "http://localhost:5000/whyshouldhire"
+        "https://virtual-experts-server.cyclic.app/whyshouldhire"
       );
       const whyShouldHireData = await whyShouldHireResponse.json();
       setHires(whyShouldHireData);

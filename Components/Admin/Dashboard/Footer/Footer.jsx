@@ -11,11 +11,11 @@ const AdminFooter = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("http://localhost:5000/footer")
+    fetch("https://virtual-experts-server.cyclic.app/footer")
       .then((res) => res.json())
       .then((data) => setFooterData(data[0]));
 
-    fetch("http://localhost:5000/footerLink")
+    fetch("https://virtual-experts-server.cyclic.app/footerLink")
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]));
   }, [number]);
@@ -31,7 +31,7 @@ const AdminFooter = () => {
     const _id = footerData._id;
     const address = data.address || footerData.address;
 
-    fetch("http://localhost:5000/footer/update", {
+    fetch("https://virtual-experts-server.cyclic.app/footer/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
@@ -61,7 +61,7 @@ const AdminFooter = () => {
     const twitter = data.twitter || footerLink.twitter;
     const youTube = data.youTube || footerLink.youTube;
 
-    fetch("http://localhost:5000/footerLink/update", {
+    fetch("https://virtual-experts-server.cyclic.app/footerLink/update", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({

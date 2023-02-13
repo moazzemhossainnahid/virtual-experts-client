@@ -14,7 +14,7 @@ const Home = ({ homeData, setNumber }) => {
     const description = data.description || newDescription;
     const keywords = data.keywords || newKeywords;
 
-    fetch("http://localhost:5000/metaHome/update", {
+    fetch("https://virtual-experts-server.cyclic.app/metaHome/update", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

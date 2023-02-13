@@ -24,7 +24,7 @@ const Blog = () => {
   const [number, setNumber] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5000/blogs")
+    fetch("https://virtual-experts-server.cyclic.app/blogs")
       .then((res) => res.json())
       .then((data) => {
         setBlogsCardData(data);
@@ -48,7 +48,7 @@ const Blog = () => {
 
     console.log(Info)
 
-    const res = await fetch("http://localhost:5000/leads/post", {
+    const res = await fetch("https://virtual-experts-server.cyclic.app/leads/post", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(Info),

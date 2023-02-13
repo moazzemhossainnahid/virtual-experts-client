@@ -39,7 +39,7 @@ const AdminServiceCard = ({
   // console.log(file)
 
   const deleteService = (id) => {
-    fetch(`http://localhost:5000/servicesCard/delete/${id}`, {
+    fetch(`https://virtual-experts-server.cyclic.app/servicesCard/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -103,7 +103,7 @@ const AdminServiceCard = ({
     formData.append("imgAlt", newImgAlt);
 
     if (file === null) {
-      fetch("http://localhost:5000/servicesCard/update", {
+      fetch("https://virtual-experts-server.cyclic.app/servicesCard/update", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newData),
@@ -114,7 +114,7 @@ const AdminServiceCard = ({
           setNumber((prvState) => prvState + 1);
         });
     } else {
-      fetch("http://localhost:5000/servicesCard/update", {
+      fetch("https://virtual-experts-server.cyclic.app/servicesCard/update", {
         method: "PUT",
         body: formData,
       })

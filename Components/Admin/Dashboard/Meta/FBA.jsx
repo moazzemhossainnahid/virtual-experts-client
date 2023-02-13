@@ -16,7 +16,7 @@ const FBA = ({ fbaData, setNumber }) => {
         const keywords = data.keywords || newKeywords;
 
 
-        fetch("http://localhost:5000/metaFBA/update", {
+        fetch("https://virtual-experts-server.cyclic.app/metaFBA/update", {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

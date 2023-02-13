@@ -11,7 +11,7 @@ const AdminAmazon = () => {
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    fetch("http://localhost:5000/amazon")
+    fetch("https://virtual-experts-server.cyclic.app/amazon")
       .then((res) => res.json())
       .then((data) => setAmazon(data));
   }, [number]);
@@ -36,7 +36,7 @@ const AdminAmazon = () => {
       description_part_3 = amazon.description_part_3;
     }
 
-    fetch("http://localhost:5000/amazon/update", {
+    fetch("https://virtual-experts-server.cyclic.app/amazon/update", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -33,7 +33,7 @@ const TeamsCard = ({ team, index, setNumber }) => {
         formData.append("_id", _id);
 
         if (file === null) {
-            fetch("http://localhost:5000/teams/update", {
+            fetch("https://virtual-experts-server.cyclic.app/teams/update", {
                 method: "PUT",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(newData),
@@ -44,7 +44,7 @@ const TeamsCard = ({ team, index, setNumber }) => {
                     setNumber((prvState) => prvState + 1);
                 });
         } else {
-            fetch("http://localhost:5000/teams/update", {
+            fetch("https://virtual-experts-server.cyclic.app/teams/update", {
                 method: "PUT",
                 body: formData,
             })

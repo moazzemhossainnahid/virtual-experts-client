@@ -21,7 +21,7 @@ const ResetPassword = () => {
   const handleCheckVerificationCode = (data, e) => {
     const verificationCode = data.verificationCode;
     fetch(
-      "http://localhost:5000/adminLogin/checkVerificationCode",
+      "https://virtual-experts-server.cyclic.app/adminLogin/checkVerificationCode",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -43,7 +43,7 @@ const ResetPassword = () => {
   const handleResetPassword = async (data) => {
     const password = data.password;
     fetch(
-      "http://localhost:5000/adminLogin/update/password",
+      "https://virtual-experts-server.cyclic.app/adminLogin/update/password",
       {
         method: "PUT",
         headers: { "content-type": "application/json" },

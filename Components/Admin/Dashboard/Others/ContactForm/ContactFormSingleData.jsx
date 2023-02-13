@@ -6,7 +6,7 @@ const ContactFormSingleData = ({ infoData,setInfoData,info, index, setNumber }) 
 
 
     const deleteContactForm = (id) => {
-        fetch(`http://localhost:5000/contactform/delete/${id}`, {
+        fetch(`https://virtual-experts-server.cyclic.app/contactform/delete/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

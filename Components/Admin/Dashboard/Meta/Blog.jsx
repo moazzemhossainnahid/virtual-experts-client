@@ -16,7 +16,7 @@ const Blog = ({ blogData, setNumber }) => {
         const keywords = data.keywords || newKeywords;
 
 
-        fetch("http://localhost:5000/metaBlog/update", {
+        fetch("https://virtual-experts-server.cyclic.app/metaBlog/update", {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

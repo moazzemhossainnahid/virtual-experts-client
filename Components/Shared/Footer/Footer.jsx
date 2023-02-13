@@ -19,11 +19,11 @@ const Footer = () => {
   const [footer, setFooter] = useState(null);
   const [footerLink, setFooterLink] = useState({});
   useEffect(() => {
-    fetch("http://localhost:5000/footer")
+    fetch("https://virtual-experts-server.cyclic.app/footer")
       .then((res) => res.json())
       .then((data) => setFooter(data[0]))
 
-    fetch("http://localhost:5000/footerLink")
+    fetch("https://virtual-experts-server.cyclic.app/footerLink")
       .then((res) => res.json())
       .then((data) => setFooterLink(data[0]))
   }, []);

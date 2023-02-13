@@ -7,7 +7,7 @@ const WhyWeAreUniqueSinglData = ({ answer, index, setNumber }) => {
 
     const onSubmit = (data) => {
         const title = data.title || answer.title;
-        fetch("http://localhost:5000/aboutUniqueList/update", {
+        fetch("https://virtual-experts-server.cyclic.app/aboutUniqueList/update", {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ title, _id: answer._id }),

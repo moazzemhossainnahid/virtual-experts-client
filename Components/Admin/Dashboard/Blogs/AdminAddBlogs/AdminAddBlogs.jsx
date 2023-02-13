@@ -22,7 +22,7 @@ const AdminAddBlogs = ({ setNumber }) => {
     formData.append("cardDescription", data.cardDescription);
     formData.append("imgAlt", data.imgAlt);
 
-    fetch(`http://localhost:5000/blogs/post`, {
+    fetch(`https://virtual-experts-server.cyclic.app/blogs/post`, {
       method: "POST",
       body: formData,
     })

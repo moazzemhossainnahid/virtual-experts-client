@@ -6,7 +6,7 @@ const LeadsSingleData = ({ leadData, setLeadData, lead, index, setNumber }) => {
 
 
     const deleteLeads = (id) => {
-        fetch(`http://localhost:5000/leads/delete/${id}`, {
+        fetch(`https://virtual-experts-server.cyclic.app/leads/delete/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

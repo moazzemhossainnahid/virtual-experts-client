@@ -34,7 +34,7 @@ const AdminBlogCard = ({
   // console.log(file)
 
   const deleteBlog = (id) => {
-    fetch(`http://localhost:5000/blogs/delete/${id}`, {
+    fetch(`https://virtual-experts-server.cyclic.app/blogs/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -76,7 +76,7 @@ const AdminBlogCard = ({
     formData.append("imgAlt", newImgAlt);
 
     if (file === null) {
-      fetch("http://localhost:5000/blogs/update", {
+      fetch("https://virtual-experts-server.cyclic.app/blogs/update", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newData),
@@ -87,7 +87,7 @@ const AdminBlogCard = ({
           setNumber((prvState) => prvState + 1);
         });
     } else {
-      fetch("http://localhost:5000/blogs/update", {
+      fetch("https://virtual-experts-server.cyclic.app/blogs/update", {
         method: "PUT",
         body: formData,
       })

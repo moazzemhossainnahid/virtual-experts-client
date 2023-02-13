@@ -15,7 +15,7 @@ const AdminInvoice = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch( "http://localhost:5000/servicesCard" )
+        fetch( "https://virtual-experts-server.cyclic.app/servicesCard" )
         .then(res => res.json())
         .then((data) => {
             setData(data)
@@ -60,7 +60,7 @@ const AdminInvoice = () => {
 
         // console.log(invoiceInfo);
         
-        const res = await fetch("http://localhost:5000/invoice/post", {
+        const res = await fetch("https://virtual-experts-server.cyclic.app/invoice/post", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(invoiceInfo),
@@ -368,7 +368,7 @@ export default AdminInvoice;
 
 // export async function getServerSideProps() {
 //     const res = await fetch(
-//       "http://localhost:5000/servicesCard"
+//       "https://virtual-experts-server.cyclic.app/servicesCard"
 //     );
 //     const serviceData = await res.json();
   

@@ -6,7 +6,7 @@ const AdminHowToPlaceAnOrder = () => {
   const [number, setNumber] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/placeAnOrderList")
+    fetch("https://virtual-experts-server.cyclic.app/placeAnOrderList")
       .then((res) => res.json())
       .then((data) => setAnswerList(data));
   }, [number]);

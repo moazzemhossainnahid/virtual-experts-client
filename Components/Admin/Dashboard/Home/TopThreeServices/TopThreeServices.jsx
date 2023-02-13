@@ -14,11 +14,11 @@ const AdminTopThreeService = () => {
 
   useEffect(() => {
     setShowSpinner(true);
-    fetch("http://localhost:5000/headerInfoTopServices")
+    fetch("https://virtual-experts-server.cyclic.app/headerInfoTopServices")
       .then((res) => res.json())
       .then((result) => setTitle(result[0]));
 
-    fetch("http://localhost:5000/topServices")
+    fetch("https://virtual-experts-server.cyclic.app/topServices")
       .then((res) => res.json())
       .then((result) => {
         setShowSpinner(false);
@@ -29,7 +29,7 @@ const AdminTopThreeService = () => {
   const handleUpdateInfo = (data) => {
     const newTitle = data.title || title.title;
     fetch(
-      "http://localhost:5000/headerInfoTopServices/update",
+      "https://virtual-experts-server.cyclic.app/headerInfoTopServices/update",
       {
         method: "PUT",
         headers: { "content-type": "application/json" },

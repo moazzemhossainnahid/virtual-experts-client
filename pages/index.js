@@ -79,57 +79,57 @@ export default function Home({
 //top three services fetching
 export async function getServerSideProps(context) {
   const resTopServices = await fetch(
-    "http://localhost:5000/topServices"
+    "https://virtual-experts-server.cyclic.app/topServices"
   );
   const topServicesData = await resTopServices.json();
 
   const resHeaderInfoTopServices = await fetch(
-    "http://localhost:5000/headerInfoTopServices"
+    "https://virtual-experts-server.cyclic.app/headerInfoTopServices"
   );
   const headerInfoTopServicesData = await resHeaderInfoTopServices.json();
 
   const resVirtualService = await fetch(
-    "http://localhost:5000/virtualService"
+    "https://virtual-experts-server.cyclic.app/virtualService"
   );
   const virtualServicesData = await resVirtualService.json();
 
   const resHeaderInfoVirtualExperts = await fetch(
-    "http://localhost:5000/headerInfoVirtualExports"
+    "https://virtual-experts-server.cyclic.app/headerInfoVirtualExports"
   );
   const headerInfoVirtualExpertsData = await resHeaderInfoVirtualExperts.json();
 
   const resBanner = await fetch(
-    "http://localhost:5000/banner"
+    "https://virtual-experts-server.cyclic.app/banner"
   );
   const bannerData = await resBanner.json();
 
   const resTestimonials = await fetch(
-    "http://localhost:5000/testimonials"
+    "https://virtual-experts-server.cyclic.app/testimonials"
   );
   const testimonials = await resTestimonials.json();
 
   const resAmazon = await fetch(
-    "http://localhost:5000/amazon"
+    "https://virtual-experts-server.cyclic.app/amazon"
   );
   const amazonData = await resAmazon.json();
 
   const resPlaceAnOrderList = await fetch(
-    "http://localhost:5000/placeAnOrderList"
+    "https://virtual-experts-server.cyclic.app/placeAnOrderList"
   );
   const placeAnOrderListData = await resPlaceAnOrderList.json();
 
   const resPlaceAnOrder = await fetch(
-    "http://localhost:5000/placeAnOrder"
+    "https://virtual-experts-server.cyclic.app/placeAnOrder"
   );
   const placeAnOrderData = await resPlaceAnOrder.json();
 
   const resFooter = await fetch(
-    "http://localhost:5000/footer"
+    "https://virtual-experts-server.cyclic.app/footer"
   );
   const footerLink = await resFooter.json();
 
   const resMetaHome = await fetch(
-    "http://localhost:5000/metaHome"
+    "https://virtual-experts-server.cyclic.app/metaHome"
   );
   const metaHome = await resMetaHome.json();
 

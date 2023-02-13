@@ -52,30 +52,30 @@ export default About;
 
 export async function getServerSideProps() {
   const aboutResponse = await fetch(
-    "http://localhost:5000/about"
+    "https://virtual-experts-server.cyclic.app/about"
   );
   const aboutData = await aboutResponse.json();
 
   const aboutUniqueResponse = await fetch(
-    "http://localhost:5000/aboutUnique"
+    "https://virtual-experts-server.cyclic.app/aboutUnique"
   );
   const aboutUniquetData = await aboutUniqueResponse.json();
 
   const aboutUniqueListResponse = await fetch(
-    "http://localhost:5000/aboutUniqueList"
+    "https://virtual-experts-server.cyclic.app/aboutUniqueList"
   );
   const aboutUniquetListData = await aboutUniqueListResponse.json();
 
   const aboutTeamResponse = await fetch(
-    "http://localhost:5000/aboutTeam"
+    "https://virtual-experts-server.cyclic.app/aboutTeam"
   );
   const aboutTeamData = await aboutTeamResponse.json();
 
-  const resTeams = await fetch("http://localhost:5000/teams");
+  const resTeams = await fetch("https://virtual-experts-server.cyclic.app/teams");
   const teams = await resTeams.json();
 
   const resMetaAbout = await fetch(
-    "http://localhost:5000/metaAbout"
+    "https://virtual-experts-server.cyclic.app/metaAbout"
   );
   const metaAbout = await resMetaAbout.json();
 

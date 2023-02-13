@@ -29,11 +29,11 @@ const LetsTalks = ({ footerData, metaLetsTalk }) => {
 export default LetsTalks;
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:5000/footer");
+  const res = await fetch("https://virtual-experts-server.cyclic.app/footer");
   const footerData = await res.json();
 
   const resmetaLetsTalk = await fetch(
-    "http://localhost:5000/metaLetsTalk"
+    "https://virtual-experts-server.cyclic.app/metaLetsTalk"
   );
   const metaLetsTalk = await resmetaLetsTalk.json();
 

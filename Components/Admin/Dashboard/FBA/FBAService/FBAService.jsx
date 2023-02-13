@@ -8,7 +8,7 @@ const AdminFBAService = () => {
   useEffect(() => {
     const loadData = async () => {
       const fbaServiceResponse = await fetch(
-        "http://localhost:5000/fbaservice"
+        "https://virtual-experts-server.cyclic.app/fbaservice"
       );
       const fbaServiceData = await fbaServiceResponse.json();
       setAnswers(fbaServiceData);

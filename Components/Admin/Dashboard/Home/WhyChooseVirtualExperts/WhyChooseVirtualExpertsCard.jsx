@@ -23,7 +23,7 @@ const AdminWhyChooseVirtualExpertsCard = ({
   // const handleUpdateInfo = (data) => {
   //   const title = data.title || cardData.title;
   //   const description = data.description || cardData.description;
-  //   fetch("http://localhost:5000/virtualService/update", {
+  //   fetch("https://virtual-experts-server.cyclic.app/virtualService/update", {
   //     method: "PUT",
   //     headers: { "content-type": "application/json" },
   //     body: JSON.stringify({ title, _id: cardData._id, description }),
@@ -58,7 +58,7 @@ const AdminWhyChooseVirtualExpertsCard = ({
     console.log("data in formdata", formData);
 
     if (file === null) {
-      fetch("http://localhost:5000/virtualService/update", {
+      fetch("https://virtual-experts-server.cyclic.app/virtualService/update", {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(newData),
@@ -69,7 +69,7 @@ const AdminWhyChooseVirtualExpertsCard = ({
           setNumber((prvState) => prvState + 1);
         });
     } else {
-      fetch("http://localhost:5000/virtualService/update", {
+      fetch("https://virtual-experts-server.cyclic.app/virtualService/update", {
         method: "PUT",
         body: formData,
       })

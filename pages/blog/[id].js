@@ -28,7 +28,7 @@ const BlogDetails = () => {
   const [newBlog, setNewBlog] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/blogs")
+    fetch("https://virtual-experts-server.cyclic.app/blogs")
       .then((res) => res.json())
       .then((data) => {
         setSBlog(data);

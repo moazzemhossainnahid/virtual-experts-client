@@ -6,7 +6,7 @@ const ScheduleMeeting = () => {
   const [scheduleTitle, setScheduleTitle] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:5000/scheduleMeeting")
+    fetch("https://virtual-experts-server.cyclic.app/scheduleMeeting")
       .then((res) => res.json())
       .then((data) => setScheduleTitle(data));
   }, []);

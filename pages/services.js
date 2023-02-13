@@ -53,22 +53,22 @@ const Services = ({
 
 export async function getServerSideProps(context) {
   const res = await fetch(
-    "http://localhost:5000/servicesCard"
+    "https://virtual-experts-server.cyclic.app/servicesCard"
   );
   const servicesCardData = await res.json();
 
   const whatWeDoRes = await fetch(
-    "http://localhost:5000/whatWeDo"
+    "https://virtual-experts-server.cyclic.app/whatWeDo"
   );
   const whatWeDo = await whatWeDoRes.json();
 
   const serviceCardHeaderRes = await fetch(
-    "http://localhost:5000/serviceCardHeader"
+    "https://virtual-experts-server.cyclic.app/serviceCardHeader"
   );
   const serviceCardHeader = await serviceCardHeaderRes.json();
 
   const resMetaService = await fetch(
-    "http://localhost:5000/metaService"
+    "https://virtual-experts-server.cyclic.app/metaService"
   );
   const metaService = await resMetaService.json();
 

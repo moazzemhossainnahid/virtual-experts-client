@@ -50,27 +50,27 @@ export default AmazonFBA;
 
 export async function getServerSideProps() {
   const fbaResponse = await fetch(
-    "http://localhost:5000/amazonfba"
+    "https://virtual-experts-server.cyclic.app/amazonfba"
   );
   const fbaData = await fbaResponse.json();
 
   const fbad1Response = await fetch(
-    "http://localhost:5000/fbadesc1"
+    "https://virtual-experts-server.cyclic.app/fbadesc1"
   );
   const fbad1Data = await fbad1Response.json();
 
   const whyshouldhireResponse = await fetch(
-    "http://localhost:5000/whyshouldhire"
+    "https://virtual-experts-server.cyclic.app/whyshouldhire"
   );
   const whyshouldhireData = await whyshouldhireResponse.json();
 
   const fbaServiceResponse = await fetch(
-    "http://localhost:5000/fbaservice"
+    "https://virtual-experts-server.cyclic.app/fbaservice"
   );
   const fbaServiceData = await fbaServiceResponse.json();
 
   const resMetaFBA = await fetch(
-    "http://localhost:5000/metaFBA"
+    "https://virtual-experts-server.cyclic.app/metaFBA"
   );
   const metaFBA = await resMetaFBA.json();
 

@@ -16,7 +16,7 @@ const About = ({ aboutData, setNumber }) => {
         const keywords = data.keywords || newKeywords;
 
 
-        fetch("http://localhost:5000/metaAbout/update", {
+        fetch("https://virtual-experts-server.cyclic.app/metaAbout/update", {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
