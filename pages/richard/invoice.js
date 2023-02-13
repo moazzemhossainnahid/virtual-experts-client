@@ -22,7 +22,7 @@ const Invoice = () => {
     const router = useRouter();
     const page = router.query.page;
 
-    console.log(invoiceData);
+    // console.log(invoiceData);
 
     useEffect(() => {
         const loadData = async () => {
@@ -247,13 +247,10 @@ const Invoice = () => {
                             </div>
                         ))}
                         <div className="d-flex justify-content-center">
-                            {
-                                invoiceData > 5 &&
-                                <ReactPaginate
-                                    pageCount={totalPage}
-                                    onPageChange={handlePageChange}
-                                />
-                            }
+                            <ReactPaginate
+                                pageCount={totalPage}
+                                onPageChange={handlePageChange}
+                            />
                         </div>
                     </div>
                 </div>

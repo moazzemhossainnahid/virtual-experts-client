@@ -58,7 +58,7 @@ const AdminInvoice = () => {
             selectedServices: selectedServices,
         };
 
-        console.log(invoiceInfo)
+        // console.log(invoiceInfo);
         
         const res = await fetch("http://localhost:5000/invoice/post", {
             method: "POST",
@@ -71,7 +71,7 @@ const AdminInvoice = () => {
         }
 
         toast.success("Please Download the invoice");
-        e.target.reset();
+        window.location.reload();
     };
 
     const handleSelect = (e) => {
