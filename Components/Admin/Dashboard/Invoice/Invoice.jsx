@@ -51,12 +51,22 @@ const AdminInvoice = () => {
         setInfo(data);
 
         const invoiceInfo = {
-            name: data.name,
-            email: data.email,
-            phone: data.phone,
-            subject: data.subject,
-            message: txt,
+            date: data.date,
+            invoiceNo: data.invoiceNo,
+            clientName: data.clientName,
+            clientAddress: data.clientAddress,
+            clientEmail: data.clientEmail,
+            grandTotal: data.grandTotal,
+            price: data.price,
+            quantity: data.quantity,
+            subTotal: data.subTotal,
+            tax: data.tax,
+            taxPercentage: data.taxPercentage,
+            total: data.total,
+            selectedServices: selectedServices,
         };
+
+        console.log(invoiceInfo)
         
         const res = await fetch("http://localhost:5000/invoice/post", {
             method: "POST",
