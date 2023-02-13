@@ -107,7 +107,7 @@ const AdminInvoice = () => {
                             </button>
                         </div>
                         <div className="my-5">
-                            <MyDocument info={info} selectedServices={selectedServices} handelClear={handelClear} />
+                            {/* <MyDocument info={info} selectedServices={selectedServices} handelClear={handelClear} /> */}
                         </div>
                     </div>
                 </div>

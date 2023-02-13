@@ -654,13 +654,13 @@ const MyDoc = ({ info, selectedServices }) => (
 );
 
 const MyDocument = ({ info, handelClear }) => (
-  <div className="btn btn-dark" onClick={handelClear}>
+  <div className="btn" onClick={handelClear}>
     <PDFDownloadLink
       document={<MyDoc info={info} selectedServices={info?.selectedServices} />}
-      fileName={`${info.clientName}.pdf`}
+      fileName={`${info.clientName}-${info.invoiceNo}.pdf`}
     >
       {({ blob, url, loading, error }) =>
-        loading ? "Loading document..." : "Download Now"
+        loading ? "Loading Document..." : "Download Now"
       }
     </PDFDownloadLink>
   </div>
