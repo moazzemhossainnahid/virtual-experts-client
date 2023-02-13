@@ -80,26 +80,132 @@ const AmazonFBAConsultant = ({
             <div className="row">
               <div className="col-md-6 d-flex justify-content-left justify-content-md-center align-items-center">
                 <div>
-                  {fbaServiceData?.slice(0,10).map((item) => (
-                    <div key={item._id} className="d-flex fs-15 lh-30 mt-2">
-                      <span className="me-2 numberBefore fw-500 text-dark">
-                        {item?.sl}
-                      </span>
-                      <p>{item?.title}</p>
-                    </div>
-                  ))}
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      01
+                    </span>
+                    <p>{fbaServiceData[0]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      02
+                    </span>
+                    <p>{fbaServiceData[1]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      03
+                    </span>
+                    <p>{fbaServiceData[2]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      04
+                    </span>
+                    <p>{fbaServiceData[3]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      05
+                    </span>
+                    <p>{fbaServiceData[4]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      06
+                    </span>
+                    <p>{fbaServiceData[5]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      07
+                    </span>
+                    <p>{fbaServiceData[6]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      08
+                    </span>
+                    <p>{fbaServiceData[7]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      09
+                    </span>
+                    <p>{fbaServiceData[8]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      10
+                    </span>
+                    <p>{fbaServiceData[9]?.title}</p>
+                  </div>
+
                 </div>
               </div>
               <div className="col-md-6 d-flex justify-content-left justify-content-md-center align-items-center">
-                <div>
-                  {fbaServiceData?.slice(10,20).map((item) => (
-                    <div key={item._id} className="d-flex fs-15 lh-30 mt-2">
-                      <span className="me-2 numberBefore fw-500 text-dark">
-                        {item?.sl}
-                      </span>
-                      <p>{item.title}</p>
-                    </div>
-                  ))}
+              <div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      11
+                    </span>
+                    <p>{fbaServiceData[10]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      12
+                    </span>
+                    <p>{fbaServiceData[11]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      13
+                    </span>
+                    <p>{fbaServiceData[12]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      14
+                    </span>
+                    <p>{fbaServiceData[13]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      15
+                    </span>
+                    <p>{fbaServiceData[14]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      16
+                    </span>
+                    <p>{fbaServiceData[15]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      17
+                    </span>
+                    <p>{fbaServiceData[16]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      18
+                    </span>
+                    <p>{fbaServiceData[17]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      19
+                    </span>
+                    <p>{fbaServiceData[18]?.title}</p>
+                  </div>
+                  <div className="d-flex fs-15 lh-30 mt-2">
+                    <span className="me-2 numberBefore fw-500 text-dark">
+                      20
+                    </span>
+                    <p>{fbaServiceData[19]?.title}</p>
+                  </div>
+
                 </div>
               </div>
             </div>
