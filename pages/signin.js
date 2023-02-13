@@ -67,16 +67,16 @@ const Signin = () => {
       subject: `You verification code is - ${randomNumber}`,
       name: "Virtual Experts",
       verificationCode: randomNumber,
-      link: "https://virtualexperts.net/reset-password",
+      link: "http://localhost:3000/reset-password",
     };
-    // const msgTemplate = {
-    //   service_id: "service_jpr5wh2",
-    //   template_id: "template_jcid58g",
-    //   user_id: "user_Gj21qvrXg9jH4lGJolreq",
-    //   template_params: {
-    //     ...emailInfo,
-    //   },
-    // };
+    const msgTemplate = {
+      service_id: "service_rzmhs77",
+      template_id: "template_qh7ovco",
+      user_id: "IhCq6pEXATangp8On",
+      template_params: {
+        ...emailInfo,
+      },
+    };
 
     fetch(
       "http://localhost:5000/adminLogin/update/verificationCode",
@@ -177,12 +177,12 @@ const Signin = () => {
                   {errors.password?.message}
                 </span>
 
-                {/* <p
+                <p
                   className="text-end cursor-pointer fs-14 text-dark"
                   onClick={handleResetPassword}
                 >
                   Change Password?
-                </p> */}
+                </p>
 
                 <button className="card-button rounded mx-auto mt-2 d-block" type="submit">
                   Sign In

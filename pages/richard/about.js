@@ -11,7 +11,6 @@ import AdminWhyWeAreUnique from "../../Components/Admin/Dashboard/About/WhyWeAre
 import Sidebar from "../../Components/Admin/Dashboard/Others/Sidebar/Sidebar";
 import WithAdminAuth from "../../Components/Others/WithAdminAuth";
 
-
 const About = () => {
   return (
     <>
