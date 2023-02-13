@@ -246,12 +246,15 @@ const Invoice = () => {
                                 {/* modal 2 end */}
                             </div>
                         ))}
-                        {/* <div className="d-flex justify-content-center">
-                            <ReactPaginate
-                                pageCount={totalPage}
-                                onPageChange={handlePageChange}
-                            />
-                        </div> */}
+                        <div className="d-flex justify-content-center">
+                            {
+                                invoiceData > 5 &&
+                                <ReactPaginate
+                                    pageCount={totalPage}
+                                    onPageChange={handlePageChange}
+                                />
+                            }
+                        </div>
                     </div>
                 </div>
             </section>
