@@ -137,7 +137,7 @@ const Invoice = () => {
                                     </p>
                                     <div className="d-flex align-items-center">
                                         <small
-                                            className="cursor-pointer bg-info px-5 py-2 mx-2 rounded"
+                                            className="cursor-pointer bg-info px-3 mx-2 rounded"
                                         // data-bs-toggle="modal"
                                         // data-bs-target={`#order${index + 100}`}
                                         >
