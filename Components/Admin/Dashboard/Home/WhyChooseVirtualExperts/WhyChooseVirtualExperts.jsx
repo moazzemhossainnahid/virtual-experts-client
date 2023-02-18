@@ -97,7 +97,7 @@ const AdminWhyChooseVirtualExperts = () => {
             <div className="modal-body">
               <form onSubmit={handleSubmit(handleUpdateInfo)}>
                 <textarea
-                  rows="5"
+                  rows="2"
                   cols="5"
                   defaultValue={info.title}
                   {...register("title")}
