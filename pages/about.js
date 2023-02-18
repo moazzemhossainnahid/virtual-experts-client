@@ -29,10 +29,13 @@ const About = ({
         />
         <meta
           name="keyword"
-          content="amazon fba consultant,
-        amazon seo services,
-        amazon seo consultant,
-        amazon seo agency"
+          content=
+          {
+            metaAbout.keywords
+              ? ` ${metaAbout.keywords}`
+              : "amazon fba consultant, amazon seo services, amazon seo consultant, amazon seo agency"
+          }
+          
         />
       </Head>
       <AboutComponents

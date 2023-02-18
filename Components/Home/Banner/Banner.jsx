@@ -14,7 +14,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 const Banner = ({ bannerData, footerLink }) => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
-  const [verfied, setVerifed] = useState(false);
+  // const [verfied, setVerifed] = useState(false);
   const [txt, setTxt] = useState("");
 
   // const onSubmit = async (data, e) => {
@@ -232,11 +232,11 @@ const Banner = ({ bannerData, footerLink }) => {
                       <p className="fs-14 text-danger">Description Required</p>
                     )}
                   </div>
-                  <ReCAPTCHA
+                  {/* <ReCAPTCHA
                     sitekey="6LfcpGQkAAAAACUIxoFBVl6ImItvJnSCJQtLxHJi"
                     onChange={onChange}
-                  />
-                  <button disabled={!verfied} className={`cursor-pointer card-button mt-2 d-block`} type="submit">
+                  /> */}
+                  <button className={`cursor-pointer card-button mt-2 d-block`} type="submit">
                     Submit
                   </button>
                 </form>

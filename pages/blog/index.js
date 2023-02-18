@@ -15,12 +15,12 @@ import cardHeaderImg from "../../Assets/Images/others/v-logo.svg";
 import SideLink from "../../Components/Home/Banner/SideLink/SideLink";
 import { BlogData } from "../../Data/BlogData";
 
-const Blog = () => {
+const Blog = ({metaBlog}) => {
   const router = useRouter();
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [txt, setTxt] = useState("");
   const [blogsCardData, setBlogsCardData] = useState([]);
-  const [verfied, setVerifed] = useState(false);
+  // const [verfied, setVerifed] = useState(false);
   const [number, setNumber] = useState(0);
 
   useEffect(() => {
@@ -33,10 +33,10 @@ const Blog = () => {
 
     
     //recaptcha function
-    function onChange(value) {
-      console.log("Captcha value:", value);
-      setVerifed(true);
-    }
+    // function onChange(value) {
+    //   console.log("Captcha value:", value);
+    //   setVerifed(true);
+    // }
 
   const onSubmit = async (data) => {
     const Info = {
@@ -88,8 +88,30 @@ const Blog = () => {
   return (
     <>
       <Head>
-        <title>Virtual Experts | Blog</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <title>
+          {metaBlog.title
+            ? `Virtual Experts |  ${metaBlog.title}`
+            : "virtual Experts | Blog"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaBlog.description
+              ? ` ${metaBlog.description}`
+              : "virtual Experts"
+          }
+        />
+        <meta
+          name="keyword"
+          content=
+          {
+            metaBlog.keywords
+              ? ` ${metaBlog.keywords}`
+              : "Amazon Marketing Services, amazon seller feedback, amazon product review, amazon seo, amazon fba consultant, amazonseo services, amazonsearch engine optimization, amazonseo consultant, amazon seo agency, worst amazon reviews, amazon bad reviews, amazon fba consulting services, listing optimization services, amazon negative review removal, how to remove bad reviews on amazon"
+          }
+          
+        />
       </Head>
       <ToastContainer
         position="top-right"
@@ -312,11 +334,11 @@ const Blog = () => {
                       <p className="fs-14 text-danger">Description Required</p>
                     )}
                   </div>
-                  <ReCAPTCHA
+                  {/* <ReCAPTCHA
                     sitekey="6LfcpGQkAAAAACUIxoFBVl6ImItvJnSCJQtLxHJi"
                     onChange={onChange}
-                  />
-                  <button disabled={!verfied} className="card-button mt-2 d-block" type="submit">
+                  /> */}
+                  <button className="card-button mt-2 d-block" type="submit">
                     Submit
                   </button>
                 </form>
@@ -329,5 +351,20 @@ const Blog = () => {
     </>
   );
 };
+
+export async function getServerSideProps(context) {
+
+  const resMetaBlog = await fetch(
+    "https://virtual-experts-server.cyclic.app/metaBlog"
+  );
+  const metaBlog = await resMetaBlog.json();
+
+  return {
+    props: {
+      metaBlog: metaBlog[0],
+    },
+  };
+}
+
 
 export default Blog;

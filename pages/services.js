@@ -27,21 +27,13 @@ const Services = ({
         />
         <meta
           name="keyword"
-          content="Amazon Marketing Services,
-          amazon seller feedback,
-          amazon product review,
-          amazon seo,
-          amazon fba consultant,
-          amazonseo services,
-          amazonsearch engine optimization,
-          amazonseo consultant,
-          amazon seo agency,
-          worst amazon reviews,
-          amazon bad reviews,
-          amazon fba consulting services,
-          listing optimization services,
-          amazon negative review removal,
-          how to remove bad reviews on amazon"
+          content=
+          {
+            metaService.keywords
+              ? ` ${metaService.keywords}`
+              : "Amazon Marketing Services, amazon seller feedback, amazon product review, amazon seo, amazon fba consultant, amazonseo services, amazonsearch engine optimization, amazonseo consultant, amazon seo agency, worst amazon reviews, amazon bad reviews, amazon fba consulting services, listing optimization services, amazon negative review removal, how to remove bad reviews on amazon"
+          }
+          
         />
       </Head>
       <ServicesComponents whatWeDo={whatWeDo} servicesCardData={servicesCardData} serviceCardHeader={serviceCardHeader} />
