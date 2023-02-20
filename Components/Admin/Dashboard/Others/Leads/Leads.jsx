@@ -17,7 +17,7 @@ const AdminLeads = () => {
     }, [number]);
     return (
         <section className="my-2 boxShadow bg-gray rounded me-3 p-3">
-            <h1 className="fs-24 spacing-3 text-center py-3">Lead's Info</h1>
+            <h1 className="fs-24 spacing-3 text-center py-3">{`Lead's Info`}</h1>
             <div className="row">
                     {leadData.map((lead, index) => (
                         <LeadsSingleData

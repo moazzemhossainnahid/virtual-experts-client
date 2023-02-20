@@ -141,6 +141,7 @@ const Blog = ({metaBlog}) => {
           </p>
         </div>
       </div>
+      <SideLink />
 
       <div className="container mt-5">
         <div className="row ">
@@ -347,7 +348,6 @@ const Blog = ({metaBlog}) => {
           </div>
         </div>
       </div>
-      <SideLink />
     </>
   );
 };

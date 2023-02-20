@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-
+import Script from 'next/script'
 import jwt_decode from "jwt-decode";
 import Head from "next/head";
 import Router, { useRouter } from "next/router";
@@ -82,14 +82,14 @@ export default function App({ Component, pageProps }) {
               fbq('track', 'PageView');`,
             }}
           /> */}
-          <noscript>
+          {/* <noscript>
             <img
               height="1"
               width="1"
               style={{ display: "none" }}
               src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
             />
-          </noscript>
+          </noscript> */}
         </Head>
 
         <UserContext.Provider value={[signedUser, setSignedUser]}>
@@ -113,10 +113,7 @@ export default function App({ Component, pageProps }) {
           integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
           crossOrigin="anonymous"
         ></script>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
-        ></script>
+
         {/* Google Analytics Script Add */}
         {/* <script
           dangerouslySetInnerHTML={{
@@ -151,6 +148,10 @@ export default function App({ Component, pageProps }) {
           />
         </noscript> */}
       </Head>
+      <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
+        />
       <Navbar />
       <UserContext.Provider value={[signedUser, setSignedUser]}>
         <Component {...pageProps} />

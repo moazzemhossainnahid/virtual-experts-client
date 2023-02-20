@@ -60,7 +60,7 @@ const LeadsSingleData = ({ leadData, setLeadData, lead, index, setNumber }) => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel">
-                                DELETE - {lead?.name}'s Data
+                                {`DELETE - ${lead?.name}'s Data`}
                             </h5>
                             <button
                                 type="button"

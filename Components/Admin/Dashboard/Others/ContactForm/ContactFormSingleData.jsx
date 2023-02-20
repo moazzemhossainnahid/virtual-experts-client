@@ -61,7 +61,7 @@ const ContactFormSingleData = ({ infoData,setInfoData,info, index, setNumber }) 
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
-                  DELETE - {info.name}'s Data
+                  {`DELETE - ${info.name}'s Data`}
                 </h5>
                 <button
                   type="button"
