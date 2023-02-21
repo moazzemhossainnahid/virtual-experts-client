@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import bannerImg from "../../../Assets/Images/home/amazon-fba-consultant-virtual-experts.svg";
 import cardHeaderBg from "../../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../../Assets/Images/others/v-logo.svg";
-import SideLink from "./SideLink/SideLink";
+// import SideLink from "./SideLink/SideLink";
 import swal from "sweetalert";
 // import ReCAPTCHA from "react-google-recaptcha";
 
@@ -142,7 +142,7 @@ const Banner = ({ bannerData, footerLink }) => {
       </div>
 
       {/* social link goes here */}
-      <SideLink />
+      {/* <SideLink /> */}
 
       {/* PopUp Modal */}
       <div
