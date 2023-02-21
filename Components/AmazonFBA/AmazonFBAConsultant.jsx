@@ -5,11 +5,11 @@ import ReactHtmlParser from "react-html-parser";
 import amazonFBA from "../../Assets/Images/public/amazon-fba.svg";
 import shape from "../../Assets/Images/others/dummy.png";
 import styles from "../../styles/About.module.css";
-// import SideLink from "../Home/banner/SideLink/SideLink";
 import SectionTitle2 from "../Shared/SectionTitile/SectionTitile2";
 import SectionTitle3 from "../Shared/SectionTitile/SectionTitle3";
 import SectionTitle4 from "../Shared/SectionTitile/SectionTitle4";
 import angle from "../../Assets/Images/others/Rectangle 266.svg";
+import SideLink from "../Home/Banner/SideLink/SideLink";
 // import ScheduleMeeting from "../ScheduleMeeting/ScheduleMeeting";
 
 
@@ -256,7 +256,7 @@ const AmazonFBAConsultant = ({
         </div>
         <SectionTitle4 />
       </section>
-      {/* <SideLink /> */}
+      <SideLink />
     </>
   );
 };
