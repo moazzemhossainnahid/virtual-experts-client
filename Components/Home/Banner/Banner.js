@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 import bannerImg from "../../../Assets/Images/home/amazon-fba-consultant-virtual-experts.svg";
 import cardHeaderBg from "../../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../../Assets/Images/others/v-logo.svg";
-import styles from "../../../styles/Banner.module.css";
 // import SideLink from "./SideLink/SideLink";
 import swal from "sweetalert";
 // import ReCAPTCHA from "react-google-recaptcha";
@@ -108,7 +107,7 @@ const Banner = ({ bannerData, footerLink }) => {
         draggable
         pauseOnHover
       /> */}
-      <div className={`${styles.bannerContainer}`}>
+      <div style={{backgroundColor:"#f5f8fe"}} className="">
         <div className="container py-5">
           <div className="row d-flex align-items-center">
             <div className="col-md-6 order-2 order-md-1">
