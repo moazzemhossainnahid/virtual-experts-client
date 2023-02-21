@@ -7,13 +7,12 @@ import { useForm } from "react-hook-form";
 import {AiFillInstagram} from "react-icons/ai";
 import { FaEnvelope, FaFacebook, FaSkype, FaTelegram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
-import { HiLocationMarker, HiOutlineMail } from "react-icons/hi";
 import { ImTwitter } from "react-icons/im";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Logo from "../../Assets/Images/others/Shape.svg";
 import styles from "../../styles/LetsTalk.module.css";
-// import SideLink from "../Home/banner/SideLink/SideLink";
+import SideLink from "../Home/Banner/SideLink/SideLink";
 
 const LetsTalk = ({ footerData }) => {
     const router = useRouter();
@@ -313,7 +312,7 @@ const LetsTalk = ({ footerData }) => {
                 {/* <ScheduleMeeting /> */}
             </div>
         </section>
-        {/* <SideLink /> */}
+        <SideLink />
     </>;
 };
 
