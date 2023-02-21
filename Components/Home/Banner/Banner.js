@@ -3,14 +3,14 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineClose } from "react-icons/ai";
-import { toast, ToastContainer } from "react-toastify";
+// import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import bannerImg from "../../../Assets/Images/home/amazon-fba-consultant-virtual-experts.svg";
 import cardHeaderBg from "../../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../../Assets/Images/others/v-logo.svg";
 import SideLink from "./SideLink/SideLink";
 import swal from "sweetalert";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
 const Banner = ({ bannerData, footerLink }) => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -97,7 +97,7 @@ const Banner = ({ bannerData, footerLink }) => {
 
   return (
     <div className="">
-      <ToastContainer
+      {/* <ToastContainer
         position="top-right"
         autoClose={3000}
         hideProgressBar={false}
@@ -107,7 +107,7 @@ const Banner = ({ bannerData, footerLink }) => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      />
+      /> */}
       <div className={`${styles.bannerContainer}`}>
         <div className="container py-5">
           <div className="row d-flex align-items-center">

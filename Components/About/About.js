@@ -5,7 +5,7 @@ import ReactHtmlParser from "react-html-parser";
 import about2 from "../../Assets/Images/about/about-virtual-experts-amazon-seo-agency.svg";
 import about1 from "../../Assets/Images/about/amazon-fba-consultant-about-virtual-experts.svg";
 import styles from "../../styles/About.module.css";
-import SideLink from "../Home/banner/SideLink/SideLink";
+// import SideLink from "../Home/banner/SideLink/SideLink";
 
 const AboutComponents = ({
   aboutData,
@@ -154,7 +154,7 @@ const AboutComponents = ({
         {/* ============================ */}
         {/* <ScheduleMeeting /> */}
       </section>
-      <SideLink />
+      {/* <SideLink /> */}
     </>
   );
 };
