@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
-import JoditEditor from 'jodit-react';
+// import JoditEditor from 'jodit-react';
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
@@ -125,14 +125,14 @@ const AdminUpdateBlog = ({
               <div class="form-group m-1">
                 <label for="desc">Blog Descriptions</label>
                 {/* <JoditEditor type="text" ref={editor} value={content} onBlur={newContent => setContent(newContent)} class="form-control" id="desc" placeholder="Blog Descriptions"/> */}
-                <JoditEditor
+                {/* <JoditEditor
                   ref={editor}
                   value={blogsData.description}
                   // config={config}
                   tabIndex={1} // tabIndex of textarea
                   onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
                   onChange={newContent => { }}
-                />
+                /> */}
               </div>
             </div>
             <div class="form-row col-11 mx-auto p-2">
