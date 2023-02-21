@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Amazon from "../Components/Home/Amazon/Amazon";
-import Banner from "../Components/Home/banner/banner";
+import Banner from "../Components/Home/Banner/Banner";
 import HowToPlaceAnOrder from "../Components/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";
 import TopAmazonClients from "../Components/Home/TopAmazonClients/TopAmazonClients";
 import TopThreeServices from "../Components/Home/TopThreeServices/TopThreeServices";
