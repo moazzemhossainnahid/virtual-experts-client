@@ -1,4 +1,3 @@
-import styles from "../../../styles/Banner.module.css";
 import Image from "next/image";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -8,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import bannerImg from "../../../Assets/Images/home/amazon-fba-consultant-virtual-experts.svg";
 import cardHeaderBg from "../../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../../Assets/Images/others/v-logo.svg";
+import styles from "../../../styles/Banner.module.css";
 // import SideLink from "./SideLink/SideLink";
 import swal from "sweetalert";
 // import ReCAPTCHA from "react-google-recaptcha";
