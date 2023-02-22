@@ -86,8 +86,8 @@ const AdminUpdateBlog = ({
         .then((result) => {
           if (result) {
             toast.success("Blogs Update Successfully");
-            router.push(`/richard/blog`)
             setNumber((prvState) => prvState + 1);
+            router.push(`/richard/blog`);
           }
         });
     } else {
@@ -99,8 +99,8 @@ const AdminUpdateBlog = ({
         .then((result) => {
           if (result) {
             toast.success("Blogs Update Successfully");
-            router.push(`/richard/blog`)
             setNumber((prvState) => prvState + 1);
+            router.push(`/richard/blog`);
           }
         });
     }
