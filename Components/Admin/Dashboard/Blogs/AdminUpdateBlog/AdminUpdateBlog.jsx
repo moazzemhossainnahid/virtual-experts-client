@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-
+import { useRouter } from "next/navigation";
 
 import dynamic from 'next/dynamic'
 const importJodit = () => import('jodit-react')
@@ -15,6 +15,7 @@ const AdminUpdateBlog = ({
   setShowSpinner,
   showSpinner
 }) => {
+  const router = useRouter();
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
   const [content, setContent] = useState('');
@@ -82,9 +83,12 @@ const AdminUpdateBlog = ({
         body: JSON.stringify(newData),
       })
         .then((res) => res.json())
-        .then((data) => {
-          setNumber((prvState) => prvState + 1);
-          toast.success("Blog Update Successfully");
+        .then((result) => {
+          if (result) {
+            toast.success("Blogs Update Successfully");
+            router.push(`/richard/blog`)
+            setNumber((prvState) => prvState + 1);
+          }
         });
     } else {
       fetch("https://virtual-experts-server.cyclic.app/blogs/update", {
@@ -92,9 +96,12 @@ const AdminUpdateBlog = ({
         body: formData,
       })
         .then((res) => res.json())
-        .then((data) => {
-          setNumber((prvState) => prvState + 1);
-          toast.success("Blog Update Successfully");
+        .then((result) => {
+          if (result) {
+            toast.success("Blogs Update Successfully");
+            router.push(`/richard/blog`)
+            setNumber((prvState) => prvState + 1);
+          }
         });
     }
   };

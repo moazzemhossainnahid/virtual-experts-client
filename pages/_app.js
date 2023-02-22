@@ -5,10 +5,10 @@ import Head from "next/head";
 import Router, { useRouter } from "next/router";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
-import { createContext, useEffect, useState } from "react";
-import { FaArrowAltCircleUp } from "react-icons/fa";
+import React, { createContext, useEffect, useState } from "react";
 import Navbar from '../Components/Shared/Navbar/Navbar';
 import Footer from '../Components/Shared/Footer/Footer';
+import { Hydrate, QueryClient, QueryClientProvider, } from '@tanstack/react-query'
 
 
 nProgress.configure(
@@ -22,6 +22,7 @@ export const UserContext = createContext();
 export default function App({ Component, pageProps }) {
   // return <Component {...pageProps} />
   const router = useRouter();
+  const [queryClient] = React.useState(() => new QueryClient())
 
   const handelClickTop = () => {
     window.scroll(0, 0);
@@ -91,10 +92,13 @@ export default function App({ Component, pageProps }) {
             />
           </noscript> */}
         </Head>
-
-        <UserContext.Provider value={[signedUser, setSignedUser]}>
-          <Component {...pageProps} />
-        </UserContext.Provider>
+        <QueryClientProvider client={queryClient}>
+          <Hydrate state={pageProps.dehydratedState}>
+            <UserContext.Provider value={[signedUser, setSignedUser]}>
+              <Component {...pageProps} />
+            </UserContext.Provider>
+          </Hydrate>
+        </QueryClientProvider>
       </>
     );
   }
@@ -149,13 +153,17 @@ export default function App({ Component, pageProps }) {
         </noscript> */}
       </Head>
       <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
-        />
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
+      />
       <Navbar />
-      <UserContext.Provider value={[signedUser, setSignedUser]}>
-        <Component {...pageProps} />
-      </UserContext.Provider>
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <UserContext.Provider value={[signedUser, setSignedUser]}>
+            <Component {...pageProps} />
+          </UserContext.Provider>
+        </Hydrate>
+      </QueryClientProvider>
       <div
         className={
           router.pathname === "/richard" ||
