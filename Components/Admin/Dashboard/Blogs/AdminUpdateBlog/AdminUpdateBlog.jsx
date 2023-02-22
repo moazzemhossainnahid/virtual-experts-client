@@ -1,27 +1,39 @@
-import Image from "next/image";
-import { useRef, useState } from "react";
-// import JoditEditor from 'jodit-react';
+import { useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
+
+import dynamic from 'next/dynamic'
+const importJodit = () => import('jodit-react')
+const JoditEditor = dynamic(importJodit, {
+  ssr: false,
+})
+
 const AdminUpdateBlog = ({
-  // imgType,
   blogsData,
-  // index,
-  // blogsCardData,
-  // setBlogsCardData,
   setNumber,
+  setShowSpinner,
+  showSpinner
 }) => {
   const [file, setFile] = useState(null);
   const { register, handleSubmit } = useForm();
-  const editor = useRef(null);
   const [content, setContent] = useState('');
 
-  console.log(blogsData);
+
+  // console.log(blogsData);
 
 
-  var date = new Date(blogsData?.createdAt);
-  var original_date = date.getDate() + " " + date.toLocaleString('default', { month: 'long' }) + " " + date.getFullYear();
+  // Jodi Editor
+  const editor = useRef(null)
+
+  const config = useMemo(
+    () => ({
+      readonly: false,
+    }),
+    []
+  )
+
+  // END Jodi Editor
 
 
   // console.log(original_date);
@@ -37,7 +49,7 @@ const AdminUpdateBlog = ({
 
   const onSubmitEdit = (data) => {
     const newTitle = data.title || blogsData.title;
-    const newDescription = content || blogsData.description;
+    const newDescription = content || blogsData?.description;
     const newCardDescription = data.cardDescription || blogsData.cardDescription;
     const newWriterName = data.writerName || blogsData.writerName;
     const newImgAlt = data.imgAlt || blogsData.imgAlt;
@@ -71,8 +83,8 @@ const AdminUpdateBlog = ({
       })
         .then((res) => res.json())
         .then((data) => {
-          toast.success("Blog Update Successfully");
           setNumber((prvState) => prvState + 1);
+          toast.success("Blog Update Successfully");
         });
     } else {
       fetch("https://virtual-experts-server.cyclic.app/blogs/update", {
@@ -81,8 +93,8 @@ const AdminUpdateBlog = ({
       })
         .then((res) => res.json())
         .then((data) => {
-          toast.success("Blog Update Successfully");
           setNumber((prvState) => prvState + 1);
+          toast.success("Blog Update Successfully");
         });
     }
   };
@@ -118,21 +130,22 @@ const AdminUpdateBlog = ({
             <div class="form-row col-11 mx-auto p-2">
               <div class="form-group m-1">
                 <label for="desc">Blog Card Descriptions</label>
-                <textarea {...register("cardDescription")} defaultValue={blogsData.cardDescription} type="text" class="form-control" id="desc" placeholder="Blog Card Descriptions"/>
+                <textarea {...register("cardDescription")} defaultValue={blogsData.cardDescription} type="text" class="form-control" id="desc" placeholder="Blog Card Descriptions" />
               </div>
             </div>
             <div class="form-row col-11 mx-auto p-2">
               <div class="form-group m-1">
                 <label for="desc">Blog Descriptions</label>
-                {/* <JoditEditor type="text" ref={editor} value={content} onBlur={newContent => setContent(newContent)} class="form-control" id="desc" placeholder="Blog Descriptions"/> */}
-                {/* <JoditEditor
+
+                <JoditEditor
                   ref={editor}
-                  value={blogsData.description}
-                  // config={config}
-                  tabIndex={1} // tabIndex of textarea
-                  onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
-                  onChange={newContent => { }}
-                /> */}
+                  value={blogsData?.description}
+                  config={config}
+                  onBlur={(newContent) => {
+                    setContent(newContent)
+                  }}
+                />
+
               </div>
             </div>
             <div class="form-row col-11 mx-auto p-2">

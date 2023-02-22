@@ -68,7 +68,7 @@ const BlogDetails = () => {
             <div className="p-3 boxShadow bg-gray rounded me-4 mb-5">
 
               {
-                blogsData && <AdminUpdateBlog setNumber={setNumber} blogsData={blogsData} />
+                blogsData && <AdminUpdateBlog setNumber={setNumber} blogsData={blogsData} setShowSpinner={setShowSpinner} showSpinner={showSpinner} />
               }
 
             </div>
