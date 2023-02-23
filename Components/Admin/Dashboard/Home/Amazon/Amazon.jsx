@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ReactHtmlParser from "react-html-parser";
+
 
 const AdminAmazon = () => {
   const [amazon, setAmazon] = useState({});
@@ -80,7 +82,7 @@ const AdminAmazon = () => {
         <h6 className="fs-18 mt-3">Description Part 2</h6>
         <p className="fs-14">{amazon.description_part_2}</p>
         <h6 className="fs-18 mt-3">Description Part 3</h6>
-        <p className="fs-14">{amazon.description_part_3}</p>
+        <p className="fs-14">{ReactHtmlParser(amazon.description_part_3)}</p>
         <div className="d-flex justify-content-end">
           <AiFillEdit
             size={30}

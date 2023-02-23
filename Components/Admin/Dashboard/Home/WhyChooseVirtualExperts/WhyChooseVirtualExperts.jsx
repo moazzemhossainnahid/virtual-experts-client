@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
+import ReactHtmlParser from "react-html-parser";
+
 import AdminWhyChooseVirtualExpertsCard from "./WhyChooseVirtualExpertsCard";
 
 const AdminWhyChooseVirtualExperts = () => {
@@ -57,7 +59,7 @@ const AdminWhyChooseVirtualExperts = () => {
         <h6 className="fs-18 mt-3">Description 1</h6>
         <p className="fs-14">{info.description_part_1}</p>
         <h6 className="fs-18 mt-3">Description 2</h6>
-        <p className="fs-14">{info.description_part_2}</p>
+        <p className="fs-14">{ReactHtmlParser(info.description_part_2)}</p>
         <div className="my-2 row">
           {cardsData.map((cardData, index) => (
             <AdminWhyChooseVirtualExpertsCard

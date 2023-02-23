@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
+import ReactHtmlParser from "react-html-parser";
+
 
 const AdminWhyChooseVirtualExpertsCard = ({
   cardData,
@@ -120,7 +122,7 @@ const AdminWhyChooseVirtualExpertsCard = ({
           <h6 className="fs-18">Title</h6>
           <p className="fs-14">{cardData.title}</p>
           <h6 className="fs-18">Subtitle</h6>
-          <p className="fs-14">{cardData.description}</p>
+          <p className="fs-14">{ReactHtmlParser(cardData.description)}</p>
           <div className="d-flex justify-content-end">
           <AiFillEdit
             size={30}

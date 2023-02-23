@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import ReactHtmlParser from "react-html-parser";
 
 const WhyChooseVirtualExperts = ({ virtualServicesData, headerInfoVirtualExpertsData }) => {
 
@@ -14,7 +14,7 @@ const WhyChooseVirtualExperts = ({ virtualServicesData, headerInfoVirtualExperts
           {headerInfoVirtualExpertsData[0].description_part_1}
         </p>
         <p className="col-12 col-md-11 mx-auto fs-14 pt-3 lh-26 text-justify">
-          {headerInfoVirtualExpertsData[0].description_part_2}
+          {ReactHtmlParser(headerInfoVirtualExpertsData[0].description_part_2)}
         </p>
         <div className="row mt-1">
           {virtualServicesData.map((virtualService) => {
@@ -51,7 +51,7 @@ const WhyChooseVirtualExperts = ({ virtualServicesData, headerInfoVirtualExperts
                   <h3 className="fs-16 mt-2 lh-26 font-family-popins fw-500">
                     {virtualService?.title}
                   </h3>
-                  <p className="fs-15 lh-30">{virtualService?.description}</p>
+                  <p className="fs-15 lh-30">{ReactHtmlParser(virtualService?.description)}</p>
                 </div>
               </div>
             )
