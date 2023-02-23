@@ -10,7 +10,8 @@ const AdminWhyChooseVirtualExperts = () => {
   const [cardsData, setCardsData] = useState([]);
 
   const titleData = info.title;
-  const descriptionData = info.description;
+  const description1Data = info.description_part_1;
+  const description2Data = info.description_part_2;
 
   const { register, handleSubmit } = useForm();
 
@@ -28,13 +29,14 @@ const AdminWhyChooseVirtualExperts = () => {
 
   const handleUpdateInfo = (data) => {
     const title = data.title || titleData;
-    const description = data.description || descriptionData;
+    const description_part_1 = data.description_part_1 || description1Data;
+    const description_part_2 = data.description_part_2 || description2Data;
     fetch(
       "https://virtual-experts-server.cyclic.app/headerInfoVirtualExports/update",
       {
         method: "PUT",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ title, _id: info._id, description }),
+        body: JSON.stringify({ title, _id: info._id, description_part_1, description_part_2 }),
       }
     )
       .then((res) => res.json())
@@ -52,8 +54,10 @@ const AdminWhyChooseVirtualExperts = () => {
         </div>
         <h6 className="mt-3 fs-18">Title</h6>
         <p className="fs-14">{info.title}</p>
-        <h6 className="fs-18 mt-3">Subtitle</h6>
-        <p className="fs-14">{info.description}</p>
+        <h6 className="fs-18 mt-3">Description 1</h6>
+        <p className="fs-14">{info.description_part_1}</p>
+        <h6 className="fs-18 mt-3">Description 2</h6>
+        <p className="fs-14">{info.description_part_2}</p>
         <div className="my-2 row">
           {cardsData.map((cardData, index) => (
             <AdminWhyChooseVirtualExpertsCard
@@ -108,10 +112,19 @@ const AdminWhyChooseVirtualExperts = () => {
                 <textarea
                   rows="5"
                   cols="5"
-                  defaultValue={info.description}
-                  {...register("description")}
-                  name="description"
-                  id="description"
+                  defaultValue={info.description_part_1}
+                  {...register("description_part_1")}
+                  name="description_part_1"
+                  id="description_part_1"
+                  className="form-control mb-2"
+                ></textarea>
+                <textarea
+                  rows="5"
+                  cols="5"
+                  defaultValue={info.description_part_2}
+                  {...register("description_part_2")}
+                  name="description_part_2"
+                  id="description_part_2"
                   className="form-control mb-2"
                 ></textarea>
                 <input
