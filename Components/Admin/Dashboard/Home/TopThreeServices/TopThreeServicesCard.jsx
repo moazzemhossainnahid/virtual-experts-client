@@ -85,11 +85,11 @@ const AdminTopThreeServiceCard = ({ serviceCard, setNumber, index }) => {
             height="150"
             width="150"
           />
-          <h6 className="fs-18">Title</h6>
+          <h6 className="fs-16">Title</h6>
           <p>{serviceCard.title}</p>
-          <h6 className="fs-18">Subtitle</h6>
-          <p>{serviceCard.description}</p>
-          <div className="d-flex justify-content-end">
+          <h6 className="fs-16">Subtitle</h6>
+          <p className="fs-14">{serviceCard.description}</p>
+          <div className="d-flex justify-content-end py-3">
             <AiFillEdit
               size={30}
               className="text-warning bg-dark rounded-circle p-1 cursor-pointer "

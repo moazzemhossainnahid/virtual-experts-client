@@ -50,7 +50,7 @@ const TopAmazonClients = ({ topclients }) => {
                     </div>
                     <div className="p-2 p-md-5 text-center">
                         <Image
-                            src={`${imgType} ; base64, ${currentTestimonials.img.img}`}
+                            src={`${imgType} ; base64, ${currentTestimonials?.img.img}`}
                             alt="Loading..."
                             width="70"
                             height="70"

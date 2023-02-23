@@ -48,7 +48,7 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                     <h3 className="text-center mt-5 font-family-roboto fs-18 fs-600 lh-28">
                                         {service.title}
                                     </h3>
-                                    <p style={{height:"200px"}} className="text-justify fs-15 lh-24 mt-3 text-color ">
+                                    <p style={{height:"210px"}} className="text-justify fs-14 lh-24 mt-3 text-color ">
                                         {service.description}
                                     </p>
                                     <Link
