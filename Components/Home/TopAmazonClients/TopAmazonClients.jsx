@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import quoteIcon from "../../../Assets/Images/others/icon.svg";
+import SectionTitle2 from "../../Shared/SectionTitile/SectionTitile2";
 
 const TopAmazonClients = ({ topclients }) => {
     const [number, setNumber] = useState(0);
@@ -38,9 +39,11 @@ const TopAmazonClients = ({ topclients }) => {
     return (
         <section>
             <div className="container py-5">
-                <h2 className={`title1 fs-24 roboto-font-family fw-400`} >
+                {/* <h2 className={`title1 fs-24 roboto-font-family fw-400`} >
                     Our Top Amazon Clients
-                </h2>
+                </h2> */}
+                <SectionTitle2 title="Our Top Amazon Clients" isBgWhite={true} />
+
                 <div className="col-12 col-md-7 boxShadow mx-auto mb-3 mt-5 position-relative">
                     <div className="position-absolute left-38">
                         <Image src={quoteIcon} alt="quoteIcon" height="80" width="80" />
