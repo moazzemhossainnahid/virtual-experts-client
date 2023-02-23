@@ -150,7 +150,7 @@ const AdminServiceCard = ({
         <div className="boxShadow p-3 borderRadius" style={{ height: "270px" }}>
           <h6 className="fs-18">{servicesCard.title}</h6>
           <h6 className="fs-14 mt-2">{servicesCard.subTitle}</h6>
-          {servicesCard.regularReview && (
+          {/* {servicesCard.regularReview && (
             <p className="fs-14">
               Regular Review : ${servicesCard.regularReview} each
             </p>
@@ -164,11 +164,11 @@ const AdminServiceCard = ({
             <p className="fs-14">
               Top 50 Reviewers : ${servicesCard.top50Reviewers} each
             </p>
-          )}
+          )} */}
           {servicesCard.price && (
             <p className="fs-14">Price : ${servicesCard.price}</p>
           )}
-          {servicesCard.delivery && (
+          {/* {servicesCard.delivery && (
             <p className="fs-14">Delivery : {servicesCard.delivery} days</p>
           )}
           {servicesCard.warranty && (
@@ -178,7 +178,7 @@ const AdminServiceCard = ({
             <p className="fs-14">
               Maintenence : ${servicesCard.maintenance} per month
             </p>
-          )}
+          )} */}
           <div className="d-flex justify-content-end">
             <AiFillEdit
               size={30}
