@@ -168,7 +168,7 @@ const AdminAddServices = ({ setNumber }) => {
                   />
                 </div> */}
 
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label htmlFor="title">Price</label>
                   <input
                     type="text"
@@ -179,7 +179,7 @@ const AdminAddServices = ({ setNumber }) => {
                     autoComplete="off"
                     className="form-control"
                   />
-                </div>
+                </div> */}
 
                 {/* <div className="form-group">
                   <label htmlFor="title">Maintenance</label>

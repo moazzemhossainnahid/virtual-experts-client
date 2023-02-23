@@ -74,13 +74,13 @@ const AdminServiceCard = ({
       _id: _id,
       title: newTitle,
       subTitle: newSubTitle,
-      regularReview: newRegularReview,
-      videoReview: newVideoReview,
-      top50Reviewers: newTop50Reviewers,
-      delivery: newDelivery,
-      warranty: newWarranty,
+      // regularReview: newRegularReview,
+      // videoReview: newVideoReview,
+      // top50Reviewers: newTop50Reviewers,
+      // delivery: newDelivery,
+      // warranty: newWarranty,
       price: newPrice,
-      maintenance: newMaintenance,
+      // maintenance: newMaintenance,
       imgTitle: newImgTitle,
       imgAlt: newImgAlt,
       img: servicesCard.img,
@@ -92,13 +92,13 @@ const AdminServiceCard = ({
     formData.append("_id", _id);
     formData.append("title", newTitle);
     formData.append("subTitle", newSubTitle);
-    formData.append("regularReview", newRegularReview);
-    formData.append("videoReview", newVideoReview);
-    formData.append("top50Reviewers", newTop50Reviewers);
-    formData.append("delivery", newDelivery);
-    formData.append("warranty", newWarranty);
+    // formData.append("regularReview", newRegularReview);
+    // formData.append("videoReview", newVideoReview);
+    // formData.append("top50Reviewers", newTop50Reviewers);
+    // formData.append("delivery", newDelivery);
+    // formData.append("warranty", newWarranty);
     formData.append("price", newPrice);
-    formData.append("maintenance", newMaintenance);
+    // formData.append("maintenance", newMaintenance);
     formData.append("imgTitle", newImgTitle);
     formData.append("imgAlt", newImgAlt);
 
@@ -111,6 +111,7 @@ const AdminServiceCard = ({
         .then((res) => res.json())
         .then((data) => {
           toast.success("Service Edit Successfully");
+          // window.location.reload();
           setNumber((prvState) => prvState + 1);
         });
     } else {
@@ -121,6 +122,7 @@ const AdminServiceCard = ({
         .then((res) => res.json())
         .then((data) => {
           toast.success("Service Edit Successfully");
+          // window.location.reload();
           setNumber((prvState) => prvState + 1);
         });
     }
@@ -165,9 +167,9 @@ const AdminServiceCard = ({
               Top 50 Reviewers : ${servicesCard.top50Reviewers} each
             </p>
           )} */}
-          {servicesCard.price && (
+          {/* {servicesCard.price && (
             <p className="fs-14">Price : ${servicesCard.price}</p>
-          )}
+          )} */}
           {/* {servicesCard.delivery && (
             <p className="fs-14">Delivery : {servicesCard.delivery} days</p>
           )}
@@ -310,7 +312,7 @@ const AdminServiceCard = ({
                     />
                   </div> */}
 
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <label htmlFor="price">Price</label>
                     <input
                       type="text"
@@ -321,7 +323,7 @@ const AdminServiceCard = ({
                       autoComplete="off"
                       className="form-control"
                     />
-                  </div>
+                  </div> */}
 
                   {/* <div className="form-group">
                     <label htmlFor="maintenance">Maintenance</label>

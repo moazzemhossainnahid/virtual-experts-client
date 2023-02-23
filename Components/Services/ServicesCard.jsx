@@ -50,7 +50,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                     </div>
                                     <div className="card-body">
                                         <div style={{ height: "300px" }} className="">
-                                            <h3 className="fs-18 lh-28 mb-4 roboto-font-family fw-normal">
+                                            <h3 style={{ height: "55px" }} className="fs-18 lh-28 mb-4 roboto-font-family fw-normal h-">
                                                 {servicesCard.title}
                                             </h3>
                                             <p className="fs-14 lh-26 font-medium m-0">
@@ -61,7 +61,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                                     Regular Review : ${servicesCard.regularReview} each
                                                 </p>
                                             )}
-                                            {servicesCard.videoReview && (
+                                            {/* {servicesCard.videoReview && (
                                                 <p className="fs-14 m-0 lh-26">
                                                     Video Review : ${servicesCard.videoReview} each
                                                 </p>
@@ -90,7 +90,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                                 <p className="fs-14 lh-26">
                                                     Maintenence : ${servicesCard.maintenance} per month
                                                 </p>
-                                            )}
+                                            )} */}
                                         </div>
                                         <Link href="/order" scroll>
 
