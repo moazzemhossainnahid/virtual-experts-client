@@ -222,7 +222,7 @@ const AdminServiceCard = ({
                   <div className="form-group">
                     <label htmlFor="title">Title</label>
                     <textarea
-                      rows="5"
+                      rows="2"
                       cols="5"
                       defaultValue={title}
                       name="title"
@@ -245,7 +245,7 @@ const AdminServiceCard = ({
                     ></textarea>
                   </div>
 
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <label htmlFor="regularReview">Regular Review</label>
                     <input
                       type="text"
@@ -256,9 +256,9 @@ const AdminServiceCard = ({
                       autoComplete="off"
                       className="form-control"
                     />
-                  </div>
+                  </div> */}
 
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <label htmlFor="videoReview">Video Review</label>
                     <input
                       type="text"
@@ -269,9 +269,9 @@ const AdminServiceCard = ({
                       autoComplete="off"
                       className="form-control"
                     />
-                  </div>
+                  </div> */}
 
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <label htmlFor="top50Reviewers">Top 50 Reviewers</label>
                     <input
                       type="text"
@@ -282,8 +282,8 @@ const AdminServiceCard = ({
                       autoComplete="off"
                       className="form-control"
                     />
-                  </div>
-
+                  </div> */}
+{/* 
                   <div className="form-group">
                     <label htmlFor="delivery">Delivery</label>
                     <input
@@ -295,9 +295,9 @@ const AdminServiceCard = ({
                       autoComplete="off"
                       className="form-control"
                     />
-                  </div>
+                  </div> */}
 
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <label htmlFor="warranty">Warranty</label>
                     <input
                       type="text"
@@ -308,7 +308,7 @@ const AdminServiceCard = ({
                       autoComplete="off"
                       className="form-control"
                     />
-                  </div>
+                  </div> */}
 
                   <div className="form-group">
                     <label htmlFor="price">Price</label>
@@ -323,7 +323,7 @@ const AdminServiceCard = ({
                     />
                   </div>
 
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <label htmlFor="maintenance">Maintenance</label>
                     <input
                       type="text"
@@ -334,7 +334,7 @@ const AdminServiceCard = ({
                       autoComplete="off"
                       className="form-control"
                     />
-                  </div>
+                  </div> */}
 
                   <div className="form-group">
                     <label htmlFor="img">Image</label>
