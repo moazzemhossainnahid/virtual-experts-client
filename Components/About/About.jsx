@@ -11,6 +11,7 @@ import SideLink from "../Home/Banner/SideLink/SideLink";
 const AboutComponents = ({
   aboutData,
   aboutTeamData,
+  aboutMissionData,
   aboutUniquetData,
   aboutUniquetListData,
   teams,
@@ -57,6 +58,31 @@ const AboutComponents = ({
                 alt="amazon-fba-consultant-about-virtual-experts"
                 title="amazon-fba-consultant-about-virtual-experts"
               />
+            </div>
+          </div>
+        </div>
+
+        {/* ================================= */}
+
+        {/* ================================= */}
+
+        <div className="container my-5">
+          <div className="row py-5">
+            <div className="col-md-6 order-2 order-md-1 px-4">
+              <h2 className={`${styles.title} fs-28 roboto-font-family lh-44 fw-400`} >
+                Our Mission
+              </h2>
+              <p className="text-muted fs-15 lh-30 text-justify">
+                {ReactHtmlParser(aboutMissionData?.mission)}
+              </p>
+            </div>
+            <div className="col-md-6 order-1 order-md-2 px-4">
+              <h2 className={`${styles.title} fs-28 roboto-font-family lh-44 fw-400`} >
+                Our Vision
+              </h2>
+              <p className="text-muted fs-15 lh-30 text-justify">
+                {ReactHtmlParser(aboutMissionData?.vision)}
+              </p>
             </div>
           </div>
         </div>
