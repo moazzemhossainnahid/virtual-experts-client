@@ -4,19 +4,20 @@ import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
-  const { title, description, subDescription } = serviceBanner;
+  const { title, description, subDescription_1, subDescription_2 } = serviceBanner;
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     const _id = serviceBanner._id;
     const title = data.title || serviceBanner.title;
     const description = data.description || serviceBanner.description;
-    const subDescription = data.subDescription || serviceBanner.subDescription;
+    const subDescription_1 = data.subDescription_1 || serviceBanner.subDescription_1;
+    const subDescription_2 = data.subDescription_2 || serviceBanner.subDescription_2;
 
     fetch("https://virtual-experts-server.cyclic.app/whatWeDo/update", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ _id, title, description, subDescription }),
+      body: JSON.stringify({ _id, title, description, subDescription_1, subDescription_2 }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -36,8 +37,10 @@ const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
       <p className="fs-14">{title}</p>
       <h6 className="fs-18 mt-3">Description</h6>
       <p className="fs-14">{description}</p>
-      <h6 className="fs-18 mt-3">SubDescription</h6>
-      <p className="fs-14">{subDescription}</p>
+      <h6 className="fs-18 mt-3">SubDescription 1</h6>
+      <p className="fs-14">{subDescription_1}</p>
+      <h6 className="fs-18 mt-3">SubDescription 2</h6>
+      <p className="fs-14">{subDescription_2}</p>
       <div className="d-flex justify-content-end">
         <AiFillEdit
           size={30}
@@ -96,15 +99,28 @@ const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="subDescription">Sub Description</label>
+                  <label htmlFor="subDescription_1">Sub Description 1</label>
                   <textarea
                     rows="5"
                     cols="5"
-                    defaultValue={subDescription}
-                    name="subDescription"
-                    id="subDescription"
+                    defaultValue={subDescription_1}
+                    name="subDescription_1"
+                    id="subDescription_1"
                     className="form-control"
-                    {...register("subDescription")}
+                    {...register("subDescription_1")}
+                  ></textarea>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="subDescription_2">Sub Description 2</label>
+                  <textarea
+                    rows="5"
+                    cols="5"
+                    defaultValue={subDescription_2}
+                    name="subDescription_2"
+                    id="subDescription_2"
+                    className="form-control"
+                    {...register("subDescription_2")}
                   ></textarea>
                 </div>
 

@@ -64,7 +64,7 @@ const ServiceCardHeader = ({ serviceCardHeader, setNumber }) => {
                 <div className="form-group">
                   <label htmlFor="title">Card Header Title</label>
                   <textarea
-                    rows="5"
+                    rows="2"
                     cols="5"
                     defaultValue={title}
                     name="title"
