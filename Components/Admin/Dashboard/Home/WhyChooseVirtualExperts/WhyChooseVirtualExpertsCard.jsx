@@ -38,15 +38,15 @@ const AdminWhyChooseVirtualExpertsCard = ({
   // };
 
   const handleUpdateInfo = (data) => {
-    const newTitle = data.title || cardData.title;
-    const _id = cardData._id;
-    const newDescription = data.description || cardData.description;
+    const newTitle = data?.title || cardData?.title;
+    const _id = cardData?._id;
+    const newDescription = data?.description || cardData?.description;
 
     const newData = {
       title: newTitle,
-      _id: cardData._id,
+      _id: cardData?._id,
       description: newDescription,
-      img: cardData.img,
+      img: cardData?.img,
       uploadImage: false,
     };
 
@@ -120,9 +120,9 @@ const AdminWhyChooseVirtualExpertsCard = ({
             )}
           </div>
           <h6 className="fs-18">Title</h6>
-          <p className="fs-14">{cardData.title}</p>
+          <p className="fs-14">{cardData?.title}</p>
           <h6 className="fs-18">Subtitle</h6>
-          <p className="fs-14">{ReactHtmlParser(cardData.description)}</p>
+          <p className="fs-14">{ReactHtmlParser(cardData?.description)}</p>
           <div className="d-flex justify-content-end">
           <AiFillEdit
             size={30}
@@ -158,7 +158,7 @@ const AdminWhyChooseVirtualExpertsCard = ({
                 <textarea
                   rows="2"
                   cols="5"
-                  defaultValue={cardData.title}
+                  defaultValue={cardData?.title}
                   {...register("title")}
                   name="title"
                   id="title"
@@ -167,7 +167,7 @@ const AdminWhyChooseVirtualExpertsCard = ({
                 <textarea
                   rows="5"
                   cols="5"
-                  defaultValue={cardData.description}
+                  defaultValue={cardData?.description}
                   {...register("description")}
                   name="description"
                   id="description"

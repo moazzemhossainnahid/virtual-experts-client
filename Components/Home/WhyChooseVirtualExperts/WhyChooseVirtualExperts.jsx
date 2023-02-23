@@ -1,14 +1,17 @@
 import Image from "next/image";
 import ReactHtmlParser from "react-html-parser";
+import SectionTitle2 from "../../Shared/SectionTitile/SectionTitile2";
 
 const WhyChooseVirtualExperts = ({ virtualServicesData, headerInfoVirtualExpertsData }) => {
 
   return (
     <section className="py-5 background-color-skyblue">
       <div className="container">
-        <h2 className={`title1 fs-24 roboto-font-family fw-400`} >
+      <SectionTitle2 title={headerInfoVirtualExpertsData[0].title} isBgWhite={true} />
+
+        {/* <h2 className={`title1 fs-24 roboto-font-family fw-400`} >
           {headerInfoVirtualExpertsData[0].title}
-        </h2>
+        </h2> */}
 
         <p className="col-12 col-md-11 text-justify mx-auto fs-14 pt-3 lh-26">
           {headerInfoVirtualExpertsData[0].description_part_1}

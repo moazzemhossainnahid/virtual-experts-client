@@ -55,11 +55,11 @@ const AdminWhyChooseVirtualExperts = () => {
           <h6 className="fs-24 spacing-3">Why Choose Virtual Experts</h6>
         </div>
         <h6 className="mt-3 fs-18">Title</h6>
-        <p className="fs-14">{info.title}</p>
+        <p className="fs-14">{info?.title}</p>
         <h6 className="fs-18 mt-3">Description 1</h6>
-        <p className="fs-14">{info.description_part_1}</p>
+        <p className="fs-14">{info?.description_part_1}</p>
         <h6 className="fs-18 mt-3">Description 2</h6>
-        <p className="fs-14">{ReactHtmlParser(info.description_part_2)}</p>
+        <p className="fs-14">{ReactHtmlParser(info?.description_part_2)}</p>
         <div className="my-2 row">
           {cardsData.map((cardData, index) => (
             <AdminWhyChooseVirtualExpertsCard
@@ -105,7 +105,7 @@ const AdminWhyChooseVirtualExperts = () => {
                 <textarea
                   rows="2"
                   cols="5"
-                  defaultValue={info.title}
+                  defaultValue={info?.title}
                   {...register("title")}
                   name="title"
                   id="title"
@@ -114,7 +114,7 @@ const AdminWhyChooseVirtualExperts = () => {
                 <textarea
                   rows="5"
                   cols="5"
-                  defaultValue={info.description_part_1}
+                  defaultValue={info?.description_part_1}
                   {...register("description_part_1")}
                   name="description_part_1"
                   id="description_part_1"
@@ -123,7 +123,7 @@ const AdminWhyChooseVirtualExperts = () => {
                 <textarea
                   rows="5"
                   cols="5"
-                  defaultValue={info.description_part_2}
+                  defaultValue={info?.description_part_2}
                   {...register("description_part_2")}
                   name="description_part_2"
                   id="description_part_2"
