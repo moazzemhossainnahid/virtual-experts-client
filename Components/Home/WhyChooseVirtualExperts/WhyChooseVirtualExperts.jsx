@@ -11,7 +11,10 @@ const WhyChooseVirtualExperts = ({ virtualServicesData, headerInfoVirtualExperts
         </h2>
 
         <p className="col-12 col-md-7 mx-auto fs-14 pt-3 lh-26 text-center">
-          {headerInfoVirtualExpertsData[0].description}
+          {headerInfoVirtualExpertsData[0].description_part_1}
+        </p>
+        <p className="col-12 col-md-7 mx-auto fs-14 pt-3 lh-26 text-center">
+          {headerInfoVirtualExpertsData[0].description_part_2}
         </p>
         <div className="row mt-1">
           {virtualServicesData.map((virtualService) => {
