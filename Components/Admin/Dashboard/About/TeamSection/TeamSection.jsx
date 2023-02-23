@@ -77,7 +77,7 @@ const AdminTeamSection = () => {
                         <div className="modal-body">
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <textarea
-                                    rows="5"
+                                    rows="2"
                                     cols="5"
                                     defaultValue={teamSection?.title}
                                     {...register("title")}

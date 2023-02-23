@@ -13,9 +13,9 @@ const ScheduleMeeting = () => {
   return <>
     <div className="container my-5 pb-3 px-md-5">
       <div className="background-color-skyblue py-5 px-2 borderRadius">
-        <div className="col-12 col-md-7 mx-auto mb-3 text-center">
+        <div className="col-12 col-md-10 mx-auto mb-3 text-center">
           {scheduleTitle.title && (
-            <h3 className="fs-24 lh-40 font-family-roboto">
+            <h3 className="fs-20 lh-40 font-family-roboto">
               {ReactHtmlParser(scheduleTitle.title)}
             </h3>
           )}

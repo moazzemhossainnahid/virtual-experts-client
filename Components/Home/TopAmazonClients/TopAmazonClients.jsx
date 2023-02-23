@@ -42,7 +42,7 @@ const TopAmazonClients = ({ topclients }) => {
                 {/* <h2 className={`title1 fs-24 roboto-font-family fw-400`} >
                     Our Top Amazon Clients
                 </h2> */}
-                <SectionTitle2 title="Our Top Amazon Clients" isBgWhite={true} />
+                <SectionTitle2 title="Our TOP Amazon FBA Clients Feedback" isBgWhite={true} />
 
                 <div className="col-12 col-md-7 boxShadow mx-auto mb-3 mt-5 position-relative">
                     <div className="position-absolute left-38">

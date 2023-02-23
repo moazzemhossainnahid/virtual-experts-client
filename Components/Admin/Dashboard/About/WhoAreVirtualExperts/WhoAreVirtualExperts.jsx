@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
+import ReactHtmlParser from "react-html-parser";
+
 
 const AdminWhoAreVirtualExperts = () => {
     const [number, setNumber] = useState(0);
@@ -44,7 +46,7 @@ const AdminWhoAreVirtualExperts = () => {
                 <h6 className="fs-18 mt-2">Title</h6>
                 <p className="fs-14">{aboutData?.title}</p>
                 <h6 className="fs-18 mt-2">Sub Title</h6>
-                <p className="fs-14">{aboutData?.discription}</p>
+                <p className="fs-14">{ReactHtmlParser(aboutData?.discription)}</p>
                 <div className="d-flex py-3 justify-content-end">
                     <AiFillEdit
                         size={30}
