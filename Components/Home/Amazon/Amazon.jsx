@@ -21,13 +21,13 @@ const Amazon = ({ amazonData }) => {
               <h2 className="fs-28 textLeftAfterEffect font-family-roboto lh-44">
                 {amazonData.title}
               </h2>
-              <p className="fs-15 mt-4 lh-30 text-justify">
+              <p className="fs-14 mt-4 lh-20 text-justify">
                 {amazonData.description_part_1}
               </p>
-              <p className="fs-15 mt-4 lh-30 text-justify">
+              <p className="fs-14 mt-4 lh-20 text-justify">
                 {amazonData.description_part_2}
               </p>
-              <p className="fs-15 mt-4 lh-30 text-justify">
+              <p className="fs-14 mt-4 lh-20 text-justify">
                 {amazonData.description_part_3}
               </p>
             </div>

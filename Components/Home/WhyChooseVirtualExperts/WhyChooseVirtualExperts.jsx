@@ -10,10 +10,10 @@ const WhyChooseVirtualExperts = ({ virtualServicesData, headerInfoVirtualExperts
           {headerInfoVirtualExpertsData[0].title}
         </h2>
 
-        <p className="col-12 col-md-7 mx-auto fs-14 pt-3 lh-26 text-center">
+        <p className="col-12 col-md-11 text-justify mx-auto fs-14 pt-3 lh-26">
           {headerInfoVirtualExpertsData[0].description_part_1}
         </p>
-        <p className="col-12 col-md-7 mx-auto fs-14 pt-3 lh-26 text-center">
+        <p className="col-12 col-md-11 mx-auto fs-14 pt-3 lh-26 text-justify">
           {headerInfoVirtualExpertsData[0].description_part_2}
         </p>
         <div className="row mt-1">
