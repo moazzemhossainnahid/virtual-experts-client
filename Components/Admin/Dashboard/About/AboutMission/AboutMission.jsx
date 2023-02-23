@@ -41,7 +41,7 @@ const AdminAboutMission = () => {
         <>
             <section className="my-3 boxShadow bg-gray rounded me-3 p-3">
                 <div className="d-flex justify-content-center">
-                    <h1 className="fs-24 spacing-3">About Mission Data</h1>
+                    <h1 className="fs-24 spacing-3">About Mission/Vision Data</h1>
                 </div>
                 <h6 className="fs-18 mt-2">Mission</h6>
                 <p className="fs-14">{aboutMissionData?.mission}</p>
