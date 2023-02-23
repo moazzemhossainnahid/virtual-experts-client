@@ -19,13 +19,13 @@ const AdminAddServices = ({ setNumber }) => {
     formData.append("file", file);
     formData.append("title", data.title);
     formData.append("subTitle", data.subTitle);
-    formData.append("regularReview", data.regularReview);
-    formData.append("videoReview", data.videoReview);
-    formData.append("top50Reviewers", data.top50Reviewers);
-    formData.append("delivery", data.delivery);
-    formData.append("warranty", data.warranty);
+    // formData.append("regularReview", data.regularReview);
+    // formData.append("videoReview", data.videoReview);
+    // formData.append("top50Reviewers", data.top50Reviewers);
+    // formData.append("delivery", data.delivery);
+    // formData.append("warranty", data.warranty);
     formData.append("price", data.price);
-    formData.append("maintenance", data.maintenance);
+    // formData.append("maintenance", data.maintenance);
     formData.append("imgTitle", data.imgTitle);
     formData.append("imgAlt", data.imgAlt);
 
@@ -89,21 +89,21 @@ const AdminAddServices = ({ setNumber }) => {
 
                 <div className="form-group">
                   <label htmlFor="title">Sub Title</label>
-                  <input
-                    type="text"
+                  <textarea
+                    rows="5"
+                    cols="5"
                     defaultValue=""
-                    {...register("subTitle", { required: true })}
                     name="subTitle"
                     id="subTitle"
-                    autoComplete="off"
                     className="form-control"
-                  />
+                    {...register("subTitle", { required: true })}
+                  ></textarea>
                   {errors.subTitle && (
                     <span className="text-danger">This field is required</span>
                   )}
                 </div>
 
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label htmlFor="title">Regular Review</label>
                   <input
                     type="text"
@@ -114,9 +114,9 @@ const AdminAddServices = ({ setNumber }) => {
                     autoComplete="off"
                     className="form-control"
                   />
-                </div>
+                </div> */}
 
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label htmlFor="title">Video Review</label>
                   <input
                     type="text"
@@ -127,8 +127,8 @@ const AdminAddServices = ({ setNumber }) => {
                     autoComplete="off"
                     className="form-control"
                   />
-                </div>
-
+                </div> */}
+                {/* 
                 <div className="form-group">
                   <label htmlFor="title">Top 50 Reviewers</label>
                   <input
@@ -140,9 +140,9 @@ const AdminAddServices = ({ setNumber }) => {
                     autoComplete="off"
                     className="form-control"
                   />
-                </div>
+                </div> */}
 
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label htmlFor="title">Delivery</label>
                   <input
                     type="text"
@@ -153,9 +153,9 @@ const AdminAddServices = ({ setNumber }) => {
                     autoComplete="off"
                     className="form-control"
                   />
-                </div>
+                </div> */}
 
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label htmlFor="title">Warranty</label>
                   <input
                     type="text"
@@ -166,7 +166,7 @@ const AdminAddServices = ({ setNumber }) => {
                     autoComplete="off"
                     className="form-control"
                   />
-                </div>
+                </div> */}
 
                 <div className="form-group">
                   <label htmlFor="title">Price</label>
@@ -181,7 +181,7 @@ const AdminAddServices = ({ setNumber }) => {
                   />
                 </div>
 
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label htmlFor="title">Maintenance</label>
                   <input
                     type="text"
@@ -192,7 +192,7 @@ const AdminAddServices = ({ setNumber }) => {
                     autoComplete="off"
                     className="form-control"
                   />
-                </div>
+                </div> */}
 
                 <div className="form-group">
                   <label htmlFor="img">Image</label>
