@@ -46,19 +46,19 @@ const AdminAboutMission = () => {
                 <h6 className="fs-18 mt-2">Mission</h6>
                 <p className="fs-14">{aboutMissionData?.mission}</p>
                 <h6 className="fs-18 mt-2">Vision</h6>
-                <p className="fs-14">{ReactHtmlParser(aboutMissionData?.vission)}</p>
+                <p className="fs-14">{ReactHtmlParser(aboutMissionData?.vision)}</p>
                 <div className="d-flex py-3 justify-content-end">
                     <AiFillEdit
                         size={30}
                         className="text-warning bg-dark rounded-circle p-1 cursor-pointer "
                         data-bs-toggle="modal"
-                        data-bs-target="#aboutID"
+                        data-bs-target="#aboutMissionID"
                     />
                 </div>
             </section>
             <div
                 className="modal fade"
-                id="aboutID"
+                id="aboutMissionID"
                 tabIndex="-1"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
@@ -84,6 +84,7 @@ const AdminAboutMission = () => {
                                     defaultValue={aboutMissionData?.mission}
                                     {...register("mission")}
                                     name="mission"
+                                    placeholder="Edit Mission"
                                     id="mission"
                                     className="form-control mb-2"
                                 ></textarea>
@@ -93,6 +94,7 @@ const AdminAboutMission = () => {
                                     defaultValue={aboutMissionData?.vision}
                                     {...register("vision")}
                                     name="vision"
+                                    placeholder="Edit Vision"
                                     id="vision"
                                     className="form-control mb-2"
                                 ></textarea>

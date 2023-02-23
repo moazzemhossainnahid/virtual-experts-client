@@ -95,6 +95,7 @@ export async function getServerSideProps() {
       aboutUniquetData: aboutUniquetData[0],
       aboutUniquetListData: aboutUniquetListData,
       aboutTeamData: aboutTeamData[0],
+      aboutMissionData:aboutMissionData[0],
       teams,
       metaAbout: metaAbout[0],
     },

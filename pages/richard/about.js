@@ -4,6 +4,7 @@ import { BiMenu } from "react-icons/bi";
 import { GiCrossedPistols } from "react-icons/gi";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AdminAboutMission from "../../Components/Admin/Dashboard/About/AboutMission/AboutMission";
 import AdminTeams from "../../Components/Admin/Dashboard/About/Teams/Teams";
 import AdminTeamSection from "../../Components/Admin/Dashboard/About/TeamSection/TeamSection";
 import AdminWhoAreVirtualExperts from "../../Components/Admin/Dashboard/About/WhoAreVirtualExperts/WhoAreVirtualExperts";
@@ -64,6 +65,7 @@ const About = () => {
           </div>
           <div className="col-12 col-md-10 scroll vh-100">
             <AdminWhoAreVirtualExperts />
+            <AdminAboutMission/>
             <AdminWhyWeAreUnique />
             <AdminTeamSection />
             <AdminTeams />
