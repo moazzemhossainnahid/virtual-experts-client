@@ -2,6 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
+import ReactHtmlParser from "react-html-parser";
+
 
 const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
   const { title, description, subDescription_1, subDescription_2 } = serviceBanner;
@@ -38,9 +40,9 @@ const AdminServiceBanner = ({ serviceBanner, setNumber }) => {
       <h6 className="fs-18 mt-3">Description</h6>
       <p className="fs-14">{description}</p>
       <h6 className="fs-18 mt-3">SubDescription 1</h6>
-      <p className="fs-14">{subDescription_1}</p>
+      <p className="fs-14">{ReactHtmlParser(subDescription_1)}</p>
       <h6 className="fs-18 mt-3">SubDescription 2</h6>
-      <p className="fs-14">{subDescription_2}</p>
+      <p className="fs-14">{ReactHtmlParser(subDescription_2)}</p>
       <div className="d-flex justify-content-end">
         <AiFillEdit
           size={30}
