@@ -8,6 +8,7 @@ const About = ({
   aboutTeamData,
   aboutUniquetData,
   aboutUniquetListData,
+  aboutMissionData,
   teams,
   metaAbout,
 }) => {
@@ -42,6 +43,7 @@ const About = ({
         aboutData={aboutData}
         aboutTeamData={aboutTeamData}
         aboutUniquetData={aboutUniquetData}
+        aboutMissionData={aboutMissionData}
         aboutUniquetListData={aboutUniquetListData}
         teams={teams}
       />
@@ -63,6 +65,11 @@ export async function getServerSideProps() {
     "https://virtual-experts-server.cyclic.app/aboutUnique"
   );
   const aboutUniquetData = await aboutUniqueResponse.json();
+
+  const aboutMissionResponse = await fetch(
+    "https://virtual-experts-server.cyclic.app/aboutMission"
+  );
+  const aboutMissionData = await aboutMissionResponse.json();
 
   const aboutUniqueListResponse = await fetch(
     "https://virtual-experts-server.cyclic.app/aboutUniqueList"
