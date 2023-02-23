@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { toast } from "react-toastify";
+import ReactHtmlParser from "react-html-parser";
+
 
 const AdminBlogCard = ({
   imgType,
@@ -115,7 +117,7 @@ const AdminBlogCard = ({
         <div className="boxShadow p-3 borderRadius" style={{ height: "270px" }}>
           <h6 className="fs-20 font-bold">{blogsCard.title}</h6>
           <h6 className="fs-16 mt-3">Author: {blogsCard.writerName}</h6>
-          <h6 className="fs-14 mt-3">{blogsCard.description.slice(0,100)}</h6>
+          <h6 className="fs-14 mt-3">{ReactHtmlParser(blogsCard.description.slice(0,150))}</h6>
           <h6 className="fs-14 mt-5">Published Date: {original_date}</h6>
           <div className="d-flex justify-content-end">
             <AiFillEdit
