@@ -27,28 +27,30 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                 className={`${styles.serviceCard} col-12 col-md-4 mx-auto mt-md-5`}
                             >
                                 <div className="d-flex justify-content-center">
-                                    {service.imgURL ? (
-                                        <Image
-                                            src={service.imgURL}
-                                            title={service.alt}
-                                            alt={service.alt}
-                                            height="150"
-                                            width="150"
-                                        />
-                                    ) : (
+                                    {service.img ? (
                                         <Image
                                             src={`${imgType} ; base64, ${service.img.img}`}
                                             alt="Loading..."
                                             height="150"
                                             width="150"
                                         />
-                                    )}
+                                    ) :
+                                        (
+                                            <Image
+                                                src={service.imgURL}
+                                                title={service.alt}
+                                                alt={service.alt}
+                                                height="150"
+                                                width="150"
+                                            />
+                                        )
+                                    }
                                 </div>
                                 <div className="boxShadow p-2 rounded">
                                     <h3 className="text-center mt-5 font-family-roboto fs-18 fs-600 lh-28">
                                         {service.title}
                                     </h3>
-                                    <p style={{height:"210px"}} className="text-justify fs-14 lh-24 mt-3 text-color ">
+                                    <p style={{ height: "210px" }} className="text-justify fs-14 lh-24 mt-3 text-color ">
                                         {service.description}
                                     </p>
                                     <Link
