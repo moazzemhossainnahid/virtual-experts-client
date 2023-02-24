@@ -299,7 +299,7 @@ const AmazonFBAConsultant = ({
         </div>
 
         {/* ========================================= */}
-        <div className="d-flex text-align-center justify-content-center">
+        <div style={{marginTop: "-50px"}} className="d-flex text-align-center justify-content-center">
           <button
             className="button px-4 py-1 slide_right"
             data-bs-toggle="modal"
@@ -313,7 +313,7 @@ const AmazonFBAConsultant = ({
         {/* ========================================= */}
 
         <SectionTitle3 />
-        
+
         {/* ========================================= */}
 
         <div style={{ backgroundColor: "#F5F8FE" }}>
