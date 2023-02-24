@@ -625,6 +625,18 @@ ul {
   left: 1%;
 }
 
+.mPlayer{
+  height: 500px;
+  width: 70%;
+  border-radius: 20px;
+}
+
+.mPlayer2{
+  height: 300px;
+  width: 100%;
+  border-radius: 20px;
+}
+
 /* 
 .serviceCard:hover .card-shape-bottom {
   transform: scale(1.2);

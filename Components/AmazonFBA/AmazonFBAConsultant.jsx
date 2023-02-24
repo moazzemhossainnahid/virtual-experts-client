@@ -14,6 +14,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 import cardHeaderBg from "../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../Assets/Images/others/v-logo.svg";
+import Player from "./Player/Player";
 // import ScheduleMeeting from "../ScheduleMeeting/ScheduleMeeting";
 
 
@@ -55,12 +56,12 @@ const AmazonFBAConsultant = ({
   // };
 
 
-    //recaptcha function
-    
-    function onChange(value) {
-      console.log("Captcha value:", value);
-      setVerifed(true);
-    }
+  //recaptcha function
+
+  function onChange(value) {
+    console.log("Captcha value:", value);
+    setVerifed(true);
+  }
 
   const onSubmit = async (data) => {
     const Info = {
@@ -299,7 +300,7 @@ const AmazonFBAConsultant = ({
         </div>
 
         {/* ========================================= */}
-        <div style={{marginTop: "-50px"}} className="d-flex text-align-center justify-content-center">
+        <div style={{ marginTop: "-50px" }} className="d-flex text-align-center justify-content-center">
           <button
             className="button px-4 py-1 slide_right"
             data-bs-toggle="modal"
@@ -310,6 +311,12 @@ const AmazonFBAConsultant = ({
             </h4>
           </button>
         </div>
+        {/* ========================================= */}
+
+        {/* <div style={{ marginTop: "30px", marginBottom:"30px" }}>
+          <Player />
+        </div> */}
+
         {/* ========================================= */}
 
         <SectionTitle3 />
@@ -388,7 +395,6 @@ const AmazonFBAConsultant = ({
                 </div>
               </div>
 
-              4283311542806279
 
               <div className="card-body mx-auto bg-white borderRadius">
                 <form onSubmit={handleSubmit(onSubmit)}>
