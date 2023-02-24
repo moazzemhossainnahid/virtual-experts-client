@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import ReactHtmlParser from "react-html-parser";
 import amazonFBA from "../../Assets/Images/public/amazon-fba.svg";
 import shape from "../../Assets/Images/others/dummy.png";
@@ -10,6 +10,10 @@ import SectionTitle3 from "../Shared/SectionTitile/SectionTitle3";
 import SectionTitle4 from "../Shared/SectionTitile/SectionTitle4";
 import angle from "../../Assets/Images/others/Rectangle 266.svg";
 import SideLink from "../Home/Banner/SideLink/SideLink";
+import { AiOutlineClose } from "react-icons/ai";
+import { useForm } from "react-hook-form";
+import cardHeaderBg from "../../Assets/Images/others/Group 157.svg";
+import cardHeaderImg from "../../Assets/Images/others/v-logo.svg";
 // import ScheduleMeeting from "../ScheduleMeeting/ScheduleMeeting";
 
 
@@ -22,8 +26,90 @@ const AmazonFBAConsultant = ({
   teams,
 }) => {
   const router = useRouter();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  // const [verfied, setVerifed] = useState(false);
+  const [txt, setTxt] = useState("");
 
-  console.log(fbad1Data?.discription)
+  // const onSubmit = async (data, e) => {
+  //   data.subject = `You got a new mail from ${data.name}`;
+  //   const msgTemplate = {
+  //     service_id: "",
+  //     template_id: "",
+  //     user_id: "",
+  //     template_params: data,
+  //   };
+
+  //   const sendMessage = async () => {
+  //     const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+  //       method: "POST",
+  //       headers: { "content-type": "application/json" },
+  //       body: JSON.stringify(msgTemplate),
+  //     });
+  //     if (res.status === 200) {
+  //       toast.success("Message Sent Successfully");
+  //     }
+  //   };
+
+  //   sendMessage();
+  //   e.target.reset();
+  // };
+
+
+    //recaptcha function
+    
+    function onChange(value) {
+      console.log("Captcha value:", value);
+      setVerifed(true);
+    }
+
+  const onSubmit = async (data) => {
+    const Info = {
+      name: data.name,
+      email: data.email,
+      productlink: data.productlink,
+      description: txt,
+    };
+
+    console.log(Info)
+
+    const res = await fetch("https://virtual-experts-server.cyclic.app/leads/post", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(Info),
+    });
+    if (res.status === 200) {
+      const msgTemplate = {
+        service_id: "service_rluy6hk",
+        template_id: "template_4errde5",
+        user_id: "seFfSonT2U8bIGJ8J",
+        template_params: Info,
+      };
+
+      fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(msgTemplate),
+      })
+        .then((res) => res.json())
+        .then((data) => { });
+      reset();
+      return swal("Thank You", "Lead Place Successfully.", "success");
+    }
+  };
+
+
+  const onInputChange = e => {
+    const { value } = e.target;
+    console.log('Input value: ', value);
+
+    const re = /^[A-Za-z. ]+(?:[ .-][A-Za-z]+)*$/;
+    if (value === "" || re.test(value)) {
+      setTxt(value);
+    }
+  };
+
+
+  // console.log(fbad1Data?.discription);
   return (
     <>
       <section className="overflow-hidden">
@@ -144,7 +230,7 @@ const AmazonFBAConsultant = ({
                 </div>
               </div>
               <div className="col-md-6 d-flex justify-content-left justify-content-md-center align-items-center">
-              <div>
+                <div>
                   <div className="d-flex fs-15 lh-30 mt-2">
                     <span className="me-2 numberBefore fw-500 text-dark">
                       11
@@ -213,6 +299,18 @@ const AmazonFBAConsultant = ({
         </div>
 
         {/* ========================================= */}
+        <div className="d-flex text-align-center justify-content-center">
+          <button
+            className="button px-4 py-1 slide_right"
+            data-bs-toggle="modal"
+            data-bs-target="#popup2"
+          >
+            <h4 className="d-inline fs-20 font-family-roboto font-semibold">
+              Get a Free Quote!
+            </h4>
+          </button>
+        </div>
+        {/* ========================================= */}
 
         <SectionTitle3 />
         {/* ========================================= */}
@@ -257,6 +355,107 @@ const AmazonFBAConsultant = ({
         <SectionTitle4 />
       </section>
       <SideLink />
+      {/* PopUp Modal */}
+      <div
+        className="modal fade"
+        id="popup2"
+        tabIndex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-body">
+              <div className="position-relative">
+                <div className="cardHeaderBg">
+                  <Image src={cardHeaderBg} alt="header" />
+                </div>
+                <div className="cardHeaderImg">
+                  <Image
+                    src={cardHeaderImg}
+                    className="mt-2 p-2"
+                    alt="cardImage"
+                  />
+                </div>
+                <div className="btn-popup cursor-pointer">
+                  <AiOutlineClose
+                    size={24}
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  />
+                </div>
+              </div>
+
+              <div className="card-body mx-auto bg-white borderRadius">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <div className="my-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="name"
+                      placeholder="Your Name/Brand Name"
+                      {...register("name", { required: true })}
+                    />
+                    {errors.name && (
+                      <p className="fs-14 text-danger">Name Required</p>
+                    )}
+                  </div>
+
+                  <div className="my-3">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Your Email"
+                      name="email"
+                      {...register("email", { required: true })}
+                    />
+                    {errors.email && (
+                      <p className="fs-14 text-danger">Email Required</p>
+                    )}
+                  </div>
+
+                  <div className="my-3">
+                    <input
+                      type="text"
+                      name="productlink"
+                      placeholder="Product Link/ASIN"
+                      {...register("productlink", { required: true })}
+                      className="form-control mt-3"
+                    />
+                    {errors.productLinkOrASIN && (
+                      <p className="fs-14 text-danger">
+                        Product Link/ASIN Required
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="my-3">
+                    <textarea
+                      rows="5"
+                      col="3"
+                      placeholder="Description"
+                      name="description"
+                      {...register("description", { required: true })}
+                      onChange={onInputChange}
+                      className="form-control my-4"
+                    />
+                    {errors.description && (
+                      <p className="fs-14 text-danger">Description Required</p>
+                    )}
+                  </div>
+                  {/* <ReCAPTCHA
+                    sitekey="6LfcpGQkAAAAACUIxoFBVl6ImItvJnSCJQtLxHJi"
+                    onChange={onChange}
+                  /> */}
+                  <button className={`cursor-pointer card-button mt-2 d-block`} type="submit">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
