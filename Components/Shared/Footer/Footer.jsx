@@ -58,14 +58,14 @@ const Footer = () => {
           <div className={`${styles.bottom} row p-2 p-md-5`}>
             <div className="col-md-4">
               <Image src={Logo} alt="logo" />
-              <p className="fs-14 mt-2 lh-26 text-muted text-center text-md-start">
+              <p className="fs-14 mt-2 lh-26 text-muted text-justify text-md-start">
                 {footer?.description}
               </p>
             </div>
             <div className="col-md-4 px-5">
               <div className="text-center text-md-start">
                 <h6
-                  className={`${styles.title} fs-16 mt-5 mt-md-0 lh-30 fw-500`}
+                  className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}
                 >
                   Get in Touch
                 </h6>
@@ -103,7 +103,7 @@ const Footer = () => {
               </Link>
             </div>
             <div className="col-md-4 text-center text-md-start mt-4 mt-md-0">
-              <h6 className={`${styles.title} fs-16 mt-5 mt-md-0 lh-30 fw-500`}>
+              <h6 className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}>
                 Let’s Get Social
               </h6>
               <div className="d-flex align-items-center my-3 justify-content-center justify-content-md-start">
@@ -145,7 +145,7 @@ const Footer = () => {
                   </Link>)
                 )}
               </div>
-              <h6 className={`${styles.title} fs-16 mt-5 mt-md-0 lh-30 fw-500`}>
+              <h6 className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}>
                 Payment method
               </h6>
               <div className="d-flex align-items-center mt-2 justify-content-center justify-content-md-start">
