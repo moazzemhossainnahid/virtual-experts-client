@@ -368,7 +368,7 @@ const AmazonFBAConsultant = ({
           <div className="modal-content">
             <div className="modal-body">
               <div className="position-relative">
-                <div className="cardHeaderBg">
+                <div className="w-full overflow-hidden mx-auto rounded">
                   <Image src={cardHeaderBg} alt="header" />
                 </div>
                 <div className="cardHeaderImg">
@@ -380,7 +380,8 @@ const AmazonFBAConsultant = ({
                 </div>
                 <div className="btn-popup cursor-pointer">
                   <AiOutlineClose
-                    size={24}
+                    size={32}
+                    className="text-dark bg-white rounded"
                     data-bs-dismiss="modal"
                     aria-label="Close"
                   />
