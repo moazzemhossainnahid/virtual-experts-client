@@ -76,7 +76,7 @@ const AmazonFBAConsultant = ({
 
         <div className="py-5">
           <div className="container my-5">
-            <SectionTitle2 title="An Amazon FBA Consultant can Provide a wipe range of services, including:" isBgWhite={true} />
+            <SectionTitle2 title="An Amazon FBA Consultant can Provide a wide range of services, including:" isBgWhite={true} />
             <div className="row">
               <div className="col-md-6 d-flex justify-content-left justify-content-md-center align-items-center">
                 <div>
