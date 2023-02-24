@@ -78,13 +78,14 @@ const Navbar = () => {
               </ul>
             </div>
             <div
-              className="d-block d-md-none cursor-pointer"
+              className="d-block d-md-none p-3 cursor-pointer"
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasRight"
               aria-controls="offcanvasRight"
             >
               <span className={styles.menu1}></span>
               <span className={styles.menu2}></span>
+              <span className={styles.menu3}></span>
             </div>
           </div>
         </div>
