@@ -10,6 +10,7 @@ const nextConfig = {
       "i.pinimg.com",
       "www.amzonestep.com",
       "res.cloudinary.com",
+      "i.ibb.co",
     ],
   },
 }

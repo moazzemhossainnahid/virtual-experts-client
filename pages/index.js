@@ -2,6 +2,7 @@ import Head from "next/head";
 import Amazon from "../Components/Home/Amazon/Amazon";
 import Banner from "../Components/Home/Banner/Banner";
 import HowToPlaceAnOrder from "../Components/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";
+import TrustedPartners from "../Components/Home/Partners/TrustedPartners";
 import TopAmazonClients from "../Components/Home/TopAmazonClients/TopAmazonClients";
 import TopThreeServices from "../Components/Home/TopThreeServices/TopThreeServices";
 import WhyChooseVirtualExperts from "../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
@@ -54,7 +55,7 @@ export default function Home({
           virtualServicesData={virtualServicesData}
           headerInfoVirtualExpertsData={headerInfoVirtualExpertsData}
         />
-
+        {/* <TrustedPartners /> */}
         <TopThreeServices
           topServicesData={topServicesData}
           headerInfoTopServicesData={headerInfoTopServicesData}
