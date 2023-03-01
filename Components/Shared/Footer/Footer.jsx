@@ -38,17 +38,17 @@ const Footer = () => {
     <footer
       className={
         router.pathname === "/richard" ||
-        router.pathname === "/richard/service" ||
-        router.pathname === "/richard/fba" ||
-        router.pathname === "/richard/about" ||
-        router.pathname === "/richard/blog" ||
-        router.pathname === "/richard/blog/[id]" ||
-        router.pathname === "/richard/cform" ||
-        router.pathname === "/richard/leads" ||
-        router.pathname === "/richard/footer" ||
-        router.pathname === "/richard/orders" ||
-        router.pathname === "/richard/invoice" ||
-        router.pathname === "/richard/meta"
+          router.pathname === "/richard/service" ||
+          router.pathname === "/richard/fba" ||
+          router.pathname === "/richard/about" ||
+          router.pathname === "/richard/blog" ||
+          router.pathname === "/richard/blog/[id]" ||
+          router.pathname === "/richard/cform" ||
+          router.pathname === "/richard/leads" ||
+          router.pathname === "/richard/footer" ||
+          router.pathname === "/richard/orders" ||
+          router.pathname === "/richard/invoice" ||
+          router.pathname === "/richard/meta"
           ? "d-none"
           : ""
       }
@@ -70,37 +70,39 @@ const Footer = () => {
                   Get in Touch
                 </h6>
               </div>
-              <Link href={`mailto:${footer?.email}`} target="_blank" legacyBehavior>
+              <div className="d-flex flex-column justify-content-center justify-content-md-start">
+                <Link href={`mailto:${footer?.email}`} target="_blank" legacyBehavior>
 
-                <p className={`mt-3 text-muted fs-14 lh-30`}>
-                  <MdEmail className={`${styles.logo}`} />
-                  <span className={`${styles.hilight}`}>
-                    <span className="fw-500">Email</span> : {footer?.email}
-                  </span>
-                </p>
+                  <p className={`mt-3 px-xs-0 px-3 px-md-0 text-muted fs-14 lh-30`}>
+                    <MdEmail className={`${styles.logo}`} />
+                    <span className={`${styles.hilight}`}>
+                      <span className="fw-500">Email</span> : {footer?.email}
+                    </span>
+                  </p>
 
-              </Link>
-              <Link href={`${footer?.skype}`} target="_blank" legacyBehavior>
+                </Link>
+                <Link href={`${footer?.skype}`} target="_blank" legacyBehavior>
 
-                <p className=" text-muted fs-14 lh-30">
-                  <FaSkype className={`${styles.logo}`} />
-                  <span className={`${styles.hilight}`}>
-                    <span className="fw-500">Skype</span> : {footer?.skypeTitle}
-                  </span>
-                </p>
+                  <p className="px-xs-0 px-3 px-md-0 text-muted fs-14 lh-30">
+                    <FaSkype className={`${styles.logo}`} />
+                    <span className={`${styles.hilight}`}>
+                      <span className="fw-500">Skype</span> : {footer?.skypeTitle}
+                    </span>
+                  </p>
 
-              </Link>
-              <Link href={`${footer?.whatsApp}`} target="_blank" legacyBehavior>
+                </Link>
+                <Link href={`${footer?.whatsApp}`} target="_blank" legacyBehavior>
 
-                <p className=" text-muted fs-14 lh-30">
-                  <IoLogoWhatsapp className={`${styles.logo}`} />
-                  <span className={`${styles.hilight}`}>
-                    <span className="fw-500">WhatsApp</span> :{" "}
-                    {footer?.whatsAppTitle}
-                  </span>
-                </p>
+                  <p className="px-xs-0 px-3 px-md-0 text-muted fs-14 lh-30">
+                    <IoLogoWhatsapp className={`${styles.logo}`} />
+                    <span className={`${styles.hilight}`}>
+                      <span className="fw-500">WhatsApp</span> :{" "}
+                      {footer?.whatsAppTitle}
+                    </span>
+                  </p>
 
-              </Link>
+                </Link>
+              </div>
             </div>
             <div className="col-md-4 text-center text-md-start mt-4 mt-md-0">
               <h6 className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}>
@@ -162,7 +164,7 @@ const Footer = () => {
                   <Image src={BTC} alt="BTC" />
                 </div>
               </div>
-            </div>  
+            </div>
           </div>
         </div>
         <div className="text-center text-muted">
