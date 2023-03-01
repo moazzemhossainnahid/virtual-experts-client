@@ -12,11 +12,7 @@ const Order = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
+  const { handleSubmit, register, formState: { errors }, } = useForm();
 
   const onSubmit = (data, e) => {
     const newArray = Object.keys(data);
@@ -146,16 +142,16 @@ const Order = () => {
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("amazonVerifiedReviews")}
+                      {...register("ProductListingimagesDesign")}
                       className="me-2 my-3"
-                      value="Amazon Verified Reviewers"
-                      id="Amazon Verified Reviewers"
+                      value="Product Listing images Design"
+                      id="Product Listing images Design"
                     />{" "}
                     <label
-                      htmlFor="Amazon Verified Reviewers"
+                      htmlFor="Product Listing images Design"
                       className="fs-15 cursor-pointer"
                     >
-                      Amazon Verified Reviewers
+                      Product Listing images Design
                     </label>
                   </div>
                   <div className="d-flex align-items-center">

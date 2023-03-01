@@ -55,7 +55,7 @@ export default function Home({
           virtualServicesData={virtualServicesData}
           headerInfoVirtualExpertsData={headerInfoVirtualExpertsData}
         />
-        {/* <TrustedPartners /> */}
+        <TrustedPartners />
         <TopThreeServices
           topServicesData={topServicesData}
           headerInfoTopServicesData={headerInfoTopServicesData}
