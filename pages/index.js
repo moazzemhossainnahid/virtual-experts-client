@@ -55,11 +55,11 @@ export default function Home({
           virtualServicesData={virtualServicesData}
           headerInfoVirtualExpertsData={headerInfoVirtualExpertsData}
         />
-        <TrustedPartners />
         <TopThreeServices
           topServicesData={topServicesData}
           headerInfoTopServicesData={headerInfoTopServicesData}
         />
+        <TrustedPartners />
         <HowToPlaceAnOrder
           placeAnOrderData={placeAnOrderData}
           placeAnOrderListData={placeAnOrderListData}
