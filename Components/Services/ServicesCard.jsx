@@ -73,7 +73,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                             )} */}
                                             {servicesCard.price && (
                                                 <p className="py-5 fw-bold text-center m-0 lh-26">
-                                                    <span className="fs-40">${servicesCard.price}</span> {servicesCard.crn && <sub className="text-xs"><span className="fs-30">/</span> {servicesCard.crn}</sub>} 
+                                                    <span className="fs-40">${servicesCard.price}</span> {servicesCard.crn && <sub className="text-xs"><span className="text-xs">/</span> {servicesCard.crn}</sub>} 
                                                 </p>
                                             )}
                                             {/* {servicesCard.crn && (
