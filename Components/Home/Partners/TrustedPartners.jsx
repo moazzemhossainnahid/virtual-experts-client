@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { PartnersData } from '../../../Data/PartnersData';
 import Image from 'next/image';
 import SectionTitle2 from '../../Shared/SectionTitile/SectionTitile2';
+import SectionTitle from '../../Shared/SectionTitile/SectionTitile';
 
 const TrustedPartners = () => {
     const settings = {
@@ -21,7 +22,7 @@ const TrustedPartners = () => {
     return (
         <div className="flex justify-center items-center w-full mx-auto bg-slate-200 ">
 
-            <SectionTitle2 title="The Brands we have worked with" isBgWhite={true} />
+            <SectionTitle title="The Brands we have worked with" isBgWhite={true} />
 
             <div className="w-full max-w-7xl mx-auto">
                 <link
