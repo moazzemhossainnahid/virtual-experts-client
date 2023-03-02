@@ -50,7 +50,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                     </div>
                                     <div className="card-body">
                                         <div style={{ height: "300px" }} className="">
-                                            <h3 style={{ height: "50px" }} className="fs-18 lh-28 mb-4 fw-bold roboto-font-family fw-normal h-">
+                                            <h3 style={{ height: "50px" }} className="fs-18 text-uppercase lh-28 mb-4 fw-bold roboto-font-family fw-normal h-">
                                                 {servicesCard.title}
                                             </h3>
                                             <p style={{ height: "170px" }} className="fs-14 lh-24 font-medium m-0 text-justify">
@@ -74,6 +74,11 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                             {servicesCard.price && (
                                                 <p className="fs-40 py-3 fw-bold text-center m-0 lh-26">
                                                     ${servicesCard.price}
+                                                </p>
+                                            )}
+                                            {servicesCard.crn && (
+                                                <p className="fs-14 m-0 lh-26">
+                                                    Chronology : {servicesCard.crn}
                                                 </p>
                                             )}
                                             {/* {servicesCard.delivery && (

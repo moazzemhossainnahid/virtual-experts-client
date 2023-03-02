@@ -25,6 +25,7 @@ const AdminAddServices = ({ setNumber }) => {
     // formData.append("delivery", data.delivery);
     // formData.append("warranty", data.warranty);
     formData.append("price", data.price);
+    formData.append("crn", data.crn);
     // formData.append("maintenance", data.maintenance);
     formData.append("imgTitle", data.imgTitle);
     formData.append("imgAlt", data.imgAlt);
@@ -168,8 +169,8 @@ const AdminAddServices = ({ setNumber }) => {
                   />
                 </div> */}
 
-                {/* <div className="form-group">
-                  <label htmlFor="title">Price</label>
+                <div className="form-group">
+                  <label htmlFor="price">Price</label>
                   <input
                     type="text"
                     defaultValue=""
@@ -179,8 +180,20 @@ const AdminAddServices = ({ setNumber }) => {
                     autoComplete="off"
                     className="form-control"
                   />
-                </div> */}
+                </div>
 
+                <div className="form-group">
+                  <label htmlFor="crn">Cronology</label>
+                  <input
+                    type="text"
+                    defaultValue=""
+                    {...register("crn")}
+                    name="crn"
+                    id="crn"
+                    autoComplete="off"
+                    className="form-control"
+                  />
+                </div>
                 {/* <div className="form-group">
                   <label htmlFor="title">Maintenance</label>
                   <input

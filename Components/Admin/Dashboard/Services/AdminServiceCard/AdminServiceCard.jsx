@@ -21,6 +21,7 @@ const AdminServiceCard = ({
     delivery,
     warranty,
     price,
+    crn,
     maintenance,
     imgTitle,
     imgAlt,
@@ -65,6 +66,7 @@ const AdminServiceCard = ({
     const newDelivery = data.delivery || servicesCard.delivery;
     const newWarranty = data.warranty || servicesCard.warranty;
     const newPrice = data.price || servicesCard.price;
+    const newCrn = data.crn || servicesCard.crn;
     const newMaintenance = data.maintenance || servicesCard.maintenance;
     const newImgTitle = data.imgTitle || servicesCard.imgTitle;
     const newImgAlt = data.imgAlt || servicesCard.imgAlt;
@@ -80,6 +82,7 @@ const AdminServiceCard = ({
       // delivery: newDelivery,
       // warranty: newWarranty,
       price: newPrice,
+      crn: newCrn,
       // maintenance: newMaintenance,
       imgTitle: newImgTitle,
       imgAlt: newImgAlt,
@@ -98,6 +101,7 @@ const AdminServiceCard = ({
     // formData.append("delivery", newDelivery);
     // formData.append("warranty", newWarranty);
     formData.append("price", newPrice);
+    formData.append("crn", newCrn);
     // formData.append("maintenance", newMaintenance);
     formData.append("imgTitle", newImgTitle);
     formData.append("imgAlt", newImgAlt);
@@ -169,6 +173,9 @@ const AdminServiceCard = ({
           )} */}
           {servicesCard.price && (
             <p className="fs-14">Price : ${servicesCard.price}</p>
+          )}
+          {servicesCard.crn && (
+            <p className="fs-14">Crn : {servicesCard.crn}</p>
           )}
           {/* {servicesCard.delivery && (
             <p className="fs-14">Delivery : {servicesCard.delivery} days</p>
@@ -320,6 +327,19 @@ const AdminServiceCard = ({
                       {...register("price")}
                       name="price"
                       id="price"
+                      autoComplete="off"
+                      className="form-control"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="crn">Cronology</label>
+                    <input
+                      type="text"
+                      defaultValue={crn}
+                      {...register("crn")}
+                      name="crn"
+                      id="crn"
                       autoComplete="off"
                       className="form-control"
                     />
