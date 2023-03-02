@@ -50,9 +50,10 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                     </div>
                                     <div className="card-body">
                                         <div style={{ height: "300px" }} className="">
-                                            <h3 style={{ height: "50px" }} className="fs-18 text-uppercase lh-28 mb-4 fw-bold roboto-font-family fw-normal h-">
+                                            <h3 style={{ height: "50px" }} className="fs-18 text-uppercase text-center lh-28 mb-4 fw-bold roboto-font-family fw-normal h-">
                                                 {servicesCard.title}
                                             </h3>
+
                                             <p style={{ height: "140px" }} className="fs-12 lh-22 font-medium m-0 text-justify">
                                                 {servicesCard.subTitle}
                                             </p>
@@ -61,6 +62,17 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                                     Regular Review : ${servicesCard.regularReview} each
                                                 </p>
                                             )} */}
+                                            {servicesCard.price && (
+                                                <p className="pt-3 fw-bold text-center m-0 lh-26">
+                                                    <span className="fs-40">${servicesCard.price}</span>
+                                                </p>
+                                            )}
+                                            {/* {servicesCard.crn && <sub className="text-xs"><span className="text-xs">/</span> {servicesCard.crn}</sub> */}
+                                            {servicesCard.crn && (
+                                                <p className="pb-2 fw-bold text-center m-0">
+                                                    <span className="fs-14">{servicesCard.crn}</span>
+                                                </p>
+                                            )}
                                             {/* {servicesCard.videoReview && (
                                                 <p className="fs-14 m-0 lh-26">
                                                     Video Review : ${servicesCard.videoReview} each
@@ -71,11 +83,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                                     Top 50 Reviewers : ${servicesCard.top50Reviewers} each
                                                 </p>
                                             )} */}
-                                            {servicesCard.price && (
-                                                <p className="py-5 fw-bold text-center m-0 lh-26">
-                                                    <span className="fs-40">${servicesCard.price}</span> {servicesCard.crn && <sub className="text-xs"><span className="text-xs">/</span> {servicesCard.crn}</sub>} 
-                                                </p>
-                                            )}
+
                                             {/* {servicesCard.crn && (
                                                 <p className="fs-14 m-0 lh-26">
                                                     Cronology : {servicesCard.crn}
