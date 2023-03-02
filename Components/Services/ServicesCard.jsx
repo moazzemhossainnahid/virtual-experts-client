@@ -28,7 +28,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                 key={servicesCard._id}
                             >
                                 <div className="card h-100 border-0 borderRadius overflow-hidden">
-                                    <div className="background-color-skyblue overflow-hidden ">
+                                    <div className="d-flex justify-content-center background-color-skyblue overflow-hidden ">
                                         {servicesCard.img ? (
                                             <Image
                                                 src={`${imgType} ; base64, ${servicesCard.img.img}`}
