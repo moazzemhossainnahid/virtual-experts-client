@@ -53,7 +53,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                             <h3 style={{ height: "50px" }} className="fs-18 text-uppercase lh-28 mb-4 fw-bold roboto-font-family fw-normal h-">
                                                 {servicesCard.title}
                                             </h3>
-                                            <p style={{ height: "170px" }} className="fs-14 lh-24 font-medium m-0 text-justify">
+                                            <p style={{ height: "140px" }} className="fs-12 lh-22 font-medium m-0 text-justify">
                                                 {servicesCard.subTitle}
                                             </p>
                                             {/* {servicesCard.regularReview && (
@@ -72,15 +72,15 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                                 </p>
                                             )} */}
                                             {servicesCard.price && (
-                                                <p className="fs-40 py-3 fw-bold text-center m-0 lh-26">
-                                                    ${servicesCard.price}
+                                                <p className="py-5 fw-bold text-center m-0 lh-26">
+                                                    <span className="fs-40">${servicesCard.price}</span> {servicesCard.crn && <sub className="text-xs"><span className="fs-30">/</span> {servicesCard.crn}</sub>} 
                                                 </p>
                                             )}
-                                            {servicesCard.crn && (
+                                            {/* {servicesCard.crn && (
                                                 <p className="fs-14 m-0 lh-26">
-                                                    Chronology : {servicesCard.crn}
+                                                    Cronology : {servicesCard.crn}
                                                 </p>
-                                            )}
+                                            )} */}
                                             {/* {servicesCard.delivery && (
                                                 <p className="fs-14 m-0 lh-26">
                                                     Delivery : {servicesCard.delivery} days
