@@ -157,303 +157,261 @@ const Order = () => {
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("amazonKindleVerifiedReviews")}
-                      value="Amazon Kindle Verified Reviews"
+                      {...register("ProductPackageDesign")}
+                      value="Product Package Design"
                       className="me-2 my-3"
-                      id="Amazon Kindle Verified Reviews"
+                      id="Product Package Design"
                     />{" "}
                     <label
-                      htmlFor="Amazon Kindle Verified Reviews"
+                      htmlFor="Product Package Design"
                       className="fs-15 cursor-pointer"
                     >
-                      Amazon Kindle Verified Reviews
+                      Product Package Design
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("removeNegativeAmazonReviewsFrom1stPage")}
-                      value="Remove Negative Amazon Reviews from 1st Page"
+                      {...register("SearchTermsKeywordsAnalysis")}
+                      value="Search Terms/Keywords Analysis"
                       className="me-2 my-3"
-                      id="Remove Negative Amazon Reviews from 1st Page"
+                      id="Search Terms/Keywords Analysis"
                     />{" "}
                     <label
-                      htmlFor="Remove Negative Amazon Reviews from 1st Page"
+                      htmlFor="Search Terms/Keywords Analysis"
                       className="fs-15 cursor-pointer"
                     >
-                      Remove Negative Amazon Reviews from 1st Page
+                      Search Terms/Keywords Analysis
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("amazonSEORank1stPageInAmazonSearchEngine")}
-                      value="Amazon SEO - Rank 1st Page in Amazon Search Engine"
+                      {...register("DesignAmazonEnhancedBrandContent")}
+                      value="Design Amazon Enhanced Brand Content"
                       className="me-2 my-3"
-                      id="Amazon SEO - Rank 1st Page in Amazon Search Engine"
+                      id="Design Amazon Enhanced Brand Content"
                     />{" "}
                     <label
-                      htmlFor="Amazon SEO - Rank 1st Page in Amazon Search Engine"
+                      htmlFor="Design Amazon Enhanced Brand Content"
                       className="fs-15 cursor-pointer"
                     >
-                      Amazon SEO - Rank 1st Page in Amazon Search Engine
+                     Design Amazon Enhanced Brand Content
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("amazonHelpfulVotes")}
-                      value="Amazon Helpful Votes"
+                      {...register("ListingOptimization")}
+                      value="Listing Optimization"
                       className="me-2 my-3"
-                      id="Amazon Helpful Votes"
+                      id="Listing Optimization"
                     />{" "}
                     <label
-                      htmlFor="Amazon Helpful Votes"
+                      htmlFor="Listing Optimization"
                       className="fs-15 cursor-pointer"
                     >
-                      Amazon Helpful Votes
+                      Listing Optimization
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("reportAbuse")}
-                      value="Report Abuse"
+                      {...register("AMAZONFBAAZCONSULTANCY")}
+                      value="AMAZON FBA A-Z CONSULTANCY!"
                       className="me-2 my-3"
-                      id="Report Abuse"
+                      id="AMAZON FBA A-Z CONSULTANCY!"
                     />{" "}
                     <label
-                      htmlFor="Report Abuse"
+                      htmlFor="AMAZON FBA A-Z CONSULTANCY!"
                       className="fs-15 cursor-pointer"
                     >
-                      Report Abuse
+                      AMAZON FBA A-Z CONSULTANCY!
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("questionAndAnswer")}
-                      value="Question & Answer"
+                      {...register("AmazonBrandStorefrontDesign")}
+                      value="Amazon Brand Storefront Design"
                       className="me-2 my-3"
-                      id="Question & Answer"
+                      id="Amazon Brand Storefront Design"
                     />{" "}
-                    <label htmlFor="Question & Answer" className="fs-15">
-                      Question & Answer
+                    <label htmlFor="Amazon Brand Storefront Design" className="fs-15">
+                      Amazon Brand Storefront Design
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("fbmHijackerRemoval")}
-                      value="FBM Hijacker Removal"
+                      {...register("ApplyforTrademarkBrandName")}
+                      value="Apply for Trademark & Brand Name"
                       className="me-2 my-3"
-                      id="FBM Hijacker Removal"
+                      id="Apply for Trademark & Brand Name"
                     />{" "}
                     <label
-                      htmlFor="FBM Hijacker Removal"
+                      htmlFor="Apply for Trademark & Brand Name"
                       className="fs-15 cursor-pointer"
                     >
-                      FBM Hijacker Removal
+                      Apply for Trademark & Brand Name
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("amazonVideoUploader")}
-                      value="Amazon Video Uploader"
+                      {...register("ProductVideoAdsCommercials")}
+                      value="Product Video Ads & Commercials"
                       className="me-2 my-3"
-                      id="Amazon Video Uploader"
+                      id="Product Video Ads & Commercials"
                     />{" "}
                     <label
-                      htmlFor="Amazon Video Uploader"
+                      htmlFor="Product Video Ads & Commercials"
                       className="fs-15 cursor-pointer"
                     >
-                      Amazon Video Uploader
+                      Product Video Ads & Commercials
                     </label>
                   </div>
-                  <div className="d-flex align-items-center">
-                    <input
-                      type="checkbox"
-                      {...register("keywordBooster")}
-                      value="Keyword Booster"
-                      className="me-2 my-3"
-                      id="Keyword Booster"
-                    />{" "}
-                    <label
-                      htmlFor="Keyword Booster"
-                      className="fs-15 cursor-pointer"
-                    >
-                      Keyword Booster
-                    </label>
-                  </div>
-                  <div className="d-flex align-items-center">
-                    <input
-                      type="checkbox"
-                      {...register("competitorProtectionAttack")}
-                      value="Competitor Protection/Attack"
-                      className="me-2 my-3"
-                      id="Competitor Protection/Attack"
-                    />{" "}
-                    <label
-                      htmlFor="Competitor Protection/Attack"
-                      className="fs-15 cursor-pointer"
-                    >
-                      Competitor Protection/Attack
-                    </label>
-                  </div>
+
                 </div>
                 {/*  */}
                 <div className="col-12 col-md-6">
+                <div className="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      {...register("ProductResearchSelection")}
+                      value="Product Research & Selection"
+                      className="me-2 my-3"
+                      id="Product Research & Selection"
+                    />{" "}
+                    <label
+                      htmlFor="Product Research & Selection"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Product Research & Selection
+                    </label>
+                  </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("ppcKeywordResearch")}
-                      value="PPC Keyword Research"
+                      {...register("UPCFNSKUCodeIssues")}
+                      value="UPC/FNSKU Code Issues"
                       className="me-2 my-3"
-                      id="PPC Keyword Research"
+                      id="UPC/FNSKU Code Issues"
                     />{" "}
-                    <span
-                      htmlFor="PPC Keyword Research"
+                    <label
+                      htmlFor="UPC/FNSKU Code Issues"
                       className="fs-15 cursor-pointer"
                     >
-                      PPC Keyword Research
+                      UPC/FNSKU Code Issues
+                    </label>
+                  </div>
+                  <div className="d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      {...register("CouponAdsDealsSetup")}
+                      value="Coupon Ads/Deals Setup"
+                      className="me-2 my-3"
+                      id="Coupon Ads/Deals Setup"
+                    />{" "}
+                    <span
+                      htmlFor="Coupon Ads/Deals Setup"
+                      className="fs-15 cursor-pointer"
+                    >
+                      Coupon Ads/Deals Setup
                     </span>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("designAmazonListingImages")}
-                      value="Design Amazon Listing Images"
+                      {...register("SupplierProductsourcing")}
+                      value="Supplier/Product sourcing"
                       className="me-2 my-3"
-                      id="Design Amazon Listing Images"
+                      id="Supplier/Product sourcing"
                     />{" "}
                     <label
-                      htmlFor="Design Amazon Listing Images"
+                      htmlFor="Supplier/Product sourcing"
                       className="fs-15 cursor-pointer"
                     >
-                      Design Amazon Listing Images
+                      Supplier/Product sourcing
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("enhanceBrandContentA+EBCDesignCopywriting")}
-                      value=" Enhance Brand Content – A+ / EBC Design/Copywriting!"
+                      {...register("InventoryManagement")}
+                      value=" Inventory Management"
                       className="me-2 my-3"
-                      id="Enhance Brand Content – A+ / EBC Design/Copywriting!"
+                      id="Inventory Management"
                     />{" "}
                     <label
-                      htmlFor="Enhance Brand Content – A+ / EBC Design/Copywriting!"
+                      htmlFor="Inventory Management"
                       className="fs-15 cursor-pointer"
                     >
-                      Enhance Brand Content – A+ / EBC Design/Copywriting!
+                      Inventory Management
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("kindleBookCoverDesign")}
-                      value="Kindle Book Cover Design"
+                      {...register("PPCCampaignManagement")}
+                      value="PPC Campaign Management"
                       className="me-2 my-3"
-                      id="Kindle Book Cover Design"
+                      id="PPC Campaign Management"
                     />{" "}
                     <label
-                      htmlFor="Kindle Book Cover Design"
+                      htmlFor="PPC Campaign Management"
                       className="fs-15 cursor-pointer"
                     >
-                      Kindle Book Cover Design
+                      PPC Campaign Management
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("bulletPointsForAmazonListing")}
-                      value="Bullet Points for Amazon Listing"
+                      {...register("PhotoshootoftheProduct")}
+                      value="Photoshoot of the Product"
                       className="me-2 my-3"
-                      id="Bullet Points for Amazon Listing"
+                      id="Photoshoot of the Product"
                     />{" "}
                     <label
-                      htmlFor="Bullet Points for Amazon Listing"
+                      htmlFor="Photoshoot of the Product"
                       className="fs-15 cursor-pointer"
                     >
-                      Bullet Points for Amazon Listing
+                      Photoshoot of the Product
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("amazonProductDescription")}
-                      value="Amazon Product Description"
+                      {...register("ProductShipmenttoAmazonwarehouse")}
+                      value="Product Shipment to Amazon warehouse"
                       className="me-2 my-3"
-                      id="Amazon Product Description"
+                      id="Product Shipment to Amazon warehouse"
                     />{" "}
                     <label
-                      htmlFor="Amazon Product Description"
+                      htmlFor="Product Shipment to Amazon warehouse"
                       className="fs-15 cursor-pointer"
                     >
-                      Amazon Product Description
+                      Product Shipment to Amazon warehouse
                     </label>
                   </div>
                   <div className="d-flex align-items-center">
                     <input
                       type="checkbox"
-                      {...register("findASupplier")}
-                      value="Find a Supplier"
+                      {...register("GoogleAdsMarketingPlan")}
+                      value="Google Ads & Marketing Plan"
                       className="me-2 my-3"
-                      id="Find a Supplier"
+                      id="Google Ads & Marketing Plan"
                     />{" "}
                     <label
-                      htmlFor="Find a Supplier"
+                      htmlFor="Google Ads & Marketing Plan"
                       className="fs-15 cursor-pointer"
                     >
-                      Find a Supplier
+                      Google Ads & Marketing Plan
                     </label>
                   </div>
-                  <div className="d-flex align-items-center">
-                    <input
-                      type="checkbox"
-                      {...register("competitorAnalysis")}
-                      value="Competitor Analysis"
-                      className="me-2 my-3"
-                      id="Competitor Analysis"
-                    />{" "}
-                    <label
-                      htmlFor="Competitor Analysis"
-                      className="fs-15 cursor-pointer"
-                    >
-                      Competitor Analysis
-                    </label>
-                  </div>
-                  <div className="d-flex align-items-center">
-                    <input
-                      type="checkbox"
-                      {...register("amazonFBAAtoZConsultancy")}
-                      value="Amazon FBA A-Z Consultancy!"
-                      className="me-2 my-3"
-                      id="Amazon FBA A-Z Consultancy!"
-                    />{" "}
-                    <label
-                      htmlFor="Amazon FBA A-Z Consultancy!"
-                      className="fs-15 cursor-pointer"
-                    >
-                      Amazon FBA A-Z Consultancy!
-                    </label>
-                  </div>
-                  <div className="d-flex align-items-center">
-                    <input
-                      type="checkbox"
-                      {...register("amazonKindleBookAtoZConsultancy")}
-                      value="Amazon Kindle Book A-Z Consultancy!"
-                      className="me-2 my-3"
-                      id="Amazon Kindle Book A-Z Consultancy!"
-                    />{" "}
-                    <label
-                      htmlFor="Amazon Kindle Book A-Z Consultancy!"
-                      className="fs-15 cursor-pointer"
-                    >
-                      Amazon Kindle Book A-Z Consultancy!
-                    </label>
-                  </div>
+
+
                 </div>
                 <div>
                   <input
