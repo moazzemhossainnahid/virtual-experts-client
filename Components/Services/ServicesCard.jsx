@@ -53,7 +53,7 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                             <h3 style={{ height: "50px" }} className="fs-18 lh-28 mb-4 fw-bold roboto-font-family fw-normal h-">
                                                 {servicesCard.title}
                                             </h3>
-                                            <p className="fs-14 lh-24 font-medium m-0 text-justify">
+                                            <p style={{ height: "170px" }} className="fs-14 lh-24 font-medium m-0 text-justify">
                                                 {servicesCard.subTitle}
                                             </p>
                                             {/* {servicesCard.regularReview && (
@@ -72,8 +72,8 @@ const ServicesCard = ({ servicesCardData, serviceCardHeader }) => {
                                                 </p>
                                             )} */}
                                             {servicesCard.price && (
-                                                <p className="fs-14 m-0 lh-26">
-                                                    Price : {servicesCard.price}
+                                                <p className="fs-40 py-3 fw-bold text-center m-0 lh-26">
+                                                    ${servicesCard.price}
                                                 </p>
                                             )}
                                             {/* {servicesCard.delivery && (

@@ -98,6 +98,10 @@ ul {
   font-size: 30px;
 }
 
+.fs-40 {
+  font-size: 40px;
+}
+
 .fs-36 {
   font-size: 36px;
 }
@@ -260,6 +264,10 @@ ul {
 
 /*Working on font size responsiveness*/
 @media only screen and (max-width: 600px) {
+  .fs-40 {
+    font-size: 30px;
+  }
+
   .fs-30 {
     font-size: 30px;
   }

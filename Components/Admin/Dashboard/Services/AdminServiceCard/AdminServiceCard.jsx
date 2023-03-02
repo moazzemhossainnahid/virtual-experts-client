@@ -167,9 +167,9 @@ const AdminServiceCard = ({
               Top 50 Reviewers : ${servicesCard.top50Reviewers} each
             </p>
           )} */}
-          {/* {servicesCard.price && (
+          {servicesCard.price && (
             <p className="fs-14">Price : ${servicesCard.price}</p>
-          )} */}
+          )}
           {/* {servicesCard.delivery && (
             <p className="fs-14">Delivery : {servicesCard.delivery} days</p>
           )}
@@ -312,7 +312,7 @@ const AdminServiceCard = ({
                     />
                   </div> */}
 
-                  {/* <div className="form-group">
+                  <div className="form-group">
                     <label htmlFor="price">Price</label>
                     <input
                       type="text"
@@ -323,7 +323,7 @@ const AdminServiceCard = ({
                       autoComplete="off"
                       className="form-control"
                     />
-                  </div> */}
+                  </div>
 
                   {/* <div className="form-group">
                     <label htmlFor="maintenance">Maintenance</label>
