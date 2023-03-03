@@ -77,7 +77,6 @@ const TrustedPartners = () => {
                                         height="150"
                                         width="150"
                                     />
-                                    {/* <img className='w-40 md:w-52 flex justify-center items-center h-30 py-5 px-7' key={idx} src={item?.imageURL} alt="partners" /> */}
                                 </div>
 
                             )

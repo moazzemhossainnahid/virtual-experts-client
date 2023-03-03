@@ -27,14 +27,21 @@ const BestProduct = () => {
                             Best in Test 2023
                         </div>
                     </div>
-                    <div style={{marginTop:"-30px"}} className="d-flex flex-column flex-md-row row justify-content-center bg-warning align-items-center">
-                        <div className="col-12 col-md-3 bg-danger">
+                    <div style={{ marginTop: "-30px" }} className="d-flex flex-column flex-md-row row justify-content-center px-3 align-items-center">
+                        <div className="col-12 col-md-3 bg-white border border-2">
+                            <Image
+                                style={{ }}
+                                src={`https://i.ibb.co/DzfHjH3/fba.png`}
+                                alt="amazon-fba-a-z-consultancy"
+                                title="amazon-fba-a-z-consultancy"
+                                width={200}
+                                height={200}
+                            />
+                        </div>
+                        <div className="col-12 col-md-6 bg-white border">
                             <h2 className="">hey there</h2>
                         </div>
-                        <div className="col-12 col-md-6 bg-dark">
-                            <h2 className="">hey there</h2>
-                        </div>
-                        <div className="col-12 col-md-3 bg-info">
+                        <div className="col-12 col-md-3 bg-gray border">
                             <h2 className="">hey there</h2>
                         </div>
                     </div>
