@@ -67,7 +67,7 @@ const Signin = () => {
       subject: `You verification code is - ${randomNumber}`,
       name: "Virtual Experts",
       verificationCode: randomNumber,
-      link: "http://localhost:3000/reset-password",
+      link: "https://virtualexperts.net/reset-password",
     };
     const msgTemplate = {
       service_id: "service_rzmhs77",
