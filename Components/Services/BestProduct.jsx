@@ -5,7 +5,8 @@ import ring from "../../Assets/Images/service/Ellipse 261.svg";
 
 const BestProduct = () => {
 
-
+    const today = new Date();
+    const year = today.getFullYear();
 
     return <>
         <div className="container col-11 position-relative my-5 pb-3">
@@ -80,7 +81,7 @@ const BestProduct = () => {
                             height={50}
                         />
                         <div style={{ backgroundImage: "url('https://i.ibb.co/3Tzr0bh/Seek-Png-com-orange-banner.png')", backgroundRepeat: "no-repeat", marginLeft: "-10px", zIndex: "1" }} className="px-3 py-1 fs-12 text-light">
-                            Best Amazon FBA Service 2023
+                            Best Amazon FBA Service {year}
                         </div>
                     </div>
                     <div className="d-flex flex-column justify-content-center align-items-center p-2">
