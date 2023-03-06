@@ -12,8 +12,7 @@ const nextConfig = {
       "res.cloudinary.com",
       "i.ibb.co",
     ],
-    loader: 'custom',
-    loaderFile: './my/image/loader.js',
+    unoptimized: true
   },
 }
 
