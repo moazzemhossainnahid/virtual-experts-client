@@ -169,7 +169,7 @@ const Footer = () => {
         </div>
         <div className="text-center text-muted">
           {/* <p className="pt-3 fs-14 text-muted">{footer?.copyRightText}</p> */}
-          <p className="pt-3 fs-14 text-muted">© 2014-{year} | NAHID | Virtual Experts Limited | All Right Reserved</p>
+          <p className="pt-3 fs-14 text-muted">© 2014-{year} Virtual Experts Limited | All Right Reserved</p>
         </div>
       </section>
     </footer>
