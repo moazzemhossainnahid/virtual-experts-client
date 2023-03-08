@@ -155,7 +155,7 @@ const AboutComponents = ({
                         title={team.alt}
                         height="350"
                         width="300"
-                        layout="responsive"
+                        layout="fill"
                         className="pb-1"
                       />
                     ) : (
@@ -164,7 +164,7 @@ const AboutComponents = ({
                         alt="loading.."
                         height="350"
                         width="300"
-                        layout="responsive"
+                        layout="fill"
                         className="pb-1"
                       />
                     )}
