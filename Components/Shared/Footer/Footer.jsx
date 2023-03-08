@@ -169,6 +169,7 @@ const Footer = () => {
         </div>
         <div className="text-center text-muted">
           {/* <p className="pt-3 fs-14 text-muted">{footer?.copyRightText}</p> */}
+          {/* Footer Link */}
           <p className="pt-3 fs-14 text-muted">© 2014-{year} Virtual Experts Limited | All Right Reserved</p>
         </div>
       </section>
