@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className={`fixed-top bg-white`}>
           <div className="d-flex justify-content-between z-50 align-items-center container py-3">
             <div className="d-none d-md-block">
-              <Link href="/" scroll >
+              <Link href="/" scroll legacyBehavior>
 
                 <Image
                   src={logo}
@@ -54,7 +54,7 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="d-block d-md-none">
-              <Link href="/" scroll >
+              <Link href="/" scroll legacyBehavior>
 
                 <Image src={logo} alt="logo" height="31" width="170" />
 
@@ -68,7 +68,7 @@ const Navbar = () => {
                       href={nav.link}
                       className={`${currentPath === nav.link ? `${styles.active}` : ""
                         } ${styles.navItem}`}
-                      >
+                      legacyBehavior>
 
                       {nav.title}
 
@@ -108,7 +108,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className="mx-auto">
-            <Link href="/" scroll >
+            <Link href="/" scroll legacyBehavior>
 
               <Image
                 src={mobileLogo}
@@ -128,7 +128,7 @@ const Navbar = () => {
                   key={nav.id}
                   className={`${styles.navItemMobileHover} my-2 py-2`}
                 >
-                  <Link href={nav.link} passHref >
+                  <Link href={nav.link} passHref legacyBehavior>
                     <span
                       className={`cursor-pointer`}
                       data-bs-dismiss="offcanvas"

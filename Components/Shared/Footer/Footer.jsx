@@ -71,7 +71,7 @@ const Footer = () => {
                 </h6>
               </div>
               <div className="d-flex flex-column justify-content-center justify-content-md-start">
-                <Link href={`mailto:${footer?.email}`} target="_blank" >
+                <Link href={`mailto:${footer?.email}`} target="_blank" legacyBehavior>
 
                   <p className={`mt-3 px-xs-0 px-3 px-md-0 text-muted fs-14 lh-30`}>
                     <MdEmail className={`${styles.logo}`} />
@@ -81,7 +81,7 @@ const Footer = () => {
                   </p>
 
                 </Link>
-                <Link href={`${footer?.skype}`} target="_blank" >
+                <Link href={`${footer?.skype}`} target="_blank" legacyBehavior>
 
                   <p className="px-xs-0 px-3 px-md-0 text-muted fs-14 lh-30">
                     <FaSkype className={`${styles.logo}`} />
@@ -91,7 +91,7 @@ const Footer = () => {
                   </p>
 
                 </Link>
-                <Link href={`${footer?.whatsApp}`} target="_blank" >
+                <Link href={`${footer?.whatsApp}`} target="_blank" legacyBehavior>
 
                   <p className="px-xs-0 px-3 px-md-0 text-muted fs-14 lh-30">
                     <IoLogoWhatsapp className={`${styles.logo}`} />
@@ -110,14 +110,14 @@ const Footer = () => {
               </h6>
               <div className="d-flex align-items-center my-3 justify-content-center justify-content-md-start">
                 {footerLink?.facebook && (
-                  (<Link href={footerLink.facebook} target="_blank" >
+                  (<Link href={footerLink.facebook} target="_blank" legacyBehavior>
 
                     <FaFacebook className={`${styles.logo} me-3`} />
 
                   </Link>)
                 )}
                 {footerLink?.instagram && (
-                  (<Link href={footerLink.instagram} target="_blank" >
+                  (<Link href={footerLink.instagram} target="_blank" legacyBehavior>
 
                     <AiFillInstagram className={`${styles.logo} me-3`} />
 
@@ -125,7 +125,7 @@ const Footer = () => {
                 )}
 
                 {footerLink?.telegram && (
-                  (<Link href={footerLink.telegram} target="_blank" >
+                  (<Link href={footerLink.telegram} target="_blank" legacyBehavior>
 
                     <FaTelegram className={`${styles.logo} me-3`} />
 
@@ -133,14 +133,14 @@ const Footer = () => {
                 )}
 
                 {footerLink?.twitter && (
-                  (<Link href={footerLink.twitter} target="_blank" >
+                  (<Link href={footerLink.twitter} target="_blank" legacyBehavior>
 
                     <ImTwitter className={`${styles.logo} me-3`} />
 
                   </Link>)
                 )}
                 {footerLink?.youTube && (
-                  (<Link href={footerLink.youTube} target="_blank" >
+                  (<Link href={footerLink.youTube} target="_blank" legacyBehavior>
 
                     <FaYoutube className={`${styles.logo} me-3`} />
 

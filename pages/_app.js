@@ -183,10 +183,10 @@ export default function App({ Component, pageProps }) {
           <FaArrowAltCircleUp size={40} />
         </div> */}
       </div>
-      {/* <Script
+      <Script
         strategy="lazyOnload"
         src='https://embed.tawk.to/5dc483b81936a27a715fd119/default'
-      /> */}
+      />
       <Footer />
 
     </>
