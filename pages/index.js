@@ -1,12 +1,22 @@
+import dynamic from "next/dynamic";
 import Head from "next/head";
-import Amazon from "../Components/Home/Amazon/Amazon";
 import Banner from "../Components/Home/Banner/Banner";
-import HowToPlaceAnOrder from "../Components/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";
-import TrustedPartners from "../Components/Home/Partners/TrustedPartners";
-import TopAmazonClients from "../Components/Home/TopAmazonClients/TopAmazonClients";
-import TopThreeServices from "../Components/Home/TopThreeServices/TopThreeServices";
-import WhyChooseVirtualExperts from "../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
-import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
+// import Amazon from "../Components/Home/Amazon/Amazon";
+// import HowToPlaceAnOrder from "../Components/Home/HowToPlaceAnOrder/HowToPlaceAnOrder";
+// import TrustedPartners from "../Components/Home/Partners/TrustedPartners";
+// import TopAmazonClients from "../Components/Home/TopAmazonClients/TopAmazonClients";
+// import TopThreeServices from "../Components/Home/TopThreeServices/TopThreeServices";
+// import WhyChooseVirtualExperts from "../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
+// import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
+
+const Amazon = dynamic(() => import('../Components/Home/Amazon/Amazon'));
+const HowToPlaceAnOrder = dynamic(() => import('../Components/Home/HowToPlaceAnOrder/HowToPlaceAnOrder'));
+const TrustedPartners = dynamic(() => import('../Components/Home/Partners/TrustedPartners'));
+const TopAmazonClients = dynamic(() => import('../Components/Home/TopAmazonClients/TopAmazonClients'));
+const TopThreeServices = dynamic(() => import('../Components/Home/TopThreeServices/TopThreeServices'));
+const WhyChooseVirtualExperts = dynamic(() => import('../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts'));
+const ScheduleMeeting = dynamic(() => import('../Components/ScheduleMeeting/ScheduleMeeting'));
+
 
 export default function Home({
   topServicesData,
