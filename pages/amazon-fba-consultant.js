@@ -1,7 +1,11 @@
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import React from "react";
-import AmazonFBAConsultant from "../Components/AmazonFBA/AmazonFBAConsultant";
-import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
+// import AmazonFBAConsultant from "../Components/AmazonFBA/AmazonFBAConsultant";
+// import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
+
+const AmazonFBAConsultant = dynamic(() => import('../Components/AmazonFBA/AmazonFBAConsultant'));
+const ScheduleMeeting = dynamic(() => import('../Components/ScheduleMeeting/ScheduleMeeting'));
 
 
 const AmazonFBA = ({

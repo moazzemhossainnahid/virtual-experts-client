@@ -1,7 +1,9 @@
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import React from "react";
-import LetsTalk from "../Components/LetsTalk/LetsTalk";
+// import LetsTalk from "../Components/LetsTalk/LetsTalk";
 
+const LetsTalk = dynamic(() => import('../Components/LetsTalk/LetsTalk'));
 
 const LetsTalks = ({ footerData, metaLetsTalk }) => {
   return (
