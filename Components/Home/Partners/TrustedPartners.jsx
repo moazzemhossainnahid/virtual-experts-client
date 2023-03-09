@@ -66,10 +66,10 @@ const TrustedPartners = () => {
                         PartnersData.map((item, idx) => {
                             return (
 
-                                <div key={idx} className="py-10 flex justify-center items-center gap-5">
+                                <div key={idx} className="py-10 d-flex justify-content-center align-items-center gap-5">
                                     <Image
                                         style={{ filter: "grayscale(100%)" }}
-                                        className='flex justify-center items-center py-5 px-7'
+                                        className='d-flex justify-content-center align-items-center py-5 px-7'
                                         src={item?.imageURL}
                                         title={item?.alt}
                                         alt={item?.alt}
