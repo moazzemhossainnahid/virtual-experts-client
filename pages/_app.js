@@ -9,6 +9,7 @@ import React, { createContext, useEffect, useState } from "react";
 import Navbar from '../Components/Shared/Navbar/Navbar';
 import Footer from '../Components/Shared/Footer/Footer';
 import { Hydrate, QueryClient, QueryClientProvider, } from '@tanstack/react-query'
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 nProgress.configure(
   { showSpinner: false },
@@ -183,10 +184,13 @@ export default function App({ Component, pageProps }) {
           <FaArrowAltCircleUp size={40} />
         </div> */}
       </div>
-      <Script
+      <TawkMessengerReact
+        propertyId="5dc483b81936a27a715fd119"
+        widgetId="default" />
+      {/* <Script
         strategy="lazyOnload"
         src='https://embed.tawk.to/5dc483b81936a27a715fd119/default'
-      />
+      /> */}
       <Footer />
 
     </>
