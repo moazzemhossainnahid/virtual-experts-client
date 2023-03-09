@@ -155,10 +155,10 @@ export default function App({ Component, pageProps }) {
           />
         </noscript> */}
       </Head>
-      <Script
+      {/* <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
-      />
+      /> */}
       <Navbar />
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
