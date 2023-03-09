@@ -184,6 +184,7 @@ export default function App({ Component, pageProps }) {
           <FaArrowAltCircleUp size={40} />
         </div> */}
       </div>
+      {/* twak add */}
       <TawkMessengerReact
         propertyId="5dc483b81936a27a715fd119"
         widgetId="default" />
