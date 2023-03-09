@@ -17,9 +17,6 @@ nProgress.configure(
   }
 );
 
-export const config = {
-  unstable_runtimeJS: false
-};
 
 export const UserContext = createContext();
 export default function App({ Component, pageProps }) {
