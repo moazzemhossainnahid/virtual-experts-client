@@ -73,8 +73,8 @@ const TrustedPartners = () => {
                                         src={item?.imageURL}
                                         title={item?.alt}
                                         alt={item?.alt}
-                                        height="150"
-                                        width="150"
+                                        width={150}
+                                        height={150}
                                         objectFit="contain"
                                     />
                                 </div>

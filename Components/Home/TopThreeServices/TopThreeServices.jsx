@@ -31,8 +31,8 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                         <Image
                                             src={`${imgType} ; base64, ${service.img.img}`}
                                             alt="Loading..."
-                                            height="150"
-                                            width="150"
+                                            width={150}
+                                            height={150}
                                             objectFit="contain"
                                         />
                                     ) :
@@ -41,8 +41,8 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                                 src={service.imgURL}
                                                 title={service.alt}
                                                 alt={service.alt}
-                                                height="150"
-                                                width="150"
+                                                width={150}
+                                                height={150}
                                                 objectFit="contain"
                                             />
                                         )
