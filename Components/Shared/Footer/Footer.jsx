@@ -64,11 +64,11 @@ const Footer = () => {
             </div>
             <div className="col-md-4 px-5">
               <div className="text-center text-md-start">
-                <h6
+                <h3
                   className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}
                 >
                   Get in Touch
-                </h6>
+                </h3>
               </div>
               <div className="d-flex flex-column justify-content-center justify-content-md-start">
                 <Link href={`mailto:${footer?.email}`} target="_blank" legacyBehavior>

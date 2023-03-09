@@ -124,9 +124,9 @@ const Banner = ({ bannerData, footerLink }) => {
                 data-bs-toggle="modal"
                 data-bs-target="#popup"
               >
-                <h4 className="d-inline fs-14 font-family-roboto font-semibold">
+                <h3 className="d-inline fs-14 font-family-roboto font-semibold">
                   Get Free Quote!
-                </h4>
+                </h3>
               </button>
             </div>
             <div className="col-md-6 order-1 order-md-2 pb-5 pb-md-0">
