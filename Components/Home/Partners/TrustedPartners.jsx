@@ -75,6 +75,8 @@ const TrustedPartners = () => {
                                         alt={item?.alt}
                                         height="150"
                                         width="150"
+                                        layout="fill"
+                                        objectFit="contain"
                                     />
                                 </div>
 
