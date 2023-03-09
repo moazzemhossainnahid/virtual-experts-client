@@ -137,7 +137,6 @@ const Banner = ({ bannerData, footerLink }) => {
                 className="img-fluid"
                 layout="fill"
                 objectFit="contain"
-                loading="eager"
               />
             </div>
           </div>
