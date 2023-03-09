@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { PartnersData } from '../../../Data/PartnersData';
 import Image from 'next/image';
-import SectionTitle2 from '../../Shared/SectionTitile/SectionTitile2';
 import SectionTitle from '../../Shared/SectionTitile/SectionTitile';
 
 const TrustedPartners = () => {
@@ -54,7 +53,7 @@ const TrustedPartners = () => {
                 <link
                     rel="stylesheet"
                     type="text/css"
-                    charset="UTF-8"
+                    charet="UTF-8"
                     href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
                 />
                 <link
