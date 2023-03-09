@@ -136,6 +136,7 @@ const Banner = ({ bannerData, footerLink }) => {
                 title="amazon-fba-consultant-virtual-experts"
                 className="img-fluid"
                 strategy="eager"
+                loading="eager"
               />
             </div>
           </div>
