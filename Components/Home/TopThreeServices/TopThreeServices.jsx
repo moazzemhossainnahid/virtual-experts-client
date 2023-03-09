@@ -33,7 +33,6 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                             alt="Loading..."
                                             width={150}
                                             height={150}
-                                            objectFit="contain"
                                         />
                                     ) :
                                         (
@@ -43,7 +42,6 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                                 alt={service.alt}
                                                 width={150}
                                                 height={150}
-                                                objectFit="contain"
                                             />
                                         )
                                     }
