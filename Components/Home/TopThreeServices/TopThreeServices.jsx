@@ -32,7 +32,8 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                             src={`${imgType} ; base64, ${service.img.img}`}
                                             alt="Service"
                                             title="Service"
-                                            layout={'fill'}
+                                            fill={true}
+                                            style={{ objectFit: 'cover' }}
                                         />
                                     ) :
                                         (
