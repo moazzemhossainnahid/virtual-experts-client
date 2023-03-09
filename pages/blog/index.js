@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -12,12 +13,11 @@ import "react-toastify/dist/ReactToastify.css";
 import swal from "sweetalert";
 import cardHeaderBg from "../../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../../Assets/Images/others/v-logo.svg";
-import SideLink from "../../Components/Home/Banner/SideLink/SideLink";
+// import SideLink from "../../Components/Home/Banner/SideLink/SideLink";
 import { BlogData } from "../../Data/BlogData";
 
-export const config = {
-  unstable_runtimeJS: false
-};
+const SideLink = dynamic(() => import('../../Components/Home/Banner/SideLink/SideLink'));
+
 
 const Blog = ({metaBlog}) => {
   const router = useRouter();

@@ -1,8 +1,11 @@
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import React from "react";
-import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
-import ServicesComponents from "../Components/Services/Services";
+// import ServicesComponents from "../Components/Services/Services";
+// import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
+const ServicesComponents = dynamic(() => import('../Components/Services/Services'));
+const ScheduleMeeting = dynamic(() => import('../Components/ScheduleMeeting/ScheduleMeeting'));
 
 const Services = ({
   servicesCardData,
