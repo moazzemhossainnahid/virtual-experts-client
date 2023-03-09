@@ -26,14 +26,14 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                 key={service._id}
                                 className={`${styles.serviceCard} col-12 col-md-4 mx-auto mt-md-5`}
                             >
-                                <div className="d-flex justify-content-center">
+                                <div style={{ position: 'relative', width: '200px', height: '200px',}} className="d-flex justify-content-center">
                                     {service.img ? (
                                         <Image
                                             src={`${imgType} ; base64, ${service.img.img}`}
                                             alt="Service"
                                             title="Service"
-                                            width={200}
-                                            height={200}
+                                            layout={'fill'}
+                                            objectFit="cover"
                                         />
                                     ) :
                                         (
@@ -41,8 +41,8 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                                 src={service.imgURL}
                                                 title="Service"
                                                 alt="Service"
-                                                width={200}
-                                                height={200}
+                                                layout={'fill'}
+                                                objectFit="cover"
                                             />
                                         )
                                     }
