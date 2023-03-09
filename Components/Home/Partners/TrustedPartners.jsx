@@ -69,12 +69,12 @@ const TrustedPartners = () => {
                                 <div key={idx} className="py-10 h-40 flex justify-center items-center gap-5">
                                     <Image
                                         style={{ filter: "grayscale(100%)" }}
-                                        className='flex justify-center items-center py-5 px-7'
+                                        className='w-40 md:w-52 flex justify-center items-center h-30 py-5 px-7'
                                         src={item?.imageURL}
                                         title={item?.alt}
                                         alt={item?.alt}
-                                        width={150}
-                                        height={150}
+                                        height="150"
+                                        width="150"
                                     />
                                 </div>
 
