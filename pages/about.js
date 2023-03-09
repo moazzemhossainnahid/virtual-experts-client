@@ -3,9 +3,6 @@ import React from "react";
 import AboutComponents from "../Components/About/About";
 import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
-export const config = {
-  unstable_runtimeJS: false
-};
 
 const About = ({
   aboutData,

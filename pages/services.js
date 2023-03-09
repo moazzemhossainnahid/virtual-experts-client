@@ -4,10 +4,6 @@ import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 import ServicesComponents from "../Components/Services/Services";
 
 
-export const config = {
-  unstable_runtimeJS: false
-};
-
 const Services = ({
   servicesCardData,
   whatWeDo,

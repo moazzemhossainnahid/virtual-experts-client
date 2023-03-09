@@ -3,9 +3,6 @@ import React from "react";
 import AmazonFBAConsultant from "../Components/AmazonFBA/AmazonFBAConsultant";
 import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
-export const config = {
-  unstable_runtimeJS: false
-};
 
 const AmazonFBA = ({
   fbaData,

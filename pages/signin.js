@@ -13,10 +13,6 @@ import cardHeaderImg from "../Assets/Images/others/v-logo.svg";
 import Spinner from "../Components/Others/Spinner";
 import { UserContext } from "./_app";
 
-export const config = {
-  unstable_runtimeJS: false
-};
-
 const Signin = () => {
   const [showSpinner, setShowSpinner] = useState(false);
   const router = useRouter();

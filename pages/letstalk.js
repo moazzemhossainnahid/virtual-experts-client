@@ -2,9 +2,6 @@ import Head from "next/head";
 import React from "react";
 import LetsTalk from "../Components/LetsTalk/LetsTalk";
 
-export const config = {
-  unstable_runtimeJS: false
-};
 
 const LetsTalks = ({ footerData, metaLetsTalk }) => {
   return (

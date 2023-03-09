@@ -9,10 +9,6 @@ import cardHeaderBg from "../Assets/Images/others/Group 157.svg";
 import cardHeaderImg from "../Assets/Images/others/v-logo.svg";
 
 
-export const config = {
-  unstable_runtimeJS: false
-};
-
 const ResetPassword = () => {
   const router = useRouter();
   const [showResetPassword, setShowResetPassword] = useState(false);
