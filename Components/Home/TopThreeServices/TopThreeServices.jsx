@@ -30,8 +30,8 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                     {service.img ? (
                                         <Image
                                             src={`${imgType} ; base64, ${service.img.img}`}
-                                            alt={service?.imgAlt}
-                                            title={service?.imgAlt}
+                                            alt="Service"
+                                            title="Service"
                                             width={200}
                                             height={200}
                                         />
@@ -39,8 +39,8 @@ const TopThreeServices = ({ topServicesData, headerInfoTopServicesData }) => {
                                         (
                                             <Image
                                                 src={service.imgURL}
-                                                title={service.alt}
-                                                alt={service.alt}
+                                                title="Service"
+                                                alt="Service"
                                                 width={200}
                                                 height={200}
                                             />
