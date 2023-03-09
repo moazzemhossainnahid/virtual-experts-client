@@ -5,6 +5,10 @@ import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 import SectionTitle from "../Components/Shared/SectionTitile/SectionTitile";
 
+export const config = {
+  unstable_runtimeJS: false
+};
+
 const Order = () => {
   const router = useRouter();
 

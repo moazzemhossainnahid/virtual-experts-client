@@ -15,6 +15,10 @@ import cardHeaderImg from "../../Assets/Images/others/v-logo.svg";
 import SideLink from "../../Components/Home/Banner/SideLink/SideLink";
 import { BlogData } from "../../Data/BlogData";
 
+export const config = {
+  unstable_runtimeJS: false
+};
+
 const Blog = ({metaBlog}) => {
   const router = useRouter();
   const { register, handleSubmit, formState: { errors }, reset } = useForm();

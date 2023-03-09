@@ -10,13 +10,16 @@ import Navbar from '../Components/Shared/Navbar/Navbar';
 import Footer from '../Components/Shared/Footer/Footer';
 import { Hydrate, QueryClient, QueryClientProvider, } from '@tanstack/react-query'
 
-
 nProgress.configure(
   { showSpinner: false },
   {
     template: "<div role='bar' className='bg-info'>...</div>",
   }
 );
+
+export const config = {
+  unstable_runtimeJS: false
+};
 
 export const UserContext = createContext();
 export default function App({ Component, pageProps }) {

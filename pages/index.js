@@ -8,6 +8,10 @@ import TopThreeServices from "../Components/Home/TopThreeServices/TopThreeServic
 import WhyChooseVirtualExperts from "../Components/Home/WhyChooseVirtualExperts/WhyChooseVirtualExperts";
 import ScheduleMeeting from "../Components/ScheduleMeeting/ScheduleMeeting";
 
+export const config = {
+  unstable_runtimeJS: false
+};
+
 export default function Home({
   topServicesData,
   virtualServicesData,
