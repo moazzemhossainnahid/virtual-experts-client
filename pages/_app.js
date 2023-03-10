@@ -6,10 +6,11 @@ import Router, { useRouter } from "next/router";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
 import React, { createContext, useEffect, useState } from "react";
-import Navbar from '../Components/Shared/Navbar/Navbar';
-import Footer from '../Components/Shared/Footer/Footer';
+// import Navbar from '../Components/Shared/Navbar/Navbar';
+// import Footer from '../Components/Shared/Footer/Footer';
 import { Hydrate, QueryClient, QueryClientProvider, } from '@tanstack/react-query'
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import dynamic from 'next/dynamic';
 
 nProgress.configure(
   { showSpinner: false },
@@ -17,6 +18,9 @@ nProgress.configure(
     template: "<div role='bar' className='bg-info'>...</div>",
   }
 );
+
+const Navbar = dynamic(() => import('../Components/Shared/Navbar/Navbar'));
+const Footer = dynamic(() => import('../Components/Shared/Footer/Footer'));
 
 
 export const UserContext = createContext();
