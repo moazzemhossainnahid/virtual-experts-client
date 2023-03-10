@@ -13,6 +13,9 @@ const nextConfig = {
       "i.ibb.co",
     ],
   },
+  experimental: {
+    largePageDataBytes: 800 * 1000,
+  },
 }
 
 module.exports = nextConfig
