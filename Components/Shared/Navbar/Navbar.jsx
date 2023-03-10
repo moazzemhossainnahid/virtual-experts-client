@@ -134,7 +134,7 @@ const Navbar = () => {
                       data-bs-dismiss="offcanvas"
                       aria-label="Close"
                     >
-                      <a className={styles.navItemMobile}>{nav.title}</a>
+                      <a href={nav.link} className={styles.navItemMobile}>{nav.title}</a>
                     </span>
                   </Link>
                 </div>
