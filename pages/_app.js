@@ -56,9 +56,6 @@ export default function App({ Component, pageProps }) {
     return Component.getLayout(
       <>
         <Head>
-          {/* <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
-          <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script> */}
-
           {/* Google Analytics Script Add */}
           {/* <script
             async
@@ -110,19 +107,6 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        {/* <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-          crossOrigin="anonymous"
-        ></link>
-        <script
-          async
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-          crossOrigin="anonymous"
-        ></script> */}
-
         {/* Google Analytics Script Add */}
         {/* <script
           dangerouslySetInnerHTML={{
