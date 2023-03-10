@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import dynamic from 'next/dynamic';
 import Script from 'next/script'
 import jwt_decode from "jwt-decode";
 import Head from "next/head";
@@ -9,8 +10,6 @@ import React, { createContext, useEffect, useState } from "react";
 // import Navbar from '../Components/Shared/Navbar/Navbar';
 // import Footer from '../Components/Shared/Footer/Footer';
 import { Hydrate, QueryClient, QueryClientProvider, } from '@tanstack/react-query'
-import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
-import dynamic from 'next/dynamic';
 
 nProgress.configure(
   { showSpinner: false },
@@ -189,14 +188,11 @@ export default function App({ Component, pageProps }) {
         </div> */}
       </div>
       {/* twak add */}
-      <TawkMessengerReact
-        propertyId="5dc483b81936a27a715fd119"
-        widgetId="default" />
 
-      {/* <Script
+      <Script
         strategy="lazyOnload"
         src='https://embed.tawk.to/5dc483b81936a27a715fd119/default'
-      /> */}
+      />
       
       <Footer />
 

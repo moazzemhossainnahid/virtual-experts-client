@@ -332,11 +332,6 @@
     "@tanstack/query-core" "4.26.1"
     use-sync-external-store "^1.2.0"
 
-"@tawk.to/tawk-messenger-react@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@tawk.to/tawk-messenger-react/-/tawk-messenger-react-2.0.1.tgz#2e9bbfef47f81578aa49a7cd4d72191a0c3276a4"
-  integrity sha512-jMWbeOCMwqcjLCR7a9+mh0Ce/Cl9aPyfZAvzkNKCFKBYaV9n8eAE7U/XKKFqCKfp5AehDMUCB5saG2cFSSP0Xw==
-
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
