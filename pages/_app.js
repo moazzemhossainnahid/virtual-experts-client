@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/globals.css';
 import dynamic from 'next/dynamic';
 import Script from 'next/script'
@@ -9,7 +10,7 @@ import "nprogress/nprogress.css";
 import React, { createContext, useEffect, useState } from "react";
 // import Navbar from '../Components/Shared/Navbar/Navbar';
 // import Footer from '../Components/Shared/Footer/Footer';
-import { Hydrate, QueryClient, QueryClientProvider, } from '@tanstack/react-query'
+import { Hydrate, QueryClient, QueryClientProvider, } from '@tanstack/react-query';
 
 nProgress.configure(
   { showSpinner: false },
@@ -55,8 +56,8 @@ export default function App({ Component, pageProps }) {
     return Component.getLayout(
       <>
         <Head>
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
-          <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+          {/* <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+          <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script> */}
 
           {/* Google Analytics Script Add */}
           {/* <script
@@ -109,7 +110,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link
+        {/* <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
@@ -120,7 +121,7 @@ export default function App({ Component, pageProps }) {
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
           crossOrigin="anonymous"
-        ></script>
+        ></script> */}
 
         {/* Google Analytics Script Add */}
         {/* <script

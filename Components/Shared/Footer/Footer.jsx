@@ -103,9 +103,9 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-md-4 text-center text-md-start mt-4 mt-md-0">
-              <h6 className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}>
+              <h3 className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}>
                 Let’s Get Social
-              </h6>
+              </h3>
               <div className="d-flex align-items-center my-3 justify-content-center justify-content-md-start">
                 {footerLink?.facebook && (
                   (<Link href={footerLink.facebook} target="_blank" legacyBehavior>
