@@ -42,12 +42,12 @@ const Banner = ({ bannerData, footerLink }) => {
   // };
 
 
-    //recaptcha function
-    
-    function onChange(value) {
-      console.log("Captcha value:", value);
-      setVerifed(true);
-    }
+  //recaptcha function
+
+  function onChange(value) {
+    console.log("Captcha value:", value);
+    setVerifed(true);
+  }
 
   const onSubmit = async (data) => {
     const Info = {
@@ -108,7 +108,7 @@ const Banner = ({ bannerData, footerLink }) => {
         draggable
         pauseOnHover
       /> */}
-      <div style={{backgroundColor:"#f5f8fe"}} className="">
+      <div style={{ backgroundColor: "#f5f8fe" }} className="">
         <div className="container py-5">
           <div className="row d-flex align-items-center">
             <div className="col-md-6 order-2 order-md-1">
@@ -124,9 +124,9 @@ const Banner = ({ bannerData, footerLink }) => {
                 data-bs-toggle="modal"
                 data-bs-target="#popup"
               >
-                <h3 className="d-inline fs-14 font-family-roboto font-semibold">
+                <span className="d-inline fs-14 font-family-roboto font-semibold">
                   Get Free Quote!
-                </h3>
+                </span>
               </button>
             </div>
             <div className="col-md-6 order-1 order-md-2 pb-5 pb-md-0">
