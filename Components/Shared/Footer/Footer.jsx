@@ -108,51 +108,45 @@ const Footer = () => {
               </span>
               <div className="d-flex align-items-center my-3 justify-content-center justify-content-md-start">
                 {footerLink?.facebook && (
-                  (<Link href={footerLink.facebook} target="_blank" legacyBehavior>
-
-                    <a href={footerLink.facebook} className="">
+                  (
+                    <a target="_blank" rel="noreferrer" href={footerLink.facebook} className="">
                       <FaFacebook className={`${styles.logo} me-3`} />
                     </a>
-
-                  </Link>)
+                  )
                 )}
                 {footerLink?.instagram && (
-                  (<Link href={footerLink.instagram} target="_blank" legacyBehavior>
+                  (
 
-                    <a href={footerLink.instagram} className="">
+                    <a target="_blank" rel="noreferrer" href={footerLink.instagram} className="">
                       <AiFillInstagram className={`${styles.logo} me-3`} />
                     </a>
 
-                  </Link>)
+                  )
                 )}
 
                 {footerLink?.telegram && (
-                  (<Link href={footerLink.telegram} target="_blank" legacyBehavior>
+                  (
 
-                    <a href={footerLink.telegram} className="">
+                    <a target="_blank" rel="noreferrer" href={footerLink.telegram} className="">
                       <FaTelegram className={`${styles.logo} me-3`} />
                     </a>
-
-                  </Link>)
+                  )
                 )}
 
                 {footerLink?.twitter && (
-                  (<Link href={footerLink.twitter} target="_blank" legacyBehavior>
+                  (
 
-                    <a href={footerLink.twitter} className="">
+                    <a target="_blank" rel="noreferrer" href={footerLink.twitter} className="">
                       <ImTwitter className={`${styles.logo} me-3`} />
                     </a>
-
-                  </Link>)
+                  )
                 )}
                 {footerLink?.youTube && (
-                  (<Link href={footerLink.youTube} target="_blank" legacyBehavior>
-
-                    <a href={footerLink.youTube} className="">
+                  (
+                    <a target="_blank" rel="noreferrer" href={footerLink.youTube} className="">
                       <FaYoutube className={`${styles.logo} me-3`} />
                     </a>
-
-                  </Link>)
+                  )
                 )}
               </div>
               <span className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}>
