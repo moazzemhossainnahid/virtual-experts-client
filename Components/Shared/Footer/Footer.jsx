@@ -109,7 +109,7 @@ const Footer = () => {
               <div className="d-flex align-items-center my-3 justify-content-center justify-content-md-start">
                 {footerLink?.facebook && (
                   (
-                    <a target="_blank" rel="noreferrer" href={footerLink.facebook} className="">
+                    <a target="_blank" rel="noreferrer" aria-label="Facebook" href={footerLink.facebook} className="">
                       <FaFacebook className={`${styles.logo} me-3`} />
                     </a>
                   )
@@ -117,7 +117,7 @@ const Footer = () => {
                 {footerLink?.instagram && (
                   (
 
-                    <a target="_blank" rel="noreferrer" href={footerLink.instagram} className="">
+                    <a target="_blank" rel="noreferrer" aria-label="Instagram" href={footerLink.instagram} className="">
                       <AiFillInstagram className={`${styles.logo} me-3`} />
                     </a>
 
@@ -127,7 +127,7 @@ const Footer = () => {
                 {footerLink?.telegram && (
                   (
 
-                    <a target="_blank" rel="noreferrer" href={footerLink.telegram} className="">
+                    <a target="_blank" rel="noreferrer" aria-label="Telegram" href={footerLink.telegram} className="">
                       <FaTelegram className={`${styles.logo} me-3`} />
                     </a>
                   )
@@ -136,14 +136,14 @@ const Footer = () => {
                 {footerLink?.twitter && (
                   (
 
-                    <a target="_blank" rel="noreferrer" href={footerLink.twitter} className="">
+                    <a target="_blank" rel="noreferrer" aria-label="Twitter" href={footerLink.twitter} className="">
                       <ImTwitter className={`${styles.logo} me-3`} />
                     </a>
                   )
                 )}
                 {footerLink?.youTube && (
                   (
-                    <a target="_blank" rel="noreferrer" href={footerLink.youTube} className="">
+                    <a target="_blank" rel="noreferrer" aria-label="Youtube" href={footerLink.youTube} className="">
                       <FaYoutube className={`${styles.logo} me-3`} />
                     </a>
                   )
