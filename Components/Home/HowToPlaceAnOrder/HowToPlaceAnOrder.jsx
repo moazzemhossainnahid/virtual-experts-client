@@ -14,6 +14,7 @@ const HowToPlaceAnOrder = ({ placeAnOrderData, placeAnOrderListData }) => {
               title="amazon-marketing-strategy"
               height="411"
               width="574"
+              loading="lazy"
             />
           </div>
           <div className="col-12 col-md-7 ps-md-5">

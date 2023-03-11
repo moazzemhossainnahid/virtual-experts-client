@@ -10,12 +10,12 @@ const Amazon = ({ amazonData }) => {
         <div className="container py-5">
           <div className="row d-flex align-items-center">
             <div className="col-md-6 pb-5 pb-md-0 px-5">
-              <Image
+              {/* <Image
                 className="img-fluid"
                 src={amazonImg}
                 alt="amazon-marketing-service-virtual-experts-limited"
                 title="amazon-marketing-service-virtual-experts-limited"
-              />
+              /> */}
             </div>
             <div className="col-md-6 mt-md-2">
               <h2 className="fs-28 textLeftAfterEffect font-family-roboto lh-44">

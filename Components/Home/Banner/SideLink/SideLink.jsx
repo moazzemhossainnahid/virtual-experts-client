@@ -14,7 +14,7 @@ const SideLink = () => {
       .then((data) => setFooterLink(data[0]));
   }, []);
 
-  console.log(footerLink);
+  // console.log(footerLink);
 
   return (
     <div className={`position-fixed left-0 top-30 ${styles.zIndex}`}>

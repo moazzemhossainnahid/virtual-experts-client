@@ -110,14 +110,18 @@ const Footer = () => {
                 {footerLink?.facebook && (
                   (<Link href={footerLink.facebook} target="_blank" legacyBehavior>
 
-                    <FaFacebook className={`${styles.logo} me-3`} />
+                    <a href={footerLink.facebook} className="">
+                      <FaFacebook className={`${styles.logo} me-3`} />
+                    </a>
 
                   </Link>)
                 )}
                 {footerLink?.instagram && (
                   (<Link href={footerLink.instagram} target="_blank" legacyBehavior>
 
-                    <AiFillInstagram className={`${styles.logo} me-3`} />
+                    <a href={footerLink.instagram} className="">
+                      <AiFillInstagram className={`${styles.logo} me-3`} />
+                    </a>
 
                   </Link>)
                 )}
@@ -125,7 +129,9 @@ const Footer = () => {
                 {footerLink?.telegram && (
                   (<Link href={footerLink.telegram} target="_blank" legacyBehavior>
 
-                    <FaTelegram className={`${styles.logo} me-3`} />
+                    <a href={footerLink.telegram} className="">
+                      <FaTelegram className={`${styles.logo} me-3`} />
+                    </a>
 
                   </Link>)
                 )}
@@ -133,14 +139,18 @@ const Footer = () => {
                 {footerLink?.twitter && (
                   (<Link href={footerLink.twitter} target="_blank" legacyBehavior>
 
-                    <ImTwitter className={`${styles.logo} me-3`} />
+                    <a href={footerLink.twitter} className="">
+                      <ImTwitter className={`${styles.logo} me-3`} />
+                    </a>
 
                   </Link>)
                 )}
                 {footerLink?.youTube && (
                   (<Link href={footerLink.youTube} target="_blank" legacyBehavior>
 
-                    <FaYoutube className={`${styles.logo} me-3`} />
+                    <a href={footerLink.youTube} className="">
+                      <FaYoutube className={`${styles.logo} me-3`} />
+                    </a>
 
                   </Link>)
                 )}

@@ -129,16 +129,15 @@ const Banner = ({ bannerData, footerLink }) => {
                 </span>
               </button>
             </div>
-            <div className="col-md-6 order-1 order-md-2 pb-5 pb-md-0">
+            {/* <div className="col-md-6 order-1 order-md-2 pb-5 pb-md-0">
               <Image
                 src={bannerImg}
                 alt="amazon-fba-consultant-virtual-experts"
                 title="amazon-fba-consultant-virtual-experts"
                 className="img-fluid"
-                strategy="eager"
-                loading="eager"
+                priority={42}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

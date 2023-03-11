@@ -63,22 +63,22 @@ const TrustedPartners = () => {
         />
         <Slider className='' {...settings}>
           {
-            PartnersData.map((item, idx) => {
+            PartnersData.map((item) => {
               return (
-                <>
-                  <div key={idx} className="py-10 d-flex justify-content-center align-items-center gap-5">
-                    <div style={{ position: 'relative', width: '150px', height: '150px', }} className="d-flex justify-content-center mx-auto">
-                      <Image
-                        style={{ filter: "grayscale(100%)", objectFit: 'cover' }}
-                        className='d-flex justify-content-center align-items-center py-5 px-7'
-                        src={item?.imageURL}
-                        title={item?.alt}
-                        alt={item?.alt}
-                        fill={true}
-                      />
-                    </div>
+                <div key={item.alt} className="py-10 d-flex justify-content-center align-items-center gap-5">
+                  <div style={{ position: 'relative', width: '150px', height: '150px', }} className="d-flex justify-content-center mx-auto">
+                    <Image
+                      style={{ filter: "grayscale(100%)", objectFit: 'cover' }}
+                      className='d-flex justify-content-center align-items-center py-5 px-7'
+                      src={item?.imageURL}
+                      title={item?.alt}
+                      alt={item?.alt}
+                      fill={true}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                   </div>
-                </>
+                </div>
+
               )
             })
           }
