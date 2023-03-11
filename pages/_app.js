@@ -54,12 +54,12 @@ export default function App({ Component, pageProps }) {
   if (Component.getLayout) {
     return Component.getLayout(
       <>
-        <Head>
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
-          <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        {/* <Head> */}
+        {/* <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+          <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script> */}
 
-          {/* Google Analytics Script Add */}
-          {/* <script
+        {/* Google Analytics Script Add */}
+        {/* <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
           ></script>
@@ -73,8 +73,8 @@ export default function App({ Component, pageProps }) {
               gtag("config", "G-M0L3PN9HQL");`,
             }}
           /> */}
-          {/* facebook Analytics Script Add */}
-          {/* <script
+        {/* facebook Analytics Script Add */}
+        {/* <script
             dangerouslySetInnerHTML={{
               __html: `!function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -87,7 +87,7 @@ export default function App({ Component, pageProps }) {
               fbq('track', 'PageView');`,
             }}
           /> */}
-          {/* <noscript>
+        {/* <noscript>
             <img
               height="1"
               width="1"
@@ -95,7 +95,7 @@ export default function App({ Component, pageProps }) {
               src="https://www.facebook.com/tr?id=878234442794429&ev=PageView&noscript=1"
             />
           </noscript> */}
-        </Head>
+        {/* </Head> */}
         <QueryClientProvider client={queryClient}>
           <Hydrate state={pageProps.dehydratedState}>
             <UserContext.Provider value={[signedUser, setSignedUser]}>
@@ -110,17 +110,15 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-          crossOrigin="anonymous"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
         ></link>
-        <script
+        {/* <script
           async
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
           crossOrigin="anonymous"
-        ></script>
+        ></script> */}
         {/* Google Analytics Script Add */}
         {/* <script
           dangerouslySetInnerHTML={{
@@ -155,6 +153,10 @@ export default function App({ Component, pageProps }) {
           />
         </noscript> */}
       </Head>
+      <script
+        async
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      ></script>
       {/* <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
