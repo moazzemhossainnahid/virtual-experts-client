@@ -64,9 +64,9 @@ const Footer = () => {
             </div>
             <div className="col-md-4 px-5">
               <div className="text-center text-md-start">
-                <h3 className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`} >
+                <span className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`} >
                   Get in Touch
-                </h3>
+                </span>
               </div>
               <div className="d-flex flex-column justify-content-center justify-content-md-start">
                 <Link href={`mailto:${footer?.email}`} target="_blank" legacyBehavior>
@@ -103,9 +103,9 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-md-4 text-center text-md-start mt-4 mt-md-0">
-              <h3 className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}>
+              <span className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}>
                 Let’s Get Social
-              </h3>
+              </span>
               <div className="d-flex align-items-center my-3 justify-content-center justify-content-md-start">
                 {footerLink?.facebook && (
                   (<Link href={footerLink.facebook} target="_blank" legacyBehavior>
@@ -145,9 +145,9 @@ const Footer = () => {
                   </Link>)
                 )}
               </div>
-              <h6 className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}>
+              <span className={`${styles.title} fs-16 mt-2 mt-md-0 lh-30 fw-500`}>
                 Payment method
-              </h6>
+              </span>
               <div className="d-flex align-items-center mt-2 justify-content-center justify-content-md-start">
                 <div className="me-2 my-3">
                   <Image src={PayPal} alt="paypal" />
