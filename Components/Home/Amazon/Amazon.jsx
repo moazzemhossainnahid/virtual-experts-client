@@ -15,7 +15,6 @@ const Amazon = ({ amazonData }) => {
                 src={amazonImg}
                 alt="amazon-marketing-service-virtual-experts-limited"
                 title="amazon-marketing-service-virtual-experts-limited"
-                objectFit="contain"
               />
             </div>
             <div className="col-md-6 mt-md-2">

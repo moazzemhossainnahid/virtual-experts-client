@@ -109,10 +109,10 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link
+        {/* <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        ></link>
+        ></link> */}
         {/* <script
           async
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
@@ -153,10 +153,6 @@ export default function App({ Component, pageProps }) {
           />
         </noscript> */}
       </Head>
-      <script
-        async
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-      ></script>
       {/* <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-M0L3PN9HQL"
@@ -189,11 +185,11 @@ export default function App({ Component, pageProps }) {
         </div> */}
       </div>
       {/* twak add */}
-
+      {/* 
       <Script
         strategy="lazyOnload"
         src='https://embed.tawk.to/5dc483b81936a27a715fd119/default'
-      />
+      /> */}
 
       <Footer />
 
